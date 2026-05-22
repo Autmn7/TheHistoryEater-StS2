@@ -31,5 +31,11 @@
   "KEINEMOD-CONCEAL_HISTORY_POWER.title": "封存历史",
   "KEINEMOD-FATIGUE_POWER.description": "",
   "KEINEMOD-FATIGUE_POWER.smartDescription": "下[blue]{Amount}[/blue]个回合少抽[blue]1[/blue]张牌。",
-  "KEINEMOD-FATIGUE_POWER.title": "疲惫"
+  "KEINEMOD-FATIGUE_POWER.title": "疲惫",
+  "KEINEMOD-HISTORY_OF_UNTRODDEN_POWER.description": "",
+  "KEINEMOD-HISTORY_OF_UNTRODDEN_POWER.smartDescription": "在你的回合开始时，给予所有敌人[blue]{Amount}[/blue]层[gold]历史之隙[/gold]。",
+  "KEINEMOD-HISTORY_OF_UNTRODDEN_POWER.title": "「旧秘境史 -古代史-」",
+  "KEINEMOD-HISTORY_OF_FANTASY_POWER.description": "",
+  "KEINEMOD-HISTORY_OF_FANTASY_POWER.smartDescription": "每当你生成一张卡牌，给予一名随机敌人[blue]{Amount}[/blue]层[gold]历史之隙[/gold]。",
+  "KEINEMOD-HISTORY_OF_FANTASY_POWER.title": "「新幻想史 -现代史-」"
 }

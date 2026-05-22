@@ -31,5 +31,11 @@
   "KEINEMOD-CONCEAL_HISTORY_POWER.title": "Conceal History",
   "KEINEMOD-FATIGUE_POWER.description": "",
   "KEINEMOD-FATIGUE_POWER.smartDescription": "{Amount:plural:Next turn|For the next [blue]{}[/blue] turns}, draw [blue][/blue]1 less card.",
-  "KEINEMOD-FATIGUE_POWER.title": "Fatigue"
+  "KEINEMOD-FATIGUE_POWER.title": "Fatigue",
+  "KEINEMOD-HISTORY_OF_UNTRODDEN_POWER.description": "",
+  "KEINEMOD-HISTORY_OF_UNTRODDEN_POWER.smartDescription": "At the start of your turn, apply [blue]{Amount}[/blue] [gold]Historical Gap[/gold] to ALL enemies.",
+  "KEINEMOD-HISTORY_OF_UNTRODDEN_POWER.title": "History of Untrodden Land",
+  "KEINEMOD-HISTORY_OF_FANTASY_POWER.description": "",
+  "KEINEMOD-HISTORY_OF_FANTASY_POWER.smartDescription": "Whenever you generate a card, apply [blue]{Amount}[/blue] [gold]Historical Gap[/gold] to a random enemies.",
+  "KEINEMOD-HISTORY_OF_FANTASY_POWER.title": "History of Fantasy"
 }

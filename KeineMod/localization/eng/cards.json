@@ -56,6 +56,9 @@
   "KEINEMOD-YOSHIMITSU_CRISIS.description": "Deal {Damage:diff()} damage.\n[blue]Human[/blue]: [gold]Consume[/gold] up to {Cards:diff()} {Cards:plural:card|cards}, gain {energyPrefix:energyIcons(1)} for each.\n[green]Hakutaku[/green]: [gold]Recall[/gold] up to {Cards:diff()} {Cards:plural:card|cards}, gain {Block:diff()} [gold]Block[/gold] for each.",
   "KEINEMOD-YOSHIMITSU_CRISIS.title": "Yoshimitsu Crisis",
   "KEINEMOD-YOSHIMITSU_CRISIS.artist": "",
+  "KEINEMOD-GHQ_CRISIS.description": "Deal {Damage:diff()} damage to ALL enemies {Repeat:diff()} times.\nCost 1 less {energyPrefix:energyIcons(1)} for each card in your [gold]Scroll[/gold].\n[green]Hakutaku[/green]: [gold]Recall[/gold] up to {Cards:diff()} {Cards:plural:card|cards} and [gold]Exhaust[/gold] this card.",
+  "KEINEMOD-GHQ_CRISIS.title": "GHQ Crisis",
+  "KEINEMOD-GHQ_CRISIS.artist": "",
   "KEINEMOD-LEISURE.description": "Gain {Block:diff()} [gold]Block[/gold].\n[gold]Create[/gold] 1 [gold]Flow[/gold].\n[blue]Human[/blue]: [gold]Consume[/gold] 1 card.\n[green]Hakutaku[/green]: [gold]Create[/gold] 1 more [gold]Flow[/gold].",
   "KEINEMOD-LEISURE.title": "Leisure",
   "KEINEMOD-LEISURE.artist": "",
@@ -148,5 +151,14 @@
   "KEINEMOD-FADING_PAST.artist": "",
   "KEINEMOD-FATIGUE.description": "Drawn: Next turn, draw 1 less card.",
   "KEINEMOD-FATIGUE.title": "Fatigue",
-  "KEINEMOD-FATIGUE.artist": ""
+  "KEINEMOD-FATIGUE.artist": "",
+  "KEINEMOD-HISTORY_OF_UNTRODDEN.description": "At the start of your turn, apply [blue]{Amount}[/blue] [gold]Historical Gap[/gold] to ALL enemies.",
+  "KEINEMOD-HISTORY_OF_UNTRODDEN.title": "History of Untrodden Land",
+  "KEINEMOD-HISTORY_OF_UNTRODDEN.artist": "",
+  "KEINEMOD-HISTORY_OF_FANTASY.description": "Whenever you generate a card, apply [blue]{Amount}[/blue] [gold]Historical Gap[/gold] to a random enemies.",
+  "KEINEMOD-HISTORY_OF_FANTASY.title": "History of Fantasy",
+  "KEINEMOD-HISTORY_OF_FANTASY.artist": "",
+  "KEINEMOD-FEAST_OF_HISTORY.description": "Apply {HistoricalGapPower:diff()} [gold]Historical Gap[/gold] to ALL enemies.\n[blue]Human[/blue]: [gold]Consume[/gold] your [gold]Hand[/gold].\n[green]Hakutaku[/green]: Double ALL enemies' [gold]Historical Gap[/gold] after apply.",
+  "KEINEMOD-FEAST_OF_HISTORY.title": "Feast of History",
+  "KEINEMOD-FEAST_OF_HISTORY.artist": ""
 } 
