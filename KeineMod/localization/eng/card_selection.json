@@ -1,0 +1,6 @@
+{
+  "TO_CONSUME_KEINE": "Choose {Amount:plural:a card|[blue]{}[/blue] cards} to [gold]Consume[/gold].",
+  "TO_CONSUME_UPTO_KEINE": "Choose up to {Amount:plural:a card|[blue]{}[/blue] cards} to [gold]Consume[/gold].",
+  "TO_RECALL_KEINE": "Choose {Amount:plural:a card|[blue]{}[/blue] cards} to [gold]Recall[/gold].",
+  "TO_RECALL_UPTO_KEINE": "Choose up to {Amount:plural:a card|[blue]{}[/blue] cards} to [gold]Recall[/gold]."
+}

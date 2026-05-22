@@ -1,0 +1,25 @@
+﻿using BaseLib.Patches.Content;
+using MegaCrit.Sts2.Core.Entities.Cards;
+
+namespace KeineMod.KeineModCode.Scripts;
+
+public class KeineModKeywords
+{
+    [CustomEnum] [KeywordProperties(AutoKeywordPosition.None)]
+    public static CardKeyword Consume;
+
+    [CustomEnum] [KeywordProperties(AutoKeywordPosition.None)]
+    public static CardKeyword Create;
+
+    [CustomEnum] [KeywordProperties(AutoKeywordPosition.None)]
+    public static CardKeyword Recall;
+
+    [CustomEnum] [KeywordProperties(AutoKeywordPosition.None)]
+    public static CardKeyword Human;
+
+    [CustomEnum] [KeywordProperties(AutoKeywordPosition.None)]
+    public static CardKeyword Hakutaku;
+
+    [CustomEnum] [KeywordProperties(AutoKeywordPosition.None)]
+    public static CardKeyword Knowledgeable;
+}
