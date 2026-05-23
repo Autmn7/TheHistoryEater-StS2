@@ -4,6 +4,7 @@ using KeineMod.KeineModCode.Scripts;
 using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization;
@@ -26,7 +27,6 @@ public static class ConsumeCmd
             if (consumedCard is not Flow && (consumedCard is not TheSmartest || consumedCard.EnergyCost.GetResolved() <= 0)) await CardPileCmd.Add(consumedCard, ScrollPile.Scroll);
             await KeineHooks.OnConsumed(choiceContext, player, consumedCard);
         }
-
         return list;
     }
 
@@ -43,7 +43,34 @@ public static class ConsumeCmd
             if (consumedCard is not Flow && (consumedCard is not TheSmartest || consumedCard.EnergyCost.GetResolved() <= 0)) await CardPileCmd.Add(consumedCard, ScrollPile.Scroll);
             await KeineHooks.OnConsumed(choiceContext, player, consumedCard);
         }
-
         return list;
+    }
+
+    public static async Task<CardModel?> FromHandSingle(PlayerChoiceContext choiceContext, Player player, AbstractModel source, bool shouldUpgrade = false)
+    {
+        if (CombatManager.Instance.IsOverOrEnding)
+            return null;
+        var prefs = new CardSelectorPrefs(new LocString("card_selection", "TO_CONSUME_KEINE"), 1);
+        var consumedCard = (await CardSelectCmd.FromHand(choiceContext, player, prefs, null, source)).FirstOrDefault();
+        if (consumedCard != null)
+        {
+            if (shouldUpgrade)
+                CardCmd.Upgrade(consumedCard);
+            if (consumedCard is not Flow && (consumedCard is not TheSmartest || consumedCard.EnergyCost.GetResolved() <= 0)) await CardPileCmd.Add(consumedCard, ScrollPile.Scroll);
+            await KeineHooks.OnConsumed(choiceContext, player, consumedCard);
+        }
+        return consumedCard;
+    }
+
+    public static async Task EntireHand(PlayerChoiceContext choiceContext, Player player, AbstractModel source)
+    {
+        if (CombatManager.Instance.IsOverOrEnding)
+            return;
+        List<CardModel> hand = PileType.Hand.GetPile(player).Cards.ToList();
+        foreach (CardModel consumedCard in hand)
+        {
+            if (consumedCard is not Flow && (consumedCard is not TheSmartest || consumedCard.EnergyCost.GetResolved() <= 0)) await CardPileCmd.Add(consumedCard, ScrollPile.Scroll);
+            await KeineHooks.OnConsumed(choiceContext, player, consumedCard);
+        }
     }
 }

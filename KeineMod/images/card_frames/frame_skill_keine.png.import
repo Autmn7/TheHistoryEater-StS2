@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbw2o4jokh616"
-path="res://.godot/imported/character_icon_char_name.png-1abb6a9dd47dd03eef2cd1be65a32640.ctex"
+uid="uid://bivw52p36urcm"
+path="res://.godot/imported/frame_skill_keine.png-c646dc45c9d33be0f325521ed61bb865.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://KeineMod/images/charui/character_icon_char_name.png"
-dest_files=["res://.godot/imported/character_icon_char_name.png-1abb6a9dd47dd03eef2cd1be65a32640.ctex"]
+source_file="res://KeineMod/images/card_frames/frame_skill_keine.png"
+dest_files=["res://.godot/imported/frame_skill_keine.png-c646dc45c9d33be0f325521ed61bb865.ctex"]
 
 [params]
 

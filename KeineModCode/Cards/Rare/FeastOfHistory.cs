@@ -25,7 +25,7 @@ public class FeastOfHistory : KeineModCard
                     await PowerCmd.Apply<HistoricalGapPower>(choiceContext, enemy, enemy.GetPowerAmount<HistoricalGapPower>(), Owner.Creature, this);
         }
         if (InHuman())
-            await ConsumeCmd.FromHand(choiceContext, Owner, 99, this);
+            await ConsumeCmd.EntireHand(choiceContext, Owner, this);
         
     }
 }

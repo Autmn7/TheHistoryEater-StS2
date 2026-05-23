@@ -10,7 +10,8 @@ public class Overworked : KeineModCard
     public Overworked() : base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
         WithPower<KnowledgePower>(1);
-        WithEnergy(1, 1);
+        WithEnergy(2);
+        WithKeyword(CardKeyword.Exhaust, UpgradeType.Remove);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

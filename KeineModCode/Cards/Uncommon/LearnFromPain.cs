@@ -22,10 +22,9 @@ public class LearnFromPain : KeineModCard
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target).WithHitCount(InHakutaku() ? 2 : 1).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
         if (InHuman())
         {
-            var consumedCards = await ConsumeCmd.FromHand(choiceContext, Owner, 1, this);
-            foreach (var consumedCard in consumedCards)
-                if (consumedCard.Type is CardType.Status or CardType.Curse)
-                    await PowerCmd.Apply<KnowledgePower>(choiceContext, Owner.Creature, DynamicVars["KnowledgePower"].BaseValue, Owner.Creature, this);
+            var consumedCard = await ConsumeCmd.FromHandSingle(choiceContext, Owner, this);
+            if (consumedCard is { Type: CardType.Status or CardType.Curse })
+                await PowerCmd.Apply<KnowledgePower>(choiceContext, Owner.Creature, DynamicVars["KnowledgePower"].BaseValue, Owner.Creature, this);
         }
     }
 }

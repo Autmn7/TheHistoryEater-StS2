@@ -1,6 +1,13 @@
 ﻿using BaseLib.Abstracts;
 using Godot;
+using KeineMod.KeineModCode.Cards;
+using KeineMod.KeineModCode.Core;
 using KeineMod.KeineModCode.Extensions;
+using KeineMod.KeineModCode.Powers;
+using KeineMod.KeineModCode.Scripts;
+using KeineMod.KeineModCode.Stances;
+using MegaCrit.Sts2.Core.Assets;
+using MegaCrit.Sts2.Core.Entities.Cards;
 
 namespace KeineMod.KeineModCode.Character;
 
@@ -20,15 +27,49 @@ public class KeineModCardPool : CustomCardPoolModel
     public override float S => 1f; //Saturation
     public override float V => 1f; //Brightness
 
+    //Color of small card icons
+    public override Color DeckEntryCardColor => new("ffffff");
+
+    public override bool IsColorless => false;
+
     //Alternatively, leave these values at 1 and provide a custom frame image.
     /*public override Texture2D CustomFrame(CustomCardModel card)
     {
         //This will attempt to load KeineMod/images/cards/frame.png
         return PreloadManager.Cache.GetTexture2D("cards/frame.png".ImagePath());
     }*/
+    public override Texture2D CustomFrame(CustomCardModel card)
+    {
+        String cardFrame = "keine";
+        if (card is KeineModCard keineCard && !keineCard.IsCanonical)
+        {
+            var hasHakutaku = keineCard.Keywords.Contains(KeineModKeywords.Hakutaku);
+            var hasHuman = keineCard.Keywords.Contains(KeineModKeywords.Human);
+            var hasDualForm = keineCard.Owner.Creature.HasPower<DualFormPower>();
+            var isHakutakuForm = KeineModel.IsInStance<HakutakuForm>(keineCard.Owner);
 
-    //Color of small card icons
-    public override Color DeckEntryCardColor => new("ffffff");
+            if (hasHakutaku)
+            {
+                if (!hasDualForm)
+                {
+                    if (isHakutakuForm)
+                        cardFrame = "hakutaku";
+                }
+                else
+                {
+                    cardFrame = !hasHuman ? "hakutaku" : "dual";
+                }
+            }
+        }
 
-    public override bool IsColorless => false;
+        string type = card.Type switch
+        {
+            CardType.Attack => "attack",
+            CardType.Power => "power",
+            _ => "skill"
+        };
+
+        return PreloadManager.Cache.GetAsset<Texture2D>(
+            $"frame_{type}_{cardFrame}.png".CardFramePath());
+    }
 }

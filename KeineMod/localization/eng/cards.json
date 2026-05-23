@@ -152,13 +152,13 @@
   "KEINEMOD-FATIGUE.description": "Drawn: Next turn, draw 1 less card.",
   "KEINEMOD-FATIGUE.title": "Fatigue",
   "KEINEMOD-FATIGUE.artist": "",
-  "KEINEMOD-HISTORY_OF_UNTRODDEN.description": "At the start of your turn, apply [blue]{Amount}[/blue] [gold]Historical Gap[/gold] to ALL enemies.",
+  "KEINEMOD-HISTORY_OF_UNTRODDEN.description": "At the start of your turn, apply {HistoryOfUntroddenPower:diff()} [gold]Historical Gap[/gold] to ALL enemies.",
   "KEINEMOD-HISTORY_OF_UNTRODDEN.title": "History of Untrodden Land",
   "KEINEMOD-HISTORY_OF_UNTRODDEN.artist": "",
-  "KEINEMOD-HISTORY_OF_FANTASY.description": "Whenever you generate a card, apply [blue]{Amount}[/blue] [gold]Historical Gap[/gold] to a random enemies.",
+  "KEINEMOD-HISTORY_OF_FANTASY.description": "Whenever you generate a card, apply {HistoryOfFantasyPower:diff()} [gold]Historical Gap[/gold] to a random enemies.",
   "KEINEMOD-HISTORY_OF_FANTASY.title": "History of Fantasy",
   "KEINEMOD-HISTORY_OF_FANTASY.artist": "",
-  "KEINEMOD-FEAST_OF_HISTORY.description": "Apply {HistoricalGapPower:diff()} [gold]Historical Gap[/gold] to ALL enemies.\n[blue]Human[/blue]: [gold]Consume[/gold] your [gold]Hand[/gold].\n[green]Hakutaku[/green]: Double ALL enemies' [gold]Historical Gap[/gold] after apply.",
+  "KEINEMOD-FEAST_OF_HISTORY.description": "Apply {HistoricalGapPower:diff()} [gold]Historical Gap[/gold] to ALL enemies.\n[blue]Human[/blue]: [gold]Consume[/gold] your [gold]Hand[/gold].\n[green]Hakutaku[/green]: After apply, double ALL enemies' [gold]Historical Gap[/gold].",
   "KEINEMOD-FEAST_OF_HISTORY.title": "Feast of History",
   "KEINEMOD-FEAST_OF_HISTORY.artist": ""
 } 

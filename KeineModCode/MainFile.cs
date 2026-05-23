@@ -42,7 +42,7 @@ public partial class MainFile : Node
     public static class ScrollPileInjectionPatch
     {
         [HarmonyPostfix]
-        public static void Postfix(NCombatUi __instance, CombatState state)
+        public static void InjectScrollPile(NCombatUi __instance, CombatState state)
         {
             if (__instance.GetNodeOrNull<Control>("ScrollPileRoot") != null)
                 return;
@@ -77,10 +77,11 @@ public partial class MainFile : Node
     [HarmonyPatch(typeof(NHandCardHolder), nameof(NHandCardHolder.UpdateCard))]
     public static class CardGlowPatch
     {
-        private static void Postfix(NHandCardHolder __instance)
+        [HarmonyPostfix]
+        private static void RenderGlow(NHandCardHolder __instance)
         {
             var card = __instance.CardNode?.Model;
-            if (card == null || card is not KeineModCard keineCard || card.Owner.PlayerCombatState == null || !keineCard.CanPlay()) return;
+            if (card is not KeineModCard keineCard || card.Owner.PlayerCombatState == null || !keineCard.CanPlay()) return;
 
             var highlight = __instance.CardNode.CardHighlight;
 
@@ -93,11 +94,11 @@ public partial class MainFile : Node
             if (!hasDualForm)
             {
                 if (isHakutakuForm)
-                    highlight.Modulate = new Color(0f, 1.0f, 0f, 0.98f);
+                    highlight.Modulate = new Color(0.35f, 1.0f, 0.5f, 0.98f);
             }
             else
             {
-                highlight.Modulate = !hasHuman ? new Color(0f, 1.0f, 0f, 0.98f) : new Color(0f, 1.0f, 0.5f, 0.98f);
+                highlight.Modulate = !hasHuman ? new Color(0.35f, 1.0f, 0.5f, 0.98f) : new Color(1.0f, 1.0f, 1.0f, 0.98f);
             }
         }
     }

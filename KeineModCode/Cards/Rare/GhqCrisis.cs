@@ -1,9 +1,11 @@
 ﻿using KeineMod.KeineModCode.Commands;
+using KeineMod.KeineModCode.Piles;
 using KeineMod.KeineModCode.Scripts;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models;
 
 namespace KeineMod.KeineModCode.Cards.Rare;
 
@@ -24,6 +26,29 @@ public class GhqCrisis : KeineModCard
         {
             await RecallCmd.FromScrollUpTo(choiceContext, Owner, DynamicVars.Cards.IntValue);
             await CardCmd.Exhaust(choiceContext, this);
+        }
+    }
+
+    public override async Task AfterCardChangedPilesLate(CardModel card, PileType oldPileType, AbstractModel? source)
+    {
+        await UpdateCost();
+    }
+
+    public override async Task AfterCardEnteredCombat(CardModel card)
+    {
+        await UpdateCost();
+    }
+
+    private async Task UpdateCost()
+    {
+        if (Pile != null && Pile.IsCombatPile && Owner.PlayerCombatState != null && CombatState != null && CombatState.IsLiveCombat())
+        {
+            int baseCost = EnergyCost._base;
+            int bonus = ScrollPile.Scroll.GetPile(Owner).Cards.Count;
+            int targetCost = Math.Max(0, baseCost - bonus);
+            EnergyCost._localModifiers.RemoveAll(m => (int)m.Type == 1 && (int)m.Expiration == 0);
+            EnergyCost.SetThisCombat(targetCost);
+            InvokeEnergyCostChanged();
         }
     }
 }

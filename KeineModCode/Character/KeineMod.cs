@@ -57,16 +57,16 @@ public class KeineMod : PlaceholderCharacterModel
     }
 
     // public override string CustomVisualPath => "visual/character_visual_mokou.tscn".ScenePath();
-    // public override string CustomCharacterSelectBg => "select/character_select_bg_mokou.tscn".ScenePath();
+    public override string CustomCharacterSelectBg => "select/character_select_bg_keine.tscn".ScenePath();
     // public override string CustomEnergyCounterPath => "energy/energy_counter_mokou.tscn".ScenePath();
     // public override string CustomRestSiteAnimPath => "rest/rest_site_mokou.tscn".ScenePath();
     // public override string CustomMerchantAnimPath => "merchant/merchant_mokou.tscn".ScenePath();
 
-    public override string CustomIconTexturePath => "character_icon_char_name.png".CharacterUiPath();
+    public override string CustomIconTexturePath => "character_icon_keine.png".CharacterUiPath();
     public override string CustomIconOutlineTexturePath => "character_icon_outline_keine.png".CharacterUiPath();
     public override string CustomCharacterSelectIconPath => "char_select_char_name.png".CharacterUiPath();
     public override string CustomCharacterSelectLockedIconPath => "char_select_char_name_locked.png".CharacterUiPath();
-    public override string CustomMapMarkerPath => "map_marker_char_name.png".CharacterUiPath();
+    public override string CustomMapMarkerPath => "map_marker_keine.png".CharacterUiPath();
 
     // public override string CustomArmPointingTexturePath => "mokou_point.png".CharacterUiPath();
     // public override string CustomArmRockTexturePath => "mokou_rock.png".CharacterUiPath();

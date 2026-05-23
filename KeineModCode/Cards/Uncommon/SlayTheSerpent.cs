@@ -28,15 +28,13 @@ public class SlayTheSerpent : KeineModCard
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
         if (InHuman())
         {
-            var consumedCards = await ConsumeCmd.FromHand(choiceContext, Owner, 1, this);
-            foreach (var consumedCard in consumedCards)
-                if (consumedCard is Snakebite or SerpentForm)
-                {
-                    CardModel sword = CombatState.CreateCard<HeavenlySword>(Owner);
-                    await CreateCmd.Execute(sword, Owner, IsUpgraded);
-                }
+            var consumedCard = await ConsumeCmd.FromHandSingle(choiceContext, Owner, this);
+            if (consumedCard is Snakebite or SerpentForm)
+            {
+                CardModel sword = CombatState.CreateCard<HeavenlySword>(Owner);
+                await CreateCmd.Execute(sword, Owner, IsUpgraded);
+            }
         }
-
         if (InHakutaku())
         {
             CardModel serpent = CombatState.CreateCard<Snakebite>(Owner);

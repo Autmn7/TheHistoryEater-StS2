@@ -1,5 +1,6 @@
 using BaseLib.Abstracts;
 using BaseLib.Utils;
+using KeineMod.KeineModCode.Scripts;
 using KeineMod.KeineModCode.Stances;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Entities.Players;
@@ -58,7 +59,7 @@ public class KeineModel : CustomSingletonModel
         // 	}
         // 	watcherNCreatureVisuals.SetEyeStance(eyeStance);
         // }
-        // await WatcherHook.OnStanceChange(ctx, player, current, ActiveStance[player]);
+        await KeineHooks.OnStanceChange(ctx, player, current, ActiveStance[player]);
     }
 
     public override Task BeforeCombatStart()
