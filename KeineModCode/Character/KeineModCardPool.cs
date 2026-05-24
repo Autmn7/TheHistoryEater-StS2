@@ -40,8 +40,8 @@ public class KeineModCardPool : CustomCardPoolModel
     }*/
     public override Texture2D CustomFrame(CustomCardModel card)
     {
-        String cardFrame = "keine";
-        if (card is KeineModCard keineCard && !keineCard.IsCanonical)
+        var cardFrame = "keine";
+        if (card is KeineModCard keineCard && !keineCard.IsCanonical && keineCard.Owner?.Creature != null && card.Owner.PlayerCombatState != null && card.CombatState != null && card.CombatState.IsLiveCombat())
         {
             var hasHakutaku = keineCard.Keywords.Contains(KeineModKeywords.Hakutaku);
             var hasHuman = keineCard.Keywords.Contains(KeineModKeywords.Human);
@@ -62,7 +62,7 @@ public class KeineModCardPool : CustomCardPoolModel
             }
         }
 
-        string type = card.Type switch
+        var type = card.Type switch
         {
             CardType.Attack => "attack",
             CardType.Power => "power",

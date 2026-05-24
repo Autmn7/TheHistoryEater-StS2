@@ -43,9 +43,9 @@ public class GhqCrisis : KeineModCard
     {
         if (Pile != null && Pile.IsCombatPile && Owner.PlayerCombatState != null && CombatState != null && CombatState.IsLiveCombat())
         {
-            int baseCost = EnergyCost._base;
-            int bonus = ScrollPile.Scroll.GetPile(Owner).Cards.Count;
-            int targetCost = Math.Max(0, baseCost - bonus);
+            var baseCost = EnergyCost._base;
+            var bonus = ScrollPile.Scroll.GetPile(Owner).Cards.Count;
+            var targetCost = Math.Max(0, baseCost - bonus);
             EnergyCost._localModifiers.RemoveAll(m => (int)m.Type == 1 && (int)m.Expiration == 0);
             EnergyCost.SetThisCombat(targetCost);
             InvokeEnergyCostChanged();

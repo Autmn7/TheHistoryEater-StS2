@@ -1,9 +1,9 @@
 {
-  "KEINEMOD-CONSUME.description": "将卡牌移入你的[gold]卷轴[/gold]，触发其被[gold]吞噬[/gold]效果。",
+  "KEINEMOD-CONSUME.description": "将牌移入你的[gold]卷轴[/gold]，触发其被[gold]吞噬[/gold]效果。",
   "KEINEMOD-CONSUME.title": "吞噬",
-  "KEINEMOD-CREATE.description": "将卡牌加入你的[gold]手牌[/gold]，使加入的非状态牌获得[gold]保留[/gold]。",
+  "KEINEMOD-CREATE.description": "将牌加入你的[gold]手牌[/gold]，使加入的非状态牌获得[gold]保留[/gold]。",
   "KEINEMOD-CREATE.title": "创造",
-  "KEINEMOD-RECALL.description": "将卡牌从你的[gold]卷轴[/gold]移入[gold]手牌[/gold]，使其本回合耗能减[blue]1[/blue]并获得[gold]虚无[/gold]和[gold]消耗[/gold]。",
+  "KEINEMOD-RECALL.description": "将牌从你的[gold]卷轴[/gold]移入[gold]手牌[/gold]，使其本回合耗能减[blue]1[/blue]并获得[gold]虚无[/gold]和[gold]消耗[/gold]。",
   "KEINEMOD-RECALL.title": "重现",
   "KEINEMOD-HUMAN.description": "当你处于[blue]人类[/blue]形态时获得额外效果。",
   "KEINEMOD-HUMAN.title": "人类",

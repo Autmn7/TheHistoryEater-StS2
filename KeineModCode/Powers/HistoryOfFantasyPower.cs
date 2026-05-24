@@ -18,9 +18,6 @@ public class HistoryOfFantasyPower : KeineModPower
             return;
         Flash();
         var enemy = Owner.Player?.RunState.Rng.CombatTargets.NextItem(CombatState.HittableEnemies);
-        if (enemy != null)
-        {
-            await PowerCmd.Apply<HistoricalGapPower>(new ThrowingPlayerChoiceContext(), enemy, Amount, Owner, null);
-        }
+        if (enemy != null) await PowerCmd.Apply<HistoricalGapPower>(new ThrowingPlayerChoiceContext(), enemy, Amount, Owner, null);
     }
 }

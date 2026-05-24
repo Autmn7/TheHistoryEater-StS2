@@ -24,19 +24,18 @@ public abstract class KeineModCard : ConstructedCardModel, IOnStanceChange
     protected KeineModCard(int cost, CardType type, CardRarity rarity, TargetType target)
         : base(cost, type, rarity, target)
     {
-        WithTip(new TooltipSource((Func<CardModel, IHoverTip>)((CardModel card) =>
-            (IHoverTip)(object)new HoverTip(new LocString("static_hover_tips", "KEINEMOD-ARTIST-TITLE"), new LocString("cards", ((AbstractModel)this).Id.Entry + ".artist"), null))));
+        WithTip(new TooltipSource( card => new HoverTip(new LocString("static_hover_tips", "KEINEMOD-ARTIST-TITLE"), new LocString("cards", Id.Entry + ".artist"))));
     }
 
     public override string CustomPortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
     public override string BetaPortraitPath => $"beta/{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
 
-    public bool InHuman()
+    protected bool InHuman()
     {
         return Owner.Creature.HasPower<DualFormPower>() || !KeineModel.IsInStance<HakutakuForm>(Owner);
     }
 
-    public bool InHakutaku()
+    protected bool InHakutaku()
     {
         return Owner.Creature.HasPower<DualFormPower>() || KeineModel.IsInStance<HakutakuForm>(Owner);
     }
@@ -44,23 +43,21 @@ public abstract class KeineModCard : ConstructedCardModel, IOnStanceChange
     public Task OnStanceChange(PlayerChoiceContext ctx, Player player, KeineStanceModel oldStance, KeineStanceModel newStance)
     {
         if (VisualCardPool is KeineModCardPool)
-        {
-            var node = NCard.FindOnTable(this);
-            node?.Reload();
-        }
+            NCard.FindOnTable(this)?.Reload();
         return Task.CompletedTask;
     }
 
     public override Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
     {
-        if (power is DualFormPower)
-        {
-            if (VisualCardPool is KeineModCardPool)
-            {
-                var node = NCard.FindOnTable(this);
-                node?.Reload();
-            }
-        }
+        if (power is DualFormPower && VisualCardPool is KeineModCardPool)
+            NCard.FindOnTable(this)?.Reload();
+        return Task.CompletedTask;
+    }
+
+    public override Task AfterCardChangedPiles(CardModel card, PileType oldPile, AbstractModel? clonedBy)
+    {
+        if (card == this && VisualCardPool is KeineModCardPool)
+            NCard.FindOnTable(card)?.Reload();
         return Task.CompletedTask;
     }
 }

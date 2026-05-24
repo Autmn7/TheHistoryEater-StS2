@@ -35,6 +35,7 @@ public class SlayTheSerpent : KeineModCard
                 await CreateCmd.Execute(sword, Owner, IsUpgraded);
             }
         }
+
         if (InHakutaku())
         {
             CardModel serpent = CombatState.CreateCard<Snakebite>(Owner);

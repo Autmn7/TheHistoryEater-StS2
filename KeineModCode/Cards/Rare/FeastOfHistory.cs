@@ -19,13 +19,10 @@ public class FeastOfHistory : KeineModCard
     {
         await PowerCmd.Apply<HistoricalGapPower>(choiceContext, CombatState.HittableEnemies, DynamicVars["HistoricalGapPower"].BaseValue, Owner.Creature, this);
         if (InHakutaku())
-        {
             foreach (var enemy in CombatState.HittableEnemies)
                 if (enemy.HasPower<HistoricalGapPower>())
                     await PowerCmd.Apply<HistoricalGapPower>(choiceContext, enemy, enemy.GetPowerAmount<HistoricalGapPower>(), Owner.Creature, this);
-        }
         if (InHuman())
             await ConsumeCmd.EntireHand(choiceContext, Owner, this);
-        
     }
 }

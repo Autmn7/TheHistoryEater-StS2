@@ -18,8 +18,8 @@ public class Flow : KeineModCard, IOnConsumed
 
     public Flow() : base(-1, CardType.Status, CardRarity.Token, TargetType.Self)
     {
-        WithCards(1);
         WithKeywords(CardKeyword.Unplayable, CardKeyword.Ethereal);
+        WithTip(KeineModKeywords.Consume);
     }
 
     public override int MaxUpgradeLevel => 0;
@@ -36,7 +36,7 @@ public class Flow : KeineModCard, IOnConsumed
         {
             ToDrawByEthereal = causedByEthereal;
             if (!causedByEthereal)
-                await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.BaseValue, Owner);
+                await CardPileCmd.Draw(choiceContext, 1, Owner);
         }
     }
 
@@ -47,7 +47,7 @@ public class Flow : KeineModCard, IOnConsumed
         if (ToDrawByEthereal)
         {
             ToDrawByEthereal = false;
-            await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.BaseValue, Owner);
+            await CardPileCmd.Draw(choiceContext, 1,  Owner);
         }
     }
 }

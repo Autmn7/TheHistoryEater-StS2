@@ -16,7 +16,6 @@ public class RevisionSession : KeineModCard, IOnConsumed
         WithBlock(10, 3);
         WithPower<KnowledgePower>(1);
         WithKeywords(CardKeyword.Retain, KeineModKeywords.Knowledgeable);
-
         WithTip(KeineModKeywords.Consume);
     }
 

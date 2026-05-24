@@ -26,6 +26,7 @@ public class YoshimitsuCrisis : KeineModCard
             if (consumedCards.Count > 0)
                 await PlayerCmd.GainEnergy(consumedCards.Count, Owner);
         }
+
         if (InHakutaku())
         {
             var recalledCards = (await RecallCmd.FromScrollUpTo(choiceContext, Owner, DynamicVars.Cards.IntValue)).ToList();

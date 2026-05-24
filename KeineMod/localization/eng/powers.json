@@ -37,5 +37,8 @@
   "KEINEMOD-HISTORY_OF_UNTRODDEN_POWER.title": "History of Untrodden Land",
   "KEINEMOD-HISTORY_OF_FANTASY_POWER.description": "",
   "KEINEMOD-HISTORY_OF_FANTASY_POWER.smartDescription": "Whenever you generate a card, apply [blue]{Amount}[/blue] [gold]Historical Gap[/gold] to a random enemies.",
-  "KEINEMOD-HISTORY_OF_FANTASY_POWER.title": "History of Fantasy"
+  "KEINEMOD-HISTORY_OF_FANTASY_POWER.title": "History of Fantasy",
+  "KEINEMOD-ANCIENT_PROTECTION_POWER.description": "",
+  "KEINEMOD-ANCIENT_PROTECTION_POWER.smartDescription": "Whenever you [gold]Consume[/gold] a card, gain [blue]{Amount}[/blue] [gold]Block[/gold].",
+  "KEINEMOD-ANCIENT_PROTECTION_POWER.title": "Ancient Protection"
 }

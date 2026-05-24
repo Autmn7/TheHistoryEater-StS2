@@ -24,9 +24,10 @@ public static class ConsumeCmd
         {
             if (shouldUpgrade)
                 CardCmd.Upgrade(consumedCard);
-            if (consumedCard is not Flow && (consumedCard is not TheSmartest || consumedCard.EnergyCost.GetResolved() <= 0)) await CardPileCmd.Add(consumedCard, ScrollPile.Scroll);
+            if (consumedCard is not (Flow or Fatigue) && (consumedCard is not TheSmartest || consumedCard.EnergyCost.GetResolved() <= 0)) await CardPileCmd.Add(consumedCard, ScrollPile.Scroll);
             await KeineHooks.OnConsumed(choiceContext, player, consumedCard);
         }
+
         return list;
     }
 
@@ -40,9 +41,10 @@ public static class ConsumeCmd
         {
             if (shouldUpgrade)
                 CardCmd.Upgrade(consumedCard);
-            if (consumedCard is not Flow && (consumedCard is not TheSmartest || consumedCard.EnergyCost.GetResolved() <= 0)) await CardPileCmd.Add(consumedCard, ScrollPile.Scroll);
+            if (consumedCard is not (Flow or Fatigue) && (consumedCard is not TheSmartest || consumedCard.EnergyCost.GetResolved() <= 0)) await CardPileCmd.Add(consumedCard, ScrollPile.Scroll);
             await KeineHooks.OnConsumed(choiceContext, player, consumedCard);
         }
+
         return list;
     }
 
@@ -56,9 +58,10 @@ public static class ConsumeCmd
         {
             if (shouldUpgrade)
                 CardCmd.Upgrade(consumedCard);
-            if (consumedCard is not Flow && (consumedCard is not TheSmartest || consumedCard.EnergyCost.GetResolved() <= 0)) await CardPileCmd.Add(consumedCard, ScrollPile.Scroll);
+            if (consumedCard is not (Flow or Fatigue) && (consumedCard is not TheSmartest || consumedCard.EnergyCost.GetResolved() <= 0)) await CardPileCmd.Add(consumedCard, ScrollPile.Scroll);
             await KeineHooks.OnConsumed(choiceContext, player, consumedCard);
         }
+
         return consumedCard;
     }
 
@@ -66,10 +69,10 @@ public static class ConsumeCmd
     {
         if (CombatManager.Instance.IsOverOrEnding)
             return;
-        List<CardModel> hand = PileType.Hand.GetPile(player).Cards.ToList();
-        foreach (CardModel consumedCard in hand)
+        var hand = PileType.Hand.GetPile(player).Cards.ToList();
+        foreach (var consumedCard in hand)
         {
-            if (consumedCard is not Flow && (consumedCard is not TheSmartest || consumedCard.EnergyCost.GetResolved() <= 0)) await CardPileCmd.Add(consumedCard, ScrollPile.Scroll);
+            if (consumedCard is not (Flow or Fatigue) && (consumedCard is not TheSmartest || consumedCard.EnergyCost.GetResolved() <= 0)) await CardPileCmd.Add(consumedCard, ScrollPile.Scroll);
             await KeineHooks.OnConsumed(choiceContext, player, consumedCard);
         }
     }
