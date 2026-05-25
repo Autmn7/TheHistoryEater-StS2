@@ -46,7 +46,7 @@ public class KeineModCardPool : CustomCardPoolModel
             var hasHakutaku = keineCard.Keywords.Contains(KeineModKeywords.Hakutaku);
             var hasHuman = keineCard.Keywords.Contains(KeineModKeywords.Human);
             var hasDualForm = keineCard.Owner.Creature.HasPower<DualFormPower>();
-            var isHakutakuForm = keineCard.Owner.Creature.HasPower<FullMoonPower>();
+            var isHakutakuForm = KeineModel.IsInStance<HakutakuForm>(keineCard.Owner);
 
             if (hasHakutaku)
             {

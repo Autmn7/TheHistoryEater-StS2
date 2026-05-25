@@ -138,9 +138,16 @@ public partial class MainFile : Node
     [HarmonyPatch(typeof(NHandCardHolder), nameof(NHandCardHolder.UpdateCard))]
     public static class CardGlowPatch
     {
+        // Tracks active UI card holders without preventing them from being garbage collected
+        private static readonly List<WeakReference<NHandCardHolder>> _trackedHolders = new();
+
         [HarmonyPostfix]
         private static void RenderGlow(NHandCardHolder __instance)
         {
+            // 1. Track this instance whenever the game updates it naturally
+            TrackInstance(__instance);
+
+            // 2. Run your existing glow logic
             var card = __instance.CardNode?.Model;
             if (card is not KeineModCard keineCard || card.Owner.PlayerCombatState == null || !keineCard.CanPlay()) return;
 
@@ -149,7 +156,7 @@ public partial class MainFile : Node
             var hasHakutaku = keineCard.Keywords.Contains(KeineModKeywords.Hakutaku);
             var hasHuman = keineCard.Keywords.Contains(KeineModKeywords.Human);
             var hasDualForm = keineCard.Owner.Creature.HasPower<DualFormPower>();
-            var isHakutakuForm = keineCard.Owner.Creature.HasPower<FullMoonPower>();
+            var isHakutakuForm = KeineModel.IsInStance<HakutakuForm>(keineCard.Owner);
 
             if (!hasHakutaku) return;
             if (!hasDualForm)
@@ -161,6 +168,27 @@ public partial class MainFile : Node
             {
                 highlight.Modulate = !hasHuman ? new Color(0.35f, 1.0f, 0.5f, 0.98f) : new Color(1.0f, 1.0f, 1.0f, 0.98f);
             }
+        }
+
+        private static void TrackInstance(NHandCardHolder instance)
+        {
+            // Clean up dead/disposed Godot instances to prevent leaks
+            _trackedHolders.RemoveAll(w => !w.TryGetTarget(out var target) || !IsInstanceValid(target));
+
+            // Add if it's a new instance
+            if (!_trackedHolders.Any(w => w.TryGetTarget(out var target) && target == instance)) _trackedHolders.Add(new WeakReference<NHandCardHolder>(instance));
+        }
+
+        /// <summary>
+        /// Forces all currently active hand cards to re-evaluate their glow colors immediately.
+        /// </summary>
+        public static void RefreshAllGlows()
+        {
+            _trackedHolders.RemoveAll(w => !w.TryGetTarget(out var target) || !IsInstanceValid(target));
+
+            foreach (var weak in _trackedHolders)
+                if (weak.TryGetTarget(out var instance))
+                    RenderGlow(instance);
         }
     }
 }

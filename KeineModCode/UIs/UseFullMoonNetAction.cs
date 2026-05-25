@@ -1,5 +1,4 @@
-﻿using MegaCrit.Sts2.Core.Combat;
-using MegaCrit.Sts2.Core.Entities.Players;
+﻿using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Multiplayer.Serialization;
@@ -9,7 +8,9 @@ namespace KeineMod.KeineModCode.UIs;
 public class UseFullMoonNetAction : INetAction
 {
     // 必须保留显式的无参构造函数，供网络底层反序列化时实例化对象
-    public UseFullMoonNetAction() { }
+    public UseFullMoonNetAction()
+    {
+    }
 
     // 因为此动作没有任何本地字段需要跨网络传输，
     // 底层会通过 [GenerateSubtypes] 自动识别并传输类类型，

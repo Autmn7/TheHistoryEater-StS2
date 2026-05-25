@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.Models;
 
 namespace KeineMod.KeineModCode.Powers;
 
+[Obsolete("This power is replaced by the Full Moon UI system to control direct stance change.")]
 public class FullMoonPower : KeineModPower
 {
     public override PowerType Type => PowerType.Buff;

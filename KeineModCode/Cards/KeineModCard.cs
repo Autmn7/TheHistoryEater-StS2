@@ -13,15 +13,13 @@ using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization;
-using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.Models.Events;
 using MegaCrit.Sts2.Core.Nodes.Cards;
 
 namespace KeineMod.KeineModCode.Cards;
 
 [Pool(typeof(KeineModCardPool))]
-public abstract class KeineModCard : ConstructedCardModel
+public abstract class KeineModCard : ConstructedCardModel, IOnStanceChange
 {
     protected KeineModCard(int cost, CardType type, CardRarity rarity, TargetType target)
         : base(cost, type, rarity, target)
@@ -34,26 +32,24 @@ public abstract class KeineModCard : ConstructedCardModel
 
     protected bool InHuman()
     {
-        Log.Info((Owner.Character is Character.KeineMod) + " InHuman Form: has moon  " + Owner.Creature.HasPower<FullMoonPower>());
-        return Owner.Creature.HasPower<DualFormPower>() || !Owner.Creature.HasPower<FullMoonPower>();
+        return Owner.Creature.HasPower<DualFormPower>() || !KeineModel.IsInStance<HakutakuForm>(Owner);
     }
 
     protected bool InHakutaku()
     {
-        Log.Info((Owner.Character is Character.KeineMod) + " InHakutaku Form: has moon  " + Owner.Creature.HasPower<FullMoonPower>());
-        return Owner.Creature.HasPower<DualFormPower>() || Owner.Creature.HasPower<FullMoonPower>();
+        return Owner.Creature.HasPower<DualFormPower>() || KeineModel.IsInStance<HakutakuForm>(Owner);
     }
 
-    // public Task OnStanceChange(PlayerChoiceContext ctx, Player player, KeineStanceModel oldStance, KeineStanceModel newStance)
-    // {
-    //     if (player == Owner && VisualCardPool is KeineModCardPool)
-    //         NCard.FindOnTable(this)?.Reload();
-    //     return Task.CompletedTask;
-    // }
+    public Task OnStanceChange(PlayerChoiceContext ctx, Player player, KeineStanceModel oldStance, KeineStanceModel newStance)
+    {
+        if (player == Owner && VisualCardPool is KeineModCardPool && Keywords.Contains(KeineModKeywords.Hakutaku))
+            NCard.FindOnTable(this)?.Reload();
+        return Task.CompletedTask;
+    }
 
     public override Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
     {
-        if (power.Owner == Owner.Creature && power is DualFormPower or FullMoonPower && VisualCardPool is KeineModCardPool && Keywords.Contains(KeineModKeywords.Hakutaku))
+        if (power.Owner == Owner.Creature && power is DualFormPower && VisualCardPool is KeineModCardPool && Keywords.Contains(KeineModKeywords.Hakutaku))
             NCard.FindOnTable(this)?.Reload();
         return Task.CompletedTask;
     }

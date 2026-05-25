@@ -39,18 +39,15 @@ public partial class NFullMoonController : Control
             return;
 
         var fullMoonUi = FullMoonChargeStateRegistry.Get(_player);
-        
+
         // 🔒 联机防线 3：在本地进行前端预检（是否有层数、本回合是否用过）
         if (fullMoonUi.CanUse())
-        {
             // ❌ 注意：【绝对不要】在这里写 fullMoonUi.LoseFullMoon(1); 
             // 如果在 UI 里直接扣除层数，会导致你本地扣了，但队友没扣，从而引发不同步（Desync）。
-
             // 🚀 【核心改变】：将动作打包，丢进联机同步队列
             // 游戏底层会自动调用该 Action 的 ToNetAction() 将其广播给所有玩家，
             // 所有人（包括你自己）的后端队列都会收到这个 Action，并严格同步地执行扣层数和加能力。
             RunManager.Instance.ActionQueueSynchronizer.RequestEnqueue(new UseFullMoonAction(_player));
-        }
     }
 
     public override void _Process(double delta)
