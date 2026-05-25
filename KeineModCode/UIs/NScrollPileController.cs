@@ -4,7 +4,7 @@ using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Nodes.Screens;
 using MegaCrit.Sts2.Core.Runs;
 
-namespace KeineMod.KeineModCode.Piles;
+namespace KeineMod.KeineModCode.UIs;
 
 public partial class NScrollPileController : Control
 {

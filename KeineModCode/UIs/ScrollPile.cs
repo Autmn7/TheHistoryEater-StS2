@@ -6,7 +6,7 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Nodes.Rooms;
 using MegaCrit.Sts2.Core.Runs;
 
-namespace KeineMod.KeineModCode.Piles;
+namespace KeineMod.KeineModCode.UIs;
 
 public class ScrollPile : CustomPile
 {

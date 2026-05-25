@@ -2,7 +2,9 @@ using BaseLib.Abstracts;
 using BaseLib.Utils;
 using KeineMod.KeineModCode.Scripts;
 using KeineMod.KeineModCode.Stances;
+using KeineMod.KeineModCode.UIs;
 using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
@@ -66,7 +68,16 @@ public class KeineModel : CustomSingletonModel
     {
         var val = CombatManager.Instance.DebugOnlyGetState();
         if (val == null) return Task.CompletedTask;
-        foreach (var player in val.Players) ActiveStance[player] = KeineModelDb.KeineStance<HumanForm>();
+        foreach (var player in val.Players)
+            ActiveStance[player] = KeineModelDb.KeineStance<HumanForm>();
+        return Task.CompletedTask;
+    }
+
+    public override Task AfterSideTurnStart(CombatSide side, IReadOnlyList<Creature> participants, ICombatState combatState)
+    {
+        if (side != CombatSide.Player)
+            return Task.CompletedTask;
+        foreach (var player in combatState.Players) FullMoonChargeStateRegistry.Get(player).ClickedThisTurn = false;
         return Task.CompletedTask;
     }
 }

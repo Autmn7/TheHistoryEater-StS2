@@ -18,7 +18,7 @@ public class ShiftingHistory : KeineModCard
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await PowerCmd.Apply<HistoricalGapPower>(choiceContext, cardPlay.Target, DynamicVars["HistoricalGapPower"].BaseValue, Owner.Creature, this);
-        int gapAmount = cardPlay.Target.GetPowerAmount<HistoricalGapPower>();
+        var gapAmount = cardPlay.Target.GetPowerAmount<HistoricalGapPower>();
         if (gapAmount > 0)
             await PowerCmd.Apply<TimeShiftPower>(choiceContext, Owner.Creature, gapAmount, Owner.Creature, this);
     }

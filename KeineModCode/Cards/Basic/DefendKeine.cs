@@ -1,5 +1,4 @@
-﻿using KeineMod.KeineModCode.Commands;
-using MegaCrit.Sts2.Core.Commands;
+﻿using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 
@@ -16,6 +15,5 @@ public class DefendKeine : KeineModCard
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
-        await StanceCmd.ExitStance(choiceContext, Owner, cardPlay.Card);
     }
 }

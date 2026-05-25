@@ -28,7 +28,7 @@ public class KeineModCardPool : CustomCardPoolModel
     public override float V => 1f; //Brightness
 
     //Color of small card icons
-    public override Color DeckEntryCardColor => new("ffffff");
+    public override Color DeckEntryCardColor => new("#00afaf");
 
     public override bool IsColorless => false;
 
@@ -46,7 +46,7 @@ public class KeineModCardPool : CustomCardPoolModel
             var hasHakutaku = keineCard.Keywords.Contains(KeineModKeywords.Hakutaku);
             var hasHuman = keineCard.Keywords.Contains(KeineModKeywords.Human);
             var hasDualForm = keineCard.Owner.Creature.HasPower<DualFormPower>();
-            var isHakutakuForm = KeineModel.IsInStance<HakutakuForm>(keineCard.Owner);
+            var isHakutakuForm = keineCard.Owner.Creature.HasPower<FullMoonPower>();
 
             if (hasHakutaku)
             {

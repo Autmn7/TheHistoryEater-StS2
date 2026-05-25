@@ -13,11 +13,13 @@ public class KeineMod : PlaceholderCharacterModel
 {
     public const string CharacterId = "KeineMod";
 
-    public static readonly Color Color = new("ffffff");
+    public static readonly Color Color = new("#00afaf");
 
     public override Color NameColor => Color;
-    public override CharacterGender Gender => CharacterGender.Neutral;
-    public override int StartingHp => 70;
+    public override Color EnergyLabelOutlineColor => new("#8b0000");
+    public override Color MapDrawingColor => Color;
+    public override CharacterGender Gender => CharacterGender.Feminine;
+    public override int StartingHp => 75;
 
     public override IEnumerable<CardModel> StartingDeck =>
     [

@@ -47,7 +47,7 @@ public class Flow : KeineModCard, IOnConsumed
         if (ToDrawByEthereal)
         {
             ToDrawByEthereal = false;
-            await CardPileCmd.Draw(choiceContext, 1,  Owner);
+            await CardPileCmd.Draw(choiceContext, 1, Owner);
         }
     }
 }

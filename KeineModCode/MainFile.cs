@@ -5,15 +5,16 @@ using HarmonyLib;
 using KeineMod.KeineModCode.Cards;
 using KeineMod.KeineModCode.Core;
 using KeineMod.KeineModCode.Extensions;
-using KeineMod.KeineModCode.Piles;
 using KeineMod.KeineModCode.Powers;
 using KeineMod.KeineModCode.Scripts;
 using KeineMod.KeineModCode.Stances;
+using KeineMod.KeineModCode.UIs;
 using MegaCrit.Sts2.Core.Assets;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Context;
 using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Modding;
+using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Nodes.Cards.Holders;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 using Logger = MegaCrit.Sts2.Core.Logging.Logger;
@@ -36,10 +37,23 @@ public partial class MainFile : Node
         Harmony harmony = new(ModId);
         harmony.PatchAll();
         Log.Info("[KeineMod] Harmony PatchAll completed");
+        KeineSubscriber.Subscribe();
+        Log.Info("[KeineMod] Combat Hooks subscribed");
+    }
+
+    [HarmonyPatch(typeof(CombatManager), nameof(CombatManager.SetUpCombat))]
+    public static class FullMoonChargeSetUpPatch
+    {
+        [HarmonyPostfix]
+        private static void FullMoonChargeSetUp()
+        {
+            var tracker = CombatManager.Instance.StateTracker;
+            FullMoonChargeStateRegistry.Clear(tracker);
+        }
     }
 
     [HarmonyPatch(typeof(NCombatUi), "Activate")]
-    public static class ScrollPileInjectionPatch
+    public static class UiInjectionPatch
     {
         [HarmonyPostfix]
         public static void InjectScrollPile(NCombatUi __instance, CombatState state)
@@ -72,6 +86,53 @@ public partial class MainFile : Node
 
             Logger.Info("[KeineMod] Loaded scroll pile UI");
         }
+
+        [HarmonyPostfix]
+        public static void InjectFullMoon(NCombatUi __instance, CombatState state)
+        {
+            if (__instance.GetNodeOrNull<Control>("FullMoonRoot") != null)
+                return;
+
+            var scene = PreloadManager.Cache.GetScene("full_moon/full_moon_ui.tscn".ScenePath());
+
+            if (scene == null)
+                return;
+
+            var control = scene.Instantiate<Control>();
+
+            control.Name = "FullMoonRoot";
+            control.TopLevel = false;
+            control.ZIndex = 0;
+
+            __instance.EnergyCounterContainer.AddChild(control);
+
+            control.Position = new Vector2(140f, 60f);
+
+            var controller =
+                control.GetNode<NFullMoonController>("NFullMoonController");
+
+            var me = LocalContext.GetMe(state);
+
+            if (me != null)
+                controller.Initialize(me);
+
+            Logger.Info("[KeineMod] Loaded full moon UI");
+        }
+    }
+
+    [HarmonyPatch(typeof(PowerModel), nameof(PowerModel.ShouldRemoveDueToAmount))]
+    public static class TimeShiftPreventRemovalPatch
+    {
+        public static bool Prefix(PowerModel __instance, ref bool __result)
+        {
+            if (__instance is TimeShiftPower)
+            {
+                __result = false;
+                return false;
+            }
+
+            return true;
+        }
     }
 
     [HarmonyPatch(typeof(NHandCardHolder), nameof(NHandCardHolder.UpdateCard))]
@@ -88,7 +149,7 @@ public partial class MainFile : Node
             var hasHakutaku = keineCard.Keywords.Contains(KeineModKeywords.Hakutaku);
             var hasHuman = keineCard.Keywords.Contains(KeineModKeywords.Human);
             var hasDualForm = keineCard.Owner.Creature.HasPower<DualFormPower>();
-            var isHakutakuForm = KeineModel.IsInStance<HakutakuForm>(keineCard.Owner);
+            var isHakutakuForm = keineCard.Owner.Creature.HasPower<FullMoonPower>();
 
             if (!hasHakutaku) return;
             if (!hasDualForm)
