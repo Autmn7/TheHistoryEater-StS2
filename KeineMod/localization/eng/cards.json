@@ -5,7 +5,7 @@
   "KEINEMOD-DEFEND_KEINE.description": "Gain {Block:diff()} [gold]Block[/gold].",
   "KEINEMOD-DEFEND_KEINE.title": "Defend",
   "KEINEMOD-DEFEND_KEINE.artist": "",
-  "KEINEMOD-DROPLET_OF_TIME.description": "Deal {Damage:diff()} damage.\n[gold]Time Shift[/gold] {TimeShiftPower:diff()}.",
+  "KEINEMOD-DROPLET_OF_TIME.description": "Deal {Damage:diff()} damage.\nIf you have no [gold]Full Moon[/gold], [gold]Time Shift[/gold] {TimeShiftPower:diff()}.",
   "KEINEMOD-DROPLET_OF_TIME.title": "Droplet of Time",
   "KEINEMOD-DROPLET_OF_TIME.artist": "",
   "KEINEMOD-MANIPULATE_HISTORY.description": "Gain {Block:diff()} [gold]Block[/gold].\n[blue]Human[/blue]: [gold]Consume[/gold]{IfUpgraded:show: up to|} {Cards:diff()} {Cards:plural:card|cards}.\n[green]Hakutaku[/green]: [gold]Create[/gold] a [gold]{IfUpgraded:show:Scroll of Valor+|Scroll of Valor}[/gold].",

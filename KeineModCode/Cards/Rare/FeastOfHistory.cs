@@ -12,7 +12,7 @@ public class FeastOfHistory : KeineModCard
     public FeastOfHistory() : base(2, CardType.Skill, CardRarity.Rare, TargetType.AllEnemies)
     {
         WithPower<HistoricalGapPower>(3, 2);
-        WithKeywords(KeineModKeywords.Human, KeineModKeywords.Consume, KeineModKeywords.Hakutaku, CardKeyword.Exhaust);
+        WithKeywords(KeineModKeywords.Human, KeineModKeywords.Consume, KeineModKeywords.Hakutaku, KeineModKeywords.Recall, CardKeyword.Exhaust);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

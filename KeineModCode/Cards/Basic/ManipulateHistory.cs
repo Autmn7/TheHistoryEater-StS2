@@ -18,7 +18,7 @@ public class ManipulateHistory : KeineModCard, ITranscendenceCard
     {
         WithBlock(7, 2);
         WithCards(1);
-        WithKeywords(KeineModKeywords.Human, KeineModKeywords.Consume, KeineModKeywords.Hakutaku, KeineModKeywords.Create);
+        WithKeywords(KeineModKeywords.Human, KeineModKeywords.Consume, KeineModKeywords.Hakutaku, KeineModKeywords.Recall, KeineModKeywords.Create);
         WithTip(new TooltipSource(card => HoverTipFactory.FromCard<ScrollOfValor>(card.IsUpgraded)));
         WithTip(typeof(HeavenlySword));
     }

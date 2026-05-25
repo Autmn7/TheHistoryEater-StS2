@@ -14,7 +14,7 @@ public class GoodAppleBadApple : KeineModCard
         WithPower<ValorPower>(4, 2);
         WithCards(2);
         WithEnergy(1);
-        WithKeywords(KeineModKeywords.Human, KeineModKeywords.Hakutaku);
+        WithKeywords(KeineModKeywords.Human, KeineModKeywords.Hakutaku, KeineModKeywords.Recall);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

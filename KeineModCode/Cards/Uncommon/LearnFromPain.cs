@@ -14,7 +14,7 @@ public class LearnFromPain : KeineModCard
         WithVar("Knowledgeable", 1);
         WithDamage(5, 3);
         WithPower<KnowledgePower>(1);
-        WithKeywords(KeineModKeywords.Knowledgeable, KeineModKeywords.Human, KeineModKeywords.Consume, KeineModKeywords.Hakutaku);
+        WithKeywords(KeineModKeywords.Knowledgeable, KeineModKeywords.Human, KeineModKeywords.Consume, KeineModKeywords.Hakutaku, KeineModKeywords.Recall);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

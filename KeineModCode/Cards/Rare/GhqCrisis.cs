@@ -16,7 +16,7 @@ public class GhqCrisis : KeineModCard
         WithDamage(3, 1);
         WithVar(new RepeatVar(4));
         WithCards(4);
-        WithKeywords(KeineModKeywords.Hakutaku);
+        WithKeywords(KeineModKeywords.Hakutaku, KeineModKeywords.Recall);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

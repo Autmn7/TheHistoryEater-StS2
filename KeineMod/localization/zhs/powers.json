@@ -1,9 +1,9 @@
 {
-  "KEINEMOD-TIME_SHIFT_POWER.description": "",
-  "KEINEMOD-TIME_SHIFT_POWER.smartDescription": "",
+  "KEINEMOD-TIME_SHIFT_POWER.description": "每当你打出一张牌，[gold]时移[/gold][blue]1[/blue]。当[gold]时移[/gold]达到[blue]12[/blue]层，失去[blue]12[/blue]层并获得[blue]1[/blue]层[gold]满月[/gold]。",
+  "KEINEMOD-TIME_SHIFT_POWER.smartDescription": "每当你打出一张牌，[gold]时移[/gold][blue]1[/blue]。",
   "KEINEMOD-TIME_SHIFT_POWER.title": "时移",
-  "KEINEMOD-FULL_MOON_POWER.description": "",
-  "KEINEMOD-FULL_MOON_POWER.smartDescription": "",
+  "KEINEMOD-FULL_MOON_POWER.description": "此能力已被淘汰。看到请联系作者报错。",
+  "KEINEMOD-FULL_MOON_POWER.smartDescription": "此能力已被淘汰。看到请联系作者报错。",
   "KEINEMOD-FULL_MOON_POWER.title": "满月",
   "KEINEMOD-KNOWLEDGE_POWER.description": "每有[blue]2[/blue]点[gold]知识[/gold]，每回合额外抽[blue]1[/blue]张牌，",
   "KEINEMOD-KNOWLEDGE_POWER.smartDescription": "",

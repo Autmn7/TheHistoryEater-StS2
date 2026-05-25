@@ -15,7 +15,7 @@ public class HeadbuttKeine : KeineModCard
     {
         WithDamage(30, 6);
         WithKeyword(CardKeyword.Retain, UpgradeType.Add);
-        WithKeywords(KeineModKeywords.Hakutaku, CardKeyword.Exhaust);
+        WithKeywords(KeineModKeywords.Hakutaku, KeineModKeywords.Recall, CardKeyword.Exhaust);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

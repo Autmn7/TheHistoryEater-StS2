@@ -5,7 +5,7 @@
   "KEINEMOD-DEFEND_KEINE.description": "获得{Block:diff()}点[gold]格挡[/gold]。",
   "KEINEMOD-DEFEND_KEINE.title": "防御",
   "KEINEMOD-DEFEND_KEINE.artist": "",
-  "KEINEMOD-DROPLET_OF_TIME.description": "造成{Damage:diff()}点伤害。\n[gold]时移[/gold]{TimeShiftPower:diff()}。",
+  "KEINEMOD-DROPLET_OF_TIME.description": "造成{Damage:diff()}点伤害。\n如果你没有[gold]满月[/gold]，[gold]时移[/gold]{TimeShiftPower:diff()}。",
   "KEINEMOD-DROPLET_OF_TIME.title": "水滴石穿",
   "KEINEMOD-DROPLET_OF_TIME.artist": "",
   "KEINEMOD-MANIPULATE_HISTORY.description": "获得{Block:diff()}点[gold]格挡[/gold]。\n[blue]人类[/blue]：[gold]吞噬[/gold]{IfUpgraded:show:至多|}{Cards:diff()}张牌。\n[green]白泽[/green]：[gold]创造[/gold]1张[gold]{IfUpgraded:show:勇之卷轴+|勇之卷轴}[/gold]。",

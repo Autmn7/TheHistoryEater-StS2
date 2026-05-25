@@ -69,7 +69,8 @@ public class KeineModel : CustomSingletonModel
         var val = CombatManager.Instance.DebugOnlyGetState();
         if (val == null) return Task.CompletedTask;
         foreach (var player in val.Players)
-            ActiveStance[player] = KeineModelDb.KeineStance<HumanForm>();
+            if (player.Character is Character.KeineMod)
+                ActiveStance[player] = KeineModelDb.KeineStance<HumanForm>();
         return Task.CompletedTask;
     }
 

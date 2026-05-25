@@ -1,5 +1,5 @@
 {
-  "KEINEMOD-OLD_SCROLL.description": "At the start of each combat, [gold]Create[/gold] a [gold]Scroll of Valor[/gold]. After you play a card, [gold]Time Shift[/gold] [blue]{TimeShiftPower}[/blue].",
+  "KEINEMOD-OLD_SCROLL.description": "At the start of each combat, [gold]Time Shift[/gold] [blue]{TimeShiftPower}[/blue] and [gold]Create[/gold] a [gold]Scroll of Valor[/gold].",
   "KEINEMOD-OLD_SCROLL.flavor": "",
   "KEINEMOD-OLD_SCROLL.title": "Old Scroll"
 }

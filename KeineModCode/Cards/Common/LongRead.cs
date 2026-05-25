@@ -11,7 +11,7 @@ public class LongRead : KeineModCard
     public LongRead() : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
     {
         WithCards(2, 1);
-        WithKeywords(KeineModKeywords.Human, KeineModKeywords.Consume, KeineModKeywords.Hakutaku);
+        WithKeywords(KeineModKeywords.Human, KeineModKeywords.Consume, KeineModKeywords.Hakutaku, KeineModKeywords.Recall);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

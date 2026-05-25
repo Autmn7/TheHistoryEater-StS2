@@ -1,4 +1,5 @@
 using KeineMod.KeineModCode.Commands;
+using KeineMod.KeineModCode.Powers;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
@@ -16,10 +17,10 @@ public sealed class HakutakuForm : KeineStanceModel
 
     public override async Task OnEnterStance(PlayerChoiceContext choiceContext, Player player, CardModel? source)
     {
-        // var recallAmount = 2;
-        // if (player.Creature.HasPower<WisdomPower>())
-        //     recallAmount += player.Creature.GetPowerAmount<WisdomPower>();
-        // await RecallCmd.FromScrollUpTo(choiceContext, player, recallAmount);
+        var recallAmount = 2;
+        if (player.Creature.HasPower<WisdomPower>())
+            recallAmount += player.Creature.GetPowerAmount<WisdomPower>();
+        await RecallCmd.FromScrollUpTo(choiceContext, player, recallAmount);
     }
 
     public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)

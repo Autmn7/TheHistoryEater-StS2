@@ -11,6 +11,9 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.Models.Relics;
+using MegaCrit.Sts2.Core.Rooms;
 
 namespace KeineMod.KeineModCode.Relics;
 
@@ -18,14 +21,22 @@ public class OldScroll : KeineModRelic
 {
     public override RelicRarity Rarity => RelicRarity.Starter;
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new CardsVar(1), new PowerVar<TimeShiftPower>(1)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new CardsVar(1), new PowerVar<TimeShiftPower>(3)];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromKeyword(KeineModKeywords.Create),
         HoverTipFactory.FromPower<TimeShiftPower>(),
+        HoverTipFactory.FromKeyword(KeineModKeywords.Create),
         HoverTipFactory.FromCard<ScrollOfValor>()
     ];
+
+    public override async Task AfterRoomEntered(AbstractRoom room)
+    {
+        if (!(room is CombatRoom))
+            return;
+        Flash();
+        await PowerCmd.Apply<TimeShiftPower>(new ThrowingPlayerChoiceContext(), Owner.Creature, DynamicVars["TimeShiftPower"].BaseValue, Owner.Creature, null);
+    }
 
     public override async Task BeforeHandDraw(
         Player player,
@@ -34,15 +45,7 @@ public class OldScroll : KeineModRelic
     {
         if (player != Owner || combatState.RoundNumber != 1)
             return;
-        Flash();
         CardModel created = Owner.Creature.CombatState.CreateCard<ScrollOfValor>(Owner);
         await CreateCmd.Execute(created, Owner);
-    }
-
-    public override async Task AfterCardPlayedLate(PlayerChoiceContext choiceContext, CardPlay cardPlay)
-    {
-        if (cardPlay.Card.Owner != Owner)
-            return;
-        await PowerCmd.Apply<TimeShiftPower>(choiceContext, Owner.Creature, DynamicVars["TimeShiftPower"].BaseValue, Owner.Creature, null);
     }
 }
