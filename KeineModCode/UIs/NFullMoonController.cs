@@ -1,5 +1,6 @@
 using Godot;
 using KeineMod.KeineModCode.Powers;
+using KeineMod.KeineModCode.Scripts;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Context;
 using MegaCrit.Sts2.Core.Entities.Players;
@@ -26,22 +27,11 @@ public partial class NFullMoonController : Control
     // 因为前端 UI 现在只负责“发送点击请求”，不再直接等待后端的异步命令执行完毕。
     private void OnGuiInput(InputEvent @event)
     {
-        if (_player == null || !(@event is InputEventMouseButton eventMouseButton) || eventMouseButton.ButtonIndex != MouseButton.Left || !eventMouseButton.Pressed)
+        if (_player == null || @event is not InputEventMouseButton { ButtonIndex: MouseButton.Left, Pressed: true } || !LocalContext.IsMe(_player) || !CombatManager.Instance.IsPartOfPlayerTurn(_player))
             return;
 
-        // 🔒 联机防线 1：必须是“本地玩家”在点击“自己的 UI”
-        // 防止联机时，你点击自己的按钮却触发了队友的动作，或者队友的点击在你的电脑上被错误触发。
-        if (!LocalContext.IsMe(_player))
-            return;
-
-        // 🔒 联机防线 2：必须在当前玩家的回合内才可以点击
-        if (!CombatManager.Instance.IsPartOfPlayerTurn(_player))
-            return;
-
-        var fullMoonUi = FullMoonChargeStateRegistry.Get(_player);
-
-        // 🔒 联机防线 3：在本地进行前端预检（是否有层数、本回合是否用过）
-        if (fullMoonUi.CanUse())
+        var fullMoonUi = KeineConstantsStateRegistry.Get(_player);
+        if (fullMoonUi.CanUse(_player))
             // ❌ 注意：【绝对不要】在这里写 fullMoonUi.LoseFullMoon(1); 
             // 如果在 UI 里直接扣除层数，会导致你本地扣了，但队友没扣，从而引发不同步（Desync）。
             // 🚀 【核心改变】：将动作打包，丢进联机同步队列
@@ -65,7 +55,7 @@ public partial class NFullMoonController : Control
             // 每帧自动从 Registry 读取最新的层数并刷新显示
             // 因为 Action 执行时所有人的 Registry 都会同步更新，所以这里的 UI 刷新在所有人电脑上都是准确的。
             if (_countLabel != null)
-                _countLabel.Text = FullMoonChargeStateRegistry.Get(_player).FullMoonCharge.ToString();
+                _countLabel.Text = KeineConstantsStateRegistry.Get(_player).FullMoonCharge.ToString();
             _ui.Modulate = Colors.White;
         }
     }

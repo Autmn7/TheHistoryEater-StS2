@@ -13,7 +13,7 @@ public class RevisionSession : KeineModCard, IOnConsumed
     public RevisionSession() : base(2, CardType.Skill, CardRarity.Common, TargetType.Self)
     {
         WithVar("Knowledgeable", 1, 1);
-        WithBlock(10, 3);
+        WithBlock(11, 3);
         WithPower<KnowledgePower>(1);
         WithKeywords(CardKeyword.Retain, KeineModKeywords.Knowledgeable);
         WithTip(KeineModKeywords.Consume);

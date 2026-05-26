@@ -12,8 +12,8 @@ public class SwirlOfHistory : KeineModCard, IOnConsumed
 {
     public SwirlOfHistory() : base(2, CardType.Attack, CardRarity.Common, TargetType.AllEnemies)
     {
-        WithDamage(10, 3);
-        WithPower<HistoricalGapPower>(4, 1);
+        WithDamage(12, 3);
+        WithPower<HistoricalGapPower>(3, 1);
         WithVar("Consumed", 2, 1);
         WithTip(KeineModKeywords.Consume);
     }

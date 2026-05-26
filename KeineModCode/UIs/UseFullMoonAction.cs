@@ -1,4 +1,5 @@
 ﻿using KeineMod.KeineModCode.Core;
+using KeineMod.KeineModCode.Scripts;
 using KeineMod.KeineModCode.Stances;
 using MegaCrit.Sts2.Core.Context;
 using MegaCrit.Sts2.Core.Entities.Multiplayer;
@@ -31,8 +32,8 @@ public class UseFullMoonAction : GameAction
     {
         if (_player == null) return Task.CompletedTask;
 
-        var fullMoonUi = FullMoonChargeStateRegistry.Get(_player);
-        if (fullMoonUi.CanUse())
+        var fullMoonUi = KeineConstantsStateRegistry.Get(_player);
+        if (fullMoonUi.CanUse(_player))
         {
             fullMoonUi.ClickedThisTurn = true;
             fullMoonUi.LoseFullMoon(1);

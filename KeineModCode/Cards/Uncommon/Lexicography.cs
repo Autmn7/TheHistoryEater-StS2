@@ -7,7 +7,7 @@ namespace KeineMod.KeineModCode.Cards.Uncommon;
 
 public class Lexicography : KeineModCard
 {
-    public Lexicography() : base(1, CardType.Attack, CardRarity.Uncommon, TargetType.Self)
+    public Lexicography() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
         WithBlock(3);
         WithPower<KnowledgePower>(1);

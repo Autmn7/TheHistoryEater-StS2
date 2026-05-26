@@ -1,4 +1,4 @@
-using KeineMod.KeineModCode.UIs;
+using KeineMod.KeineModCode.Scripts;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -20,7 +20,7 @@ public class TimeShiftPower : KeineModPower
         {
             Flash();
             var fullMoonToGain = (int)Math.Floor(Amount / 12.0);
-            FullMoonChargeStateRegistry.Get(Owner.Player).GainFullMoon(fullMoonToGain);
+            KeineConstantsStateRegistry.Get(Owner.Player).GainFullMoon(fullMoonToGain);
             await PowerCmd.Apply<TimeShiftPower>(choiceContext, Owner, -fullMoonToGain * 12, Owner, null);
         }
     }

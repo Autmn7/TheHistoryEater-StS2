@@ -6,5 +6,5 @@ namespace KeineMod.KeineModCode.Scripts;
 
 public interface IOnConsumed
 {
-    Task OnConsumed(PlayerChoiceContext ctx, Player player, CardModel consumedCard);
+    Task OnConsumed(PlayerChoiceContext choiceContext, Player player, CardModel consumedCard);
 }

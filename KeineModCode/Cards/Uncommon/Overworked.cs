@@ -14,6 +14,8 @@ public class Overworked : KeineModCard
         WithKeyword(CardKeyword.Exhaust, UpgradeType.Remove);
     }
 
+    protected override bool ShouldGlowRedInternal => !Owner.Creature.HasPower<KnowledgePower>();
+
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         if (Owner.Creature.HasPower<KnowledgePower>() && Owner.Creature.GetPowerAmount<KnowledgePower>() >= DynamicVars["KnowledgePower"].BaseValue)

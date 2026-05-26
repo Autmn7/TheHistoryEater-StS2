@@ -11,7 +11,7 @@ public class NewSemester : KeineModCard
     public NewSemester() : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
     {
         WithVar("Knowledgeable", 1);
-        WithBlock(5, 3);
+        WithBlock(6, 3);
         WithVar("Threshold", 2);
         WithPower<KnowledgePower>(1);
         WithCards(1);

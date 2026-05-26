@@ -14,7 +14,7 @@ public class AncientProtectionPower : KeineModPower, IOnConsumed
 
     public override PowerStackType StackType => PowerStackType.Counter;
 
-    public async Task OnConsumed(PlayerChoiceContext ctx, Player player, CardModel consumedCard)
+    public async Task OnConsumed(PlayerChoiceContext choiceContext, Player player, CardModel consumedCard)
     {
         if (consumedCard.Owner.Creature != Owner || CombatState.CurrentSide != Owner.Side)
             return;

@@ -43,5 +43,8 @@
   "KEINEMOD-HISTORY_OF_FANTASY_POWER.title": "History of Fantasy",
   "KEINEMOD-ANCIENT_PROTECTION_POWER.description": "",
   "KEINEMOD-ANCIENT_PROTECTION_POWER.smartDescription": "Whenever you [gold]Consume[/gold] a card, gain [blue]{Amount}[/blue] [gold]Block[/gold].",
-  "KEINEMOD-ANCIENT_PROTECTION_POWER.title": "Ancient Protection"
+  "KEINEMOD-ANCIENT_PROTECTION_POWER.title": "Ancient Protection",
+  "KEINEMOD-SUNRISE_POWER.description": "",
+  "KEINEMOD-SUNRISE_POWER.smartDescription": "You cannot enter [green]Hakutaku[/green] form {Amount:plural:[blue]{}[/blue] turn|[blue]{}[/blue] turns}.",
+  "KEINEMOD-SUNRISE_POWER.title": "Sunrise"
 }

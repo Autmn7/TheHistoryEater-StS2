@@ -25,6 +25,7 @@ public static class ConsumeCmd
             if (shouldUpgrade)
                 CardCmd.Upgrade(consumedCard);
             if (consumedCard is not (Flow or Fatigue) && (consumedCard is not TheSmartest || consumedCard.EnergyCost.GetResolved() <= 0)) await CardPileCmd.Add(consumedCard, ScrollPile.Scroll);
+            KeineConstantsStateRegistry.Get(player).IncrementCardsConsumed(1);
             await KeineHooks.OnConsumed(choiceContext, player, consumedCard);
         }
 
@@ -42,6 +43,7 @@ public static class ConsumeCmd
             if (shouldUpgrade)
                 CardCmd.Upgrade(consumedCard);
             if (consumedCard is not (Flow or Fatigue) && (consumedCard is not TheSmartest || consumedCard.EnergyCost.GetResolved() <= 0)) await CardPileCmd.Add(consumedCard, ScrollPile.Scroll);
+            KeineConstantsStateRegistry.Get(player).IncrementCardsConsumed(1);
             await KeineHooks.OnConsumed(choiceContext, player, consumedCard);
         }
 
@@ -59,6 +61,7 @@ public static class ConsumeCmd
             if (shouldUpgrade)
                 CardCmd.Upgrade(consumedCard);
             if (consumedCard is not (Flow or Fatigue) && (consumedCard is not TheSmartest || consumedCard.EnergyCost.GetResolved() <= 0)) await CardPileCmd.Add(consumedCard, ScrollPile.Scroll);
+            KeineConstantsStateRegistry.Get(player).IncrementCardsConsumed(1);
             await KeineHooks.OnConsumed(choiceContext, player, consumedCard);
         }
 
@@ -73,6 +76,7 @@ public static class ConsumeCmd
         foreach (var consumedCard in hand)
         {
             if (consumedCard is not (Flow or Fatigue) && (consumedCard is not TheSmartest || consumedCard.EnergyCost.GetResolved() <= 0)) await CardPileCmd.Add(consumedCard, ScrollPile.Scroll);
+            KeineConstantsStateRegistry.Get(player).IncrementCardsConsumed(1);
             await KeineHooks.OnConsumed(choiceContext, player, consumedCard);
         }
     }

@@ -14,7 +14,7 @@ public class ReshapeHistory : KeineModCard
 {
     public ReshapeHistory() : base(1, CardType.Skill, CardRarity.Ancient, TargetType.Self)
     {
-        WithBlock(12, 4);
+        WithBlock(15, 5);
         WithCards(2, 1);
         WithKeywords(CardKeyword.Innate, KeineModKeywords.Human, KeineModKeywords.Consume, KeineModKeywords.Hakutaku, KeineModKeywords.Recall, KeineModKeywords.Create);
         WithTip(new TooltipSource(card => HoverTipFactory.FromCard<HeavenlySword>(card.IsUpgraded)));

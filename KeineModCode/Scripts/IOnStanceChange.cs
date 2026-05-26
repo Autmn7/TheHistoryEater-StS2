@@ -6,5 +6,5 @@ namespace KeineMod.KeineModCode.Scripts;
 
 public interface IOnStanceChange
 {
-    Task OnStanceChange(PlayerChoiceContext ctx, Player player, KeineStanceModel oldStance, KeineStanceModel newStance);
+    Task OnStanceChange(PlayerChoiceContext choiceContext, Player player, KeineStanceModel oldStance, KeineStanceModel newStance);
 }

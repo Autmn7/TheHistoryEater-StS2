@@ -42,13 +42,13 @@ public partial class MainFile : Node
     }
 
     [HarmonyPatch(typeof(CombatManager), nameof(CombatManager.SetUpCombat))]
-    public static class FullMoonChargeSetUpPatch
+    public static class KeineConstantsResetPatch
     {
         [HarmonyPostfix]
-        private static void FullMoonChargeSetUp()
+        private static void KeineConstantsReset()
         {
             var tracker = CombatManager.Instance.StateTracker;
-            FullMoonChargeStateRegistry.Clear(tracker);
+            KeineConstantsStateRegistry.Clear(tracker);
         }
     }
 

@@ -11,8 +11,8 @@ public class ConcealHistory : KeineModCard
 {
     public ConcealHistory() : base(1, CardType.Skill, CardRarity.Rare, TargetType.AnyEnemy)
     {
-        WithBlock(8, 2);
-        WithPower<HistoricalGapPower>(3, 1);
+        WithBlock(7, 2);
+        WithPower<HistoricalGapPower>(2, 1);
         WithKeywords(KeineModKeywords.Human, KeineModKeywords.Hakutaku, KeineModKeywords.Recall);
     }
 

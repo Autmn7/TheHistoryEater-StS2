@@ -43,5 +43,8 @@
   "KEINEMOD-HISTORY_OF_FANTASY_POWER.title": "「新幻想史 -现代史-」",
   "KEINEMOD-ANCIENT_PROTECTION_POWER.description": "",
   "KEINEMOD-ANCIENT_PROTECTION_POWER.smartDescription": "每当你[gold]吞噬[/gold]一张牌，获得[blue]{Amount}[/blue]点[gold]格挡[/gold]。",
-  "KEINEMOD-ANCIENT_PROTECTION_POWER.title": "远古庇佑"
+  "KEINEMOD-ANCIENT_PROTECTION_POWER.title": "远古庇佑",
+  "KEINEMOD-SUNRISE_POWER.description": "",
+  "KEINEMOD-SUNRISE_POWER.smartDescription": "{Amount}回合内，你无法进入[green]白泽[/green]形态。",
+  "KEINEMOD-SUNRISE_POWER.title": "日出"
 }

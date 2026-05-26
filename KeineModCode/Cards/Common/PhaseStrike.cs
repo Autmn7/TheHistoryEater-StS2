@@ -26,7 +26,7 @@ public class PhaseStrike : KeineModCard
         if (InHakutaku())
         {
             await PlayerCmd.GainEnergy(DynamicVars.Energy.BaseValue, Owner);
-            await StanceCmd.ExitStance(choiceContext, Owner, cardPlay.Card);
+            await StanceCmd.ExitStance(choiceContext, Owner, this);
         }
     }
 }

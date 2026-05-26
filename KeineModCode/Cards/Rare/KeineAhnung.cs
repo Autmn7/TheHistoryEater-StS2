@@ -17,6 +17,8 @@ public class KeineAhnung : KeineModCard
         WithTip(typeof(TheStrongest));
     }
 
+    protected override bool ShouldGlowRedInternal => !InHakutaku();
+
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         if (InHakutaku())

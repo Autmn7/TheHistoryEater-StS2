@@ -52,13 +52,13 @@ public abstract class KeineStanceModel : AbstractModel
         // description.Add("energyPrefix", EnergyIconHelper.GetPrefix((AbstractModel)(object)val));
     }
 
-    public virtual async Task OnEnterStance(PlayerChoiceContext ctx, Player owner, CardModel? source)
+    public virtual async Task OnEnterStance(PlayerChoiceContext choiceContext, Player owner, CardModel? source)
     {
         _vfx = new StanceVfxController(VfxConfig);
         await _vfx.OnEnter(owner.Creature);
     }
 
-    public virtual async Task OnExitStance(PlayerChoiceContext ctx, Player owner, CardModel? source)
+    public virtual async Task OnExitStance(PlayerChoiceContext choiceContext, Player owner, CardModel? source)
     {
         if (_vfx != null) await _vfx.OnExit(owner.Creature);
         _vfx = null;

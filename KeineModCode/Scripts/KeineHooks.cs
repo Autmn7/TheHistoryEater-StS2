@@ -7,16 +7,16 @@ namespace KeineMod.KeineModCode.Scripts;
 
 public class KeineHooks
 {
-    private static async Task Dispatch<T>(PlayerChoiceContext ctx, Player player, Func<T, Task> invoke) where T : class
+    private static async Task Dispatch<T>(PlayerChoiceContext choiceContext, Player player, Func<T, Task> invoke) where T : class
     {
         var combatState = player.Creature.CombatState;
         if (combatState == null) return;
         foreach (var model in combatState.IterateHookListeners().OfType<T>())
         {
             var abstractModel = model as AbstractModel;
-            ctx.PushModel(abstractModel);
+            choiceContext.PushModel(abstractModel);
             await invoke(model);
-            ctx.PopModel(abstractModel);
+            choiceContext.PopModel(abstractModel);
         }
     }
 

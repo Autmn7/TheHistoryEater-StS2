@@ -2,7 +2,6 @@ using BaseLib.Abstracts;
 using BaseLib.Utils;
 using KeineMod.KeineModCode.Scripts;
 using KeineMod.KeineModCode.Stances;
-using KeineMod.KeineModCode.UIs;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
@@ -33,19 +32,19 @@ public class KeineModel : CustomSingletonModel
         return ActiveStance[player] is T;
     }
 
-    public static async Task SetStance<T>(PlayerChoiceContext ctx, Player player, CardModel? source) where T : KeineStanceModel
+    public static async Task SetStance<T>(PlayerChoiceContext choiceContext, Player player, CardModel? source) where T : KeineStanceModel
     {
-        await SetStance(ctx, player, KeineModelDb.KeineStance<T>(), source);
+        await SetStance(choiceContext, player, KeineModelDb.KeineStance<T>(), source);
     }
 
-    private static async Task SetStance(PlayerChoiceContext ctx, Player player, KeineStanceModel newCanonical, CardModel? source)
+    private static async Task SetStance(PlayerChoiceContext choiceContext, Player player, KeineStanceModel newCanonical, CardModel? source)
     {
         var current = ActiveStance[player];
         if (((object)current)?.GetType() == ((object)newCanonical).GetType()) return;
-        if (current != null) await current.OnExitStance(ctx, player, source);
+        if (current != null) await current.OnExitStance(choiceContext, player, source);
         var mutable = newCanonical.ToMutable(player);
         ActiveStance[player] = mutable;
-        await mutable.OnEnterStance(ctx, player, source);
+        await mutable.OnEnterStance(choiceContext, player, source);
         var instance = NCombatRoom.Instance;
         var creatureNode = instance != null ? instance.GetCreatureNode(player.Creature) : null;
         // WatcherNCreatureVisuals visuals = ((creatureNode != null) ? creatureNode.Visuals : null) as WatcherNCreatureVisuals;
@@ -61,7 +60,7 @@ public class KeineModel : CustomSingletonModel
         // 	}
         // 	watcherNCreatureVisuals.SetEyeStance(eyeStance);
         // }
-        await KeineHooks.OnStanceChange(ctx, player, current, ActiveStance[player]);
+        await KeineHooks.OnStanceChange(choiceContext, player, current, ActiveStance[player]);
     }
 
     public override Task BeforeCombatStart()
@@ -78,7 +77,7 @@ public class KeineModel : CustomSingletonModel
     {
         if (side != CombatSide.Player)
             return Task.CompletedTask;
-        foreach (var player in combatState.Players) FullMoonChargeStateRegistry.Get(player).ClickedThisTurn = false;
+        foreach (var player in combatState.Players) KeineConstantsStateRegistry.Get(player).ClickedThisTurn = false;
         return Task.CompletedTask;
     }
 }

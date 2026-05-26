@@ -40,7 +40,7 @@ public abstract class KeineModCard : ConstructedCardModel, IOnStanceChange
         return Owner.Creature.HasPower<DualFormPower>() || KeineModel.IsInStance<HakutakuForm>(Owner);
     }
 
-    public Task OnStanceChange(PlayerChoiceContext ctx, Player player, KeineStanceModel oldStance, KeineStanceModel newStance)
+    public Task OnStanceChange(PlayerChoiceContext choiceContext, Player player, KeineStanceModel oldStance, KeineStanceModel newStance)
     {
         if (player == Owner && VisualCardPool is KeineModCardPool && Keywords.Contains(KeineModKeywords.Hakutaku))
             NCard.FindOnTable(this)?.Reload();

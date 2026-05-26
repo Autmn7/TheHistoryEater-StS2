@@ -59,7 +59,7 @@
   "KEINEMOD-YOSHIMITSU_CRISIS.description": "Deal {Damage:diff()} damage.\n[blue]Human[/blue]: [gold]Consume[/gold] up to {Cards:diff()} {Cards:plural:card|cards}, gain {energyPrefix:energyIcons(1)} for each.\n[green]Hakutaku[/green]: [gold]Recall[/gold] up to {Cards:diff()} {Cards:plural:card|cards}, gain {Block:diff()} [gold]Block[/gold] for each.",
   "KEINEMOD-YOSHIMITSU_CRISIS.title": "Yoshimitsu Crisis",
   "KEINEMOD-YOSHIMITSU_CRISIS.artist": "",
-  "KEINEMOD-GHQ_CRISIS.description": "Deal {Damage:diff()} damage to ALL enemies {Repeat:diff()} times.\nCost 1 less {energyPrefix:energyIcons(1)} for each card in your [gold]Scroll[/gold].\n[green]Hakutaku[/green]: [gold]Recall[/gold] up to {Cards:diff()} {Cards:plural:card|cards} and [gold]Exhaust[/gold] this card.",
+  "KEINEMOD-GHQ_CRISIS.description": "Deal {Damage:diff()} damage to ALL enemies {Repeat:diff()} times.\nCost {energyPrefix:energyIcons(1)} less for each card you [gold]Consumed[/gold] this combat.\n[green]Hakutaku[/green]: [gold]Recall[/gold] up to {Cards:diff()} {Cards:plural:card|cards} and [gold]Exhaust[/gold] this card.",
   "KEINEMOD-GHQ_CRISIS.title": "GHQ Crisis",
   "KEINEMOD-GHQ_CRISIS.artist": "",
   "KEINEMOD-LEISURE.description": "Gain {Block:diff()} [gold]Block[/gold].\n[gold]Create[/gold] 1 [gold]Flow[/gold].\n[blue]Human[/blue]: [gold]Consume[/gold] 1 card.\n[green]Hakutaku[/green]: [gold]Create[/gold] 1 more [gold]Flow[/gold].",
@@ -128,7 +128,7 @@
   "KEINEMOD-UNOFFICIAL_HISTORY.description": "Apply {HistoricalGapPower:diff()} [gold]Historical Gap[/gold].\nGain {WeakGain:diff()} [gold]Weak[/gold].\n[blue]Human[/blue]: Apply {WeakPower:diff()} [gold]Weak[/gold].\n[green]Hakutaku[/green]: No longer gains [gold]Weak[/gold].",
   "KEINEMOD-UNOFFICIAL_HISTORY.title": "Unofficial History",
   "KEINEMOD-UNOFFICIAL_HISTORY.artist": "",
-  "KEINEMOD-ELEGANCE.description": "Gain {Block:diff()} [gold]Block[/gold].\nCost 1 less {energyPrefix:energyIcons(1)} for each card in your [gold]Scroll[/gold].",
+  "KEINEMOD-ELEGANCE.description": "Gain {Block:diff()} [gold]Block[/gold].\nCost {energyPrefix:energyIcons(1)} less for each card in your [gold]Scroll[/gold].",
   "KEINEMOD-ELEGANCE.title": "Elegance",
   "KEINEMOD-ELEGANCE.artist": "",
   "KEINEMOD-LEARN_FROM_PAIN.description": "[gold]Knowledgeable[/gold] {Knowledgeable:diff()}.\nDeal {Damage:diff()} damage.\n[blue]Human[/blue]: [gold]Consume[/gold] 1 card, if it is a Status or Curse, gain {KnowledgePower:diff()} [gold]Knowledge[/gold].\n[green]Hakutaku[/green]: Deal damage an additional time.",
@@ -166,5 +166,14 @@
   "KEINEMOD-ANCIENT_PROTECTION.artist": "",
   "KEINEMOD-SHIFTING_HISTORY.description": "Apply {HistoricalGapPower:diff()} [gold]Historical Gap[/gold].\n[gold]Time Shift[/gold] equal to enemy's [gold]Historical Gap[/gold].",
   "KEINEMOD-SHIFTING_HISTORY.title": "Shifting History",
-  "KEINEMOD-SHIFTING_HISTORY.artist": ""
+  "KEINEMOD-SHIFTING_HISTORY.artist": "",
+  "KEINEMOD-FLOWER_OF_EDO.description": "Deal {Damage:diff()} damage to ALL enemies.\n[gold]Consumed[/gold]: Increase damage by {Increase:diff()} this combat.\n[gold]Recalled[/gold]: Does not gain [gold]Exhaust[/gold].",
+  "KEINEMOD-FLOWER_OF_EDO.title": "Flower of Edo",
+  "KEINEMOD-FLOWER_OF_EDO.artist": "",
+  "KEINEMOD-YAMATO_KINGDOM.description": "[gold]Knowledgeable[/gold] {Knowledgeable:diff()}.\nGain {Block:diff()} [gold]Block[/gold] X{IfUpgraded:show:+1} times.\nGain X{IfUpgraded:show:+1} [gold]Knowledge[/gold].",
+  "KEINEMOD-YAMATO_KINGDOM.title": "Yamato Kingdom",
+  "KEINEMOD-YAMATO_KINGDOM.artist": "",
+  "KEINEMOD-LAND_OF_RISING_SUN.description": "[green]Hakutaku[/green]: Deal {Damage:diff()} damage to ALL enemies. Exit your form, you cannot enter [green]Hakutaku[/green] form for {SunrisePower:diff()} turns.",
+  "KEINEMOD-LAND_OF_RISING_SUN.title": "Land of Rising Sun",
+  "KEINEMOD-LAND_OF_RISING_SUN.artist": ""
 } 

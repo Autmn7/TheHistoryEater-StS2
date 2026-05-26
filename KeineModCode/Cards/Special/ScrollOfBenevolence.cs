@@ -17,7 +17,7 @@ public class ScrollOfBenevolence : KeineModCard, IOnConsumed
 {
     public ScrollOfBenevolence() : base(-1, CardType.Skill, CardRarity.Token, TargetType.Self)
     {
-        WithPower<BenevolencePower>(3, 2);
+        WithPower<BenevolencePower>(2, 2);
         WithKeywords(CardKeyword.Unplayable);
         WithTip(KeineModKeywords.Consume);
         WithTip(new TooltipSource(card => HoverTipFactory.FromCard<CurvedJewel>()));

@@ -1,6 +1,5 @@
 ﻿using KeineMod.KeineModCode.Commands;
 using KeineMod.KeineModCode.Scripts;
-using KeineMod.KeineModCode.UIs;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -44,7 +43,7 @@ public class GhqCrisis : KeineModCard
         if (Pile != null && Pile.IsCombatPile && Owner.PlayerCombatState != null && CombatState != null && CombatState.IsLiveCombat())
         {
             var baseCost = EnergyCost._base;
-            var bonus = ScrollPile.Scroll.GetPile(Owner).Cards.Count;
+            var bonus = KeineConstantsStateRegistry.Get(Owner).CardsConsumedThisCombat;
             var targetCost = Math.Max(0, baseCost - bonus);
             EnergyCost._localModifiers.RemoveAll(m => (int)m.Type == 1 && (int)m.Expiration == 0);
             EnergyCost.SetThisCombat(targetCost);
