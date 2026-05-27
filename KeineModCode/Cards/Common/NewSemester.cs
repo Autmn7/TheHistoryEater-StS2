@@ -10,11 +10,10 @@ public class NewSemester : KeineModCard
 {
     public NewSemester() : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
     {
-        WithVar("Knowledgeable", 1);
-        WithBlock(6, 3);
+        WithBlock(6, 2);
         WithVar("Threshold", 2);
         WithPower<KnowledgePower>(1);
-        WithCards(1);
+        WithCards(1, 1);
         WithKeywords(KeineModKeywords.Knowledgeable);
     }
 

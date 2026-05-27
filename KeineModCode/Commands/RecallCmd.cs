@@ -1,4 +1,5 @@
-﻿using KeineMod.KeineModCode.Cards.Uncommon;
+﻿using KeineMod.KeineModCode.Cards.Common;
+using KeineMod.KeineModCode.Cards.Uncommon;
 using KeineMod.KeineModCode.UIs;
 using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Combat;
@@ -23,7 +24,8 @@ public class RecallCmd
         {
             if (shouldUpgrade)
                 CardCmd.Upgrade(recalledCard);
-            CardCmd.ApplyKeyword(recalledCard, CardKeyword.Ethereal);
+            if (recalledCard is not RevisionSession)
+                CardCmd.ApplyKeyword(recalledCard, CardKeyword.Ethereal);
             if (recalledCard is not FlowerOfEdo)
                 CardCmd.ApplyKeyword(recalledCard, CardKeyword.Exhaust);
             recalledCard.EnergyCost.AddThisTurn(-1);
@@ -43,7 +45,8 @@ public class RecallCmd
         {
             if (shouldUpgrade)
                 CardCmd.Upgrade(recalledCard);
-            CardCmd.ApplyKeyword(recalledCard, CardKeyword.Ethereal);
+            if (recalledCard is not RevisionSession)
+                CardCmd.ApplyKeyword(recalledCard, CardKeyword.Ethereal);
             if (recalledCard is not FlowerOfEdo)
                 CardCmd.ApplyKeyword(recalledCard, CardKeyword.Exhaust);
             recalledCard.EnergyCost.AddThisTurn(-1);

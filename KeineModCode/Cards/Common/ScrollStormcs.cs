@@ -11,7 +11,6 @@ public class ScrollStorm : KeineModCard
 {
     public ScrollStorm() : base(2, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
     {
-        WithVar("Knowledgeable", 1);
         WithDamage(5, 2);
         WithVar(new RepeatVar(3));
         WithPower<KnowledgePower>(1);

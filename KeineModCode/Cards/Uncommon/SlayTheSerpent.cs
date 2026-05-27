@@ -15,7 +15,7 @@ public class SlayTheSerpent : KeineModCard
 {
     public SlayTheSerpent() : base(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
-        WithDamage(10, 4);
+        WithDamage(11, 4);
         WithCards(1);
         WithKeywords(KeineModKeywords.Human, KeineModKeywords.Consume, KeineModKeywords.Create, KeineModKeywords.Hakutaku, KeineModKeywords.Recall);
         WithTip(typeof(Snakebite));

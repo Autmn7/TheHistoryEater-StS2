@@ -23,6 +23,6 @@ public class KeineModKeywords
     [CustomEnum] [KeywordProperties(AutoKeywordPosition.None)]
     public static CardKeyword Fullmoon;
 
-    [CustomEnum] [KeywordProperties(AutoKeywordPosition.None)]
+    [CustomEnum] [KeywordProperties(AutoKeywordPosition.Before)]
     public static CardKeyword Knowledgeable;
 }

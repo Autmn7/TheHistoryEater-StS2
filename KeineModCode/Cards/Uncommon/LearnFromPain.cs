@@ -11,7 +11,6 @@ public class LearnFromPain : KeineModCard
 {
     public LearnFromPain() : base(0, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
-        WithVar("Knowledgeable", 1);
         WithDamage(5, 3);
         WithPower<KnowledgePower>(1);
         WithKeywords(KeineModKeywords.Knowledgeable, KeineModKeywords.Human, KeineModKeywords.Consume, KeineModKeywords.Hakutaku, KeineModKeywords.Recall);

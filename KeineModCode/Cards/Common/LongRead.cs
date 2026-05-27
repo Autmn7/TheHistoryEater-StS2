@@ -10,13 +10,13 @@ public class LongRead : KeineModCard
 {
     public LongRead() : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
     {
-        WithCards(2, 1);
-        WithKeywords(KeineModKeywords.Human, KeineModKeywords.Consume, KeineModKeywords.Hakutaku, KeineModKeywords.Recall);
+        WithCards(3, 1);
+        WithKeywords(KeineModKeywords.Human, KeineModKeywords.Consume);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await CardPileCmd.Draw(choiceContext, InHakutaku() ? DynamicVars.Cards.BaseValue + 1 : DynamicVars.Cards.BaseValue, Owner);
+        await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.BaseValue, Owner);
         if (InHuman())
             await ConsumeCmd.FromHand(choiceContext, Owner, 1, this);
     }

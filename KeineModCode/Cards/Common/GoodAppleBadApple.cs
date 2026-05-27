@@ -4,14 +4,14 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 
-namespace KeineMod.KeineModCode.Cards.Uncommon;
+namespace KeineMod.KeineModCode.Cards.Common;
 
 public class GoodAppleBadApple : KeineModCard
 {
-    public GoodAppleBadApple() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+    public GoodAppleBadApple() : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
     {
-        WithPower<BenevolencePower>(4, 2);
-        WithPower<ValorPower>(4, 2);
+        WithPower<BenevolencePower>(3, 2);
+        WithPower<ValorPower>(3, 2);
         WithCards(2);
         WithEnergy(1);
         WithKeywords(KeineModKeywords.Human, KeineModKeywords.Hakutaku, KeineModKeywords.Recall);

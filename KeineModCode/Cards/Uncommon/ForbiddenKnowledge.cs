@@ -1,0 +1,27 @@
+﻿using KeineMod.KeineModCode.Powers;
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+
+namespace KeineMod.KeineModCode.Cards.Uncommon;
+
+public class ForbiddenKnowledge : KeineModCard
+{
+    public ForbiddenKnowledge() : base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+    {
+        WithPower<KnowledgePower>(1);
+        WithEnergy(2);
+        WithKeyword(CardKeyword.Exhaust, UpgradeType.Remove);
+    }
+
+    protected override bool ShouldGlowRedInternal => !Owner.Creature.HasPower<KnowledgePower>();
+
+    protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+    {
+        if (Owner.Creature.HasPower<KnowledgePower>())
+        {
+            await PowerCmd.ModifyAmount(choiceContext, Owner.Creature.GetPower<KnowledgePower>(), -DynamicVars["KnowledgePower"].BaseValue, Owner.Creature, this);
+            await PlayerCmd.GainEnergy(DynamicVars.Energy.BaseValue, Owner);
+        }
+    }
+}

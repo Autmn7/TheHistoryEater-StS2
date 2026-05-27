@@ -10,8 +10,7 @@ public class ScrollSlash : KeineModCard
 {
     public ScrollSlash() : base(1, CardType.Attack, CardRarity.Common, TargetType.AllEnemies)
     {
-        WithVar("Knowledgeable", 1, 1);
-        WithDamage(7, 2);
+        WithDamage(7, 3);
         WithEnergy(1);
         WithCards(1);
         WithKeywords(KeineModKeywords.Knowledgeable, KeineModKeywords.Human, KeineModKeywords.Hakutaku, KeineModKeywords.Recall);

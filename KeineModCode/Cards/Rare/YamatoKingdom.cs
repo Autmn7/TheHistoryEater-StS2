@@ -10,7 +10,6 @@ public class YamatoKingdom : KeineModCard
 {
     public YamatoKingdom() : base(0, CardType.Skill, CardRarity.Rare, TargetType.Self)
     {
-        WithVar("Knowledgeable", 1);
         WithBlock(5);
         WithTip(typeof(KnowledgePower));
         WithKeywords(KeineModKeywords.Knowledgeable, CardKeyword.Retain, CardKeyword.Exhaust);

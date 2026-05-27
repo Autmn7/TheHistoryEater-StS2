@@ -11,6 +11,6 @@
   "KEINEMOD-HAKUTAKU.title": "Hakutaku",
   "KEINEMOD-FULLMOON.description": "Once per turn: you can click on [gold]Full Moon[/gold], spending [blue]1[/blue] stack and enter [green]Hakutaku[/green] form this turn.",
   "KEINEMOD-FULLMOON.title": "Full Moon",
-  "KEINEMOD-KNOWLEDGEABLE.description": "This card's damage and [gold]Block[/gold] scales X times with your [gold]Knowledge[/gold].",
-  "KEINEMOD-KNOWLEDGEABLE.title": "Knowledgeable X"
+  "KEINEMOD-KNOWLEDGEABLE.description": "This card's damage and [gold]Block[/gold] scales with your [gold]Knowledge[/gold].",
+  "KEINEMOD-KNOWLEDGEABLE.title": "Knowledgeable"
 }

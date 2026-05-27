@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2ap6auh2tp37"
-path="res://.godot/imported/mental_outburst.png-75de07c282a7ac23f749dae8ad683366.ctex"
+uid="uid://rheqh4lgy0uc"
+path="res://.godot/imported/scroll_dance.png-1ddcb024695d2dedd4da95b0dbe1f1ec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://KeineMod/images/card_portraits/mental_outburst.png"
-dest_files=["res://.godot/imported/mental_outburst.png-75de07c282a7ac23f749dae8ad683366.ctex"]
+source_file="res://KeineMod/images/card_portraits/scroll_dance.png"
+dest_files=["res://.godot/imported/scroll_dance.png-1ddcb024695d2dedd4da95b0dbe1f1ec.ctex"]
 
 [params]
 

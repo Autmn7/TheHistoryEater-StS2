@@ -12,11 +12,11 @@ public class RevisionSession : KeineModCard, IOnConsumed
 {
     public RevisionSession() : base(2, CardType.Skill, CardRarity.Common, TargetType.Self)
     {
-        WithVar("Knowledgeable", 1, 1);
-        WithBlock(11, 3);
+        WithBlock(11, 4);
         WithPower<KnowledgePower>(1);
-        WithKeywords(CardKeyword.Retain, KeineModKeywords.Knowledgeable);
+        WithKeywords(KeineModKeywords.Knowledgeable, CardKeyword.Retain);
         WithTip(KeineModKeywords.Consume);
+        WithTip(KeineModKeywords.Recall);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

@@ -27,7 +27,7 @@ public class KnowledgePower : KeineModPower
         CardModel? cardSource)
     {
         if (cardSource != null && cardSource.Keywords.Contains(KeineModKeywords.Knowledgeable))
-            return Owner != dealer || !props.IsPoweredAttack() ? 0M : Amount * (cardSource.DynamicVars.TryGetValue("Knowledgeable", out var v) ? v.BaseValue : 0);
+            return Owner != dealer || !props.IsPoweredAttack() ? 0M : Amount;
         return 0M;
     }
 
@@ -39,7 +39,7 @@ public class KnowledgePower : KeineModPower
         CardPlay? cardPlay)
     {
         if (cardSource != null && cardSource.Keywords.Contains(KeineModKeywords.Knowledgeable))
-            return !props.IsPoweredCardOrMonsterMoveBlock() ? 0M : Amount * (cardSource.DynamicVars.TryGetValue("Knowledgeable", out var v) ? v.BaseValue : 0);
+            return !props.IsPoweredCardOrMonsterMoveBlock() ? 0M : Amount;
         return 0M;
     }
 }

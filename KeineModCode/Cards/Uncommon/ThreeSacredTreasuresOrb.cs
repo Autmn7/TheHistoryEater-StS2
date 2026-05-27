@@ -9,23 +9,25 @@ using MegaCrit.Sts2.Core.Models;
 
 namespace KeineMod.KeineModCode.Cards.Uncommon;
 
-public class ThreeSacredTreasuresMirror : KeineModCard
+public class ThreeSacredTreasuresOrb : KeineModCard
 {
-    public ThreeSacredTreasuresMirror() : base(2, CardType.Power, CardRarity.Uncommon, TargetType.Self)
+    public ThreeSacredTreasuresOrb() : base(2, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
-        WithEnergy(1);
+        WithBlock(14, 4);
+        WithVar("TreasureOfBenevolencePower", 1);
         WithCards(1, 1);
         WithKeyword(KeineModKeywords.Create);
-        WithTip(typeof(EightSpanMirror));
-        WithTip(typeof(ScrollOfWisdom));
+        WithTip(typeof(CurvedJewel));
+        WithTip(typeof(ScrollOfBenevolence));
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await PowerCmd.Apply<TreasureOfWisdomPower>(choiceContext, Owner.Creature, DynamicVars.Energy.BaseValue, Owner.Creature, this);
+        await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
+        await PowerCmd.Apply<TreasureOfBenevolencePower>(choiceContext, Owner.Creature, DynamicVars["TreasureOfBenevolencePower"].BaseValue, Owner.Creature, this);
         for (var i = 0; i < DynamicVars.Cards.BaseValue; ++i)
         {
-            CardModel created = CombatState.CreateCard<ScrollOfWisdom>(Owner);
+            CardModel created = CombatState.CreateCard<ScrollOfBenevolence>(Owner);
             await CreateCmd.Execute(created, Owner);
         }
     }

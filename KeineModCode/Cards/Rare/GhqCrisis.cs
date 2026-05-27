@@ -1,53 +1,44 @@
-﻿using KeineMod.KeineModCode.Commands;
-using KeineMod.KeineModCode.Scripts;
+﻿using KeineMod.KeineModCode.Scripts;
+using KeineMod.KeineModCode.UIs;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 
 namespace KeineMod.KeineModCode.Cards.Rare;
 
-public class GhqCrisis : KeineModCard
+public class GhqCrisis : KeineModCard, IOnConsumed
 {
-    public GhqCrisis() : base(4, CardType.Attack, CardRarity.Rare, TargetType.AllEnemies)
+    public GhqCrisis() : base(4, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
     {
-        WithDamage(3, 1);
-        WithVar(new RepeatVar(4));
-        WithCards(4);
-        WithKeywords(KeineModKeywords.Hakutaku, KeineModKeywords.Recall);
+        WithDamage(6, 2);
+        WithEnergy(1);
+        WithKeyword(CardKeyword.Retain, UpgradeType.Add);
+        WithKeyword(CardKeyword.Exhaust);
+        WithTip(KeineModKeywords.Consume);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this).TargetingAllOpponents(CombatState).WithHitCount(DynamicVars.Repeat.IntValue).Execute(choiceContext);
-        if (InHakutaku())
-        {
-            await RecallCmd.FromScrollUpTo(choiceContext, Owner, DynamicVars.Cards.IntValue);
-            await CardCmd.Exhaust(choiceContext, this);
-        }
+        List<CardModel> list = ScrollPile.Scroll.GetPile(Owner).Cards.ToList();
+        int cardCount = list.Count;
+        foreach (CardModel card in list)
+            await CardCmd.Exhaust(choiceContext, card);
+        await DamageCmd.Attack(DynamicVars.Damage.BaseValue).WithHitCount(cardCount).FromCard(this).Targeting(cardPlay.Target).Execute(choiceContext);
     }
 
-    public override async Task AfterCardChangedPilesLate(CardModel card, PileType oldPileType, AbstractModel? source)
+    public Task OnConsumed(PlayerChoiceContext choiceContext, Player player, CardModel consumedCard)
     {
-        await UpdateCost();
+        EnergyCost.AddThisCombat(-DynamicVars.Energy.IntValue);
+        return Task.CompletedTask;
     }
 
-    public override async Task AfterCardEnteredCombat(CardModel card)
+    public override Task AfterCardEnteredCombat(CardModel card)
     {
-        await UpdateCost();
-    }
-
-    private async Task UpdateCost()
-    {
-        if (Pile != null && Pile.IsCombatPile && Owner.PlayerCombatState != null && CombatState != null && CombatState.IsLiveCombat())
-        {
-            var baseCost = EnergyCost._base;
-            var bonus = KeineConstantsStateRegistry.Get(Owner).CardsConsumedThisCombat;
-            var targetCost = Math.Max(0, baseCost - bonus);
-            EnergyCost._localModifiers.RemoveAll(m => (int)m.Type == 1 && (int)m.Expiration == 0);
-            EnergyCost.SetThisCombat(targetCost);
-            InvokeEnergyCostChanged();
-        }
+        if (card != this || IsClone)
+            return Task.CompletedTask;
+        EnergyCost.AddThisCombat(-KeineConstantsStateRegistry.Get(Owner).CardsConsumedThisCombat * DynamicVars.Energy.IntValue);
+        return Task.CompletedTask;
     }
 }
