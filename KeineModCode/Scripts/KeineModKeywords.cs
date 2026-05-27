@@ -25,4 +25,7 @@ public class KeineModKeywords
 
     [CustomEnum] [KeywordProperties(AutoKeywordPosition.Before)]
     public static CardKeyword Knowledgeable;
+    
+    [CustomEnum] [KeywordProperties(AutoKeywordPosition.Before)]
+    public static CardKeyword Sacredscroll;
 }

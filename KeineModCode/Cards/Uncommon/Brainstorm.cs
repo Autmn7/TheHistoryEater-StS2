@@ -28,14 +28,16 @@ public class Brainstorm : KeineModCard
         // Filter out valid Attack choices
         var attackPool = allOtherCards.Where(c =>
             c.Type == CardType.Attack &&
-            (!c.Tags.Contains(CardTag.OstyAttack) || Owner.IsOstyAlive)
+            (!c.Tags.Contains(CardTag.OstyAttack) || Owner.IsOstyAlive) &&
+            c.BaseStarCost <= Owner.PlayerCombatState?.Stars
         );
 
         // Filter out valid Block Skill choices using your exact evaluation rule
         var blockPool = allOtherCards.Where(c =>
             c.Type == CardType.Skill &&
             c.DynamicVars.ContainsKey("Block") &&
-            c.DynamicVars["Block"].BaseValue > 1
+            c.DynamicVars["Block"].BaseValue > 1 &&
+            c.BaseStarCost <= Owner.PlayerCombatState?.Stars
         );
 
         // Roll 1 random distinct card from each pool based on combat RNG seed

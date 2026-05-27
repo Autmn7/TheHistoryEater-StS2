@@ -1,8 +1,11 @@
+using KeineMod.KeineModCode.Commands;
 using KeineMod.KeineModCode.Scripts;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 
@@ -14,9 +17,18 @@ public class KnowledgePower : KeineModPower
 
     public override PowerStackType StackType => PowerStackType.Counter;
 
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DivisorVar("Cards", 3)];
+
     public override decimal ModifyHandDraw(Player player, decimal count)
     {
-        return player != Owner.Player ? count : count + (decimal)Math.Floor(Amount / 2.0);
+        return player != Owner.Player ? count : count + (int)Math.Floor(Amount / 3.0);
+    }
+
+    public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
+    {
+        if (player != Owner.Player)
+            return;
+        await ConsumeCmd.FromHandUpTo(choiceContext, Owner.Player, (int)Math.Floor(Amount / 3.0), this);
     }
 
     public override decimal ModifyDamageAdditive(

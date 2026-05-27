@@ -5,7 +5,6 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Nodes.CommonUi;
@@ -17,10 +16,10 @@ public class ScrollOfValor : KeineModCard, IOnConsumed
 {
     public ScrollOfValor() : base(-1, CardType.Skill, CardRarity.Token, TargetType.Self)
     {
-        WithPower<ValorPower>(2, 2);
+        WithPower<ValorPower>(3, 2);
         WithKeywords(CardKeyword.Unplayable);
         WithTip(KeineModKeywords.Consume);
-        WithTip(new TooltipSource(card => HoverTipFactory.FromCard<HeavenlySword>()));
+        WithTip(typeof(HeavenlySword));
     }
 
     public async Task OnConsumed(PlayerChoiceContext choiceContext, Player player, CardModel card)

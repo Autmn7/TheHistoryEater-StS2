@@ -12,5 +12,7 @@
   "KEINEMOD-FULLMOON.description": "Once per turn: you can click on [gold]Full Moon[/gold], spending [blue]1[/blue] stack and enter [green]Hakutaku[/green] form this turn.",
   "KEINEMOD-FULLMOON.title": "Full Moon",
   "KEINEMOD-KNOWLEDGEABLE.description": "This card's damage and [gold]Block[/gold] scales with your [gold]Knowledge[/gold].",
-  "KEINEMOD-KNOWLEDGEABLE.title": "Knowledgeable"
+  "KEINEMOD-KNOWLEDGEABLE.title": "Knowledgeable",
+  "KEINEMOD-SACREDSCROLL.description": "[gold]Unplayable[/gold]. Does not count towards [gold]Hand[/gold] space.",
+  "KEINEMOD-SACREDSCROLL.title": "Sacred Scroll"
 }

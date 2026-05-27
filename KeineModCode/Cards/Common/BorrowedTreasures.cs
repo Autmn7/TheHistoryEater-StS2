@@ -14,18 +14,18 @@ public class BorrowedTreasures : KeineModCard
     {
         WithKeywords(KeineModKeywords.Create);
         WithKeyword(CardKeyword.Exhaust, UpgradeType.Remove);
-        WithTip(typeof(HeavenlySword));
-        WithTip(typeof(CurvedJewel));
-        WithTip(typeof(EightSpanMirror));
+        WithTip(typeof(ScrollOfValor));
+        WithTip(typeof(ScrollOfBenevolence));
+        WithTip(typeof(ScrollOfWisdom));
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         List<CardModel> treasures =
         [
-            CombatState.CreateCard<HeavenlySword>(Owner),
-            CombatState.CreateCard<CurvedJewel>(Owner),
-            CombatState.CreateCard<EightSpanMirror>(Owner)
+            CombatState.CreateCard<ScrollOfValor>(Owner),
+            CombatState.CreateCard<ScrollOfBenevolence>(Owner),
+            CombatState.CreateCard<ScrollOfWisdom>(Owner)
         ];
         var created = await CardSelectCmd.FromChooseACardScreen(choiceContext, treasures, Owner);
         await CreateCmd.Execute(created, Owner);

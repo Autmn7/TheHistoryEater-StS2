@@ -5,7 +5,6 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Nodes.CommonUi;
@@ -20,7 +19,7 @@ public class ScrollOfWisdom : KeineModCard, IOnConsumed
         WithPower<WisdomPower>(1, 1);
         WithKeywords(CardKeyword.Unplayable);
         WithTip(KeineModKeywords.Consume);
-        WithTip(new TooltipSource(card => HoverTipFactory.FromCard<EightSpanMirror>()));
+        WithTip(typeof(EightSpanMirror));
     }
 
     public async Task OnConsumed(PlayerChoiceContext choiceContext, Player player, CardModel card)

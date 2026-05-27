@@ -9,7 +9,7 @@ public class Lexicography : KeineModCard
 {
     public Lexicography() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
-        WithBlock(3);
+        WithBlock(4);
         WithPower<KnowledgePower>(1);
         WithKeyword(CardKeyword.Innate, UpgradeType.Add);
         WithKeyword(CardKeyword.Exhaust);

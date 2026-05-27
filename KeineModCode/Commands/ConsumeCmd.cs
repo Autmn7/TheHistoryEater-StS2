@@ -16,7 +16,7 @@ public static class ConsumeCmd
 {
     public static async Task<IEnumerable<CardModel>> FromHand(PlayerChoiceContext choiceContext, Player player, int amount, AbstractModel source, bool shouldUpgrade = false)
     {
-        if (CombatManager.Instance.IsOverOrEnding)
+        if (CombatManager.Instance.IsOverOrEnding || amount <= 0)
             return [];
         var prefs = new CardSelectorPrefs(new LocString("card_selection", "TO_CONSUME_KEINE"), amount);
         var list = (await CardSelectCmd.FromHand(choiceContext, player, prefs, null, source)).ToList();
@@ -34,7 +34,7 @@ public static class ConsumeCmd
 
     public static async Task<IEnumerable<CardModel>> FromHandUpTo(PlayerChoiceContext choiceContext, Player player, int amount, AbstractModel source, bool shouldUpgrade = false)
     {
-        if (CombatManager.Instance.IsOverOrEnding)
+        if (CombatManager.Instance.IsOverOrEnding ||  amount <= 0)
             return [];
         var prefs = new CardSelectorPrefs(new LocString("card_selection", "TO_CONSUME_UPTO_KEINE"), 0, amount);
         var list = (await CardSelectCmd.FromHand(choiceContext, player, prefs, null, source)).ToList();

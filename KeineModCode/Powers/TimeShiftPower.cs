@@ -29,6 +29,7 @@ public class TimeShiftPower : KeineModPower
     {
         if (cardPlay.Card.Owner.Creature != Owner)
             return;
-        await PowerCmd.Apply<TimeShiftPower>(choiceContext, Owner, 1, Owner, null, true);
+        var timeShift = Math.Max(1, cardPlay.Resources.EnergySpent);
+        await PowerCmd.Apply<TimeShiftPower>(choiceContext, Owner, timeShift, Owner, null, true);
     }
 }

@@ -28,7 +28,8 @@ public class ForeignKnowledge : KeineModCard
         // Filter out valid Attack choices
         var attackPool = allOtherCards.Where(c =>
             c.Type == CardType.Attack &&
-            (!c.Tags.Contains(CardTag.OstyAttack) || Owner.IsOstyAlive)
+            (!c.Tags.Contains(CardTag.OstyAttack) || Owner.IsOstyAlive) &&
+            c.BaseStarCost <= Owner.PlayerCombatState?.Stars
         );
 
         // Roll 3 distinct random Attack cards based on combat RNG seed
