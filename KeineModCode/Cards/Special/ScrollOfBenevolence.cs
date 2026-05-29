@@ -22,10 +22,9 @@ public class ScrollOfBenevolence : KeineModCard, IOnConsumed
         WithTip(typeof(CurvedJewel));
     }
 
-    public async Task OnConsumed(PlayerChoiceContext choiceContext, Player player, CardModel card)
+    public async Task OnConsumed(PlayerChoiceContext choiceContext, Player player, CardModel consumedCard)
     {
-        if (card != this)
-            return;
+        if (consumedCard != this) return;
         await PowerCmd.Apply<BenevolencePower>(choiceContext, Owner.Creature, DynamicVars["BenevolencePower"].BaseValue, Owner.Creature, this);
         CardModel jewel = CombatState.CreateCard<CurvedJewel>(Owner);
         await CardCmd.Transform(this, jewel, CardPreviewStyle.None);

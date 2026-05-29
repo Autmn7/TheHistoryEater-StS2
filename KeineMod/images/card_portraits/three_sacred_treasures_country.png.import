@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0mp88xwq8el"
-path="res://.godot/imported/prescience.png-8196d46f44444cc00089c297e62e1a28.ctex"
+uid="uid://cwlhwvv7juq5b"
+path="res://.godot/imported/three_sacred_treasures_country.png-4b79cad7f9963af6ddd5435f9c517262.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://KeineMod/images/card_portraits/prescience.png"
-dest_files=["res://.godot/imported/prescience.png-8196d46f44444cc00089c297e62e1a28.ctex"]
+source_file="res://KeineMod/images/card_portraits/three_sacred_treasures_country.png"
+dest_files=["res://.godot/imported/three_sacred_treasures_country.png-4b79cad7f9963af6ddd5435f9c517262.ctex"]
 
 [params]
 

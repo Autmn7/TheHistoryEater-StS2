@@ -22,10 +22,9 @@ public class ScrollOfWisdom : KeineModCard, IOnConsumed
         WithTip(typeof(EightSpanMirror));
     }
 
-    public async Task OnConsumed(PlayerChoiceContext choiceContext, Player player, CardModel card)
+    public async Task OnConsumed(PlayerChoiceContext choiceContext, Player player, CardModel consumedCard)
     {
-        if (card != this)
-            return;
+        if (consumedCard != this) return;
         await PowerCmd.Apply<WisdomPower>(choiceContext, Owner.Creature, DynamicVars["WisdomPower"].BaseValue, Owner.Creature, this);
         CardModel mirror = CombatState.CreateCard<EightSpanMirror>(Owner);
         await CardCmd.Transform(this, mirror, CardPreviewStyle.None);

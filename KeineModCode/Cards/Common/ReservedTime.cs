@@ -13,8 +13,8 @@ public class ReservedTime : KeineModCard, IOnConsumed
     public ReservedTime() : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
     {
         WithKeywords(CardKeyword.Retain, CardKeyword.Exhaust);
-        WithPower<TimeShiftPower>(6, 2);
-        WithVar("Consumed", 3, 1);
+        WithPower<TimeShiftPower>(5, 2);
+        WithVar("Consumed", 2, 1);
         WithTip(KeineModKeywords.Consume);
     }
 
@@ -23,9 +23,9 @@ public class ReservedTime : KeineModCard, IOnConsumed
         await PowerCmd.Apply<TimeShiftPower>(choiceContext, Owner.Creature, DynamicVars["TimeShiftPower"].BaseValue, Owner.Creature, this);
     }
 
-    public async Task OnConsumed(PlayerChoiceContext choiceContext, Player player, CardModel card)
+    public async Task OnConsumed(PlayerChoiceContext choiceContext, Player player, CardModel consumedCard)
     {
-        if (card == this)
+        if (consumedCard == this)
             await PowerCmd.Apply<TimeShiftPower>(choiceContext, Owner.Creature, DynamicVars["Consumed"].BaseValue, Owner.Creature, this);
     }
 }

@@ -27,7 +27,7 @@ public class BorrowedTreasures : KeineModCard
             CombatState.CreateCard<ScrollOfBenevolence>(Owner),
             CombatState.CreateCard<ScrollOfWisdom>(Owner)
         ];
-        var created = await CardSelectCmd.FromChooseACardScreen(choiceContext, treasures, Owner);
+        var created = await CardSelectCmd.FromChooseACardScreen(choiceContext, treasures, Owner, true);
         await CreateCmd.Execute(created, Owner);
     }
 }

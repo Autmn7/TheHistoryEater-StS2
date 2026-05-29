@@ -24,9 +24,9 @@ public class SwirlOfHistory : KeineModCard, IOnConsumed
         await PowerCmd.Apply<HistoricalGapPower>(choiceContext, CombatState.HittableEnemies, DynamicVars["HistoricalGapPower"].BaseValue, Owner.Creature, this);
     }
 
-    public async Task OnConsumed(PlayerChoiceContext choiceContext, Player player, CardModel card)
+    public async Task OnConsumed(PlayerChoiceContext choiceContext, Player player, CardModel consumedCard)
     {
-        if (card == this)
+        if (consumedCard == this)
             await PowerCmd.Apply<HistoricalGapPower>(choiceContext, CombatState.HittableEnemies, DynamicVars["Consumed"].BaseValue, Owner.Creature, this);
     }
 }

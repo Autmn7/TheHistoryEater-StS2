@@ -16,7 +16,7 @@ public class Flow : KeineModCard, IOnConsumed
 {
     private bool ToDrawByEthereal { get; set; }
 
-    public Flow() : base(-1, CardType.Status, CardRarity.Token, TargetType.Self)
+    public Flow() : base(-1, CardType.Status, CardRarity.Status, TargetType.Self)
     {
         WithKeywords(CardKeyword.Unplayable, CardKeyword.Ethereal);
         WithTip(KeineModKeywords.Consume);
@@ -24,9 +24,9 @@ public class Flow : KeineModCard, IOnConsumed
 
     public override int MaxUpgradeLevel => 0;
 
-    public async Task OnConsumed(PlayerChoiceContext choiceContext, Player player, CardModel card)
+    public async Task OnConsumed(PlayerChoiceContext choiceContext, Player player, CardModel consumedCard)
     {
-        if (card == this)
+        if (consumedCard == this)
             await CardCmd.Exhaust(choiceContext, this);
     }
 

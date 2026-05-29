@@ -19,13 +19,13 @@ public class KeineModKeywords
 
     [CustomEnum] [KeywordProperties(AutoKeywordPosition.None)]
     public static CardKeyword Hakutaku;
-    
+
     [CustomEnum] [KeywordProperties(AutoKeywordPosition.None)]
     public static CardKeyword Fullmoon;
 
     [CustomEnum] [KeywordProperties(AutoKeywordPosition.Before)]
     public static CardKeyword Knowledgeable;
-    
+
     [CustomEnum] [KeywordProperties(AutoKeywordPosition.Before)]
     public static CardKeyword Sacredscroll;
 }

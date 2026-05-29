@@ -39,7 +39,7 @@ public class ReshapeHistory : KeineModCard
             if (IsUpgraded)
                 foreach (var treasure in treasures)
                     CardCmd.Upgrade(treasure);
-            var created = await CardSelectCmd.FromChooseACardScreen(choiceContext, treasures, Owner);
+            var created = await CardSelectCmd.FromChooseACardScreen(choiceContext, treasures, Owner, true);
             await CreateCmd.Execute(created, Owner);
         }
     }

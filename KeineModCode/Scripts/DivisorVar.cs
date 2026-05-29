@@ -18,10 +18,7 @@ public class DivisorVar : DynamicVar
     /// </summary>
     protected override decimal GetBaseValueForIConvertible()
     {
-        if (_owner is PowerModel power)
-        {
-            return (decimal)Math.Floor(power.Amount / (double)_divisor);
-        }
+        if (_owner is PowerModel power) return (decimal)Math.Floor(power.Amount / (double)_divisor);
         return base.GetBaseValueForIConvertible();
     }
 

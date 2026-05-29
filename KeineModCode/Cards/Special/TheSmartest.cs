@@ -20,10 +20,9 @@ public class TheSmartest : KeineModCard, IOnConsumed
         WithTip(typeof(TheStrongest));
     }
 
-    public async Task OnConsumed(PlayerChoiceContext choiceContext, Player player, CardModel card)
+    public async Task OnConsumed(PlayerChoiceContext choiceContext, Player player, CardModel consumedCard)
     {
-        if (card != this)
-            return;
+        if (consumedCard != this) return;
         if (EnergyCost.GetResolved() <= 0)
         {
             CardModel strongest = CombatState.CreateCard<TheStrongest>(Owner);

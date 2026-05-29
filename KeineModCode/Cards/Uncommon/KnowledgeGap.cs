@@ -10,7 +10,7 @@ public class KnowledgeGap : KeineModCard
 {
     public KnowledgeGap() : base(2, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
-        WithDamage(8, 4);
+        WithDamage(10, 4);
         WithVar("Ratio", 2);
         WithKeywords(KeineModKeywords.Knowledgeable);
         WithTip(typeof(HistoricalGapPower));

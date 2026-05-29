@@ -24,7 +24,7 @@ public static class ConsumeCmd
         {
             if (shouldUpgrade)
                 CardCmd.Upgrade(consumedCard);
-            if (consumedCard is not (Flow or Fatigue) && (consumedCard is not TheSmartest || consumedCard.EnergyCost.GetResolved() <= 0)) await CardPileCmd.Add(consumedCard, ScrollPile.Scroll);
+            if (consumedCard is not Flow && (consumedCard is not TheSmartest || consumedCard.EnergyCost.GetResolved() <= 0)) await CardPileCmd.Add(consumedCard, ScrollPile.Scroll);
             KeineConstantsStateRegistry.Get(player).IncrementCardsConsumed(1);
             await KeineHooks.OnConsumed(choiceContext, player, consumedCard);
         }
@@ -34,7 +34,7 @@ public static class ConsumeCmd
 
     public static async Task<IEnumerable<CardModel>> FromHandUpTo(PlayerChoiceContext choiceContext, Player player, int amount, AbstractModel source, bool shouldUpgrade = false)
     {
-        if (CombatManager.Instance.IsOverOrEnding ||  amount <= 0)
+        if (CombatManager.Instance.IsOverOrEnding || amount <= 0)
             return [];
         var prefs = new CardSelectorPrefs(new LocString("card_selection", "TO_CONSUME_UPTO_KEINE"), 0, amount);
         var list = (await CardSelectCmd.FromHand(choiceContext, player, prefs, null, source)).ToList();
@@ -42,7 +42,7 @@ public static class ConsumeCmd
         {
             if (shouldUpgrade)
                 CardCmd.Upgrade(consumedCard);
-            if (consumedCard is not (Flow or Fatigue) && (consumedCard is not TheSmartest || consumedCard.EnergyCost.GetResolved() <= 0)) await CardPileCmd.Add(consumedCard, ScrollPile.Scroll);
+            if (consumedCard is not Flow && (consumedCard is not TheSmartest || consumedCard.EnergyCost.GetResolved() <= 0)) await CardPileCmd.Add(consumedCard, ScrollPile.Scroll);
             KeineConstantsStateRegistry.Get(player).IncrementCardsConsumed(1);
             await KeineHooks.OnConsumed(choiceContext, player, consumedCard);
         }
@@ -60,7 +60,7 @@ public static class ConsumeCmd
         {
             if (shouldUpgrade)
                 CardCmd.Upgrade(consumedCard);
-            if (consumedCard is not (Flow or Fatigue) && (consumedCard is not TheSmartest || consumedCard.EnergyCost.GetResolved() <= 0)) await CardPileCmd.Add(consumedCard, ScrollPile.Scroll);
+            if (consumedCard is not Flow && (consumedCard is not TheSmartest || consumedCard.EnergyCost.GetResolved() <= 0)) await CardPileCmd.Add(consumedCard, ScrollPile.Scroll);
             KeineConstantsStateRegistry.Get(player).IncrementCardsConsumed(1);
             await KeineHooks.OnConsumed(choiceContext, player, consumedCard);
         }
@@ -75,9 +75,22 @@ public static class ConsumeCmd
         var hand = PileType.Hand.GetPile(player).Cards.ToList();
         foreach (var consumedCard in hand)
         {
-            if (consumedCard is not (Flow or Fatigue) && (consumedCard is not TheSmartest || consumedCard.EnergyCost.GetResolved() <= 0)) await CardPileCmd.Add(consumedCard, ScrollPile.Scroll);
+            if (consumedCard is not Flow && (consumedCard is not TheSmartest || consumedCard.EnergyCost.GetResolved() <= 0)) await CardPileCmd.Add(consumedCard, ScrollPile.Scroll);
             KeineConstantsStateRegistry.Get(player).IncrementCardsConsumed(1);
             await KeineHooks.OnConsumed(choiceContext, player, consumedCard);
         }
+    }
+
+    public static async Task<CardModel?> SpecificCard(CardModel? consumedCard, PlayerChoiceContext choiceContext, Player player, AbstractModel source, bool shouldUpgrade = false)
+    {
+        if (CombatManager.Instance.IsOverOrEnding || consumedCard == null)
+            return null;
+        if (shouldUpgrade)
+            CardCmd.Upgrade(consumedCard);
+        if (consumedCard is not Flow && (consumedCard is not TheSmartest || consumedCard.EnergyCost.GetResolved() <= 0)) await CardPileCmd.Add(consumedCard, ScrollPile.Scroll);
+        KeineConstantsStateRegistry.Get(player).IncrementCardsConsumed(1);
+        await KeineHooks.OnConsumed(choiceContext, player, consumedCard);
+
+        return consumedCard;
     }
 }

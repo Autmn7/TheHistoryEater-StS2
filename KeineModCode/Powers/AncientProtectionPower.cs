@@ -16,7 +16,7 @@ public class AncientProtectionPower : KeineModPower, IOnConsumed
 
     public async Task OnConsumed(PlayerChoiceContext choiceContext, Player player, CardModel consumedCard)
     {
-        if (consumedCard.Owner.Creature != Owner || CombatState.CurrentSide != Owner.Side)
+        if (consumedCard.Owner.Creature != Owner || player.Creature != Owner)
             return;
         await CreatureCmd.GainBlock(Owner, Amount, ValueProp.Unpowered, null);
     }

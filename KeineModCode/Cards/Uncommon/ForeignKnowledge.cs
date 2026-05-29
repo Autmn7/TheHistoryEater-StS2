@@ -36,7 +36,7 @@ public class ForeignKnowledge : KeineModCard
         var choices = CardFactory.GetDistinctForCombat(Owner, attackPool, 3, Owner.RunState.Rng.CombatCardGeneration).ToList();
 
         // Open the selection screen and wait for the player to choose a card
-        var chosenCard = await CardSelectCmd.FromChooseACardScreen(choiceContext, choices, Owner);
+        var chosenCard = await CardSelectCmd.FromChooseACardScreen(choiceContext, choices, Owner, true);
 
         // Create the chosen card into the player's hand with the Knowledgeable keyword applied
         if (chosenCard != null) await CreateCmd.Execute(chosenCard, Owner, false, PileType.Hand, true);

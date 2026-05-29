@@ -22,10 +22,9 @@ public class ScrollOfValor : KeineModCard, IOnConsumed
         WithTip(typeof(HeavenlySword));
     }
 
-    public async Task OnConsumed(PlayerChoiceContext choiceContext, Player player, CardModel card)
+    public async Task OnConsumed(PlayerChoiceContext choiceContext, Player player, CardModel consumedCard)
     {
-        if (card != this)
-            return;
+        if (consumedCard != this) return;
         await PowerCmd.Apply<ValorPower>(choiceContext, Owner.Creature, DynamicVars["ValorPower"].BaseValue, Owner.Creature, this);
         CardModel sword = CombatState.CreateCard<HeavenlySword>(Owner);
         await CardCmd.Transform(this, sword, CardPreviewStyle.None);

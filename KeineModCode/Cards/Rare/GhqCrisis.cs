@@ -21,11 +21,11 @@ public class GhqCrisis : KeineModCard, IOnConsumed
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        List<CardModel> list = ScrollPile.Scroll.GetPile(Owner).Cards.ToList();
-        int cardCount = list.Count;
-        foreach (CardModel card in list)
+        var list = ScrollPile.Scroll.GetPile(Owner).Cards.ToList();
+        var cardCount = list.Count;
+        foreach (var card in list)
             await CardCmd.Exhaust(choiceContext, card);
-        await DamageCmd.Attack(DynamicVars.Damage.BaseValue).WithHitCount(cardCount).FromCard(this).Targeting(cardPlay.Target).Execute(choiceContext);
+        await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target).WithHitCount(cardCount).Execute(choiceContext);
     }
 
     public Task OnConsumed(PlayerChoiceContext choiceContext, Player player, CardModel consumedCard)

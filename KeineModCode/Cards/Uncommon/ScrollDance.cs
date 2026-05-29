@@ -1,4 +1,5 @@
-﻿using KeineMod.KeineModCode.Powers;
+﻿using KeineMod.KeineModCode.Cards.Special;
+using KeineMod.KeineModCode.Powers;
 using KeineMod.KeineModCode.Scripts;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -11,8 +12,11 @@ public class ScrollDance : KeineModCard
     public ScrollDance() : base(1, CardType.Power, CardRarity.Uncommon, TargetType.Self)
     {
         WithVar("ScrollDancePower", 1);
-        WithTip(KeineModKeywords.Consume);
+        WithTip(KeineModKeywords.Create);
         WithKeyword(CardKeyword.Innate, UpgradeType.Add);
+        WithTip(typeof(ScrollOfValor));
+        WithTip(typeof(ScrollOfBenevolence));
+        WithTip(typeof(ScrollOfWisdom));
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

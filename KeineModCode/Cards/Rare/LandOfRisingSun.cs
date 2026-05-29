@@ -27,14 +27,15 @@ public class LandOfRisingSun : KeineModCard
     {
         if (InHakutaku())
         {
-            NGrandFinaleVfx child = NGrandFinaleVfx.Create(Owner.Creature);
+            var child = NGrandFinaleVfx.Create(Owner.Creature);
             if (child != null)
             {
-                NCombatRoom instance = NCombatRoom.Instance;
+                var instance = NCombatRoom.Instance;
                 if (instance != null)
-                    instance.CombatVfxContainer.AddChildSafely((Node) child);
+                    instance.CombatVfxContainer.AddChildSafely((Node)child);
                 await Cmd.Wait(NGrandFinaleVfx.totalAnticipationDuration);
             }
+
             await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this).TargetingAllOpponents(CombatState).WithHitVfxNode((Func<Creature, Node2D>)(t => (Node2D)NFireBurstVfx.Create(t, 1.0f))).Execute(choiceContext);
             await StanceCmd.ExitStance(choiceContext, Owner, this);
             await PowerCmd.Apply<SunrisePower>(choiceContext, Owner.Creature, DynamicVars["SunrisePower"].BaseValue, Owner.Creature, this);

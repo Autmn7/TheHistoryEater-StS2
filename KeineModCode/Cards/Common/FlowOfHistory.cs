@@ -32,9 +32,9 @@ public class FlowOfHistory : KeineModCard, IOnConsumed
         }
     }
 
-    public async Task OnConsumed(PlayerChoiceContext choiceContext, Player player, CardModel card)
+    public async Task OnConsumed(PlayerChoiceContext choiceContext, Player player, CardModel consumedCard)
     {
-        if (card == this)
+        if (consumedCard == this)
             await CardPileCmd.Draw(choiceContext, DynamicVars["Consumed"].BaseValue, Owner);
     }
 }

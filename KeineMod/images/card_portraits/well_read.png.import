@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bt2xc5x01qkjf"
-path="res://.godot/imported/elegance.png-eae26baf3bb2b964aa52eeec16bb4a86.ctex"
+uid="uid://2wsjfxe5vvq4"
+path="res://.godot/imported/well_read.png-6dbbdccb93368b984897dd5984d771c4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://KeineMod/images/card_portraits/elegance.png"
-dest_files=["res://.godot/imported/elegance.png-eae26baf3bb2b964aa52eeec16bb4a86.ctex"]
+source_file="res://KeineMod/images/card_portraits/well_read.png"
+dest_files=["res://.godot/imported/well_read.png-6dbbdccb93368b984897dd5984d771c4.ctex"]
 
 [params]
 

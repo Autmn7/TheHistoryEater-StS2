@@ -1,4 +1,5 @@
-﻿using KeineMod.KeineModCode.UIs;
+﻿using KeineMod.KeineModCode.Scripts;
+using KeineMod.KeineModCode.UIs;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -6,12 +7,13 @@ using MegaCrit.Sts2.Core.Models;
 
 namespace KeineMod.KeineModCode.Cards.Common;
 
-public class Elegance : KeineModCard
+public class WellRead : KeineModCard
 {
-    public Elegance() : base(3, CardType.Skill, CardRarity.Basic, TargetType.Self)
+    public WellRead() : base(3, CardType.Skill, CardRarity.Basic, TargetType.Self)
     {
-        WithBlock(11, 4);
+        WithBlock(10, 4);
         WithEnergy(1);
+        WithKeyword(KeineModKeywords.Knowledgeable);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

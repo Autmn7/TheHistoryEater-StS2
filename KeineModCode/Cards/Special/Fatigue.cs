@@ -13,7 +13,7 @@ namespace KeineMod.KeineModCode.Cards.Special;
 [Pool(typeof(TokenCardPool))]
 public class Fatigue : KeineModCard, IOnConsumed
 {
-    public Fatigue() : base(-1, CardType.Status, CardRarity.Token, TargetType.Self)
+    public Fatigue() : base(-1, CardType.Status, CardRarity.Status, TargetType.Self)
     {
         WithKeywords(CardKeyword.Unplayable);
         WithTip(KeineModKeywords.Consume);
@@ -21,15 +21,9 @@ public class Fatigue : KeineModCard, IOnConsumed
 
     public override int MaxUpgradeLevel => 0;
 
-    public async Task OnConsumed(PlayerChoiceContext choiceContext, Player player, CardModel card)
+    public async Task OnConsumed(PlayerChoiceContext choiceContext, Player player, CardModel consumedCard)
     {
-        if (card == this)
-            await CardCmd.Exhaust(choiceContext, this);
-    }
-
-    public override async Task AfterCardExhausted(PlayerChoiceContext choiceContext, CardModel card, bool causedByEthereal)
-    {
-        if (card == this)
+        if (consumedCard == this)
             await PowerCmd.Apply<FatiguePower>(choiceContext, Owner.Creature, 1, Owner.Creature, this);
     }
 }
