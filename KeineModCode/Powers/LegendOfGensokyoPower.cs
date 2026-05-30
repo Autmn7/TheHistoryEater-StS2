@@ -26,7 +26,13 @@ public class LegendOfGensokyoPower : KeineModPower
             if (otherPools.Count > 1) otherPools.Remove(Owner.Player.Character.CardPool);
 
             // Flatten all available card options from the other characters
-            var allOtherCards = otherPools.SelectMany(pool => pool.AllCards);
+            var allOtherCards = otherPools.SelectMany(pool => pool.AllCards).Where(c =>
+                // 1. Osty Rule: If it's an Attack, it's only allowed if it's NOT an OstyAttack OR Osty is alive.
+                // Non-attack cards (Skills, Powers) ignore this rule completely.
+                (c.Type != CardType.Attack || !c.Tags.Contains(CardTag.OstyAttack) || Owner.Player.IsOstyAlive) &&
+                // 2. Star Rule: Only include cards where the player can actually afford the base star cost.
+                c.BaseStarCost <= Owner.Player.PlayerCombatState?.Stars
+            );
 
             // Roll 3 distinct random Attack cards based on combat RNG seed
             var choices = CardFactory.GetDistinctForCombat(Owner.Player, allOtherCards, 3, Owner.Player.RunState.Rng.CombatCardGeneration).ToList();

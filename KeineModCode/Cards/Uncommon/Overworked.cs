@@ -13,7 +13,7 @@ public class Overworked : KeineModCard
 {
     public Overworked() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
-        WithBlock(10, 4);
+        WithBlock(11, 4);
         WithPower<KnowledgePower>(1);
         WithKeywords(KeineModKeywords.Knowledgeable, KeineModKeywords.Create);
         WithTip(typeof(Fatigue));

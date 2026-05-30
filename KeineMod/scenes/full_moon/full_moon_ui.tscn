@@ -6,16 +6,15 @@
 [node name="FullMoonRoot" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 80.0
-offset_bottom = 80.0
-pivot_offset = Vector2(40, 40)
+offset_right = 70.0
+offset_bottom = 70.0
+pivot_offset = Vector2(35, 35)
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
 [node name="NFullMoonController" type="Control" parent="."]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+mouse_filter = 2
 script = ExtResource("1_ibf5h")
 
 [node name="Icon" type="TextureRect" parent="."]
@@ -25,8 +24,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.75, 0.75)
-pivot_offset = Vector2(40, 40)
+scale = Vector2(0.9, 0.9)
+pivot_offset = Vector2(35, 35)
 mouse_filter = 2
 texture = ExtResource("2_ibf5h")
 expand_mode = 2
@@ -72,7 +71,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 0.964706, 0.886275, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.12549)
-theme_override_colors/font_outline_color = Color(0.532586, 0.122998, 0.123998, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/outline_size = 12

@@ -1,6 +1,8 @@
 using Godot;
+using KeineMod.KeineModCode.Core;
 using KeineMod.KeineModCode.Powers;
 using KeineMod.KeineModCode.Scripts;
+using KeineMod.KeineModCode.Stances;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Context;
 using MegaCrit.Sts2.Core.Entities.Players;
@@ -10,32 +12,36 @@ namespace KeineMod.KeineModCode.UIs;
 
 public partial class NFullMoonController : Control
 {
-    public Player? _player;
+    private Player? _player;
     private Control _ui;
     private Label? _countLabel;
+    private TextureRect? _icon;
+
+    // Hover Scaling Variables
+    private readonly Vector2 _baseScale = new(1.5f, 1.5f);
+    private readonly Vector2 _hoverScale = new(1.7f, 1.7f); // Scales up slightly on hover
+    private Vector2 _targetScale;
 
     public override void _Ready()
     {
         _ui = GetParent<Control>();
         _countLabel = _ui.GetNodeOrNull<Label>((NodePath)"Count") ?? _ui.GetNodeOrNull<Label>((NodePath)"CountContainer/Count");
-        _ui.Scale = new Vector2(1.5f, 1.5f);
+        _icon = _ui.GetNodeOrNull<TextureRect>((NodePath)"Icon");
+        _targetScale = _baseScale;
+        _ui.Scale = _baseScale;
         _ui.MouseFilter = MouseFilterEnum.Stop;
-        _ui.GuiInput += new GuiInputEventHandler(OnGuiInput);
+        _ui.GuiInput += OnGuiInput;
+        _ui.MouseEntered += () => _targetScale = _hoverScale;
+        _ui.MouseExited += () => _targetScale = _baseScale;
     }
 
-    // ⚡ 改造重点 1：去掉了 async 关键字
-    // 因为前端 UI 现在只负责“发送点击请求”，不再直接等待后端的异步命令执行完毕。
     private void OnGuiInput(InputEvent @event)
     {
         if (_player == null || @event is not InputEventMouseButton { ButtonIndex: MouseButton.Left, Pressed: true } || !LocalContext.IsMe(_player) || !CombatManager.Instance.IsPartOfPlayerTurn(_player))
             return;
 
         var fullMoonUi = KeineConstantsStateRegistry.Get(_player);
-        if (fullMoonUi.CanUse(_player))
-            // 🚀 【核心改变】：将动作打包，丢进联机同步队列
-            // 游戏底层会自动调用该 Action 的 ToNetAction() 将其广播给所有玩家，
-            // 所有人（包括你自己）的后端队列都会收到这个 Action，并严格同步地执行扣层数和加能力。
-            RunManager.Instance.ActionQueueSynchronizer.RequestEnqueue(new UseFullMoonAction(_player));
+        if (fullMoonUi.CanUse(_player)) RunManager.Instance.ActionQueueSynchronizer.RequestEnqueue(new UseFullMoonAction(_player));
     }
 
     public override void _Process(double delta)
@@ -50,10 +56,37 @@ public partial class NFullMoonController : Control
         else
         {
             _ui.Visible = true;
-            // 每帧自动从 Registry 读取最新的层数并刷新显示
-            // 因为 Action 执行时所有人的 Registry 都会同步更新，所以这里的 UI 刷新在所有人电脑上都是准确的。
+
+            // Smoothly interpolate UI scale for the hover animation
+            _ui.Scale = _ui.Scale.Lerp(_targetScale, (float)delta * 12f);
+
+            var registry = KeineConstantsStateRegistry.Get(_player);
+            var charge = registry.FullMoonCharge;
+
             if (_countLabel != null)
-                _countLabel.Text = KeineConstantsStateRegistry.Get(_player).FullMoonCharge.ToString();
+                _countLabel.Text = charge.ToString();
+
+            // --- VISUAL LOGIC ---
+            if (_icon != null)
+            {
+                var isHakutaku = KeineModel.IsInStance<HakutakuForm>(_player);
+
+                if (isHakutaku)
+                {
+                    _icon.Rotation += (float)delta * 0.4f;
+                    _icon.Modulate = Colors.White;
+                }
+                else if (charge > 0)
+                {
+                    _icon.Rotation += (float)delta * 0.2f;
+                    _icon.Modulate = new Color(0.93f, 0.95f, 0.62f);
+                }
+                else
+                {
+                    _icon.Modulate = new Color(0.4f, 0.4f, 0.4f);
+                }
+            }
+
             _ui.Modulate = Colors.White;
         }
     }

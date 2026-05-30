@@ -60,7 +60,7 @@
   "KEINEMOD-TREASURE_OF_WISDOM_POWER.smartDescription": "你的[gold]八咫镜[/gold]耗能减[blue]{Amount}[/blue]。",
   "KEINEMOD-TREASURE_OF_WISDOM_POWER.title": "智之神器",
   "KEINEMOD-TREASURE_OF_COUNTRY_POWER.description": "",
-  "KEINEMOD-TREASURE_OF_COUNTRY_POWER.smartDescription": "每当你[gold]吞噬[/gold]一张[gold]神器卷轴[/gold]时，获得[blue]{Amount}[/blue]点其对应的[gold]神器之力[/gold]。",
+  "KEINEMOD-TREASURE_OF_COUNTRY_POWER.smartDescription": "每当你[gold]吞噬[/gold]一张[gold]神器卷轴[/gold]时，获得[blue]{Amount}[/blue]点其[gold]神器之力[/gold]。",
   "KEINEMOD-TREASURE_OF_COUNTRY_POWER.title": "国之神器",
   "KEINEMOD-KNOWLEDGE_BASE_POWER.description": "",
   "KEINEMOD-KNOWLEDGE_BASE_POWER.smartDescription": "每当你生成一张非状态或诅咒的牌，获得[blue]{Amount}[/blue]点[gold]知识[/gold]。",

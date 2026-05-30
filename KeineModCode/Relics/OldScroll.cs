@@ -18,7 +18,7 @@ public class OldScroll : KeineModRelic
 {
     public override RelicRarity Rarity => RelicRarity.Starter;
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new CardsVar(1), new PowerVar<TimeShiftPower>(3)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<TimeShiftPower>(3)];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
@@ -29,7 +29,7 @@ public class OldScroll : KeineModRelic
 
     public override async Task AfterRoomEntered(AbstractRoom room)
     {
-        if (!(room is CombatRoom))
+        if (room is not CombatRoom)
             return;
         Flash();
         await PowerCmd.Apply<TimeShiftPower>(new ThrowingPlayerChoiceContext(), Owner.Creature, DynamicVars["TimeShiftPower"].BaseValue, Owner.Creature, null);
@@ -44,5 +44,10 @@ public class OldScroll : KeineModRelic
             return;
         CardModel created = Owner.Creature.CombatState.CreateCard<ScrollOfValor>(Owner);
         await CreateCmd.Execute(created, Owner);
+    }
+
+    public override RelicModel GetUpgradeReplacement()
+    {
+        return ModelDb.Relic<EnchantedScroll>();
     }
 }

@@ -14,7 +14,7 @@ public class Intertwined : KeineModCard
 {
     public Intertwined() : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
     {
-        WithEnergy(1, 1);
+        WithEnergy(1);
         WithTip(new TooltipSource(card => HoverTipFactory.FromCard<ScrollOfBenevolence>(card.IsUpgraded)));
         WithTip(new TooltipSource(card => HoverTipFactory.FromCard<ScrollOfValor>(card.IsUpgraded)));
     }

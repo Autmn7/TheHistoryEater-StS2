@@ -1,13 +1,10 @@
-﻿using BaseLib.Utils;
-using KeineMod.KeineModCode.Cards.Special;
+﻿using KeineMod.KeineModCode.Cards.Special;
 using KeineMod.KeineModCode.Commands;
 using KeineMod.KeineModCode.Powers;
 using KeineMod.KeineModCode.Scripts;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.HoverTips;
-using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Models;
 
 namespace KeineMod.KeineModCode.Cards.Rare;
@@ -18,11 +15,10 @@ public class ThreeSacredTreasuresCountry : KeineModCard
     {
         WithVar("TreasureOfCountryPower", 1);
         WithKeyword(CardKeyword.Innate, UpgradeType.Add);
-        WithKeyword(KeineModKeywords.Create);
+        WithKeywords(KeineModKeywords.Create, KeineModKeywords.Sacredpower);
         WithTip(typeof(ScrollOfValor));
         WithTip(typeof(ScrollOfBenevolence));
         WithTip(typeof(ScrollOfWisdom));
-        WithTip(new TooltipSource(card => new HoverTip(new LocString("cards", Id.Entry + ".extraTipTitle"), new LocString("cards", Id.Entry + ".extraTipDescription"))));
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

@@ -20,13 +20,13 @@ public class EphemeralityPower : KeineModPower
         switch (Amount)
         {
             case 1:
-                await PowerCmd.Apply<WeakPower>(new ThrowingPlayerChoiceContext(), Owner, 1, Owner, null);
+                await PowerCmd.Apply<WeakPower>(choiceContext, Owner, 1, null, null);
                 break;
             case 3:
-                await PowerCmd.Apply<StrengthPower>(new ThrowingPlayerChoiceContext(), Owner, -3, Owner, null);
+                await PowerCmd.Apply<StrengthPower>(choiceContext, Owner, -3, null, null);
                 break;
             case 7:
-                await PowerCmd.Apply<DisintegrationPower>(new ThrowingPlayerChoiceContext(), Owner, 137, Owner, null);
+                await PowerCmd.Apply<DisintegrationPower>(choiceContext, Owner, 137, null, null);
                 break;
         }
     }

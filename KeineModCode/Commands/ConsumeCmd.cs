@@ -81,7 +81,7 @@ public static class ConsumeCmd
         }
     }
 
-    public static async Task<CardModel?> SpecificCard(CardModel? consumedCard, PlayerChoiceContext choiceContext, Player player, AbstractModel source, bool shouldUpgrade = false)
+    public static async Task<CardModel?> SpecificCard(PlayerChoiceContext choiceContext, CardModel? consumedCard, Player player, AbstractModel source, bool shouldUpgrade = false)
     {
         if (CombatManager.Instance.IsOverOrEnding || consumedCard == null)
             return null;

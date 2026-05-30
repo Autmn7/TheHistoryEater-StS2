@@ -21,6 +21,6 @@ public class PassageOfTime : KeineModCard
         await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.BaseValue, Owner);
         await PowerCmd.Apply<TimeShiftPower>(choiceContext, Owner.Creature, DynamicVars["TimeShiftPower"].BaseValue, Owner.Creature, this);
         if (InHuman())
-            await ConsumeCmd.SpecificCard(this, choiceContext, Owner, this);
+            await ConsumeCmd.SpecificCard(choiceContext, this, Owner, this);
     }
 }

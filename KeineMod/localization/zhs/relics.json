@@ -1,5 +1,8 @@
 {
-  "KEINEMOD-OLD_SCROLL.description": "战斗开始时，[gold]时移[/gold][blue]{TimeShiftPower}[/blue]并[gold]创造[/gold][blue]{Cards}[/blue]张[gold]勇之卷轴[/gold]。",
+  "KEINEMOD-OLD_SCROLL.description": "战斗开始时，[gold]时移[/gold][blue]{TimeShiftPower}[/blue]，[gold]创造[/gold][blue]1[/blue]张[gold]勇之卷轴[/gold]。",
   "KEINEMOD-OLD_SCROLL.flavor": "",
-  "KEINEMOD-OLD_SCROLL.title": "古老卷轴"
+  "KEINEMOD-OLD_SCROLL.title": "古老卷轴",
+  "KEINEMOD-ENCHANTED_SCROLL.description": "战斗开始时，[gold]时移[/gold][blue]{TimeShiftPower}[/blue]，选择并[gold]创造[/gold][blue]1[/blue]张已[gold]升级[/gold]的[gold]神器卷轴[/gold]，获得[blue]{SacredPower}[/blue]点其[gold]神器之力[/gold]。",
+  "KEINEMOD-ENCHANTED_SCROLL.flavor": "",
+  "KEINEMOD-ENCHANTED_SCROLL.title": "附魔卷轴"
 }

@@ -1,35 +1,42 @@
 using Godot;
+using KeineMod.KeineModCode.Scripts;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Nodes.Screens;
-using MegaCrit.Sts2.Core.Runs;
 
 namespace KeineMod.KeineModCode.UIs;
 
 public partial class NScrollPileController : Control
 {
-    public Player? _player;
+    private Player? _player;
     private Control _ui;
     private Label? _countLabel;
+
+    // Hover Scaling Variables
+    private readonly Vector2 _baseScale = new(1.5f, 1.5f);
+    private readonly Vector2 _hoverScale = new(1.7f, 1.7f); // Scales up slightly on hover
+    private Vector2 _targetScale;
 
     public override void _Ready()
     {
         _ui = GetParent<Control>();
         _countLabel = _ui.GetNodeOrNull<Label>((NodePath)"Count") ?? _ui.GetNodeOrNull<Label>((NodePath)"CountContainer/Count");
-        _ui.Scale = new Vector2(1.5f, 1.5f);
+        _targetScale = _baseScale;
+        _ui.Scale = _baseScale;
         _ui.MouseFilter = MouseFilterEnum.Stop;
-        _ui.GuiInput += new GuiInputEventHandler(OnGuiInput);
+        _ui.GuiInput += OnGuiInput;
+        _ui.MouseEntered += () => _targetScale = _hoverScale;
+        _ui.MouseExited += () => _targetScale = _baseScale;
     }
 
     private void OnGuiInput(InputEvent @event)
     {
-        if (!(@event is InputEventMouseButton eventMouseButton) || eventMouseButton.ButtonIndex != MouseButton.Left || !eventMouseButton.Pressed)
+        if (_player == null || @event is not InputEventMouseButton { ButtonIndex: MouseButton.Left, Pressed: true })
             return;
-        var state = RunManager.Instance.State;
-        var scrollPile = _player != null ? ScrollPile.Scroll.GetPile(_player) : (CardPile)null;
-        if (scrollPile != null && !scrollPile.IsEmpty)
+        var scrollPile = _player != null ? ScrollPile.Scroll.GetPile(_player) : null;
+        if (scrollPile is { IsEmpty: false })
         {
-            NCardPileScreen.ShowScreen(scrollPile, new string[0]);
+            NCardPileScreen.ShowScreen(scrollPile, []);
             _ui.GetViewport().SetInputAsHandled();
         }
     }
@@ -39,15 +46,15 @@ public partial class NScrollPileController : Control
         if (_player == null)
             return;
         base._Process(delta);
-        var state = RunManager.Instance.State;
-        var scrollPile = _player != null ? ScrollPile.Scroll.GetPile(_player) : (CardPile)null;
-        if (scrollPile == null || scrollPile.IsEmpty)
+        var scrollPile = _player != null ? ScrollPile.Scroll.GetPile(_player) : null;
+        if (scrollPile == null || KeineConstantsStateRegistry.Get(_player).CardsConsumedThisCombat <= 0)
         {
             _ui.Visible = false;
         }
         else
         {
             _ui.Visible = true;
+            _ui.Scale = _ui.Scale.Lerp(_targetScale, (float)delta * 12f);
             if (_countLabel != null)
                 _countLabel.Text = scrollPile.Cards.Count.ToString();
             _ui.Modulate = Colors.White;

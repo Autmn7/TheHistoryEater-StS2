@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brbgvxbhh44go"
-path="res://.godot/imported/stacked_workload.png-f6cc232fadf85d0de9a1b6cc91111cb8.ctex"
+uid="uid://fb613fkp8udb"
+path="res://.godot/imported/human_form.png-cde1be6dc533a448a8a84ff95256db1c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://KeineMod/images/card_portraits/stacked_workload.png"
-dest_files=["res://.godot/imported/stacked_workload.png-f6cc232fadf85d0de9a1b6cc91111cb8.ctex"]
+source_file="res://KeineMod/scenes/visual/human_form.png"
+dest_files=["res://.godot/imported/human_form.png-cde1be6dc533a448a8a84ff95256db1c.ctex"]
 
 [params]
 

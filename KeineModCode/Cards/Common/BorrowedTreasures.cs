@@ -10,10 +10,10 @@ namespace KeineMod.KeineModCode.Cards.Common;
 
 public class BorrowedTreasures : KeineModCard
 {
-    public BorrowedTreasures() : base(0, CardType.Skill, CardRarity.Common, TargetType.Self)
+    public BorrowedTreasures() : base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
     {
+        WithDamage(9, 3);
         WithKeywords(KeineModKeywords.Create);
-        WithKeyword(CardKeyword.Exhaust, UpgradeType.Remove);
         WithTip(typeof(ScrollOfValor));
         WithTip(typeof(ScrollOfBenevolence));
         WithTip(typeof(ScrollOfWisdom));
@@ -21,12 +21,14 @@ public class BorrowedTreasures : KeineModCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+        await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
         List<CardModel> treasures =
         [
             CombatState.CreateCard<ScrollOfValor>(Owner),
-            CombatState.CreateCard<ScrollOfBenevolence>(Owner),
-            CombatState.CreateCard<ScrollOfWisdom>(Owner)
+            CombatState.CreateCard<ScrollOfBenevolence>(Owner)
         ];
+        if (IsUpgraded)
+            treasures.AddRange(CombatState.CreateCard<ScrollOfWisdom>(Owner));
         var created = await CardSelectCmd.FromChooseACardScreen(choiceContext, treasures, Owner, true);
         await CreateCmd.Execute(created, Owner);
     }

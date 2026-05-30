@@ -60,7 +60,7 @@
   "KEINEMOD-TREASURE_OF_WISDOM_POWER.smartDescription": "Your [gold]Eight-Span Mirrors[/gold] cost [blue]{Amount}[/blue] less.",
   "KEINEMOD-TREASURE_OF_WISDOM_POWER.title": "Treasure of Wisdom",
   "KEINEMOD-TREASURE_OF_COUNTRY_POWER.description": "",
-  "KEINEMOD-TREASURE_OF_COUNTRY_POWER.smartDescription": "Whenever you [gold]Consume[/gold] a [gold]Sacred Scroll[/gold], gain [blue]{Amount}[/blue] of its corresponding [gold]Sacred Power[/gold].",
+  "KEINEMOD-TREASURE_OF_COUNTRY_POWER.smartDescription": "Whenever you [gold]Consume[/gold] a [gold]Sacred Scroll[/gold], gain [blue]{Amount}[/blue] of its [gold]Sacred Power[/gold].",
   "KEINEMOD-TREASURE_OF_COUNTRY_POWER.title": "Treasure of Country",
   "KEINEMOD-KNOWLEDGE_BASE_POWER.description": "",
   "KEINEMOD-KNOWLEDGE_BASE_POWER.smartDescription": "Whenever you generate a card that is not a Status or Curse, gain [blue]{Amount}[/blue] [gold]Knowledge[/gold].",

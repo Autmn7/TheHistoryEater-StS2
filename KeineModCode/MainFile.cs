@@ -74,7 +74,7 @@ public partial class MainFile : Node
 
             __instance.EnergyCounterContainer.AddChild(control);
 
-            control.Position = new Vector2(140f, -40f);
+            control.Position = new Vector2(-80f, -40f);
 
             var controller =
                 control.GetNode<NScrollPileController>("NScrollPileController");
@@ -106,7 +106,7 @@ public partial class MainFile : Node
 
             __instance.EnergyCounterContainer.AddChild(control);
 
-            control.Position = new Vector2(140f, 60f);
+            control.Position = new Vector2(125f, -40f);
 
             var controller =
                 control.GetNode<NFullMoonController>("NFullMoonController");

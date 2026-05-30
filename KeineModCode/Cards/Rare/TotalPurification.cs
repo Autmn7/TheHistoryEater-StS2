@@ -25,13 +25,13 @@ public class TotalPurification : KeineModCard
             var discard = PileType.Discard.GetPile(Owner).Cards.ToList();
             foreach (var card in hand)
                 if (card is { Type: CardType.Status or CardType.Curse })
-                    await ConsumeCmd.SpecificCard(card, choiceContext, Owner, this);
+                    await ConsumeCmd.SpecificCard(choiceContext, card, Owner, this);
             foreach (var card in draw)
                 if (card is { Type: CardType.Status or CardType.Curse })
-                    await ConsumeCmd.SpecificCard(card, choiceContext, Owner, this);
+                    await ConsumeCmd.SpecificCard(choiceContext, card, Owner, this);
             foreach (var card in discard)
                 if (card is { Type: CardType.Status or CardType.Curse })
-                    await ConsumeCmd.SpecificCard(card, choiceContext, Owner, this);
+                    await ConsumeCmd.SpecificCard(choiceContext, card, Owner, this);
         }
 
         if (InHakutaku())
