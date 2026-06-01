@@ -12,8 +12,8 @@ public class TotalPurification : KeineModCard
 {
     public TotalPurification() : base(2, CardType.Skill, CardRarity.Rare, TargetType.Self)
     {
-        WithKeywords(CardKeyword.Retain, KeineModKeywords.Human, KeineModKeywords.Consume, KeineModKeywords.Hakutaku, KeineModKeywords.Recall, CardKeyword.Exhaust);
-        WithCostUpgradeBy(-1);
+        WithKeyword(CardKeyword.Retain, UpgradeType.Add);
+        WithKeywords(KeineModKeywords.Human, KeineModKeywords.Consume, KeineModKeywords.Hakutaku, CardKeyword.Exhaust);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

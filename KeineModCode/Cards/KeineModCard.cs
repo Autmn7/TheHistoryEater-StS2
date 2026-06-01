@@ -30,12 +30,18 @@ public abstract class KeineModCard : ConstructedCardModel, IOnStanceChange
     public override string CustomPortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
     public override string BetaPortraitPath => $"beta/{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
 
-    protected bool InHuman()
+    protected override void AddExtraArgsToDescription(LocString description)
+    {
+        base.AddExtraArgsToDescription(description);
+        FormDescription.AddTokens(this, description);
+    }
+
+    public bool InHuman()
     {
         return Owner.Creature.HasPower<DualFormPower>() || !KeineModel.IsInStance<HakutakuForm>(Owner);
     }
 
-    protected bool InHakutaku()
+    public bool InHakutaku()
     {
         return Owner.Creature.HasPower<DualFormPower>() || KeineModel.IsInStance<HakutakuForm>(Owner);
     }

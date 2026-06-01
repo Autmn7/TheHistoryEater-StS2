@@ -1,6 +1,7 @@
 ﻿using KeineMod.KeineModCode.Cards.Special;
 using KeineMod.KeineModCode.Commands;
 using KeineMod.KeineModCode.Scripts;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -12,7 +13,7 @@ public class BorrowedTreasures : KeineModCard
 {
     public BorrowedTreasures() : base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
     {
-        WithDamage(9, 3);
+        WithDamage(8, 4);
         WithKeywords(KeineModKeywords.Create);
         WithTip(typeof(ScrollOfValor));
         WithTip(typeof(ScrollOfBenevolence));
@@ -22,14 +23,16 @@ public class BorrowedTreasures : KeineModCard
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
-        List<CardModel> treasures =
-        [
-            CombatState.CreateCard<ScrollOfValor>(Owner),
-            CombatState.CreateCard<ScrollOfBenevolence>(Owner)
-        ];
-        if (IsUpgraded)
-            treasures.AddRange(CombatState.CreateCard<ScrollOfWisdom>(Owner));
-        var created = await CardSelectCmd.FromChooseACardScreen(choiceContext, treasures, Owner, true);
-        await CreateCmd.Execute(created, Owner);
+        if (!CombatManager.Instance.IsOverOrEnding)
+        {
+            List<CardModel> treasures =
+            [
+                CombatState.CreateCard<ScrollOfValor>(Owner),
+                CombatState.CreateCard<ScrollOfBenevolence>(Owner),
+                CombatState.CreateCard<ScrollOfWisdom>(Owner)
+            ];
+            var created = await CardSelectCmd.FromChooseACardScreen(choiceContext, treasures, Owner, true);
+            await CreateCmd.Execute(created, Owner);
+        }
     }
 }

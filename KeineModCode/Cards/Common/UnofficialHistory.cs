@@ -14,7 +14,7 @@ public class UnofficialHistory : KeineModCard
         WithPower<HistoricalGapPower>(5, 2);
         WithVar("WeakGain", 2);
         WithPower<WeakPower>(1);
-        WithKeywords(KeineModKeywords.Human, KeineModKeywords.Hakutaku, KeineModKeywords.Recall);
+        WithKeywords(KeineModKeywords.Human, KeineModKeywords.Hakutaku);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

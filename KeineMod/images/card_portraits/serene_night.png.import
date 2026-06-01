@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4smgejcdi1i"
-path="res://.godot/imported/night_stroll.png-ba0c0f238b18234d5df630d4478e7a80.ctex"
+uid="uid://u5eoc0ntmugj"
+path="res://.godot/imported/serene_night.png-4bbf34b6a6087f78de3be58a1d8dd974.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://KeineMod/images/card_portraits/night_stroll.png"
-dest_files=["res://.godot/imported/night_stroll.png-ba0c0f238b18234d5df630d4478e7a80.ctex"]
+source_file="res://KeineMod/images/card_portraits/serene_night.png"
+dest_files=["res://.godot/imported/serene_night.png-4bbf34b6a6087f78de3be58a1d8dd974.ctex"]
 
 [params]
 

@@ -12,11 +12,14 @@ using KeineMod.KeineModCode.UIs;
 using MegaCrit.Sts2.Core.Assets;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Context;
+using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Nodes.Cards.Holders;
 using MegaCrit.Sts2.Core.Nodes.Combat;
+using MegaCrit.Sts2.Core.RichTextTags;
 using Logger = MegaCrit.Sts2.Core.Logging.Logger;
 
 namespace KeineMod.KeineModCode;
@@ -138,8 +141,8 @@ public partial class MainFile : Node
     [HarmonyPatch(typeof(NHandCardHolder), nameof(NHandCardHolder.UpdateCard))]
     public static class CardGlowPatch
     {
-        // Tracks active UI card holders without preventing them from being garbage collected
-        private static readonly List<WeakReference<NHandCardHolder>> _trackedHolders = new();
+        // Tracks active UI cardholders without preventing them from being garbage collected
+        private static readonly List<WeakReference<NHandCardHolder>> _trackedHolders = [];
 
         [HarmonyPostfix]
         private static void RenderGlow(NHandCardHolder __instance)
@@ -182,13 +185,19 @@ public partial class MainFile : Node
         /// <summary>
         /// Forces all currently active hand cards to re-evaluate their glow colors immediately.
         /// </summary>
-        public static void RefreshAllGlows()
+        public static void RefreshAllVisuals()
         {
             _trackedHolders.RemoveAll(w => !w.TryGetTarget(out var target) || !IsInstanceValid(target));
 
             foreach (var weak in _trackedHolders)
-                if (weak.TryGetTarget(out var instance))
-                    RenderGlow(instance);
+                if (weak.TryGetTarget(out var holder) && IsInstanceValid(holder.CardNode))
+                {
+                    // Force the underlying NCard node to re-evaluate formulas and redraw
+                    // Note: If 'Normal' isn't the exact name of the default enum value in your assembly,
+                    // change it to whatever your CardPreviewMode enum uses (e.g., Default, None, Standard)
+                    holder.CardNode.UpdateVisuals(PileType.Hand, CardPreviewMode.Normal);
+                    RenderGlow(holder);
+                }
         }
     }
 

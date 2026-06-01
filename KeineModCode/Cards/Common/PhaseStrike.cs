@@ -14,7 +14,7 @@ public class PhaseStrike : KeineModCard
         WithDamage(9, 3);
         WithPower<TimeShiftPower>(3, 1);
         WithEnergy(1);
-        WithKeywords(KeineModKeywords.Human, KeineModKeywords.Hakutaku, KeineModKeywords.Recall);
+        WithKeywords(KeineModKeywords.Human, KeineModKeywords.Hakutaku);
         WithTags(CardTag.Strike);
     }
 

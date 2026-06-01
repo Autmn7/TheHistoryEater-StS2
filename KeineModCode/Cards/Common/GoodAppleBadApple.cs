@@ -10,11 +10,11 @@ public class GoodAppleBadApple : KeineModCard
 {
     public GoodAppleBadApple() : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
     {
-        WithPower<BenevolencePower>(3, 2);
-        WithPower<ValorPower>(3, 2);
+        WithPower<BenevolencePower>(2, 2);
+        WithPower<ValorPower>(2, 2);
         WithCards(2);
         WithEnergy(1);
-        WithKeywords(KeineModKeywords.Human, KeineModKeywords.Hakutaku, KeineModKeywords.Recall);
+        WithKeywords(KeineModKeywords.Human, KeineModKeywords.Hakutaku);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

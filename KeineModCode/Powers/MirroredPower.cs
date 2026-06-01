@@ -1,5 +1,6 @@
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -15,7 +16,9 @@ public class MirroredPower : KeineModPower
 
     public override int ModifyCardPlayCount(CardModel card, Creature? target, int playCount)
     {
-        return card.Owner.Creature != Owner ? playCount : playCount + 1;
+        if (card.Owner.Creature == Owner && card.Type is CardType.Attack or CardType.Skill)
+            return playCount + 1;
+        return playCount;
     }
 
     public override async Task AfterModifyingCardPlayCount(CardModel card)

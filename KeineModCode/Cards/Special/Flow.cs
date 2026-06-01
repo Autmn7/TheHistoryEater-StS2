@@ -1,4 +1,5 @@
 ﻿using BaseLib.Utils;
+using KeineMod.KeineModCode.Powers;
 using KeineMod.KeineModCode.Scripts;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
@@ -49,5 +50,27 @@ public class Flow : KeineModCard, IOnConsumed
             ToDrawByEthereal = false;
             await CardPileCmd.Draw(choiceContext, 1, Owner);
         }
+    }
+
+    public override Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
+    {
+        if (power.Owner == Owner.Creature && power is GoWithTheFlowPower)
+        {
+            CardCmd.RemoveKeyword(this, CardKeyword.Unplayable);
+            CardCmd.ApplyKeyword(this, CardKeyword.Exhaust);
+            EnergyCost.SetThisCombat(0);
+        }
+        base.AfterPowerAmountChanged(choiceContext, power, amount, applier, cardSource);
+        return Task.CompletedTask;
+    }
+
+    public override Task AfterCardEnteredCombat(CardModel card)
+    {
+        if (card != this || IsClone || !Owner.Creature.HasPower<GoWithTheFlowPower>())
+            return Task.CompletedTask;
+        CardCmd.RemoveKeyword(this, CardKeyword.Unplayable);
+        CardCmd.ApplyKeyword(this, CardKeyword.Exhaust);
+        EnergyCost.SetThisCombat(0);
+        return Task.CompletedTask;
     }
 }

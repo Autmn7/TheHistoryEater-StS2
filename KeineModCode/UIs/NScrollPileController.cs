@@ -1,5 +1,6 @@
 using Godot;
 using KeineMod.KeineModCode.Scripts;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Nodes.Screens;
@@ -47,7 +48,7 @@ public partial class NScrollPileController : Control
             return;
         base._Process(delta);
         var scrollPile = _player != null ? ScrollPile.Scroll.GetPile(_player) : null;
-        if (scrollPile == null || KeineConstantsStateRegistry.Get(_player).CardsConsumedThisCombat <= 0)
+        if (scrollPile == null || CombatManager.Instance.IsOverOrEnding || KeineConstantsStateRegistry.Get(_player).CardsConsumedThisCombat <= 0)
         {
             _ui.Visible = false;
         }

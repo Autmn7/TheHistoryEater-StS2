@@ -23,7 +23,7 @@ public class CurvedJewel : KeineModCard
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.CalculatedBlock.Calculate(cardPlay.Target), DynamicVars.CalculatedBlock.Props, cardPlay);
-        if ((int)((CalculatedVar)DynamicVars["RetainBlock"]).Calculate(cardPlay.Target) > 0)
+        if (((CalculatedVar)DynamicVars["RetainBlock"]).Calculate(cardPlay.Target) > 0)
             await PowerCmd.Apply<BlurPower>(choiceContext, Owner.Creature, 1, Owner.Creature, this);
     }
 }

@@ -3,11 +3,11 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 
-namespace KeineMod.KeineModCode.Cards.Uncommon;
+namespace KeineMod.KeineModCode.Cards.Common;
 
 public class ForbiddenKnowledge : KeineModCard
 {
-    public ForbiddenKnowledge() : base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+    public ForbiddenKnowledge() : base(0, CardType.Skill, CardRarity.Common, TargetType.Self)
     {
         WithPower<KnowledgePower>(1);
         WithEnergy(2);

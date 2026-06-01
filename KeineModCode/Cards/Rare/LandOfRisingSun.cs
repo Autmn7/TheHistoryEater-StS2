@@ -16,12 +16,10 @@ public class LandOfRisingSun : KeineModCard
 {
     public LandOfRisingSun() : base(0, CardType.Attack, CardRarity.Rare, TargetType.AllEnemies)
     {
-        WithDamage(40, 10);
+        WithDamage(30, 15);
         WithVar("SunrisePower", 2);
-        WithKeywords(KeineModKeywords.Hakutaku, KeineModKeywords.Recall);
+        WithKeywords(KeineModKeywords.Hakutaku);
     }
-
-    protected override bool ShouldGlowRedInternal => !InHakutaku();
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
@@ -31,8 +29,7 @@ public class LandOfRisingSun : KeineModCard
             if (child != null)
             {
                 var instance = NCombatRoom.Instance;
-                if (instance != null)
-                    instance.CombatVfxContainer.AddChildSafely((Node)child);
+                instance?.CombatVfxContainer.AddChildSafely((Node)child);
                 await Cmd.Wait(NGrandFinaleVfx.totalAnticipationDuration);
             }
 

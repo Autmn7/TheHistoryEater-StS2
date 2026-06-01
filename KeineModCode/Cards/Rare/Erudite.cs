@@ -9,7 +9,7 @@ public class Erudite : KeineModCard
 {
     public Erudite() : base(2, CardType.Power, CardRarity.Rare, TargetType.Self)
     {
-        WithVar("EruditePower", 3, 1);
+        WithVar("EruditePower", 6, 2);
         WithPower<KnowledgePower>(3, 1);
         WithCards(3, 1);
     }

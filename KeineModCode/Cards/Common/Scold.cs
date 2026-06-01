@@ -13,7 +13,7 @@ public class Scold : KeineModCard
         WithDamage(2, 1);
         WithPower<WeakPower>(1, 1);
         WithPower<VulnerablePower>(1, 1);
-        WithKeywords(KeineModKeywords.Human, KeineModKeywords.Hakutaku, KeineModKeywords.Recall);
+        WithKeywords(KeineModKeywords.Human, KeineModKeywords.Hakutaku);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

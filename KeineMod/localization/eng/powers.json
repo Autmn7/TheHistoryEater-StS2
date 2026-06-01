@@ -24,7 +24,7 @@
   "KEINEMOD-OMEGA_POWER.smartDescription": "At the end of your turn, deal [blue]{Amount}[/blue] damage to ALL enemies.",
   "KEINEMOD-OMEGA_POWER.title": "Omega",
   "KEINEMOD-MIRRORED_POWER.description": "",
-  "KEINEMOD-MIRRORED_POWER.smartDescription": "Your next {Amount:plural:card is|[blue]{}[/blue] cards are} played an extra time this turn.",
+  "KEINEMOD-MIRRORED_POWER.smartDescription": "Your next {Amount:plural:Attack or Skill is|[blue]{}[/blue] Attacks or Skills are} played an extra time this turn.",
   "KEINEMOD-MIRRORED_POWER.title": "Mirrored",
   "KEINEMOD-DUAL_FORM_POWER.description": "",
   "KEINEMOD-DUAL_FORM_POWER.smartDescription": "Your cards' [blue]Human[/blue] and [green]Hakutaku[/green] effects are considered triggered simultaneously at ALL time.",
@@ -73,5 +73,11 @@
   "KEINEMOD-LEGEND_OF_GENSOKYO_POWER.title": "Legend of Gensokyo",
   "KEINEMOD-ERUDITE_POWER.description": "",
   "KEINEMOD-ERUDITE_POWER.smartDescription": "Your [gold]Hand Size[/gold] is increased by [blue]{Amount}[/blue].",
-  "KEINEMOD-ERUDITE_POWER.title": "Erudite"
+  "KEINEMOD-ERUDITE_POWER.title": "Erudite",
+  "KEINEMOD-GO_WITH_THE_FLOW_POWER.description": "",
+  "KEINEMOD-GO_WITH_THE_FLOW_POWER.smartDescription": "Your [gold]Flows[/gold] are playable and have [gold]Exhaust[/gold].",
+  "KEINEMOD-GO_WITH_THE_FLOW_POWER.title": "Go with the Flow",
+  "KEINEMOD-BESTIAL_INSTINCT_POWER.description": "While you are in [green]Hakutaku[/green] form, increase Attack damage by X.",
+  "KEINEMOD-BESTIAL_INSTINCT_POWER.smartDescription": "While you are in [green]Hakutaku[/green] form, increase Attack damage by [blue]{Amount}[/blue]。",
+  "KEINEMOD-BESTIAL_INSTINCT_POWER.title": "Bestial Instinct"
 }

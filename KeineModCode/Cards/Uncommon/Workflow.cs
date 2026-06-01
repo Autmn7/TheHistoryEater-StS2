@@ -15,7 +15,7 @@ public class Workflow : KeineModCard
     {
         WithBlock(4, 3);
         WithPower<KnowledgePower>(1);
-        WithKeywords(KeineModKeywords.Human, KeineModKeywords.Consume, KeineModKeywords.Create, KeineModKeywords.Hakutaku, KeineModKeywords.Recall);
+        WithKeywords(KeineModKeywords.Human, KeineModKeywords.Consume, KeineModKeywords.Create, KeineModKeywords.Hakutaku);
         WithTip(typeof(Flow));
         WithTip(typeof(ScrollOfWisdom));
     }

@@ -9,7 +9,7 @@
   "KEINEMOD-HUMAN.title": "人类",
   "KEINEMOD-HAKUTAKU.description": "你的兽形态。每当你进入[green]白泽[/green]形态，[gold]重现[/gold]至多[blue]2[/blue]张牌。",
   "KEINEMOD-HAKUTAKU.title": "白泽",
-  "KEINEMOD-FULLMOON.description": "每回合一次：你可以点击[gold]满月[/gold]，消耗[blue]1[/blue]层，本回合进入[green]白泽[/green]形态。",
+  "KEINEMOD-FULLMOON.description": "每回合一次：你可以点击[gold]满月[/gold]，失去[blue]1[/blue]层并在本回合进入[green]白泽[/green]形态。",
   "KEINEMOD-FULLMOON.title": "满月",
   "KEINEMOD-KNOWLEDGEABLE.description": "此牌的伤害和[gold]格挡[/gold]受到[gold]知识[/gold]的加成。",
   "KEINEMOD-KNOWLEDGEABLE.title": "知识渊博",

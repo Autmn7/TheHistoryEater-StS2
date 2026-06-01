@@ -11,20 +11,17 @@ public class KeineAhnung : KeineModCard
 {
     public KeineAhnung() : base(1, CardType.Skill, CardRarity.Rare, TargetType.Self)
     {
-        WithKeyword(CardKeyword.Retain, UpgradeType.Add);
-        WithKeywords(KeineModKeywords.Hakutaku, KeineModKeywords.Recall, KeineModKeywords.Create, CardKeyword.Exhaust);
+        WithKeywords(KeineModKeywords.Create, CardKeyword.Exhaust);
         WithTip(typeof(TheSmartest));
         WithTip(typeof(TheStrongest));
     }
 
-    protected override bool ShouldGlowRedInternal => !InHakutaku();
-
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        if (InHakutaku())
-        {
-            CardModel created = CombatState.CreateCard<TheSmartest>(Owner);
+        CardModel created = CombatState.CreateCard<TheSmartest>(Owner);
+        if (IsUpgraded)
             await CreateCmd.Execute(created, Owner);
-        }
+        else
+            await CreateCmd.Execute(created, Owner, false, PileType.Draw, false, CardPilePosition.Random);
     }
 }

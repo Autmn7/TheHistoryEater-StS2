@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw7dxuq37aq3v"
-path="res://.godot/imported/mind_cleanse.png-51a79d413153a3e548beff7a64205fbd.ctex"
+uid="uid://b1hyxorspfdmw"
+path="res://.godot/imported/bestial_instinct.png-2488e7b7dc79e8e3dfbf6b1bcb9aa231.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://KeineMod/images/card_portraits/mind_cleanse.png"
-dest_files=["res://.godot/imported/mind_cleanse.png-51a79d413153a3e548beff7a64205fbd.ctex"]
+source_file="res://KeineMod/images/card_portraits/bestial_instinct.png"
+dest_files=["res://.godot/imported/bestial_instinct.png-2488e7b7dc79e8e3dfbf6b1bcb9aa231.ctex"]
 
 [params]
 

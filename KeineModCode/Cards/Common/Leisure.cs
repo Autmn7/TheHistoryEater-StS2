@@ -12,7 +12,7 @@ public class Leisure : KeineModCard
     public Leisure() : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
     {
         WithBlock(6, 3);
-        WithKeywords(KeineModKeywords.Create, KeineModKeywords.Human, KeineModKeywords.Consume, KeineModKeywords.Hakutaku, KeineModKeywords.Recall);
+        WithKeywords(KeineModKeywords.Create, KeineModKeywords.Human, KeineModKeywords.Consume, KeineModKeywords.Hakutaku);
         WithTip(typeof(Flow));
     }
 

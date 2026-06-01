@@ -7,11 +7,11 @@ namespace KeineMod.KeineModCode.Cards.Rare;
 
 public class KnowledgeBase : KeineModCard
 {
-    public KnowledgeBase() : base(2, CardType.Power, CardRarity.Rare, TargetType.Self)
+    public KnowledgeBase() : base(1, CardType.Power, CardRarity.Rare, TargetType.Self)
     {
         WithVar("KnowledgeBasePower", 1);
+        WithKeyword(CardKeyword.Innate, UpgradeType.Add);
         WithTip(typeof(KnowledgePower));
-        WithCostUpgradeBy(-1);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

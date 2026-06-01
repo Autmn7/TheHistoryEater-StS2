@@ -9,10 +9,10 @@ namespace KeineMod.KeineModCode.Cards.Rare;
 
 public class PassageOfTime : KeineModCard
 {
-    public PassageOfTime() : base(0, CardType.Skill, CardRarity.Rare, TargetType.Self)
+    public PassageOfTime() : base(1, CardType.Skill, CardRarity.Rare, TargetType.Self)
     {
-        WithCards(3, 1);
-        WithPower<TimeShiftPower>(3, 1);
+        WithCards(4, 1);
+        WithPower<TimeShiftPower>(4, 1);
         WithKeywords(KeineModKeywords.Human, KeineModKeywords.Consume);
     }
 
