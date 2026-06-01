@@ -13,13 +13,13 @@ using MegaCrit.Sts2.Core.Assets;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Context;
 using MegaCrit.Sts2.Core.Entities.Cards;
-using MegaCrit.Sts2.Core.Helpers;
+using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Nodes.Cards.Holders;
 using MegaCrit.Sts2.Core.Nodes.Combat;
-using MegaCrit.Sts2.Core.RichTextTags;
 using Logger = MegaCrit.Sts2.Core.Logging.Logger;
 
 namespace KeineMod.KeineModCode;
@@ -201,43 +201,43 @@ public partial class MainFile : Node
         }
     }
 
-    // [HarmonyPatch(typeof(CardModel), "GetDescriptionForPile")]
-    // [HarmonyPatch([typeof(PileType), typeof(CardModel.DescriptionPreviewType), typeof(Creature)])]
-    // public static class HideSacredScrollKeywordPatch
-    // {
-    //     private static string GetCustomCardText(CardKeyword keyword)
-    //     {
-    //         // 1. Match the JSON casing
-    //         var key = keyword.ToString().ToUpperInvariant();
-    //
-    //         // 2. Fetch the strings
-    //         var title = new LocString("card_keywords", key + ".title").GetFormattedText();
-    //         var period = new LocString("card_keywords", "PERIOD").GetRawText();
-    //
-    //         // 3. Return exactly what CardKeywordExtensions.GetCardText() produces
-    //         return $"[gold]{title}[/gold]{period}";
-    //     }
-    //
-    //     [HarmonyPostfix]
-    //     private static void HideSacredScrollKeyword(CardModel __instance, ref string __result)
-    //     {
-    //         if (!__instance.Keywords.Contains(KeineModKeywords.Sacredscroll)) return;
-    //         try
-    //         {
-    //             var unplayableSearch = GetCustomCardText(CardKeyword.Unplayable);
-    //     
-    //             if (string.IsNullOrEmpty(__result)) return;
-    //     
-    //             // Remove the keyword text and the newline the engine joined with
-    //             __result = __result.Replace(unplayableSearch + "\n", "");
-    //             __result = __result.Replace(unplayableSearch, "");
-    //     
-    //             __result = __result.Trim('\n', '\r', ' ');
-    //         }
-    //         catch (Exception)
-    //         {
-    //             // Safety first
-    //         }
-    //     }
-    // }
+    [HarmonyPatch(typeof(CardModel), "GetDescriptionForPile")]
+    [HarmonyPatch([typeof(PileType), typeof(CardModel.DescriptionPreviewType), typeof(Creature)])]
+    public static class HideSacredScrollKeywordPatch
+    {
+        private static string GetCustomCardText(CardKeyword keyword)
+        {
+            // 1. Match the JSON casing
+            var key = keyword.ToString().ToUpperInvariant();
+    
+            // 2. Fetch the strings
+            var title = new LocString("card_keywords", key + ".title").GetFormattedText();
+            var period = new LocString("card_keywords", "PERIOD").GetRawText();
+    
+            // 3. Return exactly what CardKeywordExtensions.GetCardText() produces
+            return $"[gold]{title}[/gold]{period}";
+        }
+    
+        [HarmonyPostfix]
+        private static void HideSacredScrollKeyword(CardModel __instance, ref string __result)
+        {
+            if (!__instance.Keywords.Contains(KeineModKeywords.Sacredscroll)) return;
+            try
+            {
+                var unplayableSearch = GetCustomCardText(CardKeyword.Unplayable);
+        
+                if (string.IsNullOrEmpty(__result)) return;
+        
+                // Remove the keyword text and the newline the engine joined with
+                __result = __result.Replace(unplayableSearch + "\n", "");
+                __result = __result.Replace(unplayableSearch, "");
+        
+                __result = __result.Trim('\n', '\r', ' ');
+            }
+            catch (Exception)
+            {
+                // Safety first
+            }
+        }
+    }
 }

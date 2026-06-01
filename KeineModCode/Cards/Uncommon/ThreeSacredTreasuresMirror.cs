@@ -17,9 +17,9 @@ public class ThreeSacredTreasuresMirror : KeineModCard
     {
         WithEnergy(1);
         WithKeyword(KeineModKeywords.Create);
-        WithCostUpgradeBy(-1);
         WithTip(typeof(EightSpanMirror));
         WithTip(new TooltipSource(card => HoverTipFactory.FromCard<ScrollOfWisdom>(card.IsUpgraded)));
+        WithCostUpgradeBy(-1);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

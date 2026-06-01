@@ -13,7 +13,7 @@
   "KEINEMOD-FULLMOON.title": "满月",
   "KEINEMOD-KNOWLEDGEABLE.description": "此牌的伤害和[gold]格挡[/gold]受到[gold]知识[/gold]的加成。",
   "KEINEMOD-KNOWLEDGEABLE.title": "知识渊博",
-  "KEINEMOD-SACREDSCROLL.description": "[gold]不能被打出[/gold]。不占用[gold]手牌[/gold]位。",
+  "KEINEMOD-SACREDSCROLL.description": "[gold]不能被打出[/gold]。被[gold]吞噬[/gold]时[gold]变化[/gold]为对应[gold]神器[/gold]。",
   "KEINEMOD-SACREDSCROLL.title": "神器卷轴",
   "KEINEMOD-SACREDPOWER.description": "勇之卷轴 - [red]力量[/red]\n仁之卷轴 - [green]敏捷[/green]\n智之卷轴 - [blue]知识[/blue]",
   "KEINEMOD-SACREDPOWER.title": "神器之力"

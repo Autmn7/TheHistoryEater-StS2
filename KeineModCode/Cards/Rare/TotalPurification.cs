@@ -10,10 +10,10 @@ namespace KeineMod.KeineModCode.Cards.Rare;
 
 public class TotalPurification : KeineModCard
 {
-    public TotalPurification() : base(2, CardType.Skill, CardRarity.Rare, TargetType.Self)
+    public TotalPurification() : base(3, CardType.Skill, CardRarity.Rare, TargetType.Self)
     {
-        WithKeyword(CardKeyword.Retain, UpgradeType.Add);
         WithKeywords(KeineModKeywords.Human, KeineModKeywords.Consume, KeineModKeywords.Hakutaku, CardKeyword.Exhaust);
+        WithCostUpgradeBy(-1);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

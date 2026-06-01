@@ -9,7 +9,7 @@ public class HistoryOfFantasy : KeineModCard
 {
     public HistoryOfFantasy() : base(2, CardType.Power, CardRarity.Uncommon, TargetType.Self)
     {
-        WithVar("HistoryOfFantasyPower", 2, 1);
+        WithVar("HistoryOfFantasyPower", 1, 1);
         WithTip(typeof(HistoricalGapPower));
     }
 

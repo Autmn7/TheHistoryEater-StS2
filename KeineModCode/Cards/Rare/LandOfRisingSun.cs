@@ -17,7 +17,7 @@ public class LandOfRisingSun : KeineModCard
     public LandOfRisingSun() : base(0, CardType.Attack, CardRarity.Rare, TargetType.AllEnemies)
     {
         WithDamage(30, 15);
-        WithVar("SunrisePower", 2);
+        WithVar("SunrisePower", 3);
         WithKeywords(KeineModKeywords.Hakutaku);
     }
 

@@ -6,7 +6,6 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization;
-using MegaCrit.Sts2.Core.Models;
 
 namespace KeineMod.KeineModCode.Cards.Rare;
 
@@ -26,12 +25,14 @@ public class BackToTheFuture : KeineModCard
         if (InHuman())
         {
             var drawPile = PileTypeExtensions.GetPile(PileType.Draw, Owner);
-            var cardsToScry = drawPile.Cards.Take(DynamicVars.Cards.IntValue).ToList();
-            if (cardsToScry.Count == 0) return;
-            var prefs = new CardSelectorPrefs(new LocString("card_selection", "TO_CONSUME_ANY_KEINE"), 0, DynamicVars.Cards.IntValue);
-            var cardsToDiscard = (await CardSelectCmd.FromSimpleGrid(choiceContext, (IReadOnlyList<CardModel>)cardsToScry, Owner, prefs)).ToList();
-            foreach (var card in cardsToDiscard)
-                await ConsumeCmd.SpecificCard(choiceContext, card, Owner, this);
+            var cardsToView = drawPile.Cards.Take(DynamicVars.Cards.IntValue).ToList();
+            if (cardsToView.Count != 0)
+            {
+                var prefs = new CardSelectorPrefs(new LocString("card_selection", "TO_CONSUME_ANY_KEINE"), 0, DynamicVars.Cards.IntValue);
+                var cardsToConsume = (await CardSelectCmd.FromSimpleGrid(choiceContext, cardsToView, Owner, prefs)).ToList();
+                foreach (var card in cardsToConsume)
+                    await ConsumeCmd.SpecificCard(choiceContext, card, Owner, this); 
+            }
             await CardPileCmd.Draw(choiceContext, 1, Owner);
         }
     }

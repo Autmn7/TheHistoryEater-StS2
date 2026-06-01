@@ -10,9 +10,9 @@ namespace KeineMod.KeineModCode.Cards.Rare;
 
 public class WipedFromHistory : KeineModCard
 {
-    public WipedFromHistory() : base(2, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
+    public WipedFromHistory() : base(1, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
     {
-        WithCalculatedDamage(12, (card, target) => card is KeineModCard keineModCard && keineModCard.InHakutaku() && target is not null && target.HasPower<HistoricalGapPower>() ? target.GetPowerAmount<HistoricalGapPower>() * 2 : 0, ValueProp.Move, 3);
+        WithCalculatedDamage(10, (card, target) => card is KeineModCard keineModCard && keineModCard.InHakutaku() && target is not null && target.HasPower<HistoricalGapPower>() ? target.GetPowerAmount<HistoricalGapPower>() * 2 : 0, ValueProp.Move, 2);
         WithTip(StaticHoverTip.Block);
         WithTip(typeof(HistoricalGapPower));
         WithKeyword(CardKeyword.Retain, UpgradeType.Add);

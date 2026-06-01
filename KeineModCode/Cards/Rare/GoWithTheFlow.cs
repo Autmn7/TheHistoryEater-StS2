@@ -10,11 +10,12 @@ namespace KeineMod.KeineModCode.Cards.Rare;
 
 public class GoWithTheFlow : KeineModCard
 {
-    public GoWithTheFlow() : base(1, CardType.Power, CardRarity.Rare, TargetType.Self)
+    public GoWithTheFlow() : base(2, CardType.Power, CardRarity.Rare, TargetType.Self)
     {
-        WithCards(2, 1);
+        WithCards(2);
         WithTip(CardKeyword.Exhaust);
         WithTip(typeof(Flow));
+        WithCostUpgradeBy(-1);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

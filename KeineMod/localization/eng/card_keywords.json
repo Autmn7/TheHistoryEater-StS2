@@ -13,7 +13,7 @@
   "KEINEMOD-FULLMOON.title": "Full Moon",
   "KEINEMOD-KNOWLEDGEABLE.description": "This card's damage and [gold]Block[/gold] scales with your [gold]Knowledge[/gold].",
   "KEINEMOD-KNOWLEDGEABLE.title": "Knowledgeable",
-  "KEINEMOD-SACREDSCROLL.description": "[gold]Unplayable[/gold]. Does not count towards [gold]Hand[/gold] space.",
+  "KEINEMOD-SACREDSCROLL.description": "[gold]Unplayable[/gold]. [gold]Transform[/gold] into its corresponding [gold]Sacred Treasure[/gold] when [gold]Consumed[/gold].",
   "KEINEMOD-SACREDSCROLL.title": "Sacred Scroll",
   "KEINEMOD-SACREDPOWER.description": "Scroll of Valor - [red]Strength[/red]\nScroll of Benevolence - [green]Dexterity[/green]\nScroll of Wisdom - [blue]Knowledge[/blue]",
   "KEINEMOD-SACREDPOWER.title": "Sacred Power"

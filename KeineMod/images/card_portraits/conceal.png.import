@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kie6n6ai47og"
-path="res://.godot/imported/conceal_history.png-f42a8b9fbdbc6545651939d2591175dc.ctex"
+uid="uid://bcfkexyc40dku"
+path="res://.godot/imported/conceal.png-0e8634802a51c76a7d181ce6cd788310.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://KeineMod/images/card_portraits/conceal_history.png"
-dest_files=["res://.godot/imported/conceal_history.png-f42a8b9fbdbc6545651939d2591175dc.ctex"]
+source_file="res://KeineMod/images/card_portraits/conceal.png"
+dest_files=["res://.godot/imported/conceal.png-0e8634802a51c76a7d181ce6cd788310.ctex"]
 
 [params]
 

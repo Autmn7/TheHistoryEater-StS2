@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dq34lg6e4fs6b"
-path="res://.godot/imported/explain_again.png-3d92481c37cbc64310dd7dba9779992a.ctex"
+uid="uid://me0e002gsy2n"
+path="res://.godot/imported/the_scale_grows.png-16ac8b91658805c9cfd792518b94cd8a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://KeineMod/images/card_portraits/explain_again.png"
-dest_files=["res://.godot/imported/explain_again.png-3d92481c37cbc64310dd7dba9779992a.ctex"]
+source_file="res://KeineMod/images/card_portraits/the_scale_grows.png"
+dest_files=["res://.godot/imported/the_scale_grows.png-16ac8b91658805c9cfd792518b94cd8a.ctex"]
 
 [params]
 

@@ -17,7 +17,7 @@ public class ScrollOfValor : KeineModCard, IOnConsumed
     public ScrollOfValor() : base(-1, CardType.Skill, CardRarity.Token, TargetType.Self)
     {
         WithPower<ValorPower>(3, 2);
-        WithKeywords(CardKeyword.Unplayable);
+        WithKeywords(KeineModKeywords.Sacredscroll, CardKeyword.Unplayable);
         WithTip(KeineModKeywords.Consume);
         WithTip(typeof(HeavenlySword));
     }

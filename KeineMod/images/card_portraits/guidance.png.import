@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brjqoe58wyhhe"
-path="res://.godot/imported/shifting_history.png-b3bd3c317d2fc19e2c8469188f97ab4d.ctex"
+uid="uid://d6pb2jrkjf55"
+path="res://.godot/imported/guidance.png-5bba35495c9954b7693423af91166576.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://KeineMod/images/card_portraits/shifting_history.png"
-dest_files=["res://.godot/imported/shifting_history.png-b3bd3c317d2fc19e2c8469188f97ab4d.ctex"]
+source_file="res://KeineMod/images/card_portraits/guidance.png"
+dest_files=["res://.godot/imported/guidance.png-5bba35495c9954b7693423af91166576.ctex"]
 
 [params]
 

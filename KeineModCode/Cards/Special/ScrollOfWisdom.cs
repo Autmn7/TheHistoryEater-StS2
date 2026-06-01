@@ -17,7 +17,7 @@ public class ScrollOfWisdom : KeineModCard, IOnConsumed
     public ScrollOfWisdom() : base(-1, CardType.Skill, CardRarity.Token, TargetType.Self)
     {
         WithPower<WisdomPower>(1, 1);
-        WithKeywords(CardKeyword.Unplayable);
+        WithKeywords(KeineModKeywords.Sacredscroll, CardKeyword.Unplayable);
         WithTip(KeineModKeywords.Consume);
         WithTip(typeof(EightSpanMirror));
     }

@@ -5,9 +5,9 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 
 namespace KeineMod.KeineModCode.Cards.Uncommon;
 
-public class ShiftingHistory : KeineModCard
+public class ChangingTimes : KeineModCard
 {
-    public ShiftingHistory() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.AnyEnemy)
+    public ChangingTimes() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
         WithPower<HistoricalGapPower>(4, 2);
         WithTip(typeof(TimeShiftPower));

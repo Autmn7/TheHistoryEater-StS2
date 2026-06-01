@@ -5,24 +5,24 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models.Powers;
 
-namespace KeineMod.KeineModCode.Cards.Rare;
+namespace KeineMod.KeineModCode.Cards.Uncommon;
 
-public class ConcealHistory : KeineModCard
+public class UnofficialHistory : KeineModCard
 {
-    public ConcealHistory() : base(1, CardType.Skill, CardRarity.Rare, TargetType.AnyEnemy)
+    public UnofficialHistory() : base(2, CardType.Skill, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
-        WithBlock(7, 2);
-        WithPower<HistoricalGapPower>(2, 1);
+        WithPower<HistoricalGapPower>(7, 2);
+        WithVar("WeakGain", 2);
+        WithPower<WeakPower>(1, 1);
         WithKeywords(KeineModKeywords.Human, KeineModKeywords.Hakutaku);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
         await PowerCmd.Apply<HistoricalGapPower>(choiceContext, cardPlay.Target, DynamicVars["HistoricalGapPower"].BaseValue, Owner.Creature, this);
+        if (!InHakutaku())
+            await PowerCmd.Apply<WeakPower>(choiceContext, Owner.Creature, DynamicVars["WeakGain"].BaseValue, Owner.Creature, this);
         if (InHuman())
-            await PowerCmd.Apply<BlurPower>(choiceContext, Owner.Creature, 1, Owner.Creature, this);
-        if (InHakutaku())
-            await PowerCmd.Apply<ConcealHistoryPower>(choiceContext, cardPlay.Target, 1, Owner.Creature, this);
+            await PowerCmd.Apply<WeakPower>(choiceContext, cardPlay.Target, DynamicVars["WeakPower"].BaseValue, Owner.Creature, this);
     }
 }
