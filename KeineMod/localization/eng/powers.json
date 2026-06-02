@@ -63,7 +63,7 @@
   "KEINEMOD-TREASURE_OF_COUNTRY_POWER.smartDescription": "Whenever you [gold]Consume[/gold] a [gold]Sacred Scroll[/gold], gain [blue]{Amount}[/blue] of its [gold]Sacred Power[/gold].",
   "KEINEMOD-TREASURE_OF_COUNTRY_POWER.title": "Treasure of Country",
   "KEINEMOD-KNOWLEDGE_BASE_POWER.description": "",
-  "KEINEMOD-KNOWLEDGE_BASE_POWER.smartDescription": "Whenever you generate a card that is not a Status or Curse, gain [blue]{Amount}[/blue] [gold]Knowledge[/gold].",
+  "KEINEMOD-KNOWLEDGE_BASE_POWER.smartDescription": "Whenever you generate a Non-Status card, gain [blue]{Amount}[/blue] [gold]Knowledge[/gold].",
   "KEINEMOD-KNOWLEDGE_BASE_POWER.title": "Knowledge Base",
   "KEINEMOD-EPHEMERALITY_POWER.description": "After applied, if the enemy's Ephemerality is exactly:\n[blue]1[/blue], enemy gains [blue]1[/blue] [gold]Weak[/gold];\n[blue]3[/blue], enemy loses [blue]3[/blue] [gold]Strength[/gold];\n[blue]7[/blue], enemy gains [blue]137[/blue] [gold]Disintegration[/gold].",
   "KEINEMOD-EPHEMERALITY_POWER.smartDescription": "After applied, if the owner's [gold]Ephemerality[/gold] is exactly:\n[blue]1[/blue], gains [blue]1[/blue] [gold]Weak[/gold];\n[blue]3[/blue], loses [blue]3[/blue] [gold]Strength[/gold];\n[blue]7[/blue], gains [blue]137[/blue] [gold]Disintegration[/gold].",
@@ -79,5 +79,14 @@
   "KEINEMOD-GO_WITH_THE_FLOW_POWER.title": "Go with the Flow",
   "KEINEMOD-BESTIAL_INSTINCT_POWER.description": "While you are in [green]Hakutaku[/green] form, increase Attack damage by X.",
   "KEINEMOD-BESTIAL_INSTINCT_POWER.smartDescription": "While you are in [green]Hakutaku[/green] form, increase Attack damage by [blue]{Amount}[/blue]。",
-  "KEINEMOD-BESTIAL_INSTINCT_POWER.title": "Bestial Instinct"
+  "KEINEMOD-BESTIAL_INSTINCT_POWER.title": "Bestial Instinct",
+  "KEINEMOD-THE_SCALE_GROWS_POWER.description": "",
+  "KEINEMOD-THE_SCALE_GROWS_POWER.smartDescription": "At the end of your turn, gain [blue]{Amount}[/blue] [gold]Knowledge[/gold].",
+  "KEINEMOD-THE_SCALE_GROWS_POWER.title": "The Scale Grows...",
+  "KEINEMOD-STACK_OVERFLOW_POWER.description": "",
+  "KEINEMOD-STACK_OVERFLOW_POWER.smartDescription": "When your [gold]Knowledge[/gold] reaches [blue]{Amount}[/blue], die.",
+  "KEINEMOD-STACK_OVERFLOW_POWER.title": "Stack Overflow",
+  "KEINEMOD-INTERNALIZE_POWER.description": "",
+  "KEINEMOD-INTERNALIZE_POWER.smartDescription": "Whenever you [gold]Consume[/gold] a card, gain [blue]{Amount}[/blue] [gold]Valor[/gold] and [gold]Benevolence[/gold].",
+  "KEINEMOD-INTERNALIZE_POWER.title": "Internalize"
 }

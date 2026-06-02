@@ -60,6 +60,7 @@ public class Flow : KeineModCard, IOnConsumed
             CardCmd.ApplyKeyword(this, CardKeyword.Exhaust);
             EnergyCost.SetThisCombat(0);
         }
+
         base.AfterPowerAmountChanged(choiceContext, power, amount, applier, cardSource);
         return Task.CompletedTask;
     }

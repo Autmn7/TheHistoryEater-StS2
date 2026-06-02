@@ -17,7 +17,7 @@ public class KnowledgeBasePower : KeineModPower
     {
         if (creator == null || creator.Creature != Owner)
             return;
-        if (card.Type != CardType.Status && card.Type != CardType.Curse && card.Rarity != CardRarity.Status && card.Rarity != CardRarity.Curse)
+        if (card.Type != CardType.Status && card.Rarity != CardRarity.Status)
         {
             Flash();
             await PowerCmd.Apply<KnowledgePower>(new ThrowingPlayerChoiceContext(), Owner, Amount, Owner, null);

@@ -27,11 +27,16 @@ internal static class RichTextAlphaPatch
     [HarmonyPatch(typeof(RichTextGold), "_ProcessCustomFX")]
     private static class GoldFix
     {
-        static bool Prefix(CharFXTransform charFx, ref bool __result)
+        private static bool Prefix(CharFXTransform charFx, ref bool __result)
         {
             var c = charFx.Color;
             // 保留 :diff() 绿色（vanilla 原行为：检测 green → 不改色）
-            if (c == StsColors.green) { __result = true; return false; }
+            if (c == StsColors.green)
+            {
+                __result = true;
+                return false;
+            }
+
             charFx.Color = WithIncomingAlpha(StsColors.gold, c);
             __result = true;
             return false;
@@ -41,7 +46,7 @@ internal static class RichTextAlphaPatch
     [HarmonyPatch(typeof(RichTextBlue), "_ProcessCustomFX")]
     private static class BlueFix
     {
-        static bool Prefix(CharFXTransform charFx, ref bool __result)
+        private static bool Prefix(CharFXTransform charFx, ref bool __result)
         {
             charFx.Color = WithIncomingAlpha(StsColors.blue, charFx.Color);
             __result = true;
@@ -52,7 +57,7 @@ internal static class RichTextAlphaPatch
     [HarmonyPatch(typeof(RichTextRed), "_ProcessCustomFX")]
     private static class RedFix
     {
-        static bool Prefix(CharFXTransform charFx, ref bool __result)
+        private static bool Prefix(CharFXTransform charFx, ref bool __result)
         {
             charFx.Color = WithIncomingAlpha(StsColors.red, charFx.Color);
             __result = true;
@@ -63,7 +68,7 @@ internal static class RichTextAlphaPatch
     [HarmonyPatch(typeof(RichTextGreen), "_ProcessCustomFX")]
     private static class GreenFix
     {
-        static bool Prefix(CharFXTransform charFx, ref bool __result)
+        private static bool Prefix(CharFXTransform charFx, ref bool __result)
         {
             charFx.Color = WithIncomingAlpha(StsColors.green, charFx.Color);
             __result = true;
@@ -74,7 +79,7 @@ internal static class RichTextAlphaPatch
     [HarmonyPatch(typeof(RichTextAqua), "_ProcessCustomFX")]
     private static class AquaFix
     {
-        static bool Prefix(CharFXTransform charFx, ref bool __result)
+        private static bool Prefix(CharFXTransform charFx, ref bool __result)
         {
             charFx.Color = WithIncomingAlpha(StsColors.aqua, charFx.Color);
             __result = true;
@@ -85,7 +90,7 @@ internal static class RichTextAlphaPatch
     [HarmonyPatch(typeof(RichTextOrange), "_ProcessCustomFX")]
     private static class OrangeFix
     {
-        static bool Prefix(CharFXTransform charFx, ref bool __result)
+        private static bool Prefix(CharFXTransform charFx, ref bool __result)
         {
             charFx.Color = WithIncomingAlpha(StsColors.orange, charFx.Color);
             __result = true;
@@ -96,7 +101,7 @@ internal static class RichTextAlphaPatch
     [HarmonyPatch(typeof(RichTextPink), "_ProcessCustomFX")]
     private static class PinkFix
     {
-        static bool Prefix(CharFXTransform charFx, ref bool __result)
+        private static bool Prefix(CharFXTransform charFx, ref bool __result)
         {
             charFx.Color = WithIncomingAlpha(StsColors.pink, charFx.Color);
             __result = true;
@@ -107,7 +112,7 @@ internal static class RichTextAlphaPatch
     [HarmonyPatch(typeof(RichTextPurple), "_ProcessCustomFX")]
     private static class PurpleFix
     {
-        static bool Prefix(CharFXTransform charFx, ref bool __result)
+        private static bool Prefix(CharFXTransform charFx, ref bool __result)
         {
             charFx.Color = WithIncomingAlpha(StsColors.purple, charFx.Color);
             __result = true;

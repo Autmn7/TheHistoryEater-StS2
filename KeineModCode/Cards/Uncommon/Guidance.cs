@@ -18,7 +18,7 @@ public class Guidance : KeineModCard
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
-        var card = (await CardSelectCmd.FromHand(choiceContext, Owner, new CardSelectorPrefs(SelectionScreenPrompt, 1), (Func<CardModel, bool>) (c => !c.Keywords.Contains(KeineModKeywords.Knowledgeable)), this)).FirstOrDefault();
+        var card = (await CardSelectCmd.FromHand(choiceContext, Owner, new CardSelectorPrefs(SelectionScreenPrompt, 1), (Func<CardModel, bool>)(c => !c.Keywords.Contains(KeineModKeywords.Knowledgeable)), this)).FirstOrDefault();
         if (card == null)
             return;
         CardCmd.ApplyKeyword(card, KeineModKeywords.Knowledgeable);

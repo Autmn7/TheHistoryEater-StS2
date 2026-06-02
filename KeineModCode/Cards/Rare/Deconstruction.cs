@@ -13,22 +13,24 @@ namespace KeineMod.KeineModCode.Cards.Rare;
 public class Deconstruction : KeineModCard
 {
     public int CountNeeded;
-    
+
     public Deconstruction() : base(0, CardType.Skill, CardRarity.Rare, TargetType.AllEnemies)
     {
         CountNeeded = 4;
         WithCards(1);
         WithVar(new CountNeededVar(4));
-        WithKeyword(KeineModKeywords.Consume);
+        WithKeywords(KeineModKeywords.Human, KeineModKeywords.Consume);
         WithTip(new TooltipSource(card => HoverTipFactory.FromCard<Reconstruction>(card.IsUpgraded)));
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         if (CountNeeded > 0) CountNeeded--;
-        await ConsumeCmd.FromHand(choiceContext, Owner, DynamicVars.Cards.IntValue, this);
+        if (InHuman())
+            await ConsumeCmd.FromHand(choiceContext, Owner, DynamicVars.Cards.IntValue, this);
         await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.IntValue, Owner);
-        await CardPileCmd.Add(this, PileType.Draw, CardPilePosition.Random);
+        if (!Keywords.Contains(CardKeyword.Exhaust))
+            await CardPileCmd.Add(this, PileType.Draw, CardPilePosition.Random);
     }
 
     public override async Task AfterCardDrawn(PlayerChoiceContext choiceContext, CardModel card, bool fromHandDraw)

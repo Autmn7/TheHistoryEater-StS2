@@ -10,7 +10,7 @@ public class BuretsuCrisis : KeineModCard
 {
     public BuretsuCrisis() : base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
     {
-        WithDamage(8, 3);
+        WithDamage(9, 3);
         WithCards(1);
         WithKeywords(KeineModKeywords.Human, KeineModKeywords.Consume, KeineModKeywords.Hakutaku, KeineModKeywords.Recall);
     }

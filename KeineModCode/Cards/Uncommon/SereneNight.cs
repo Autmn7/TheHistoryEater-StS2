@@ -24,6 +24,7 @@ public class SereneNight : KeineModCard
             CardModel flow = CombatState.CreateCard<Flow>(Owner);
             await CreateCmd.Execute(flow, Owner);
         }
+
         if (InHuman())
             await ConsumeCmd.FromHandUpTo(choiceContext, Owner, DynamicVars["Consume"].IntValue, this);
     }

@@ -14,8 +14,8 @@ public class BestialInstinct : KeineModCard
     public BestialInstinct() : base(2, CardType.Power, CardRarity.Rare, TargetType.AnyAlly)
     {
         WithPower<TimeShiftPower>(12);
-        WithTip(typeof(BestialInstinctPower));
         WithCalculatedVar("BestialInstinctPower", 3, (_, target) => target?.Player?.Character.Id.ToString() == "CHARACTER.MOKOUMOD-MOKOU_MOD" ? 2 : 0, 2);
+        WithTip(typeof(BestialInstinctPower));
         WithTip(new TooltipSource(card => new HoverTip(new LocString("cards", Id.Entry + ".extraTipTitle"), new LocString("cards", Id.Entry + ".extraTipDescription"))));
     }
 

@@ -10,7 +10,7 @@ public class YoshimitsuCrisis : KeineModCard
 {
     public YoshimitsuCrisis() : base(3, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
-        WithDamage(18, 6);
+        WithDamage(16, 5);
         WithBlock(3);
         WithCards(3);
         WithKeywords(KeineModKeywords.Human, KeineModKeywords.Consume, KeineModKeywords.Hakutaku, KeineModKeywords.Recall);

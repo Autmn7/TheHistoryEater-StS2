@@ -19,7 +19,8 @@ public class Ephemerality137 : KeineModCard, IOnConsumed
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await PowerCmd.Apply<EphemeralityPower>(choiceContext, CombatState.HittableEnemies, DynamicVars["EphemeralityPower"].BaseValue, Owner.Creature, this);
-        await CardPileCmd.Add(this, PileType.Draw, IsUpgraded ? CardPilePosition.Top : CardPilePosition.Random);
+        if (!Keywords.Contains(CardKeyword.Exhaust))
+            await CardPileCmd.Add(this, PileType.Draw, IsUpgraded ? CardPilePosition.Top : CardPilePosition.Random);
     }
 
     public async Task OnConsumed(PlayerChoiceContext choiceContext, Player player, CardModel consumedCard)

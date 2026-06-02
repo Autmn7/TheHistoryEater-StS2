@@ -31,8 +31,9 @@ public class BackToTheFuture : KeineModCard
                 var prefs = new CardSelectorPrefs(new LocString("card_selection", "TO_CONSUME_ANY_KEINE"), 0, DynamicVars.Cards.IntValue);
                 var cardsToConsume = (await CardSelectCmd.FromSimpleGrid(choiceContext, cardsToView, Owner, prefs)).ToList();
                 foreach (var card in cardsToConsume)
-                    await ConsumeCmd.SpecificCard(choiceContext, card, Owner, this); 
+                    await ConsumeCmd.SpecificCard(choiceContext, card, Owner, this);
             }
+
             await CardPileCmd.Draw(choiceContext, 1, Owner);
         }
     }

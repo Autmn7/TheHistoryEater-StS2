@@ -11,7 +11,7 @@ public class MasakadoCrisis : KeineModCard
 {
     public MasakadoCrisis() : base(2, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
     {
-        WithDamage(14, 4);
+        WithDamage(12, 4);
         WithCards(2);
         WithPower<TimeShiftPower>(2);
         WithEnergy(2);

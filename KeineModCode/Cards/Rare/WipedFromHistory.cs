@@ -23,9 +23,7 @@ public class WipedFromHistory : KeineModCard
     {
         await DamageCmd.Attack(DynamicVars.CalculatedDamage).FromCard(this).Targeting(cardPlay.Target).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
         if (InHuman())
-        {
             if (cardPlay.Target.HasPower<HistoricalGapPower>())
                 await CreatureCmd.GainBlock(Owner.Creature, cardPlay.Target.GetPowerAmount<HistoricalGapPower>(), ValueProp.Move, cardPlay);
-        }
     }
 }
