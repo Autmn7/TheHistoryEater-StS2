@@ -43,8 +43,8 @@ public class KeineModCardPool : CustomCardPoolModel
         var cardFrame = "keine";
         if (card is KeineModCard keineCard && !keineCard.IsCanonical && keineCard.Owner?.Creature != null && card.Owner.PlayerCombatState != null && card.CombatState != null && card.CombatState.IsLiveCombat())
         {
-            var hasHakutaku = keineCard.Keywords.Contains(KeineModKeywords.Hakutaku);
-            var hasHuman = keineCard.Keywords.Contains(KeineModKeywords.Human);
+            var hasHakutaku = keineCard.Keywords.Contains(KeineKeywords.Hakutaku);
+            var hasHuman = keineCard.Keywords.Contains(KeineKeywords.Human);
             var hasDualForm = keineCard.Owner.Creature.HasPower<DualFormPower>();
             var isHakutakuForm = KeineModel.IsInStance<HakutakuForm>(keineCard.Owner);
 

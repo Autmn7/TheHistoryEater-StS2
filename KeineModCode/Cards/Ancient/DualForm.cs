@@ -11,8 +11,8 @@ public class DualForm : KeineModCard
     public DualForm() : base(3, CardType.Power, CardRarity.Ancient, TargetType.Self)
     {
         WithKeyword(CardKeyword.Ethereal, UpgradeType.Remove);
-        WithTip(KeineModKeywords.Human);
-        WithTip(KeineModKeywords.Hakutaku);
+        WithTip(KeineKeywords.Human);
+        WithTip(KeineKeywords.Hakutaku);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

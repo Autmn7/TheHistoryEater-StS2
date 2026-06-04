@@ -9,18 +9,21 @@ namespace KeineMod.KeineModCode.Cards.Rare;
 
 public class PassageOfTime : KeineModCard
 {
-    public PassageOfTime() : base(1, CardType.Skill, CardRarity.Rare, TargetType.Self)
+    public PassageOfTime() : base(0, CardType.Skill, CardRarity.Rare, TargetType.Self)
     {
-        WithCards(4, 1);
-        WithPower<TimeShiftPower>(4, 1);
-        WithKeywords(KeineModKeywords.Human, KeineModKeywords.Consume);
+        WithPower<TimeShiftPower>(2, 1);
+        WithCards(2, 1);
+        WithEnergy(1);
+        WithKeywords(KeineKeywords.Human, KeineKeywords.Consume, KeineKeywords.Hakutaku, CardKeyword.Exhaust);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.BaseValue, Owner);
         await PowerCmd.Apply<TimeShiftPower>(choiceContext, Owner.Creature, DynamicVars["TimeShiftPower"].BaseValue, Owner.Creature, this);
+        await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.BaseValue, Owner);
         if (InHuman())
-            await ConsumeCmd.SpecificCard(choiceContext, this, Owner, this);
+            await ConsumeCmd.FromHandUpTo(choiceContext, Owner, DynamicVars.Cards.IntValue, this);
+        if (InHakutaku())
+            await PlayerCmd.GainEnergy(DynamicVars.Energy.BaseValue, Owner);
     }
 }

@@ -15,7 +15,7 @@ public class Overworked : KeineModCard
     {
         WithBlock(11, 4);
         WithPower<KnowledgePower>(1);
-        WithKeywords(KeineModKeywords.Knowledgeable, KeineModKeywords.Create);
+        WithKeywords(KeineKeywords.Knowledgeable, KeineKeywords.Create);
         WithTip(typeof(Fatigue));
     }
 

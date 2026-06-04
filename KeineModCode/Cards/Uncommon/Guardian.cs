@@ -12,18 +12,16 @@ namespace KeineMod.KeineModCode.Cards.Uncommon;
 
 public class Guardian : KeineModCard
 {
-    public Guardian() : base(2, CardType.Skill, CardRarity.Uncommon, TargetType.AllAllies)
+    public Guardian() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.AllAllies)
     {
-        WithBlock(12, 4);
-        WithKeywords(KeineModKeywords.Knowledgeable, CardKeyword.Retain, KeineModKeywords.Hakutaku, CardKeyword.Exhaust);
+        WithBlock(6, 3);
+        WithKeywords(KeineKeywords.Knowledgeable, KeineKeywords.Hakutaku);
         WithTip(new TooltipSource(card => new HoverTip(new LocString("cards", Id.Entry + ".extraTipTitle"), new LocString("cards", Id.Entry + ".extraTipDescription"))));
     }
 
-    public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.MultiplayerOnly;
-
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        foreach (var creature in CombatState.GetTeammatesOf(Owner.Creature).Where(c => c != null && c.IsAlive && c.IsPlayer))
+        foreach (var creature in CombatState.GetTeammatesOf(Owner.Creature).Where(c => c.IsAlive && c.IsPlayer))
         {
             var isMokou = creature.Player?.Character.Id.ToString() == "CHARACTER.MOKOUMOD-MOKOU_MOD" && creature != Owner.Creature;
             await CreatureCmd.GainBlock(creature, isMokou ? DynamicVars.Block.BaseValue * 2 : DynamicVars.Block.BaseValue, ValueProp.Move, cardPlay);

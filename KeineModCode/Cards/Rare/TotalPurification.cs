@@ -12,7 +12,7 @@ public class TotalPurification : KeineModCard
 {
     public TotalPurification() : base(3, CardType.Skill, CardRarity.Rare, TargetType.Self)
     {
-        WithKeywords(KeineModKeywords.Human, KeineModKeywords.Consume, KeineModKeywords.Hakutaku, CardKeyword.Exhaust);
+        WithKeywords(KeineKeywords.Human, KeineKeywords.Consume, KeineKeywords.Hakutaku, CardKeyword.Exhaust);
         WithCostUpgradeBy(-1);
     }
 

@@ -14,9 +14,9 @@ public class RevisionSession : KeineModCard, IOnConsumed
     {
         WithBlock(11, 4);
         WithPower<KnowledgePower>(1);
-        WithKeywords(KeineModKeywords.Knowledgeable, CardKeyword.Retain);
-        WithTip(KeineModKeywords.Consume);
-        WithTip(KeineModKeywords.Recall);
+        WithKeywords(KeineKeywords.Knowledgeable, CardKeyword.Retain);
+        WithTip(KeineKeywords.Consume);
+        WithTip(KeineKeywords.Recall);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -26,7 +26,7 @@ public class RevisionSession : KeineModCard, IOnConsumed
 
     public async Task OnConsumed(PlayerChoiceContext choiceContext, Player player, CardModel consumedCard)
     {
-        if (consumedCard == this)
-            await PowerCmd.Apply<KnowledgePower>(choiceContext, Owner.Creature, DynamicVars["KnowledgePower"].BaseValue, Owner.Creature, this);
+        if (consumedCard != this) return;
+        await PowerCmd.Apply<KnowledgePower>(choiceContext, Owner.Creature, DynamicVars["KnowledgePower"].BaseValue, Owner.Creature, this);
     }
 }

@@ -18,7 +18,7 @@ public class ThreeSacredTreasuresSword : KeineModCard
         WithDamage(8, 2);
         WithVar("Repeat", 2);
         WithVar("TreasureOfValorPower", 1);
-        WithKeyword(KeineModKeywords.Create);
+        WithKeyword(KeineKeywords.Create);
         WithTip(typeof(HeavenlySword));
         WithTip(new TooltipSource(card => HoverTipFactory.FromCard<ScrollOfValor>(card.IsUpgraded)));
     }

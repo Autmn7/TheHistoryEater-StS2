@@ -16,7 +16,7 @@ public class TheSmartest : KeineModCard, IOnConsumed
     public TheSmartest() : base(9, CardType.Skill, CardRarity.Token, TargetType.Self)
     {
         WithVar("CostReduction", 3, 6);
-        WithTip(KeineModKeywords.Consume);
+        WithTip(KeineKeywords.Consume);
         WithTip(typeof(TheStrongest));
     }
 

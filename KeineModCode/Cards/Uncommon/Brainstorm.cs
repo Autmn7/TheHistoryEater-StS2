@@ -1,39 +1,49 @@
-﻿using KeineMod.KeineModCode.Commands;
+﻿using BaseLib.Utils;
+using KeineMod.KeineModCode.Commands;
 using KeineMod.KeineModCode.Scripts;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Factories;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Localization;
+using MegaCrit.Sts2.Core.Models;
 
 namespace KeineMod.KeineModCode.Cards.Uncommon;
 
 public class Brainstorm : KeineModCard
 {
-    public Brainstorm() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+    public Brainstorm() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.AnyPlayer)
     {
-        WithKeywords(KeineModKeywords.Create, CardKeyword.Exhaust);
+        WithKeywords(KeineKeywords.Create, CardKeyword.Exhaust);
         WithTip(StaticHoverTip.Block);
-        WithTip(KeineModKeywords.Knowledgeable);
+        WithTip(KeineKeywords.Knowledgeable);
+        WithTip(new TooltipSource(card => new HoverTip(new LocString("cards", Id.Entry + ".extraTipTitle"), new LocString("cards", Id.Entry + ".extraTipDescription"))));
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+        IEnumerable<CardModel> cardPool;
         // Get all character pools and exclude the player's own pool
-        var otherPools = Owner.UnlockState.CharacterCardPools.ToList();
-        if (otherPools.Count > 1) otherPools.Remove(Owner.Character.CardPool);
-
-        // Flatten all available card options from the other characters
-        var allOtherCards = otherPools.SelectMany(pool => pool.AllCards);
+        if (cardPlay.Target?.Player != null && cardPlay.Target != Owner.Creature)
+        {
+            cardPool = cardPlay.Target.Player.Character.CardPool.AllCards.ToList().Where(c => c.Rarity is CardRarity.Common or CardRarity.Uncommon or CardRarity.Rare);
+        }
+        else
+        {
+            var otherPools = Owner.UnlockState.CharacterCardPools.ToList();
+            if (otherPools.Count > 1) otherPools.Remove(Owner.Character.CardPool);
+            cardPool = otherPools.SelectMany(pool => pool.AllCards);
+        }
 
         // Filter out valid Attack choices
-        var attackPool = allOtherCards.Where(c =>
+        var attackPool = cardPool.Where(c =>
             c.Type == CardType.Attack &&
             (!c.Tags.Contains(CardTag.OstyAttack) || Owner.IsOstyAlive) &&
             c.BaseStarCost <= Owner.PlayerCombatState?.Stars
         );
 
         // Filter out valid Block Skill choices using your exact evaluation rule
-        var blockPool = allOtherCards.Where(c =>
+        var blockPool = cardPool.Where(c =>
             c.Type == CardType.Skill &&
             c.DynamicVars.ContainsKey("Block") &&
             c.DynamicVars["Block"].BaseValue > 1 &&

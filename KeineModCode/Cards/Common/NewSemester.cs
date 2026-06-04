@@ -10,11 +10,11 @@ public class NewSemester : KeineModCard
 {
     public NewSemester() : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
     {
-        WithBlock(6, 2);
+        WithBlock(6, 3);
         WithVar("Threshold", 3);
         WithPower<KnowledgePower>(1);
-        WithCards(1, 1);
-        WithKeywords(KeineModKeywords.Knowledgeable);
+        WithCards(1);
+        WithKeywords(KeineKeywords.Knowledgeable);
     }
 
     protected override bool ShouldGlowGoldInternal => Owner.Creature.GetPowerAmount<KnowledgePower>() < DynamicVars["Threshold"].BaseValue;

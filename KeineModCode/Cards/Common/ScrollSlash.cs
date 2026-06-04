@@ -13,7 +13,7 @@ public class ScrollSlash : KeineModCard
         WithDamage(7, 3);
         WithEnergy(1);
         WithCards(1);
-        WithKeywords(KeineModKeywords.Knowledgeable, KeineModKeywords.Human, KeineModKeywords.Hakutaku);
+        WithKeywords(KeineKeywords.Knowledgeable, KeineKeywords.Human, KeineKeywords.Hakutaku);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

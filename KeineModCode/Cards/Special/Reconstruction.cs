@@ -14,7 +14,7 @@ public class Reconstruction : KeineModCard
 {
     public Reconstruction() : base(1, CardType.Skill, CardRarity.Token, TargetType.Self)
     {
-        WithKeywords(KeineModKeywords.Create);
+        WithKeywords(KeineKeywords.Create);
         WithTip(CardKeyword.Ethereal);
         WithTip(CardKeyword.Exhaust);
         WithCostUpgradeBy(-1);

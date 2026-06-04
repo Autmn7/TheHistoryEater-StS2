@@ -14,7 +14,7 @@ public class ScrollStorm : KeineModCard
         WithDamage(5, 2);
         WithCalculatedVar("Repeat", 3, (card, _) => card is KeineModCard keineModCard && keineModCard.InHakutaku() ? 1 : 0);
         WithPower<KnowledgePower>(1);
-        WithKeywords(KeineModKeywords.Knowledgeable, KeineModKeywords.Human, KeineModKeywords.Hakutaku);
+        WithKeywords(KeineKeywords.Knowledgeable, KeineKeywords.Human, KeineKeywords.Hakutaku);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

@@ -16,7 +16,7 @@ public class BackToTheFuture : KeineModCard
         WithCards(4);
         WithPower<TimeShiftPower>(4);
         WithKeyword(CardKeyword.Innate, UpgradeType.Add);
-        WithKeywords(KeineModKeywords.Human, KeineModKeywords.Consume, CardKeyword.Exhaust);
+        WithKeywords(KeineKeywords.Human, KeineKeywords.Consume, CardKeyword.Exhaust);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

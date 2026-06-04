@@ -14,7 +14,7 @@ public class SiphoningHistory : KeineModCard
     public SiphoningHistory() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
         WithVar("Ratio", 4, -1);
-        WithKeywords(KeineModKeywords.Hakutaku, KeineModKeywords.Create, CardKeyword.Exhaust);
+        WithKeywords(KeineKeywords.Hakutaku, KeineKeywords.Create, CardKeyword.Exhaust);
         WithTip(typeof(SplittingHistory));
         WithTip(typeof(HistoricalGapPower));
         WithTip(typeof(StrengthPower));

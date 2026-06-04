@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bakvlvpl2o767"
-path="res://.godot/imported/omega_power.png-4a28b5501adde31037a07915fc12d908.ctex"
+uid="uid://cluvk6comhv0v"
+path="res://.godot/imported/sacred_strike.png-4af8cbe688f79c5a150c46c659074c49.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://KeineMod/images/powers/omega_power.png"
-dest_files=["res://.godot/imported/omega_power.png-4a28b5501adde31037a07915fc12d908.ctex"]
+source_file="res://KeineMod/images/card_portraits/sacred_strike.png"
+dest_files=["res://.godot/imported/sacred_strike.png-4af8cbe688f79c5a150c46c659074c49.ctex"]
 
 [params]
 

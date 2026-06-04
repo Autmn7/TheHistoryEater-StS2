@@ -16,7 +16,7 @@ public class ThreeSacredTreasuresMirror : KeineModCard
     public ThreeSacredTreasuresMirror() : base(2, CardType.Power, CardRarity.Uncommon, TargetType.Self)
     {
         WithEnergy(1);
-        WithKeyword(KeineModKeywords.Create);
+        WithKeyword(KeineKeywords.Create);
         WithTip(typeof(EightSpanMirror));
         WithTip(new TooltipSource(card => HoverTipFactory.FromCard<ScrollOfWisdom>(card.IsUpgraded)));
         WithCostUpgradeBy(-1);

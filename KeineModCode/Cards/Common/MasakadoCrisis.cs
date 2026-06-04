@@ -15,7 +15,7 @@ public class MasakadoCrisis : KeineModCard
         WithCards(2);
         WithPower<TimeShiftPower>(2);
         WithEnergy(2);
-        WithKeywords(KeineModKeywords.Human, KeineModKeywords.Consume, KeineModKeywords.Hakutaku, KeineModKeywords.Recall);
+        WithKeywords(KeineKeywords.Human, KeineKeywords.Consume, KeineKeywords.Hakutaku, KeineKeywords.Recall);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

@@ -27,6 +27,7 @@ public static class ConsumeCmd
             if (consumedCard is not Flow && (consumedCard is not TheSmartest || consumedCard.EnergyCost.GetResolved() <= 0)) await CardPileCmd.Add(consumedCard, ScrollPile.Scroll);
             KeineConstantsStateRegistry.Get(player).IncrementCardsConsumed(1);
             await KeineHooks.OnConsumed(choiceContext, player, consumedCard);
+            await KeineHooks.OnConsumedLate(choiceContext, player, consumedCard);
         }
 
         return list;
@@ -45,6 +46,7 @@ public static class ConsumeCmd
             if (consumedCard is not Flow && (consumedCard is not TheSmartest || consumedCard.EnergyCost.GetResolved() <= 0)) await CardPileCmd.Add(consumedCard, ScrollPile.Scroll);
             KeineConstantsStateRegistry.Get(player).IncrementCardsConsumed(1);
             await KeineHooks.OnConsumed(choiceContext, player, consumedCard);
+            await KeineHooks.OnConsumedLate(choiceContext, player, consumedCard);
         }
 
         return list;
@@ -63,6 +65,7 @@ public static class ConsumeCmd
             if (consumedCard is not Flow && (consumedCard is not TheSmartest || consumedCard.EnergyCost.GetResolved() <= 0)) await CardPileCmd.Add(consumedCard, ScrollPile.Scroll);
             KeineConstantsStateRegistry.Get(player).IncrementCardsConsumed(1);
             await KeineHooks.OnConsumed(choiceContext, player, consumedCard);
+            await KeineHooks.OnConsumedLate(choiceContext, player, consumedCard);
         }
 
         return consumedCard;
@@ -78,6 +81,7 @@ public static class ConsumeCmd
             if (consumedCard is not Flow && (consumedCard is not TheSmartest || consumedCard.EnergyCost.GetResolved() <= 0)) await CardPileCmd.Add(consumedCard, ScrollPile.Scroll);
             KeineConstantsStateRegistry.Get(player).IncrementCardsConsumed(1);
             await KeineHooks.OnConsumed(choiceContext, player, consumedCard);
+            await KeineHooks.OnConsumedLate(choiceContext, player, consumedCard);
         }
     }
 
@@ -90,6 +94,7 @@ public static class ConsumeCmd
         if (consumedCard is not Flow && (consumedCard is not TheSmartest || consumedCard.EnergyCost.GetResolved() <= 0)) await CardPileCmd.Add(consumedCard, ScrollPile.Scroll);
         KeineConstantsStateRegistry.Get(player).IncrementCardsConsumed(1);
         await KeineHooks.OnConsumed(choiceContext, player, consumedCard);
+        await KeineHooks.OnConsumedLate(choiceContext, player, consumedCard);
 
         return consumedCard;
     }

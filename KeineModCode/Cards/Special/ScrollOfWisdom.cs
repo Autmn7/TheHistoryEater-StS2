@@ -17,9 +17,10 @@ public class ScrollOfWisdom : KeineModCard, IOnConsumed
     public ScrollOfWisdom() : base(-1, CardType.Skill, CardRarity.Token, TargetType.Self)
     {
         WithPower<WisdomPower>(1, 1);
-        WithKeywords(KeineModKeywords.Sacredscroll, CardKeyword.Unplayable);
-        WithTip(KeineModKeywords.Consume);
+        WithKeywords(KeineKeywords.Sacredscroll, CardKeyword.Unplayable);
+        WithTip(KeineKeywords.Consume);
         WithTip(typeof(EightSpanMirror));
+        WithTags(KeineTags.Sacred);
     }
 
     public async Task OnConsumed(PlayerChoiceContext choiceContext, Player player, CardModel consumedCard)

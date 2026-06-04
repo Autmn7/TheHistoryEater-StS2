@@ -11,7 +11,7 @@ public class MoonShift : KeineModCard
     public MoonShift() : base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
         WithCalculatedVar("CalculatedEnergy", 0, (card, _) => KeineConstantsStateRegistry.Get(card.Owner).FullMoonCharge, 1);
-        WithKeywords(CardKeyword.Retain, KeineModKeywords.Fullmoon, CardKeyword.Exhaust);
+        WithKeywords(CardKeyword.Retain, KeineKeywords.Fullmoon, CardKeyword.Exhaust);
         WithEnergyTip();
     }
 

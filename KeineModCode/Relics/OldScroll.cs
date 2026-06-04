@@ -23,7 +23,7 @@ public class OldScroll : KeineModRelic
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromPower<TimeShiftPower>(),
-        HoverTipFactory.FromKeyword(KeineModKeywords.Create),
+        HoverTipFactory.FromKeyword(KeineKeywords.Create),
         HoverTipFactory.FromCard<ScrollOfValor>()
     ];
 

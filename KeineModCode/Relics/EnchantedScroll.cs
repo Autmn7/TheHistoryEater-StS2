@@ -24,8 +24,8 @@ public class EnchantedScroll : KeineModRelic
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromPower<TimeShiftPower>(),
-        HoverTipFactory.FromKeyword(KeineModKeywords.Create),
-        HoverTipFactory.FromKeyword(KeineModKeywords.Sacredpower),
+        HoverTipFactory.FromKeyword(KeineKeywords.Create),
+        HoverTipFactory.FromKeyword(KeineKeywords.Sacredpower),
         HoverTipFactory.FromCard<ScrollOfValor>(true),
         HoverTipFactory.FromCard<ScrollOfBenevolence>(true),
         HoverTipFactory.FromCard<ScrollOfWisdom>(true)

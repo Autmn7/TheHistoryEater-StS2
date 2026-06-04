@@ -48,21 +48,21 @@ public abstract class KeineModCard : ConstructedCardModel, IOnStanceChange
 
     public Task OnStanceChange(PlayerChoiceContext choiceContext, Player player, KeineStanceModel oldStance, KeineStanceModel newStance)
     {
-        if (player == Owner && VisualCardPool is KeineModCardPool && Keywords.Contains(KeineModKeywords.Hakutaku))
+        if (player == Owner && VisualCardPool is KeineModCardPool && Keywords.Contains(KeineKeywords.Hakutaku))
             NCard.FindOnTable(this)?.Reload();
         return Task.CompletedTask;
     }
 
     public override Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
     {
-        if (power.Owner == Owner.Creature && power is DualFormPower && VisualCardPool is KeineModCardPool && Keywords.Contains(KeineModKeywords.Hakutaku))
+        if (power.Owner == Owner.Creature && power is DualFormPower && VisualCardPool is KeineModCardPool && Keywords.Contains(KeineKeywords.Hakutaku))
             NCard.FindOnTable(this)?.Reload();
         return Task.CompletedTask;
     }
 
     public override Task AfterCardChangedPiles(CardModel card, PileType oldPile, AbstractModel? clonedBy)
     {
-        if (card == this && VisualCardPool is KeineModCardPool && Keywords.Contains(KeineModKeywords.Hakutaku))
+        if (card == this && VisualCardPool is KeineModCardPool && Keywords.Contains(KeineKeywords.Hakutaku))
             NCard.FindOnTable(card)?.Reload();
         return Task.CompletedTask;
     }

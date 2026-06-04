@@ -18,7 +18,7 @@ public static class CreateCmd
         if (createdCard.Type != CardType.Status)
             CardCmd.ApplyKeyword(createdCard, CardKeyword.Retain);
         if (addKnowledgeable)
-            CardCmd.ApplyKeyword(createdCard, KeineModKeywords.Knowledgeable);
+            CardCmd.ApplyKeyword(createdCard, KeineKeywords.Knowledgeable);
         if (toPile == PileType.Hand)
             await CardPileCmd.AddGeneratedCardToCombat(createdCard, toPile, creator);
         else

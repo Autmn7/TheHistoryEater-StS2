@@ -14,8 +14,8 @@ public class Workflow : KeineModCard
     public Workflow() : base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
         WithBlock(4, 3);
-        WithPower<KnowledgePower>(1);
-        WithKeywords(KeineModKeywords.Human, KeineModKeywords.Consume, KeineModKeywords.Create, KeineModKeywords.Hakutaku);
+        WithKeywords(KeineKeywords.Human, KeineKeywords.Consume, KeineKeywords.Create, KeineKeywords.Hakutaku);
+        WithTip(KeineKeywords.Sacredscroll);
         WithTip(typeof(Flow));
         WithTip(typeof(ScrollOfWisdom));
     }

@@ -15,8 +15,8 @@ public class PhantasmalEmperor : KeineModCard
     {
         WithDamage(6);
         WithVar("Repeat", 4, 1);
-        WithPower<KnowledgePower>(3, -1);
-        WithKeyword(KeineModKeywords.Knowledgeable);
+        WithPower<KnowledgePower>(3);
+        WithKeyword(KeineKeywords.Knowledgeable);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

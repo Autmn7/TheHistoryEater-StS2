@@ -1,5 +1,6 @@
 ﻿using BaseLib.Utils;
 using KeineMod.KeineModCode.Powers;
+using KeineMod.KeineModCode.Scripts;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -15,6 +16,7 @@ public class EightSpanMirror : KeineModCard
     public EightSpanMirror() : base(2, CardType.Power, CardRarity.Token, TargetType.Self)
     {
         WithVar("MirroredPower", 1);
+        WithTags(KeineTags.Sacred);
         WithCostUpgradeBy(-1);
     }
 

@@ -17,7 +17,7 @@ public class ThreeSacredTreasuresOrb : KeineModCard
     {
         WithBlock(14, 4);
         WithVar("TreasureOfBenevolencePower", 1);
-        WithKeyword(KeineModKeywords.Create);
+        WithKeyword(KeineKeywords.Create);
         WithTip(typeof(CurvedJewel));
         WithTip(new TooltipSource(card => HoverTipFactory.FromCard<ScrollOfBenevolence>(card.IsUpgraded)));
     }

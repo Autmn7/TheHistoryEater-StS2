@@ -12,8 +12,9 @@ public class ScrollDance : KeineModCard
     public ScrollDance() : base(1, CardType.Power, CardRarity.Uncommon, TargetType.Self)
     {
         WithVar("ScrollDancePower", 1);
-        WithTip(KeineModKeywords.Create);
+        WithTip(KeineKeywords.Create);
         WithKeyword(CardKeyword.Innate, UpgradeType.Add);
+        WithTip(KeineKeywords.Sacredscroll);
         WithTip(typeof(ScrollOfValor));
         WithTip(typeof(ScrollOfBenevolence));
         WithTip(typeof(ScrollOfWisdom));

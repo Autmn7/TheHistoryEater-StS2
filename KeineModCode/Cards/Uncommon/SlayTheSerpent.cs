@@ -17,7 +17,7 @@ public class SlayTheSerpent : KeineModCard
     {
         WithDamage(11, 4);
         WithCards(1);
-        WithKeywords(KeineModKeywords.Human, KeineModKeywords.Consume, KeineModKeywords.Create, KeineModKeywords.Hakutaku);
+        WithKeywords(KeineKeywords.Human, KeineKeywords.Consume, KeineKeywords.Create, KeineKeywords.Hakutaku);
         WithTip(typeof(Snakebite));
         WithTip(typeof(SerpentForm));
         WithTip(new TooltipSource(card => HoverTipFactory.FromCard<HeavenlySword>(card.IsUpgraded)));

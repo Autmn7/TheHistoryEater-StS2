@@ -12,7 +12,7 @@ public class AncientProtection : KeineModCard
     public AncientProtection() : base(1, CardType.Power, CardRarity.Uncommon, TargetType.Self)
     {
         WithVar("AncientProtectionPower", 3, 1);
-        WithTip(KeineModKeywords.Consume);
+        WithTip(KeineKeywords.Consume);
         WithTip(StaticHoverTip.Block);
     }
 

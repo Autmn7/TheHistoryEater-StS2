@@ -29,4 +29,9 @@ public class KeineHooks
     {
         return Dispatch(choiceContext, player, (IOnConsumed m) => m.OnConsumed(choiceContext, player, consumedCard));
     }
+
+    public static Task OnConsumedLate(PlayerChoiceContext choiceContext, Player player, CardModel consumedCard)
+    {
+        return Dispatch(choiceContext, player, (IOnConsumedLate m) => m.OnConsumedLate(choiceContext, player, consumedCard));
+    }
 }

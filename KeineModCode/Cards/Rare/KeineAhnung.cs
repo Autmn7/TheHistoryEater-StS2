@@ -11,7 +11,7 @@ public class KeineAhnung : KeineModCard
 {
     public KeineAhnung() : base(1, CardType.Skill, CardRarity.Rare, TargetType.Self)
     {
-        WithKeywords(KeineModKeywords.Create, CardKeyword.Exhaust);
+        WithKeywords(KeineKeywords.Create, CardKeyword.Exhaust);
         WithTip(typeof(TheSmartest));
         WithTip(typeof(TheStrongest));
     }

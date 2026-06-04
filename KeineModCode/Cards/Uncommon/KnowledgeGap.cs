@@ -12,7 +12,7 @@ public class KnowledgeGap : KeineModCard
     {
         WithDamage(12, 3);
         WithVar("Ratio", 3);
-        WithKeywords(KeineModKeywords.Knowledgeable);
+        WithKeywords(KeineKeywords.Knowledgeable);
         WithTip(typeof(HistoricalGapPower));
     }
 

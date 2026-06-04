@@ -6,13 +6,13 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 
 namespace KeineMod.KeineModCode.Cards.Basic;
 
-public class DropletOfTime : KeineModCard
+public class TidesOfTime : KeineModCard
 {
-    public DropletOfTime() : base(0, CardType.Attack, CardRarity.Basic, TargetType.AnyEnemy)
+    public TidesOfTime() : base(0, CardType.Attack, CardRarity.Basic, TargetType.AnyEnemy)
     {
         WithDamage(4, 2);
         WithPower<TimeShiftPower>(1, 1);
-        WithKeyword(KeineModKeywords.Fullmoon);
+        WithKeyword(KeineKeywords.Fullmoon);
     }
 
     protected override bool ShouldGlowGoldInternal => !(KeineConstantsStateRegistry.Get(Owner).FullMoonCharge > 0);

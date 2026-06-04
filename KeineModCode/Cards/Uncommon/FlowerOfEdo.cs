@@ -18,8 +18,8 @@ public class FlowerOfEdo : KeineModCard, IOnConsumed
     {
         WithDamage(10, 2);
         WithVar("Increase", 6, 2);
-        WithTip(KeineModKeywords.Consume);
-        WithTip(KeineModKeywords.Recall);
+        WithTip(KeineKeywords.Consume);
+        WithTip(KeineKeywords.Recall);
         WithTip(CardKeyword.Exhaust);
     }
 

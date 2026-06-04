@@ -13,7 +13,7 @@ public class YoshimitsuCrisis : KeineModCard
         WithDamage(16, 5);
         WithBlock(3);
         WithCards(3);
-        WithKeywords(KeineModKeywords.Human, KeineModKeywords.Consume, KeineModKeywords.Hakutaku, KeineModKeywords.Recall);
+        WithKeywords(KeineKeywords.Human, KeineKeywords.Consume, KeineKeywords.Hakutaku, KeineKeywords.Recall);
         WithEnergyTip();
     }
 

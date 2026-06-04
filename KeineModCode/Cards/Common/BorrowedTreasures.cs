@@ -14,7 +14,8 @@ public class BorrowedTreasures : KeineModCard
     public BorrowedTreasures() : base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
     {
         WithDamage(8, 4);
-        WithKeywords(KeineModKeywords.Create);
+        WithKeywords(KeineKeywords.Create);
+        WithTip(KeineKeywords.Sacredscroll);
         WithTip(typeof(ScrollOfValor));
         WithTip(typeof(ScrollOfBenevolence));
         WithTip(typeof(ScrollOfWisdom));

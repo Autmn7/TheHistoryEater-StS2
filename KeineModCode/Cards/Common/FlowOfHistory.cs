@@ -17,8 +17,8 @@ public class FlowOfHistory : KeineModCard, IOnConsumed
         WithPower<HistoricalGapPower>(3, 1);
         WithCards(2);
         WithVar("Consumed", 1, 1);
-        WithKeyword(KeineModKeywords.Create);
-        WithTip(KeineModKeywords.Consume);
+        WithKeyword(KeineKeywords.Create);
+        WithTip(KeineKeywords.Consume);
         WithTip(typeof(Flow));
     }
 
@@ -34,7 +34,7 @@ public class FlowOfHistory : KeineModCard, IOnConsumed
 
     public async Task OnConsumed(PlayerChoiceContext choiceContext, Player player, CardModel consumedCard)
     {
-        if (consumedCard == this)
-            await CardPileCmd.Draw(choiceContext, DynamicVars["Consumed"].BaseValue, Owner);
+        if (consumedCard != this) return;
+        await CardPileCmd.Draw(choiceContext, DynamicVars["Consumed"].BaseValue, Owner);
     }
 }

@@ -13,7 +13,7 @@ public class Conceal : KeineModCard
     {
         WithBlock(7, 2);
         WithPower<HistoricalGapPower>(2, 1);
-        WithKeywords(KeineModKeywords.Human, KeineModKeywords.Hakutaku);
+        WithKeywords(KeineKeywords.Human, KeineKeywords.Hakutaku);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

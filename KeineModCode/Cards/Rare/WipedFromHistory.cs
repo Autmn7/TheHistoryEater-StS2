@@ -16,7 +16,7 @@ public class WipedFromHistory : KeineModCard
         WithTip(StaticHoverTip.Block);
         WithTip(typeof(HistoricalGapPower));
         WithKeyword(CardKeyword.Retain, UpgradeType.Add);
-        WithKeywords(KeineModKeywords.Human, KeineModKeywords.Hakutaku);
+        WithKeywords(KeineKeywords.Human, KeineKeywords.Hakutaku);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

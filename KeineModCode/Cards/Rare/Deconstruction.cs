@@ -19,7 +19,7 @@ public class Deconstruction : KeineModCard
         CountNeeded = 4;
         WithCards(1);
         WithVar(new CountNeededVar(4));
-        WithKeywords(KeineModKeywords.Human, KeineModKeywords.Consume);
+        WithKeywords(KeineKeywords.Human, KeineKeywords.Consume);
         WithTip(new TooltipSource(card => HoverTipFactory.FromCard<Reconstruction>(card.IsUpgraded)));
     }
 

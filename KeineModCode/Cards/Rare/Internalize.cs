@@ -11,7 +11,7 @@ public class Internalize : KeineModCard
     public Internalize() : base(1, CardType.Power, CardRarity.Rare, TargetType.Self)
     {
         WithVar("InternalizePower", 1);
-        WithTip(KeineModKeywords.Consume);
+        WithTip(KeineKeywords.Consume);
         WithTip(typeof(ValorPower));
         WithTip(typeof(BenevolencePower));
         WithCostUpgradeBy(-1);

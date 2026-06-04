@@ -20,15 +20,15 @@ public class Flow : KeineModCard, IOnConsumed
     public Flow() : base(-1, CardType.Status, CardRarity.Status, TargetType.Self)
     {
         WithKeywords(CardKeyword.Unplayable, CardKeyword.Ethereal);
-        WithTip(KeineModKeywords.Consume);
+        WithTip(KeineKeywords.Consume);
     }
 
     public override int MaxUpgradeLevel => 0;
 
     public async Task OnConsumed(PlayerChoiceContext choiceContext, Player player, CardModel consumedCard)
     {
-        if (consumedCard == this)
-            await CardCmd.Exhaust(choiceContext, this);
+        if (consumedCard != this) return;
+        await CardCmd.Exhaust(choiceContext, this);
     }
 
     public override async Task AfterCardExhausted(PlayerChoiceContext choiceContext, CardModel card, bool causedByEthereal)

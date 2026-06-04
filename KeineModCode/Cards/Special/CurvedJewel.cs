@@ -1,5 +1,6 @@
 ﻿using BaseLib.Utils;
 using KeineMod.KeineModCode.Powers;
+using KeineMod.KeineModCode.Scripts;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -17,6 +18,7 @@ public class CurvedJewel : KeineModCard
         WithCalculatedBlock(10, (card, _) => card.Owner.Creature.GetPowerAmount<BenevolencePower>());
         WithCalculatedVar("RetainBlock", 0, (card, _) => card.Owner.Creature.GetPowerAmount<TreasureOfBenevolencePower>());
         WithKeywords(CardKeyword.Exhaust);
+        WithTags(KeineTags.Sacred);
         WithCostUpgradeBy(-1);
     }
 

@@ -156,8 +156,8 @@ public partial class MainFile : Node
 
             var highlight = __instance.CardNode.CardHighlight;
 
-            var hasHakutaku = keineCard.Keywords.Contains(KeineModKeywords.Hakutaku);
-            var hasHuman = keineCard.Keywords.Contains(KeineModKeywords.Human);
+            var hasHakutaku = keineCard.Keywords.Contains(KeineKeywords.Hakutaku);
+            var hasHuman = keineCard.Keywords.Contains(KeineKeywords.Human);
             var hasDualForm = keineCard.Owner.Creature.HasPower<DualFormPower>();
             var isHakutakuForm = KeineModel.IsInStance<HakutakuForm>(keineCard.Owner);
 
@@ -221,7 +221,7 @@ public partial class MainFile : Node
         [HarmonyPostfix]
         private static void HideSacredScrollKeyword(CardModel __instance, ref string __result)
         {
-            if (!__instance.Keywords.Contains(KeineModKeywords.Sacredscroll)) return;
+            if (!__instance.Keywords.Contains(KeineKeywords.Sacredscroll)) return;
             try
             {
                 var unplayableSearch = GetCustomCardText(CardKeyword.Unplayable);

@@ -1,26 +1,32 @@
-﻿using KeineMod.KeineModCode.Scripts;
-using MegaCrit.Sts2.Core.CardSelection;
+﻿using BaseLib.Utils;
+using KeineMod.KeineModCode.Commands;
+using KeineMod.KeineModCode.Powers;
+using KeineMod.KeineModCode.Scripts;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Localization;
 
 namespace KeineMod.KeineModCode.Cards.Uncommon;
 
 public class Guidance : KeineModCard
 {
-    public Guidance() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+    public Guidance() : base(0, CardType.Skill, CardRarity.Uncommon, TargetType.AnyAlly)
     {
-        WithBlock(7, 3);
-        WithKeywords(KeineModKeywords.Knowledgeable);
+        WithCards(1, 1);
+        WithKeywords(KeineKeywords.Consume, KeineKeywords.Human, CardKeyword.Exhaust);
+        WithTip(CardKeyword.Unplayable);
+        WithTip(new TooltipSource(card => new HoverTip(new LocString("cards", Id.Entry + ".extraTipTitle"), new LocString("cards", Id.Entry + ".extraTipDescription"))));
     }
+
+    public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.MultiplayerOnly;
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
-        var card = (await CardSelectCmd.FromHand(choiceContext, Owner, new CardSelectorPrefs(SelectionScreenPrompt, 1), (Func<CardModel, bool>)(c => !c.Keywords.Contains(KeineModKeywords.Knowledgeable)), this)).FirstOrDefault();
-        if (card == null)
-            return;
-        CardCmd.ApplyKeyword(card, KeineModKeywords.Knowledgeable);
+        await PowerCmd.Apply<GuidancePower>(choiceContext, Owner.Creature, 1, Owner.Creature, this);
+        await PowerCmd.Apply<GuidedPower>(choiceContext, cardPlay.Target, 1, Owner.Creature, this);
+        if (InHuman())
+            await ConsumeCmd.FromHandUpTo(choiceContext, Owner, DynamicVars.Cards.IntValue, this);
     }
 }

@@ -14,7 +14,7 @@ public class FeastOfHistory : KeineModCard
     {
         WithPower<HistoricalGapPower>(3);
         WithCalculatedVar("Times", 2, 2, (card, _) => card is KeineModCard keineModCard && keineModCard.InHakutaku() ? 1 : 0);
-        WithKeywords(KeineModKeywords.Human, KeineModKeywords.Consume, KeineModKeywords.Hakutaku, CardKeyword.Exhaust);
+        WithKeywords(KeineKeywords.Human, KeineKeywords.Consume, KeineKeywords.Hakutaku, CardKeyword.Exhaust);
         WithCostUpgradeBy(-1);
     }
 

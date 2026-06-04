@@ -16,14 +16,14 @@ public class Fatigue : KeineModCard, IOnConsumed
     public Fatigue() : base(-1, CardType.Status, CardRarity.Status, TargetType.Self)
     {
         WithKeywords(CardKeyword.Unplayable);
-        WithTip(KeineModKeywords.Consume);
+        WithTip(KeineKeywords.Consume);
     }
 
     public override int MaxUpgradeLevel => 0;
 
     public async Task OnConsumed(PlayerChoiceContext choiceContext, Player player, CardModel consumedCard)
     {
-        if (consumedCard == this)
-            await PowerCmd.Apply<FatiguePower>(choiceContext, Owner.Creature, 1, Owner.Creature, this);
+        if (consumedCard != this) return;
+        await PowerCmd.Apply<FatiguePower>(choiceContext, Owner.Creature, 1, Owner.Creature, this);
     }
 }

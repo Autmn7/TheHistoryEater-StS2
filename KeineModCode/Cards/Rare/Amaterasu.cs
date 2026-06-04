@@ -16,7 +16,7 @@ public class Amaterasu : KeineModCard
     {
         WithCalculatedDamage(9, (card, _) => card is KeineModCard keineModCard && keineModCard.InHakutaku() ? card.Owner.Creature.GetPowerAmount<ValorPower>() : 0, ValueProp.Move, 1);
         WithPower<ValorPower>(3, 2);
-        WithKeywords(KeineModKeywords.Human, KeineModKeywords.Hakutaku);
+        WithKeywords(KeineKeywords.Human, KeineKeywords.Hakutaku);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

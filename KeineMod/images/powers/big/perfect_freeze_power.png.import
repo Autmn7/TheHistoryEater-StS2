@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dc40ita20msn3"
-path="res://.godot/imported/droplet_of_time.png-337f445f03ba35a321a2e68f96d23928.ctex"
+uid="uid://ci7evice8g5dg"
+path="res://.godot/imported/perfect_freeze_power.png-bfe038acd3221b3268be0425581980d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://KeineMod/images/card_portraits/droplet_of_time.png"
-dest_files=["res://.godot/imported/droplet_of_time.png-337f445f03ba35a321a2e68f96d23928.ctex"]
+source_file="res://KeineMod/images/powers/big/perfect_freeze_power.png"
+dest_files=["res://.godot/imported/perfect_freeze_power.png-bfe038acd3221b3268be0425581980d4.ctex"]
 
 [params]
 

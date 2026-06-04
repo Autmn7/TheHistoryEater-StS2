@@ -15,7 +15,8 @@ public class ThreeSacredTreasuresCountry : KeineModCard
     {
         WithVar("TreasureOfCountryPower", 1);
         WithKeyword(CardKeyword.Innate, UpgradeType.Add);
-        WithKeywords(KeineModKeywords.Create, KeineModKeywords.Sacredpower);
+        WithKeywords(KeineKeywords.Create, KeineKeywords.Sacredpower);
+        WithTip(KeineKeywords.Sacredscroll);
         WithTip(typeof(ScrollOfValor));
         WithTip(typeof(ScrollOfBenevolence));
         WithTip(typeof(ScrollOfWisdom));

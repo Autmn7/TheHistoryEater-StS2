@@ -12,7 +12,7 @@ public class FadingPast : KeineModCard
     public FadingPast() : base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
         WithCards(1);
-        WithKeywords(KeineModKeywords.Recall, KeineModKeywords.Create);
+        WithKeywords(KeineKeywords.Recall, KeineKeywords.Create);
         WithKeyword(CardKeyword.Exhaust, UpgradeType.Remove);
         WithTip(typeof(Fatigue));
     }

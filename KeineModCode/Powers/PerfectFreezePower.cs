@@ -10,7 +10,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace KeineMod.KeineModCode.Powers;
 
-public class OmegaPower : KeineModPower
+public class PerfectFreezePower : KeineModPower
 {
     public override PowerType Type => PowerType.Buff;
 

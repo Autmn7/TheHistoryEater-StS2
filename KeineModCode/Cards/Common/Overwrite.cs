@@ -16,7 +16,7 @@ public class Overwrite : KeineModCard
         WithDamage(7, 2);
         WithPower<HistoricalGapPower>(2, 1);
         WithCards(1);
-        WithKeyword(KeineModKeywords.Create);
+        WithKeyword(KeineKeywords.Create);
         WithTip(typeof(Flow));
     }
 

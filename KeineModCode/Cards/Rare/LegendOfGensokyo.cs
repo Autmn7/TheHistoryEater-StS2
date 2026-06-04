@@ -11,7 +11,7 @@ public class LegendOfGensokyo : KeineModCard
     public LegendOfGensokyo() : base(2, CardType.Power, CardRarity.Rare, TargetType.Self)
     {
         WithVar("LegendOfGensokyoPower", 1);
-        WithTip(KeineModKeywords.Knowledgeable);
+        WithTip(KeineKeywords.Knowledgeable);
         WithCostUpgradeBy(-1);
     }
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6yfhbcune2ld"
-path="res://.godot/imported/omega_power.png-66648e26b09ec123c8ac5cdcfc1342f6.ctex"
+uid="uid://ispftcir0dip"
+path="res://.godot/imported/perfect_freeze_power.png-aa0047d4e75bfade9faff97f7974a0c1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://KeineMod/images/powers/big/omega_power.png"
-dest_files=["res://.godot/imported/omega_power.png-66648e26b09ec123c8ac5cdcfc1342f6.ctex"]
+source_file="res://KeineMod/images/powers/perfect_freeze_power.png"
+dest_files=["res://.godot/imported/perfect_freeze_power.png-aa0047d4e75bfade9faff97f7974a0c1.ctex"]
 
 [params]
 

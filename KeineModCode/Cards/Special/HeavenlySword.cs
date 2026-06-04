@@ -1,6 +1,7 @@
 ﻿using BaseLib.Utils;
 using Godot;
 using KeineMod.KeineModCode.Powers;
+using KeineMod.KeineModCode.Scripts;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -19,6 +20,7 @@ public class HeavenlySword : KeineModCard
         WithCalculatedDamage(5, (card, _) => card.Owner.Creature.GetPowerAmount<ValorPower>());
         WithCalculatedVar("Repeat", 2, (card, _) => card.Owner.Creature.HasPower<TreasureOfValorPower>() ? 1 : 0);
         WithKeywords(CardKeyword.Exhaust);
+        WithTags(KeineTags.Sacred);
         WithCostUpgradeBy(-1);
     }
 

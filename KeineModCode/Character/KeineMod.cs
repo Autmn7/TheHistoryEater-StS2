@@ -31,7 +31,7 @@ public class KeineMod : PlaceholderCharacterModel
         ModelDb.Card<DefendKeine>(),
         ModelDb.Card<DefendKeine>(),
         ModelDb.Card<DefendKeine>(),
-        ModelDb.Card<DropletOfTime>(),
+        ModelDb.Card<TidesOfTime>(),
         ModelDb.Card<ManipulateHistory>()
     ];
 

@@ -15,7 +15,7 @@ public class LearnFromPain : KeineModCard
         WithDamage(5, 3);
         WithCalculatedVar("Repeat", 1, (card, _) => card is KeineModCard keineModCard && keineModCard.InHakutaku() ? 1 : 0);
         WithPower<KnowledgePower>(1);
-        WithKeywords(KeineModKeywords.Knowledgeable, KeineModKeywords.Human, KeineModKeywords.Consume, KeineModKeywords.Hakutaku);
+        WithKeywords(KeineKeywords.Knowledgeable, KeineKeywords.Human, KeineKeywords.Consume, KeineKeywords.Hakutaku);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

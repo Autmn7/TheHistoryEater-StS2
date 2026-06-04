@@ -13,7 +13,7 @@ public class WellRead : KeineModCard
     {
         WithBlock(10, 4);
         WithEnergy(1);
-        WithKeyword(KeineModKeywords.Knowledgeable);
+        WithKeyword(KeineKeywords.Knowledgeable);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

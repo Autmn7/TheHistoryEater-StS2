@@ -17,9 +17,10 @@ public class ScrollOfValor : KeineModCard, IOnConsumed
     public ScrollOfValor() : base(-1, CardType.Skill, CardRarity.Token, TargetType.Self)
     {
         WithPower<ValorPower>(3, 2);
-        WithKeywords(KeineModKeywords.Sacredscroll, CardKeyword.Unplayable);
-        WithTip(KeineModKeywords.Consume);
+        WithKeywords(KeineKeywords.Sacredscroll, CardKeyword.Unplayable);
+        WithTip(KeineKeywords.Consume);
         WithTip(typeof(HeavenlySword));
+        WithTags(KeineTags.Sacred);
     }
 
     public async Task OnConsumed(PlayerChoiceContext choiceContext, Player player, CardModel consumedCard)

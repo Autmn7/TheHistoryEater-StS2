@@ -15,7 +15,7 @@ public class Determination : KeineModCard
         WithBlock(12, 3);
         WithPower<ValorPower>(3, 2);
         WithCards(2, 1);
-        WithKeywords(KeineModKeywords.Human, KeineModKeywords.Consume, KeineModKeywords.Hakutaku);
+        WithKeywords(KeineKeywords.Human, KeineKeywords.Consume, KeineKeywords.Hakutaku);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

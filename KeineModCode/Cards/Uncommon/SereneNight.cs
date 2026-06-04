@@ -13,7 +13,7 @@ public class SereneNight : KeineModCard
     {
         WithCards(2, 1);
         WithVar("Consume", 2);
-        WithKeywords(KeineModKeywords.Create, KeineModKeywords.Human, KeineModKeywords.Consume);
+        WithKeywords(KeineKeywords.Create, KeineKeywords.Human, KeineKeywords.Consume);
         WithTip(typeof(Flow));
     }
 

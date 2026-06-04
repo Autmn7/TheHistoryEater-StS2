@@ -16,7 +16,7 @@ public class GhqCrisis : KeineModCard, IOnConsumed
         WithEnergy(1);
         WithKeyword(CardKeyword.Retain, UpgradeType.Add);
         WithKeyword(CardKeyword.Exhaust);
-        WithTip(KeineModKeywords.Consume);
+        WithTip(KeineKeywords.Consume);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -30,7 +30,8 @@ public class GhqCrisis : KeineModCard, IOnConsumed
 
     public Task OnConsumed(PlayerChoiceContext choiceContext, Player player, CardModel consumedCard)
     {
-        EnergyCost.AddThisCombat(-DynamicVars.Energy.IntValue);
+        if (consumedCard.Owner == Owner)
+            EnergyCost.AddThisCombat(-DynamicVars.Energy.IntValue);
         return Task.CompletedTask;
     }
 
