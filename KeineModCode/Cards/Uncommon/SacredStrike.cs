@@ -16,6 +16,7 @@ public class SacredStrike : KeineModCard
     {
         WithDamage(4, 2);
         WithCalculatedVar("Repeat", 0, (card, _) => PileType.Hand.GetPile(card.Owner).Cards.Concat(ScrollPile.Scroll.GetPile(card.Owner).Cards).Count(c => c.Tags.Contains(KeineTags.Sacred)));
+        WithKeyword(KeineKeywords.Create);
         WithTip(KeineKeywords.Sacredscroll);
         WithTip(typeof(ScrollOfValor));
         WithTip(typeof(HeavenlySword));

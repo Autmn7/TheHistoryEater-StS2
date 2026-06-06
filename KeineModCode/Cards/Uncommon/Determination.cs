@@ -26,7 +26,7 @@ public class Determination : KeineModCard
             await ConsumeCmd.FromHandUpTo(choiceContext, Owner, DynamicVars.Cards.IntValue, this);
         if (InHakutaku())
         {
-            var list = (await CardSelectCmd.FromHand(choiceContext, Owner, new CardSelectorPrefs(CardSelectorPrefs.UpgradeSelectionPrompt, DynamicVars.Cards.IntValue), null, this)).ToList();
+            var list = (await CardSelectCmd.FromHand(choiceContext, Owner, new CardSelectorPrefs(CardSelectorPrefs.UpgradeSelectionPrompt, DynamicVars.Cards.IntValue), c => c.IsUpgradable, this)).ToList();
             foreach (var card in list)
                 CardCmd.Upgrade(card);
         }

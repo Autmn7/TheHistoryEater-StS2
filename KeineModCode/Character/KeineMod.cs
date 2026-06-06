@@ -1,4 +1,5 @@
 ﻿using BaseLib.Abstracts;
+using BaseLib.Extensions;
 using BaseLib.Utils.NodeFactories;
 using Godot;
 using KeineMod.KeineModCode.Cards.Basic;
@@ -6,11 +7,21 @@ using KeineMod.KeineModCode.Extensions;
 using KeineMod.KeineModCode.Relics;
 using MegaCrit.Sts2.Core.Entities.Characters;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Nodes.Combat;
 
 namespace KeineMod.KeineModCode.Character;
 
 public class KeineMod : PlaceholderCharacterModel
 {
+    public static NCreatureVisuals? ActiveVisuals { get; private set; }
+
+    public KeineMod() : base()
+    {
+        // Since human_form.tscn is tracked by CustomVisualPath, BaseLib auto-registers it.
+        // We just manually tell BaseLib to bake the Hakutaku form at startup here:
+        "visual/hakutaku_form.tscn".ScenePath().RegisterSceneForConversion<NCreatureVisuals>();
+    }
+
     public const string CharacterId = "KeineMod";
 
     public static readonly Color Color = new("#00afaf");
@@ -59,6 +70,27 @@ public class KeineMod : PlaceholderCharacterModel
     }
 
     public override string CustomVisualPath => "visual/human_form.tscn".ScenePath();
+
+    public override NCreatureVisuals CreateCustomVisuals()
+    {
+        // 1. Instantiate your default human form visual scene as the base root
+        var humanScene = GD.Load<PackedScene>(CustomVisualPath);
+        var visuals = humanScene.Instantiate<NCreatureVisuals>();
+
+        // 2. Load and instantiate the Hakutaku scene
+        var hakuScene = GD.Load<PackedScene>("visual/hakutaku_form.tscn".ScenePath());
+        var hakuNode = hakuScene.Instantiate();
+        hakuNode.Name = "HakutakuFormNode";
+
+        // Hide the Hakutaku visuals by default when entering combat
+        if (hakuNode is CanvasItem canvasHaku) canvasHaku.Visible = false;
+
+        // 3. Nest the Hakutaku form safely inside the root visuals
+        visuals.AddChild(hakuNode);
+
+        ActiveVisuals = visuals;
+        return visuals;
+    }
 
     public override string CustomCharacterSelectBg => "select/character_select_bg_keine.tscn".ScenePath();
     // public override string CustomEnergyCounterPath => "energy/energy_counter_mokou.tscn".ScenePath();

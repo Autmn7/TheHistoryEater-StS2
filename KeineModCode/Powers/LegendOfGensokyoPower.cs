@@ -25,16 +25,20 @@ public class LegendOfGensokyoPower : KeineModPower
             var otherPools = Owner.Player.UnlockState.CharacterCardPools.ToList();
             if (otherPools.Count > 1) otherPools.Remove(Owner.Player.Character.CardPool);
 
-            // Flatten all available card options from the other characters
+            // Flatten and filter the pool down strictly to valid Attacks and Block Skills
             var allOtherCards = otherPools.SelectMany(pool => pool.AllCards).Where(c =>
-                // 1. Osty Rule: If it's an Attack, it's only allowed if it's NOT an OstyAttack OR Osty is alive.
-                // Non-attack cards (Skills, Powers) ignore this rule completely.
-                (c.Type != CardType.Attack || !c.Tags.Contains(CardTag.OstyAttack) || Owner.Player.IsOstyAlive) &&
-                // 2. Star Rule: Only include cards where the player can actually afford the base star cost.
-                c.BaseStarCost <= Owner.Player.PlayerCombatState?.Stars
+                // Shared Condition: Card must be affordable based on current Stars
+                c.BaseStarCost <= Owner.Player.PlayerCombatState?.Stars &&
+                (
+                    // Pool Option 1: Valid Attacks (including Osty validation)
+                    (c.Type == CardType.Attack && (!c.Tags.Contains(CardTag.OstyAttack) || Owner.Player.IsOstyAlive))
+                    ||
+                    // Pool Option 2: Valid Block Skills (Value must be strictly greater than 1)
+                    (c.Type == CardType.Skill && c.DynamicVars.ContainsKey("Block") && c.DynamicVars["Block"].BaseValue > 1)
+                )
             );
 
-            // Roll 3 distinct random Attack cards based on combat RNG seed
+            // Roll 3 distinct random cards from the combined pool based on combat RNG seed
             var choices = CardFactory.GetDistinctForCombat(Owner.Player, allOtherCards, 3, Owner.Player.RunState.Rng.CombatCardGeneration).ToList();
 
             // Open the selection screen and wait for the player to choose a card

@@ -210,7 +210,7 @@
   "KEINEMOD-EPHEMERALITY137.description": "Apply {EphemeralityPower:diff()} [gold]Ephemerality[/gold] to ALL enemies.\n{IfUpgraded:show:Put|Shuffle} this {IfUpgraded:show:onto the top of|into} your [gold]Draw Pile[/gold].\n[gold]Consumed[/gold]: Apply {EphemeralityPower:diff()} [gold]Ephemerality[/gold] to ALL enemies. Add a copy of this {IfUpgraded:show:onto the top of|into} your [gold]Draw Pile[/gold].",
   "KEINEMOD-EPHEMERALITY137.title": "Ephemerality 137",
   "KEINEMOD-EPHEMERALITY137.artist": "unknown",
-  "KEINEMOD-LEGEND_OF_GENSOKYO.description": "At the start of your turn, choose 1 of 3 cards from other characters to [gold]Create[/gold] with [gold]Knowledgeable[/gold].",
+  "KEINEMOD-LEGEND_OF_GENSOKYO.description": "At the start of your turn, choose 1 of 3 Attacks or [gold]Block[/gold] Skills from other characters to [gold]Create[/gold] with [gold]Knowledgeable[/gold].",
   "KEINEMOD-LEGEND_OF_GENSOKYO.title": "Legend of Gensokyo",
   "KEINEMOD-LEGEND_OF_GENSOKYO.artist": "kaze",
   "KEINEMOD-ERUDITE.description": "Your [gold]Hand Size[/gold] is increased by {EruditePower:diff()}.\nGain {KnowledgePower:diff()} [gold]Knowledge[/gold].\nDraw {Cards:diff()} {Cards:plural:card|cards}.",

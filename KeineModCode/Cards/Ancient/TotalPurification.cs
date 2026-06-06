@@ -6,13 +6,13 @@ using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models.Powers;
 
-namespace KeineMod.KeineModCode.Cards.Rare;
+namespace KeineMod.KeineModCode.Cards.Ancient;
 
 public class TotalPurification : KeineModCard
 {
-    public TotalPurification() : base(3, CardType.Skill, CardRarity.Rare, TargetType.Self)
+    public TotalPurification() : base(2, CardType.Skill, CardRarity.Ancient, TargetType.Self)
     {
-        WithKeywords(KeineKeywords.Human, KeineKeywords.Consume, KeineKeywords.Hakutaku, CardKeyword.Exhaust);
+        WithKeywords(CardKeyword.Retain, KeineKeywords.Human, KeineKeywords.Consume, KeineKeywords.Hakutaku, CardKeyword.Exhaust);
         WithCostUpgradeBy(-1);
     }
 

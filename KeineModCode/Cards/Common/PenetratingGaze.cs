@@ -11,7 +11,7 @@ public class PenetratingGaze : KeineModCard
     public PenetratingGaze() : base(1, CardType.Skill, CardRarity.Common, TargetType.AnyEnemy)
     {
         WithPower<VulnerablePower>(2, 1);
-        WithPower<ValorPower>(2, 1);
+        WithPower<ValorPower>(1, 1);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

@@ -4,13 +4,13 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 
-namespace KeineMod.KeineModCode.Cards.Ancient;
+namespace KeineMod.KeineModCode.Cards.Rare;
 
 public class DualForm : KeineModCard
 {
-    public DualForm() : base(3, CardType.Power, CardRarity.Ancient, TargetType.Self)
+    public DualForm() : base(3, CardType.Power, CardRarity.Rare, TargetType.Self)
     {
-        WithKeyword(CardKeyword.Ethereal, UpgradeType.Remove);
+        WithKeyword(CardKeyword.Retain, UpgradeType.Add);
         WithTip(KeineKeywords.Human);
         WithTip(KeineKeywords.Hakutaku);
     }

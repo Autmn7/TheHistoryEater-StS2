@@ -10,8 +10,8 @@ public class GoodAppleBadApple : KeineModCard
 {
     public GoodAppleBadApple() : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
     {
-        WithPower<BenevolencePower>(2, 2);
-        WithPower<ValorPower>(2, 2);
+        WithPower<BenevolencePower>(2, 1);
+        WithPower<ValorPower>(2, 1);
         WithCards(2);
         WithEnergy(1);
         WithKeywords(KeineKeywords.Human, KeineKeywords.Hakutaku);
