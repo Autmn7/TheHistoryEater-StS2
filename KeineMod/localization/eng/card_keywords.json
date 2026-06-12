@@ -16,5 +16,7 @@
   "KEINEMOD-SACREDSCROLL.description": "[gold]Unplayable[/gold]. [gold]Transform[/gold] into its corresponding [gold]Sacred Treasure[/gold] when [gold]Consumed[/gold].",
   "KEINEMOD-SACREDSCROLL.title": "Sacred Scroll",
   "KEINEMOD-SACREDPOWER.description": "Scroll of Valor - [red]Strength[/red]\nScroll of Benevolence - [green]Dexterity[/green]\nScroll of Wisdom - [blue]Knowledge[/blue]",
-  "KEINEMOD-SACREDPOWER.title": "Sacred Power"
+  "KEINEMOD-SACREDPOWER.title": "Sacred Power",
+  "KEINEMOD-REINCARNATION.description": "A part of the Boss's abilities. Each Boss has its unique [gold]Reincarnation[/gold], can be viewed by a power on them during Boss fights.",
+  "KEINEMOD-REINCARNATION.title": "Reincarnation"
 }

@@ -3,6 +3,7 @@ using BaseLib.Extensions;
 using BaseLib.Utils.NodeFactories;
 using Godot;
 using KeineMod.KeineModCode.Cards.Basic;
+using KeineMod.KeineModCode.Cards.Rare;
 using KeineMod.KeineModCode.Extensions;
 using KeineMod.KeineModCode.Relics;
 using MegaCrit.Sts2.Core.Entities.Characters;
@@ -34,16 +35,17 @@ public class KeineMod : PlaceholderCharacterModel
 
     public override IEnumerable<CardModel> StartingDeck =>
     [
-        ModelDb.Card<StrikeKeine>(),
-        ModelDb.Card<StrikeKeine>(),
-        ModelDb.Card<StrikeKeine>(),
-        ModelDb.Card<StrikeKeine>(),
-        ModelDb.Card<DefendKeine>(),
-        ModelDb.Card<DefendKeine>(),
-        ModelDb.Card<DefendKeine>(),
-        ModelDb.Card<DefendKeine>(),
-        ModelDb.Card<TidesOfTime>(),
-        ModelDb.Card<ManipulateHistory>()
+        ModelDb.Card<Reincarnation>()
+        // ModelDb.Card<StrikeKeine>(),
+        // ModelDb.Card<StrikeKeine>(),
+        // ModelDb.Card<StrikeKeine>(),
+        // ModelDb.Card<StrikeKeine>(),
+        // ModelDb.Card<DefendKeine>(),
+        // ModelDb.Card<DefendKeine>(),
+        // ModelDb.Card<DefendKeine>(),
+        // ModelDb.Card<DefendKeine>(),
+        // ModelDb.Card<TidesOfTime>(),
+        // ModelDb.Card<ManipulateHistory>()
     ];
 
     public override IReadOnlyList<RelicModel> StartingRelics =>
@@ -99,8 +101,8 @@ public class KeineMod : PlaceholderCharacterModel
 
     public override string CustomIconTexturePath => "character_icon_keine.png".CharacterUiPath();
     public override string CustomIconOutlineTexturePath => "character_icon_outline_keine.png".CharacterUiPath();
-    public override string CustomCharacterSelectIconPath => "char_select_char_name.png".CharacterUiPath();
-    public override string CustomCharacterSelectLockedIconPath => "char_select_char_name_locked.png".CharacterUiPath();
+    public override string CustomCharacterSelectIconPath => "char_select_keine.png".CharacterUiPath();
+    public override string CustomCharacterSelectLockedIconPath => "char_select_keine_locked.png".CharacterUiPath();
     public override string CustomMapMarkerPath => "map_marker_keine.png".CharacterUiPath();
 
     // public override string CustomArmPointingTexturePath => "mokou_point.png".CharacterUiPath();

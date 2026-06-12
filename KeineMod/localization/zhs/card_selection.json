@@ -3,5 +3,6 @@
   "TO_CONSUME_UPTO_KEINE": "选择至多[blue]{Amount}[/blue]张牌[gold]吞噬[/gold]。",
   "TO_CONSUME_ANY_KEINE": "选择任意张牌[gold]吞噬[/gold]。",
   "TO_RECALL_KEINE": "选择[blue]{Amount}[/blue]张牌[gold]重现[/gold]。",
-  "TO_RECALL_UPTO_KEINE": "选择至多[blue]{Amount}[/blue]张牌[gold]重现[/gold]。"
+  "TO_RECALL_UPTO_KEINE": "选择至多[blue]{Amount}[/blue]张牌[gold]重现[/gold]。",
+  "TO_RECALL_CLONE_KEINE": "选择[blue]{Amount}[/blue]张牌[gold]重现[/gold]其复制。"
 }

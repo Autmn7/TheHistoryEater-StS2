@@ -13,7 +13,7 @@ public class PhantasmalEmperor : KeineModCard
 {
     public PhantasmalEmperor() : base(2, CardType.Attack, CardRarity.Rare, TargetType.AllEnemies)
     {
-        WithDamage(6);
+        WithDamage(5);
         WithVar("Repeat", 4, 1);
         WithPower<KnowledgePower>(3);
         WithKeyword(KeineKeywords.Knowledgeable);

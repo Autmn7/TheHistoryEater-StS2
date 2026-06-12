@@ -16,5 +16,7 @@
   "KEINEMOD-SACREDSCROLL.description": "[gold]不能被打出[/gold]。被[gold]吞噬[/gold]时[gold]变化[/gold]为对应[gold]神器[/gold]。",
   "KEINEMOD-SACREDSCROLL.title": "神器卷轴",
   "KEINEMOD-SACREDPOWER.description": "勇之卷轴 - [red]力量[/red]\n仁之卷轴 - [green]敏捷[/green]\n智之卷轴 - [blue]知识[/blue]",
-  "KEINEMOD-SACREDPOWER.title": "神器之力"
+  "KEINEMOD-SACREDPOWER.title": "神器之力",
+  "KEINEMOD-REINCARNATION.description": "首领的一部分力量。每名首领都具有独特的[gold]转世[/gold]，可在首领战期间通过其身上的能力查看。",
+  "KEINEMOD-REINCARNATION.title": "转世"
 }

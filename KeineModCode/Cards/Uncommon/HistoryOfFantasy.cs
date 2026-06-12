@@ -7,9 +7,10 @@ namespace KeineMod.KeineModCode.Cards.Uncommon;
 
 public class HistoryOfFantasy : KeineModCard
 {
-    public HistoryOfFantasy() : base(2, CardType.Power, CardRarity.Uncommon, TargetType.Self)
+    public HistoryOfFantasy() : base(1, CardType.Power, CardRarity.Uncommon, TargetType.Self)
     {
-        WithVar("HistoryOfFantasyPower", 1, 1);
+        WithVar("HistoryOfFantasyPower", 1);
+        WithKeyword(CardKeyword.Innate, UpgradeType.Add);
         WithTip(typeof(HistoricalGapPower));
     }
 

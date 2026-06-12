@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6aj6xtebe4nj"
-path="res://.godot/imported/char_select_char_name_locked.png-27634927ada8d27828d7efd157f5f879.ctex"
+uid="uid://cpa4hou7jsp4b"
+path="res://.godot/imported/past.png-b2a8a2242de7c848c975f3243a2287eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://KeineMod/images/charui/char_select_char_name_locked.png"
-dest_files=["res://.godot/imported/char_select_char_name_locked.png-27634927ada8d27828d7efd157f5f879.ctex"]
+source_file="res://KeineMod/images/card_portraits/past.png"
+dest_files=["res://.godot/imported/past.png-b2a8a2242de7c848c975f3243a2287eb.ctex"]
 
 [params]
 

@@ -3,6 +3,7 @@ using KeineMod.KeineModCode.Scripts;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 
 namespace KeineMod.KeineModCode.Cards.Rare;
 
@@ -11,6 +12,8 @@ public class LegendOfGensokyo : KeineModCard
     public LegendOfGensokyo() : base(2, CardType.Power, CardRarity.Rare, TargetType.Self)
     {
         WithVar("LegendOfGensokyoPower", 1);
+        WithTip(StaticHoverTip.Block);
+        WithTip(KeineKeywords.Create);
         WithTip(KeineKeywords.Knowledgeable);
         WithCostUpgradeBy(-1);
     }

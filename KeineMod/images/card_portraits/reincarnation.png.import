@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qhdanvprk3nx"
-path="res://.godot/imported/char_select_char_name.png-e8689cdb00d60b790a930642f8fd659d.ctex"
+uid="uid://beubxlo58qdpd"
+path="res://.godot/imported/reincarnation.png-26d5a0d2c8cea7b600144846f1e1787d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://KeineMod/images/charui/char_select_char_name.png"
-dest_files=["res://.godot/imported/char_select_char_name.png-e8689cdb00d60b790a930642f8fd659d.ctex"]
+source_file="res://KeineMod/images/card_portraits/reincarnation.png"
+dest_files=["res://.godot/imported/reincarnation.png-26d5a0d2c8cea7b600144846f1e1787d.ctex"]
 
 [params]
 

@@ -13,7 +13,7 @@ public class RainOfShowa : KeineModCard
     public RainOfShowa() : base(1, CardType.Attack, CardRarity.Uncommon, TargetType.RandomEnemy)
     {
         WithDamage(4, 1);
-        WithCalculatedVar("Repeat", 2, (card, _) => PileType.Exhaust.GetPile(card.Owner).Cards.Count(c => c is Flow));
+        WithCalculatedVar("Repeat", 1, (card, _) => PileType.Exhaust.GetPile(card.Owner).Cards.Count(c => c is Flow));
         WithCards(1);
         WithTip(typeof(Flow));
     }

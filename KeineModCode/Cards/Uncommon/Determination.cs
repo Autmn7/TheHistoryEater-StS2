@@ -13,7 +13,7 @@ public class Determination : KeineModCard
     public Determination() : base(2, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
         WithBlock(12, 3);
-        WithPower<ValorPower>(3, 2);
+        WithPower<ValorPower>(3, 1);
         WithCards(2, 1);
         WithKeywords(KeineKeywords.Human, KeineKeywords.Consume, KeineKeywords.Hakutaku);
     }

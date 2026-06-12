@@ -3,6 +3,8 @@ using Godot;
 using Godot.Bridge;
 using HarmonyLib;
 using KeineMod.KeineModCode.Cards;
+using KeineMod.KeineModCode.Cards.Rare;
+using KeineMod.KeineModCode.Commands;
 using KeineMod.KeineModCode.Core;
 using KeineMod.KeineModCode.Extensions;
 using KeineMod.KeineModCode.Powers;
@@ -18,6 +20,7 @@ using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Monsters;
 using MegaCrit.Sts2.Core.Nodes.Cards.Holders;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 using Logger = MegaCrit.Sts2.Core.Logging.Logger;
@@ -201,7 +204,7 @@ public partial class MainFile : Node
         }
     }
 
-    [HarmonyPatch(typeof(CardModel), "GetDescriptionForPile")]
+    [HarmonyPatch(typeof(CardModel), nameof(CardModel.GetDescriptionForPile))]
     [HarmonyPatch([typeof(PileType), typeof(CardModel.DescriptionPreviewType), typeof(Creature)])]
     public static class HideSacredScrollKeywordPatch
     {
@@ -237,6 +240,31 @@ public partial class MainFile : Node
             catch (Exception)
             {
                 // Safety first
+            }
+        }
+    }
+    
+    [HarmonyPatch(typeof(MonsterModel), nameof(MonsterModel.SetUpForCombat))]
+    public static class BossSpawnPowerPatch
+    {
+        public static async void Postfix(MonsterModel __instance)
+        {
+            if (__instance.CombatState.Players.Any(player => PileType.Deck.GetPile(player).Cards.Any(card => card is Reincarnation)))
+            { 
+                await ReincarnationPowerCmd.ApplyDisplayPower(__instance);
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(TestSubject), nameof(TestSubject.Revive))]
+    public static class TestSubjectPhaseShiftPatch
+    {
+        public static async void Postfix(Task __result, TestSubject __instance)
+        {
+            await __result;
+            if (__instance.CombatState.Players.Any(player => PileType.Deck.GetPile(player).Cards.Any(card => card is Reincarnation)))
+            {
+                await ReincarnationPowerCmd.ApplyDisplayPower(__instance);
             }
         }
     }
