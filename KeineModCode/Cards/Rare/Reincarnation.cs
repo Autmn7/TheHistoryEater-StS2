@@ -56,7 +56,7 @@ public class Reincarnation : KeineModCard
 
     public override async Task BeforeHandDraw(Player player, PlayerChoiceContext choiceContext, ICombatState combatState)
     {
-        if (player != Owner || combatState.RoundNumber != 1 || !PileType.Deck.GetPile(player).Cards.Contains(DeckVersion) || string.IsNullOrEmpty(SlayedBossIds))
+        if (player != Owner || Owner.PlayerCombatState.TurnNumber != 1 || !PileType.Deck.GetPile(player).Cards.Contains(DeckVersion) || string.IsNullOrEmpty(SlayedBossIds))
             return;
 
         if (DynamicVars.TryGetValue("SlayedBosses", out var v) && v is StringVar s && !string.IsNullOrEmpty(s.StringValue))

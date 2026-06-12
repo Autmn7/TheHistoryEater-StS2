@@ -296,5 +296,8 @@
   "KEINEMOD-PAST.artist": "わんこソラ",
   "KEINEMOD-FUTURE.description": "Gain {KnowledgePower:diff()} [gold]Knowledge[/gold].\nGain {DisintegrationPower:diff()} [gold]Disintegration[/gold].",
   "KEINEMOD-FUTURE.title": "Future",
-  "KEINEMOD-FUTURE.artist": "わんこソラ"
+  "KEINEMOD-FUTURE.artist": "わんこソラ",
+  "KEINEMOD-HORRIFIC_PURSUIT.description": "Approach.\nDecrease [gold]Sandpit[/gold] by 1.\nDraw 1 card.",
+  "KEINEMOD-HORRIFIC_PURSUIT.title": "Horrific Pursuit",
+  "KEINEMOD-HORRIFIC_PURSUIT.artist": "unknown"
 }

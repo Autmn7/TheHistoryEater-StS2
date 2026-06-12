@@ -40,7 +40,7 @@ public class OldScroll : KeineModRelic
         PlayerChoiceContext choiceContext,
         ICombatState combatState)
     {
-        if (player != Owner || combatState.RoundNumber != 1)
+        if (player != Owner || Owner.PlayerCombatState.TurnNumber != 1)
             return;
         CardModel created = Owner.Creature.CombatState.CreateCard<ScrollOfValor>(Owner);
         await CreateCmd.Execute(created, Owner);

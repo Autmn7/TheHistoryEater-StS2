@@ -296,5 +296,8 @@
   "KEINEMOD-PAST.artist": "わんこソラ",
   "KEINEMOD-FUTURE.description": "获得{KnowledgePower:diff()}点[gold]知识[/gold]。\n获得{DisintegrationPower:diff()}层[gold]瓦解[/gold]。",
   "KEINEMOD-FUTURE.title": "未来",
-  "KEINEMOD-FUTURE.artist": "わんこソラ"
+  "KEINEMOD-FUTURE.artist": "わんこソラ",
+  "KEINEMOD-HORRIFIC_PURSUIT.description": "逼近。\n将[gold]沙坑[/gold]的计数减1。\n抽1张牌。",
+  "KEINEMOD-HORRIFIC_PURSUIT.title": "恐惧逼近",
+  "KEINEMOD-HORRIFIC_PURSUIT.artist": "unknown"
 }

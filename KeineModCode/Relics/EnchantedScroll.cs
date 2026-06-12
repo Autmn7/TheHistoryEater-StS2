@@ -44,7 +44,7 @@ public class EnchantedScroll : KeineModRelic
         PlayerChoiceContext choiceContext,
         ICombatState combatState)
     {
-        if (player != Owner || combatState.RoundNumber != 1)
+        if (player != Owner || Owner.PlayerCombatState.TurnNumber != 1)
             return;
         List<CardModel> treasures =
         [
