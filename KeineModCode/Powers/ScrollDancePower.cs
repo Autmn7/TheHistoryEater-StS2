@@ -28,7 +28,7 @@ public class ScrollDancePower : KeineModPower
                 CombatState.CreateCard<ScrollOfWisdom>(Owner.Player)
             ];
             var created = await CardSelectCmd.FromChooseACardScreen(choiceContext, treasures, Owner.Player, true);
-            await CreateCmd.Execute(created, Owner.Player);
+            await CreateCmd.Execute(choiceContext, created, Owner.Player);
         }
     }
 }

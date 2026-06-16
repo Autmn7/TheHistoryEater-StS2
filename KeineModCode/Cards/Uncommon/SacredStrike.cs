@@ -26,7 +26,7 @@ public class SacredStrike : KeineModCard
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         CardModel created = CombatState.CreateCard<ScrollOfValor>(Owner);
-        await CreateCmd.Execute(created, Owner);
+        await CreateCmd.Execute(choiceContext, created, Owner);
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target).WithHitCount((int)((CalculatedVar)DynamicVars["Repeat"]).Calculate(cardPlay.Target)).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
     }
 }

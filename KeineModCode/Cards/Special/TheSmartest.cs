@@ -13,7 +13,7 @@ namespace KeineMod.KeineModCode.Cards.Special;
 [Pool(typeof(TokenCardPool))]
 public class TheSmartest : KeineModCard, IOnConsumed
 {
-    public TheSmartest() : base(9, CardType.Skill, CardRarity.Token, TargetType.Self)
+    public TheSmartest() : base(9, CardType.Quest, CardRarity.Quest, TargetType.Self)
     {
         WithVar("CostReduction", 3, 6);
         WithTip(KeineKeywords.Consume);

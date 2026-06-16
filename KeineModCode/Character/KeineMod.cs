@@ -3,7 +3,6 @@ using BaseLib.Extensions;
 using BaseLib.Utils.NodeFactories;
 using Godot;
 using KeineMod.KeineModCode.Cards.Basic;
-using KeineMod.KeineModCode.Cards.Rare;
 using KeineMod.KeineModCode.Extensions;
 using KeineMod.KeineModCode.Relics;
 using MegaCrit.Sts2.Core.Entities.Characters;
@@ -35,17 +34,16 @@ public class KeineMod : PlaceholderCharacterModel
 
     public override IEnumerable<CardModel> StartingDeck =>
     [
-        ModelDb.Card<Reincarnation>()
-        // ModelDb.Card<StrikeKeine>(),
-        // ModelDb.Card<StrikeKeine>(),
-        // ModelDb.Card<StrikeKeine>(),
-        // ModelDb.Card<StrikeKeine>(),
-        // ModelDb.Card<DefendKeine>(),
-        // ModelDb.Card<DefendKeine>(),
-        // ModelDb.Card<DefendKeine>(),
-        // ModelDb.Card<DefendKeine>(),
-        // ModelDb.Card<TidesOfTime>(),
-        // ModelDb.Card<ManipulateHistory>()
+        ModelDb.Card<StrikeKeine>(),
+        ModelDb.Card<StrikeKeine>(),
+        ModelDb.Card<StrikeKeine>(),
+        ModelDb.Card<StrikeKeine>(),
+        ModelDb.Card<DefendKeine>(),
+        ModelDb.Card<DefendKeine>(),
+        ModelDb.Card<DefendKeine>(),
+        ModelDb.Card<DefendKeine>(),
+        ModelDb.Card<TidesOfTime>(),
+        ModelDb.Card<ManipulateHistory>()
     ];
 
     public override IReadOnlyList<RelicModel> StartingRelics =>
@@ -96,8 +94,8 @@ public class KeineMod : PlaceholderCharacterModel
 
     public override string CustomCharacterSelectBg => "select/character_select_bg_keine.tscn".ScenePath();
     // public override string CustomEnergyCounterPath => "energy/energy_counter_mokou.tscn".ScenePath();
-    // public override string CustomRestSiteAnimPath => "rest/rest_site_mokou.tscn".ScenePath();
-    // public override string CustomMerchantAnimPath => "merchant/merchant_mokou.tscn".ScenePath();
+    public override string CustomRestSiteAnimPath => "rest/rest_site_keine.tscn".ScenePath();
+    public override string CustomMerchantAnimPath => "merchant/merchant_keine.tscn".ScenePath();
 
     public override string CustomIconTexturePath => "character_icon_keine.png".CharacterUiPath();
     public override string CustomIconOutlineTexturePath => "character_icon_outline_keine.png".CharacterUiPath();

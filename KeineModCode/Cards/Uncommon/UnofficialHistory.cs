@@ -11,7 +11,7 @@ public class UnofficialHistory : KeineModCard
 {
     public UnofficialHistory() : base(2, CardType.Skill, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
-        WithPower<HistoricalGapPower>(8, 2);
+        WithPower<HistoricalGapPower>(7, 2);
         WithVar("WeakGain", 2);
         WithPower<WeakPower>(1, 1);
         WithKeywords(KeineKeywords.Human, KeineKeywords.Hakutaku);

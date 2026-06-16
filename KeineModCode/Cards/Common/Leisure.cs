@@ -19,10 +19,10 @@ public class Leisure : KeineModCard
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
-        await CreateCmd.Execute(CombatState.CreateCard<Flow>(Owner), Owner);
+        await CreateCmd.Execute(choiceContext, CombatState.CreateCard<Flow>(Owner), Owner);
         if (InHuman())
             await ConsumeCmd.FromHand(choiceContext, Owner, 1, this);
         if (InHakutaku())
-            await CreateCmd.Execute(CombatState.CreateCard<Flow>(Owner), Owner);
+            await CreateCmd.Execute(choiceContext, CombatState.CreateCard<Flow>(Owner), Owner);
     }
 }

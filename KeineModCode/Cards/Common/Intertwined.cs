@@ -23,8 +23,8 @@ public class Intertwined : KeineModCard
     {
         CardModel benevolence = CombatState.CreateCard<ScrollOfBenevolence>(Owner);
         CardModel valor = CombatState.CreateCard<ScrollOfValor>(Owner);
-        await CreateCmd.Execute(benevolence, Owner, IsUpgraded);
-        await CreateCmd.Execute(valor, Owner, IsUpgraded);
+        await CreateCmd.Execute(choiceContext, benevolence, Owner, IsUpgraded);
+        await CreateCmd.Execute(choiceContext, valor, Owner, IsUpgraded);
         await PowerCmd.Apply<EnergyNextTurnPower>(choiceContext, Owner.Creature, DynamicVars.Energy.BaseValue, Owner.Creature, this);
     }
 }

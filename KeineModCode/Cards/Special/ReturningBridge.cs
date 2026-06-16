@@ -18,7 +18,6 @@ namespace KeineMod.KeineModCode.Cards.Special;
 [Pool(typeof(TokenCardPool))]
 public class ReturningBridge : KeineModCard
 {
-    private string _slayedBossIds = "";
     private string _reincarnation = "";
 
     public ReturningBridge() : base(1, CardType.Power, CardRarity.Token, TargetType.Self)
@@ -28,13 +27,9 @@ public class ReturningBridge : KeineModCard
         WithTips(card => card is ReturningBridge bridge ? bridge.GetDynamicBossTips() : []);
     }
 
-    public override TargetType TargetType => !string.IsNullOrEmpty(_slayedBossIds) && (_slayedBossIds.Contains("CRUSHER") || _slayedBossIds.Contains("ROCKET") || _slayedBossIds.Contains("THE_INSATIABLE")) ? TargetType.AnyEnemy : TargetType.Self;
+    public override TargetType TargetType => !string.IsNullOrEmpty(SlayedBossIds) && (SlayedBossIds.Contains("CRUSHER") || SlayedBossIds.Contains("ROCKET") || SlayedBossIds.Contains("THE_INSATIABLE")) ? TargetType.AnyEnemy : TargetType.Self;
 
-    public string SlayedBossIds
-    {
-        get => _slayedBossIds;
-        set => _slayedBossIds = value;
-    }
+    public string SlayedBossIds { get; set; } = "";
 
     public string Reincarnation
     {
@@ -53,9 +48,9 @@ public class ReturningBridge : KeineModCard
     /// </summary>
     private IEnumerable<IHoverTip> GetDynamicBossTips()
     {
-        if (string.IsNullOrEmpty(_slayedBossIds)) yield break;
+        if (string.IsNullOrEmpty(SlayedBossIds)) yield break;
 
-        var ids = _slayedBossIds.Split(',', StringSplitOptions.RemoveEmptyEntries);
+        var ids = SlayedBossIds.Split(',', StringSplitOptions.RemoveEmptyEntries);
         foreach (var id in ids)
         {
             var dynamicTips = id switch
@@ -86,9 +81,9 @@ public class ReturningBridge : KeineModCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        if (string.IsNullOrEmpty(_slayedBossIds)) return;
+        if (string.IsNullOrEmpty(SlayedBossIds)) return;
 
-        var ids = _slayedBossIds.Split(',', StringSplitOptions.RemoveEmptyEntries);
+        var ids = SlayedBossIds.Split(',', StringSplitOptions.RemoveEmptyEntries);
 
         foreach (var id in ids)
             switch (id)
@@ -98,7 +93,7 @@ public class ReturningBridge : KeineModCard
                 // ============================================================
                 case "CEREMONIAL_BEAST":
                     // RE: Ceremonial Beast [Divine Cry]
-                    // Effect: Take an extra turn after this one where you can only play 1 card.
+                    // Effect: Take an extra turn after this one where you can only play 1 card, Block in retained in these turns.
                     await PowerCmd.Apply<DivineCryPower>(choiceContext, Owner.Creature, 1, Owner.Creature, this);
                     break;
 
@@ -127,10 +122,10 @@ public class ReturningBridge : KeineModCard
 
                 case "SOUL_FYSH":
                     // RE: Soul Fysh [Optical Camouflage]
-                    // Effect: Gain 1 Intangible. Create a Beckon.
+                    // Effect: Gain 1 Intangible. Create a Beckon to your Discard Pile.
                     await PowerCmd.Apply<IntangiblePower>(choiceContext, Owner.Creature, 1, Owner.Creature, this);
                     var beckonCard = CombatState.CreateCard<Beckon>(Owner);
-                    await CreateCmd.Execute(beckonCard, Owner);
+                    await CreateCmd.Execute(choiceContext, beckonCard, Owner, false, PileType.Discard);
                     break;
 
                 case "LAGAVULIN_MATRIARCH":
@@ -171,14 +166,15 @@ public class ReturningBridge : KeineModCard
 
                 case "THE_INSATIABLE":
                     // RE: The Insatiable [Insatiable Hunger]
-                    // Effect: Mark an enemy. Create 6 Horrific Pursuits to your Discard Pile. After playing all of them, marked enemy instantly dies (if it is a Boss, loses 100 HP instead).
+                    // Effect: Mark an enemy. Create 6 Horrific Pursuits to your Discard Pile. After playing all of them, marked enemy instantly dies (if it is a Boss, loses a proportion of HP instead).
                     if (cardPlay.Target != null && !cardPlay.Target.HasPower<SandpitMarkPower>())
                         await PowerCmd.Apply<SandpitMarkPower>(choiceContext, cardPlay.Target, 6, Owner.Creature, this);
                     for (var i = 0; i < 6; ++i)
                     {
                         CardModel card = CombatState.CreateCard<HorrificPursuit>(Owner);
-                        await CreateCmd.Execute(card, Owner, false, PileType.Discard);
+                        await CreateCmd.Execute(choiceContext, card, Owner, false, PileType.Discard);
                     }
+
                     break;
 
                 // ============================================================

@@ -24,7 +24,7 @@ public class GoWithTheFlow : KeineModCard
         for (var i = 0; i < DynamicVars.Cards.BaseValue; ++i)
         {
             CardModel flow = CombatState.CreateCard<Flow>(Owner);
-            await CreateCmd.Execute(flow, Owner);
+            await CreateCmd.Execute(choiceContext, flow, Owner);
         }
     }
 }

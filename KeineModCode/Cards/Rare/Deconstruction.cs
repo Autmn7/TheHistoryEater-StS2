@@ -16,9 +16,9 @@ public class Deconstruction : KeineModCard
 
     public Deconstruction() : base(0, CardType.Skill, CardRarity.Rare, TargetType.AllEnemies)
     {
-        CountNeeded = 3;
+        CountNeeded = 4;
         WithCards(1);
-        WithVar(new CountNeededVar(3));
+        WithVar(new CountNeededVar(4));
         WithKeywords(KeineKeywords.Human, KeineKeywords.Consume);
         WithTip(new TooltipSource(card => HoverTipFactory.FromCard<Reconstruction>(card.IsUpgraded)));
     }

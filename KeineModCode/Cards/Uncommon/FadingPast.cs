@@ -21,6 +21,6 @@ public class FadingPast : KeineModCard
     {
         await RecallCmd.FromScroll(choiceContext, Owner, DynamicVars.Cards.IntValue);
         CardModel fatigue = CombatState.CreateCard<Fatigue>(Owner);
-        await CreateCmd.Execute(fatigue, Owner);
+        await CreateCmd.Execute(choiceContext, fatigue, Owner);
     }
 }

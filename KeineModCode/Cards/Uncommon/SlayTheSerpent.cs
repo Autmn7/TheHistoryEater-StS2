@@ -15,7 +15,7 @@ public class SlayTheSerpent : KeineModCard
 {
     public SlayTheSerpent() : base(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
-        WithDamage(11, 4);
+        WithDamage(11, 3);
         WithCards(1);
         WithKeywords(KeineKeywords.Human, KeineKeywords.Consume, KeineKeywords.Create, KeineKeywords.Hakutaku);
         WithTip(typeof(Snakebite));
@@ -32,7 +32,7 @@ public class SlayTheSerpent : KeineModCard
             if (consumedCard is Snakebite or SerpentForm)
             {
                 CardModel sword = CombatState.CreateCard<HeavenlySword>(Owner);
-                await CreateCmd.Execute(sword, Owner, IsUpgraded);
+                await CreateCmd.Execute(choiceContext, sword, Owner, IsUpgraded);
             }
         }
 
@@ -41,7 +41,7 @@ public class SlayTheSerpent : KeineModCard
             CardModel serpent = CombatState.CreateCard<Snakebite>(Owner);
             if (IsUpgraded)
                 serpent = CombatState.CreateCard<SerpentForm>(Owner);
-            await CreateCmd.Execute(serpent, Owner);
+            await CreateCmd.Execute(choiceContext, serpent, Owner);
         }
     }
 }

@@ -243,16 +243,13 @@ public partial class MainFile : Node
             }
         }
     }
-    
+
     [HarmonyPatch(typeof(MonsterModel), nameof(MonsterModel.SetUpForCombat))]
     public static class BossSpawnPowerPatch
     {
         public static async void Postfix(MonsterModel __instance)
         {
-            if (__instance.CombatState.Players.Any(player => PileType.Deck.GetPile(player).Cards.Any(card => card is Reincarnation)))
-            { 
-                await ReincarnationPowerCmd.ApplyDisplayPower(__instance);
-            }
+            if (__instance.CombatState.Players.Any(player => PileType.Deck.GetPile(player).Cards.Any(card => card is Reincarnation))) await ReincarnationPowerCmd.ApplyDisplayPower(__instance);
         }
     }
 
@@ -262,10 +259,7 @@ public partial class MainFile : Node
         public static async void Postfix(Task __result, TestSubject __instance)
         {
             await __result;
-            if (__instance.CombatState.Players.Any(player => PileType.Deck.GetPile(player).Cards.Any(card => card is Reincarnation)))
-            {
-                await ReincarnationPowerCmd.ApplyDisplayPower(__instance);
-            }
+            if (__instance.CombatState.Players.Any(player => PileType.Deck.GetPile(player).Cards.Any(card => card is Reincarnation))) await ReincarnationPowerCmd.ApplyDisplayPower(__instance);
         }
     }
 }

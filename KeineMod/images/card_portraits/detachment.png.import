@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cewekwxdxyvow"
-path="res://.godot/imported/changing_times.png-d0e03f52df450cc2f1ca1c128a7bd448.ctex"
+uid="uid://dmu51i4i0bi61"
+path="res://.godot/imported/detachment.png-9944207f7842f35bbded780a67ccdac2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://KeineMod/images/card_portraits/changing_times.png"
-dest_files=["res://.godot/imported/changing_times.png-d0e03f52df450cc2f1ca1c128a7bd448.ctex"]
+source_file="res://KeineMod/images/card_portraits/detachment.png"
+dest_files=["res://.godot/imported/detachment.png-9944207f7842f35bbded780a67ccdac2.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b84mb5rseggpi"
-path="res://.godot/imported/devour_history.png-cd9a55ddbf552e06a4d47b265045a13b.ctex"
+uid="uid://hd3m8ana3ox8"
+path="res://.godot/imported/yesterday_once_more.png-3a8881bdc3b111dac626520eb456425b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://KeineMod/images/card_portraits/devour_history.png"
-dest_files=["res://.godot/imported/devour_history.png-cd9a55ddbf552e06a4d47b265045a13b.ctex"]
+source_file="res://KeineMod/images/card_portraits/yesterday_once_more.png"
+dest_files=["res://.godot/imported/yesterday_once_more.png-3a8881bdc3b111dac626520eb456425b.ctex"]
 
 [params]
 

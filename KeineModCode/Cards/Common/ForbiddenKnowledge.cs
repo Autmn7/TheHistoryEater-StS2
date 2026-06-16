@@ -10,8 +10,8 @@ public class ForbiddenKnowledge : KeineModCard
     public ForbiddenKnowledge() : base(0, CardType.Skill, CardRarity.Common, TargetType.Self)
     {
         WithPower<KnowledgePower>(1);
-        WithEnergy(2);
-        WithKeyword(CardKeyword.Exhaust, UpgradeType.Remove);
+        WithEnergy(2, 1);
+        WithKeyword(CardKeyword.Exhaust);
     }
 
     protected override bool ShouldGlowRedInternal => !Owner.Creature.HasPower<KnowledgePower>();

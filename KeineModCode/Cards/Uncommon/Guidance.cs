@@ -26,6 +26,7 @@ public class Guidance : KeineModCard
     {
         await PowerCmd.Apply<GuidancePower>(choiceContext, Owner.Creature, 1, Owner.Creature, this);
         await PowerCmd.Apply<GuidedPower>(choiceContext, cardPlay.Target, 1, Owner.Creature, this);
+        await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.BaseValue, Owner);
         if (InHuman())
             await ConsumeCmd.FromHandUpTo(choiceContext, Owner, DynamicVars.Cards.IntValue, this);
     }

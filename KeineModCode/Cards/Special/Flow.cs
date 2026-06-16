@@ -28,7 +28,7 @@ public class Flow : KeineModCard, IOnConsumed
     public async Task OnConsumed(PlayerChoiceContext choiceContext, Player player, CardModel consumedCard)
     {
         if (consumedCard != this) return;
-        await CardCmd.Exhaust(choiceContext, this);
+        await CardPileCmd.Draw(choiceContext, 1, Owner);
     }
 
     public override async Task AfterCardExhausted(PlayerChoiceContext choiceContext, CardModel card, bool causedByEthereal)

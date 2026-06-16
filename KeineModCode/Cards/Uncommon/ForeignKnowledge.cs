@@ -50,6 +50,6 @@ public class ForeignKnowledge : KeineModCard
         var chosenCard = await CardSelectCmd.FromChooseACardScreen(choiceContext, choices, Owner, true);
 
         // Create the chosen card into the player's hand with the Knowledgeable keyword applied
-        if (chosenCard != null) await CreateCmd.Execute(chosenCard, Owner, false, PileType.Hand, true);
+        if (chosenCard != null) await CreateCmd.Execute(choiceContext, chosenCard, Owner, false, PileType.Hand, true);
     }
 }

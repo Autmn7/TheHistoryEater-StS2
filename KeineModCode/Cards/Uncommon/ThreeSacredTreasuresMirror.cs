@@ -26,6 +26,6 @@ public class ThreeSacredTreasuresMirror : KeineModCard
     {
         await PowerCmd.Apply<TreasureOfWisdomPower>(choiceContext, Owner.Creature, DynamicVars.Energy.BaseValue, Owner.Creature, this);
         CardModel created = CombatState.CreateCard<ScrollOfWisdom>(Owner);
-        await CreateCmd.Execute(created, Owner, IsUpgraded);
+        await CreateCmd.Execute(choiceContext, created, Owner, IsUpgraded);
     }
 }

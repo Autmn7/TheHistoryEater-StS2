@@ -9,7 +9,7 @@ namespace KeineMod.KeineModCode.Cards.Common;
 
 public class WellRead : KeineModCard
 {
-    public WellRead() : base(3, CardType.Skill, CardRarity.Basic, TargetType.Self)
+    public WellRead() : base(3, CardType.Skill, CardRarity.Common, TargetType.Self)
     {
         WithBlock(10, 4);
         WithEnergy(1);

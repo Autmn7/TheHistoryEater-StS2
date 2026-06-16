@@ -12,8 +12,8 @@ public class FirstPyramid : KeineModCard, IOnConsumed
 {
     public FirstPyramid() : base(2, CardType.Power, CardRarity.Uncommon, TargetType.Self)
     {
-        WithPower<KnowledgePower>(3, 1);
-        WithPower<WisdomPower>(1, 1);
+        WithPower<KnowledgePower>(2, 1);
+        WithPower<WisdomPower>(1);
         WithKeywords(CardKeyword.Innate);
     }
 

@@ -10,10 +10,10 @@ namespace KeineMod.KeineModCode.Cards.Special;
 [Pool(typeof(TokenCardPool))]
 public class TheStrongest : KeineModCard
 {
-    public TheStrongest() : base(4, CardType.Power, CardRarity.Token, TargetType.Self)
+    public TheStrongest() : base(3, CardType.Power, CardRarity.Event, TargetType.Self)
     {
         WithVar("PerfectFreezePower", 99);
-        WithCostUpgradeBy(-4);
+        WithCostUpgradeBy(-3);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

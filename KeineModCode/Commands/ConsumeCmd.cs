@@ -24,7 +24,7 @@ public static class ConsumeCmd
         {
             if (shouldUpgrade)
                 CardCmd.Upgrade(consumedCard);
-            if (consumedCard is not Flow && (consumedCard is not TheSmartest || consumedCard.EnergyCost.GetResolved() <= 0)) await CardPileCmd.Add(consumedCard, ScrollPile.Scroll.GetPile(player));
+            if (consumedCard is not TheSmartest || consumedCard.EnergyCost.GetResolved() <= 0) await CardPileCmd.Add(consumedCard, ScrollPile.Scroll.GetPile(player));
             KeineConstantsStateRegistry.Get(player).IncrementCardsConsumed(1);
             await KeineHooks.OnConsumed(choiceContext, player, consumedCard);
             await KeineHooks.OnConsumedLate(choiceContext, player, consumedCard);
@@ -43,7 +43,7 @@ public static class ConsumeCmd
         {
             if (shouldUpgrade)
                 CardCmd.Upgrade(consumedCard);
-            if (consumedCard is not Flow && (consumedCard is not TheSmartest || consumedCard.EnergyCost.GetResolved() <= 0)) await CardPileCmd.Add(consumedCard, ScrollPile.Scroll.GetPile(player));
+            if (consumedCard is not TheSmartest || consumedCard.EnergyCost.GetResolved() <= 0) await CardPileCmd.Add(consumedCard, ScrollPile.Scroll.GetPile(player));
             KeineConstantsStateRegistry.Get(player).IncrementCardsConsumed(1);
             await KeineHooks.OnConsumed(choiceContext, player, consumedCard);
             await KeineHooks.OnConsumedLate(choiceContext, player, consumedCard);
@@ -62,7 +62,7 @@ public static class ConsumeCmd
         {
             if (shouldUpgrade)
                 CardCmd.Upgrade(consumedCard);
-            if (consumedCard is not Flow && (consumedCard is not TheSmartest || consumedCard.EnergyCost.GetResolved() <= 0)) await CardPileCmd.Add(consumedCard, ScrollPile.Scroll.GetPile(player));
+            if (consumedCard is not TheSmartest || consumedCard.EnergyCost.GetResolved() <= 0) await CardPileCmd.Add(consumedCard, ScrollPile.Scroll.GetPile(player));
             KeineConstantsStateRegistry.Get(player).IncrementCardsConsumed(1);
             await KeineHooks.OnConsumed(choiceContext, player, consumedCard);
             await KeineHooks.OnConsumedLate(choiceContext, player, consumedCard);
@@ -78,20 +78,24 @@ public static class ConsumeCmd
         var hand = PileType.Hand.GetPile(player).Cards.ToList();
         foreach (var consumedCard in hand)
         {
-            if (consumedCard is not Flow && (consumedCard is not TheSmartest || consumedCard.EnergyCost.GetResolved() <= 0)) await CardPileCmd.Add(consumedCard, ScrollPile.Scroll.GetPile(player));
+            if (consumedCard is not TheSmartest || consumedCard.EnergyCost.GetResolved() <= 0) await CardPileCmd.Add(consumedCard, ScrollPile.Scroll.GetPile(player));
             KeineConstantsStateRegistry.Get(player).IncrementCardsConsumed(1);
             await KeineHooks.OnConsumed(choiceContext, player, consumedCard);
             await KeineHooks.OnConsumedLate(choiceContext, player, consumedCard);
         }
     }
 
-    public static async Task<CardModel?> SpecificCard(PlayerChoiceContext choiceContext, CardModel? consumedCard, Player player, AbstractModel source, bool shouldUpgrade = false)
+    public static async Task<CardModel?> SpecificCard(PlayerChoiceContext choiceContext, CardModel? consumedCard, Player player, AbstractModel? source, bool shouldUpgrade = false, bool showPreview = false)
     {
         if (CombatManager.Instance.IsOverOrEnding || consumedCard == null)
             return null;
         if (shouldUpgrade)
             CardCmd.Upgrade(consumedCard);
-        if (consumedCard is not Flow && (consumedCard is not TheSmartest || consumedCard.EnergyCost.GetResolved() <= 0)) await CardPileCmd.Add(consumedCard, ScrollPile.Scroll.GetPile(player));
+        if (consumedCard is not TheSmartest || consumedCard.EnergyCost.GetResolved() <= 0)
+            if (!showPreview)
+                await CardPileCmd.Add(consumedCard, ScrollPile.Scroll.GetPile(player));
+            else
+                CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(consumedCard, ScrollPile.Scroll, player));
         KeineConstantsStateRegistry.Get(player).IncrementCardsConsumed(1);
         await KeineHooks.OnConsumed(choiceContext, player, consumedCard);
         await KeineHooks.OnConsumedLate(choiceContext, player, consumedCard);

@@ -12,7 +12,7 @@ public class PainfulGapPower : KeineModPower
     public override PowerType Type => PowerType.Buff;
 
     public override PowerStackType StackType => PowerStackType.Counter;
-    
+
     public override async Task AfterDamageGiven(PlayerChoiceContext choiceContext, Creature? dealer, DamageResult result, ValueProp props, Creature target, CardModel? cardSource)
     {
         if (dealer != Owner || !props.IsPoweredAttack() || result.UnblockedDamage <= 0)

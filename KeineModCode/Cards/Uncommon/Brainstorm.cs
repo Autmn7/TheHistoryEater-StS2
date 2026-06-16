@@ -55,7 +55,7 @@ public class Brainstorm : KeineModCard
         var generatedBlock = CardFactory.GetDistinctForCombat(Owner, blockPool, 1, Owner.RunState.Rng.CombatCardGeneration).FirstOrDefault();
 
         // Push both cards into the player's hand sequentially
-        if (generatedAttack != null) await CreateCmd.Execute(generatedAttack, Owner, IsUpgraded, PileType.Hand, true);
-        if (generatedBlock != null) await CreateCmd.Execute(generatedBlock, Owner, IsUpgraded, PileType.Hand, true);
+        if (generatedAttack != null) await CreateCmd.Execute(choiceContext, generatedAttack, Owner, IsUpgraded, PileType.Hand, true);
+        if (generatedBlock != null) await CreateCmd.Execute(choiceContext, generatedBlock, Owner, IsUpgraded, PileType.Hand, true);
     }
 }

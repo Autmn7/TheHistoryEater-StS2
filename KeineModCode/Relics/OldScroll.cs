@@ -35,15 +35,12 @@ public class OldScroll : KeineModRelic
         await PowerCmd.Apply<TimeShiftPower>(new ThrowingPlayerChoiceContext(), Owner.Creature, DynamicVars["TimeShiftPower"].BaseValue, Owner.Creature, null);
     }
 
-    public override async Task BeforeHandDraw(
-        Player player,
-        PlayerChoiceContext choiceContext,
-        ICombatState combatState)
+    public override async Task BeforeHandDraw(Player player, PlayerChoiceContext choiceContext, ICombatState combatState)
     {
         if (player != Owner || Owner.PlayerCombatState.TurnNumber != 1)
             return;
         CardModel created = Owner.Creature.CombatState.CreateCard<ScrollOfValor>(Owner);
-        await CreateCmd.Execute(created, Owner);
+        await CreateCmd.Execute(choiceContext, created, Owner);
     }
 
     public override RelicModel GetUpgradeReplacement()

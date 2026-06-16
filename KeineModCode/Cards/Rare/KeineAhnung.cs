@@ -20,8 +20,8 @@ public class KeineAhnung : KeineModCard
     {
         CardModel created = CombatState.CreateCard<TheSmartest>(Owner);
         if (IsUpgraded)
-            await CreateCmd.Execute(created, Owner);
+            await CreateCmd.Execute(choiceContext, created, Owner);
         else
-            await CreateCmd.Execute(created, Owner, false, PileType.Draw, false, CardPilePosition.Random);
+            await CreateCmd.Execute(choiceContext, created, Owner, false, PileType.Draw, false, CardPilePosition.Random);
     }
 }

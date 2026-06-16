@@ -31,7 +31,7 @@ public class KeineKeywords
 
     [CustomEnum] [KeywordProperties(AutoKeywordPosition.None)]
     public static CardKeyword Sacredpower;
-    
+
     [CustomEnum] [KeywordProperties(AutoKeywordPosition.None)]
     public static CardKeyword Reincarnation;
 }

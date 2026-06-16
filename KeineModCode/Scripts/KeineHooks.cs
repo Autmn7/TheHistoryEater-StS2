@@ -187,4 +187,9 @@ public class KeineHooks
     {
         return Dispatch(choiceContext, player, (IOnConsumedLate m) => m.OnConsumedLate(choiceContext, player, consumedCard));
     }
+
+    public static Task OnCreated(PlayerChoiceContext choiceContext, Player player, CardModel createdCard)
+    {
+        return Dispatch(choiceContext, player, (IOnCreated m) => m.OnCreated(choiceContext, player, createdCard));
+    }
 }

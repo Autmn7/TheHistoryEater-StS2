@@ -6,10 +6,10 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Monsters;
-using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.Saves.Runs;
 
@@ -18,6 +18,18 @@ namespace KeineMod.KeineModCode.Cards.Rare;
 public class Reincarnation : KeineModCard
 {
     private string _slayedBossIds = "";
+    private int _currentDamage = 20;
+    private int _increasedDamage;
+
+    public Reincarnation() : base(2, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
+    {
+        WithDamage(CurrentDamage);
+        WithKeywords(KeineKeywords.Reincarnation, KeineKeywords.Create, CardKeyword.Exhaust);
+        WithVar("Increment", 2, 1);
+        WithVar(new StringVar("SlayedBosses"));
+        WithTip(StaticHoverTip.Fatal);
+        WithTip(typeof(ReturningBridge));
+    }
 
     [SavedProperty]
     public string SlayedBossIds
@@ -31,26 +43,47 @@ public class Reincarnation : KeineModCard
         }
     }
 
-    public Reincarnation() : base(2, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
+    [SavedProperty]
+    public int CurrentDamage
     {
-        WithDamage(2000, 4);
-        WithKeyword(CardKeyword.Retain, UpgradeType.Add);
-        WithKeywords(KeineKeywords.Reincarnation, KeineKeywords.Create, CardKeyword.Exhaust);
-        WithVar(new StringVar("SlayedBosses"));
-        WithTip(typeof(ReturningBridge));
+        get => _currentDamage;
+        set
+        {
+            AssertMutable();
+            _currentDamage = value;
+            DynamicVars.Damage.BaseValue = _currentDamage;
+        }
+    }
+
+    [SavedProperty]
+    public int IncreasedDamage
+    {
+        get => _increasedDamage;
+        set
+        {
+            AssertMutable();
+            _increasedDamage = value;
+        }
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         ArgumentNullException.ThrowIfNull(cardPlay.Target);
+        var shouldTriggerFatal = cardPlay.Target.Powers.All(p => p.ShouldOwnerDeathTriggerFatal());
         var attackCommand = await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target).WithHitFx(tmpSfx: "blunt_attack.mp3").Execute(choiceContext);
         // Check if the target monster died from this specific processing frame
-        if (cardPlay.Target.Monster != null && attackCommand.Results.SelectMany(r => r).Any(r => r.WasTargetKilled) && Owner.RunState.CurrentRoom is { RoomType: RoomType.Boss } && !cardPlay.Target.HasPower<MinionPower>())
+        if (cardPlay.Target.Monster != null && shouldTriggerFatal && attackCommand.Results.SelectMany(r => r).Any(r => r.WasTargetKilled))
         {
-            // Track on the current card copy in play
-            RecordBossSlay(cardPlay.Target.Monster);
-            if (DeckVersion is Reincarnation deckVersion)
-                deckVersion.RecordBossSlay(cardPlay.Target.Monster);
+            var intValue = DynamicVars["Increment"].IntValue;
+            BuffOnFatal(intValue);
+            if (DeckVersion is Reincarnation deckVersion1) deckVersion1.BuffOnFatal(intValue);
+            if (Owner.RunState.CurrentRoom is { RoomType: RoomType.Boss })
+            {
+                // Track on the current card copy in play
+                RecordBossSlay(cardPlay.Target.Monster);
+                if (DeckVersion is Reincarnation deckVersion2)
+                    deckVersion2.RecordBossSlay(cardPlay.Target.Monster);
+            }
         }
     }
 
@@ -62,10 +95,26 @@ public class Reincarnation : KeineModCard
         if (DynamicVars.TryGetValue("SlayedBosses", out var v) && v is StringVar s && !string.IsNullOrEmpty(s.StringValue))
         {
             var returningBridge = CombatState.CreateCard<ReturningBridge>(Owner);
-            returningBridge.SlayedBossIds = SlayedBossIds; 
+            returningBridge.SlayedBossIds = SlayedBossIds;
             returningBridge.Reincarnation = s.StringValue;
-            await CreateCmd.Execute(returningBridge, Owner);
+            await CreateCmd.Execute(choiceContext, returningBridge, Owner);
         }
+    }
+
+    protected override void AfterDowngraded()
+    {
+        UpdateDamage();
+    }
+
+    private void BuffOnFatal(int extraDamage)
+    {
+        IncreasedDamage += extraDamage;
+        UpdateDamage();
+    }
+
+    private void UpdateDamage()
+    {
+        CurrentDamage = 20 + IncreasedDamage;
     }
 
     private void RecordBossSlay(MonsterModel boss)

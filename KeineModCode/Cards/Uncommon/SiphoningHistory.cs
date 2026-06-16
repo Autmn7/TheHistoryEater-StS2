@@ -31,7 +31,7 @@ public class SiphoningHistory : KeineModCard
         {
             var splittingHistory = CombatState.CreateCard<SplittingHistory>(Owner);
             splittingHistory.GapAmt = gapRemoved;
-            await CreateCmd.Execute(splittingHistory, Owner, false, PileType.Discard);
+            await CreateCmd.Execute(choiceContext, splittingHistory, Owner, false, PileType.Discard);
         }
     }
 }

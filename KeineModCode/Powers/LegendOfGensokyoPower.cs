@@ -45,7 +45,7 @@ public class LegendOfGensokyoPower : KeineModPower
             var chosenCard = await CardSelectCmd.FromChooseACardScreen(choiceContext, choices, Owner.Player, true);
 
             // Create the chosen card into the player's hand with the Knowledgeable keyword applied
-            if (chosenCard != null) await CreateCmd.Execute(chosenCard, Owner.Player, false, PileType.Hand, true);
+            if (chosenCard != null) await CreateCmd.Execute(choiceContext, chosenCard, Owner.Player, false, PileType.Hand, true);
         }
     }
 }

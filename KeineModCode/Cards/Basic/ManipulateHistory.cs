@@ -42,7 +42,7 @@ public class ManipulateHistory : KeineModCard, ITranscendenceCard
         if (InHakutaku())
         {
             CardModel created = CombatState.CreateCard<ScrollOfValor>(Owner);
-            await CreateCmd.Execute(created, Owner, IsUpgraded);
+            await CreateCmd.Execute(choiceContext, created, Owner, IsUpgraded);
         }
     }
 }

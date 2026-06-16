@@ -27,6 +27,6 @@ public class ThreeSacredTreasuresOrb : KeineModCard
         await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
         await PowerCmd.Apply<TreasureOfBenevolencePower>(choiceContext, Owner.Creature, DynamicVars["TreasureOfBenevolencePower"].BaseValue, Owner.Creature, this);
         CardModel created = CombatState.CreateCard<ScrollOfBenevolence>(Owner);
-        await CreateCmd.Execute(created, Owner, IsUpgraded);
+        await CreateCmd.Execute(choiceContext, created, Owner, IsUpgraded);
     }
 }

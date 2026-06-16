@@ -31,6 +31,6 @@ public class ThreeSacredTreasuresCountry : KeineModCard
             CombatState.CreateCard<ScrollOfBenevolence>(Owner),
             CombatState.CreateCard<ScrollOfWisdom>(Owner)
         ];
-        foreach (var card in treasures) await CreateCmd.Execute(card, Owner);
+        foreach (var card in treasures) await CreateCmd.Execute(choiceContext, card, Owner);
     }
 }

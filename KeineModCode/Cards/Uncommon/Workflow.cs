@@ -28,14 +28,14 @@ public class Workflow : KeineModCard
             if (consumedCard is ScrollOfValor or ScrollOfBenevolence or ScrollOfWisdom)
             {
                 CardModel flow = CombatState.CreateCard<Flow>(Owner);
-                await CreateCmd.Execute(flow, Owner);
+                await CreateCmd.Execute(choiceContext, flow, Owner);
             }
         }
 
         if (InHakutaku())
         {
             CardModel wisdom = CombatState.CreateCard<ScrollOfWisdom>(Owner);
-            await CreateCmd.Execute(wisdom, Owner);
+            await CreateCmd.Execute(choiceContext, wisdom, Owner);
         }
     }
 }

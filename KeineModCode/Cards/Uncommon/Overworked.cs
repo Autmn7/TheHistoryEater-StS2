@@ -24,6 +24,6 @@ public class Overworked : KeineModCard
         await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
         await PowerCmd.Apply<KnowledgePower>(choiceContext, Owner.Creature, DynamicVars["KnowledgePower"].BaseValue, Owner.Creature, this);
         CardModel fatigue = CombatState.CreateCard<Fatigue>(Owner);
-        await CreateCmd.Execute(fatigue, Owner);
+        await CreateCmd.Execute(choiceContext, fatigue, Owner);
     }
 }

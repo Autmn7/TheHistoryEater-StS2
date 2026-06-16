@@ -12,7 +12,7 @@ public class LearnFromPain : KeineModCard
 {
     public LearnFromPain() : base(0, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
-        WithDamage(5, 3);
+        WithDamage(4, 3);
         WithCalculatedVar("Repeat", 1, (card, _) => card is KeineModCard keineModCard && keineModCard.InHakutaku() ? 1 : 0);
         WithPower<KnowledgePower>(1);
         WithKeywords(KeineKeywords.Knowledgeable, KeineKeywords.Human, KeineKeywords.Consume, KeineKeywords.Hakutaku);
