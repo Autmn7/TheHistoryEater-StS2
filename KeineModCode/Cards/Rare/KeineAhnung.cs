@@ -11,6 +11,7 @@ public class KeineAhnung : KeineModCard
 {
     public KeineAhnung() : base(1, CardType.Skill, CardRarity.Rare, TargetType.Self)
     {
+        WithKeyword(CardKeyword.Innate, UpgradeType.Add);
         WithKeywords(KeineKeywords.Create, CardKeyword.Exhaust);
         WithTip(typeof(TheSmartest));
         WithTip(typeof(TheStrongest));
@@ -19,9 +20,6 @@ public class KeineAhnung : KeineModCard
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         CardModel created = CombatState.CreateCard<TheSmartest>(Owner);
-        if (IsUpgraded)
-            await CreateCmd.Execute(choiceContext, created, Owner);
-        else
-            await CreateCmd.Execute(choiceContext, created, Owner, false, PileType.Draw, false, CardPilePosition.Random);
+        await CreateCmd.Execute(choiceContext, created, Owner, false, PileType.Draw, false, CardPilePosition.Bottom);
     }
 }

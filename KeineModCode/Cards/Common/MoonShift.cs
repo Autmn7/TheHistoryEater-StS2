@@ -4,11 +4,11 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 
-namespace KeineMod.KeineModCode.Cards.Uncommon;
+namespace KeineMod.KeineModCode.Cards.Common;
 
 public class MoonShift : KeineModCard
 {
-    public MoonShift() : base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+    public MoonShift() : base(0, CardType.Skill, CardRarity.Common, TargetType.Self)
     {
         WithCalculatedVar("CalculatedEnergy", 0, (card, _) => KeineConstantsStateRegistry.Get(card.Owner).FullMoonCharge, 1);
         WithKeywords(CardKeyword.Retain, KeineKeywords.Fullmoon, CardKeyword.Exhaust);

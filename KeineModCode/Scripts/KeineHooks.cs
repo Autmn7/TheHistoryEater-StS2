@@ -1,4 +1,5 @@
 ﻿using Godot;
+using Godot.Collections;
 using KeineMod.KeineModCode.Extensions;
 using KeineMod.KeineModCode.Stances;
 using MegaCrit.Sts2.Core.Context;
@@ -32,7 +33,6 @@ public partial class HakuBackgroundOverlay : TextureRect
 
 public class KeineHooks
 {
-    private static readonly List<CanvasItem> DynamicHiddenHumanNodes = [];
     private static HakuBackgroundOverlay? HakuBgOverlay = null;
 
     private static T? FindChildOfType<T>(Node root) where T : Node
@@ -63,44 +63,61 @@ public class KeineHooks
 
     public static Task OnStanceChange(PlayerChoiceContext choiceContext, Player player, KeineStanceModel oldStance, KeineStanceModel newStance)
     {
-        if (Character.KeineMod.ActiveVisuals != null && GodotObject.IsInstanceValid(Character.KeineMod.ActiveVisuals))
-        {
-            var rootVisuals = Character.KeineMod.ActiveVisuals;
-            var hakuForm = rootVisuals.GetNodeOrNull<CanvasItem>("HakutakuFormNode");
+        var combatRoom = NCombatRoom.Instance;
 
+        if (player.Character is Character.KeineMod && combatRoom != null)
+        {
             var isHakutaku = newStance is HakutakuForm;
 
-            // 1. Handle Character Sprite Swapping
-            if (player.Character is Character.KeineMod && hakuForm != null)
+            // 1. Grab the correct visual node directly using the engine's room lookup maps
+            var creatureNode = combatRoom.GetCreatureNode(player.Creature);
+            var targetVisuals = creatureNode?.Visuals;
+
+            if (targetVisuals != null && GodotObject.IsInstanceValid(targetVisuals))
             {
-                if (isHakutaku)
+                var hakuForm = targetVisuals.GetNodeOrNull<CanvasItem>("HakutakuFormNode");
+
+                if (hakuForm != null)
                 {
-                    hakuForm.Visible = true;
-                    foreach (var child in rootVisuals.GetChildren())
+                    if (isHakutaku)
                     {
-                        if (child.Name == "HakutakuFormNode") continue;
-                        if (child is CanvasItem humanPart && humanPart.Visible)
+                        hakuForm.Visible = true;
+                        var hiddenNodes = new List<CanvasItem>();
+
+                        // Hide the human parts and preserve them directly in this instance's metadata
+                        foreach (var child in targetVisuals.GetChildren())
                         {
-                            humanPart.Visible = false;
-                            DynamicHiddenHumanNodes.Add(humanPart);
+                            if (child.Name == "HakutakuFormNode") continue;
+                            if (child is CanvasItem humanPart && humanPart.Visible)
+                            {
+                                humanPart.Visible = false;
+                                hiddenNodes.Add(humanPart);
+                            }
+                        }
+
+                        targetVisuals.SetMeta("DynamicHiddenHumanNodes", new Array<CanvasItem>(hiddenNodes));
+                    }
+                    else
+                    {
+                        hakuForm.Visible = false;
+
+                        // Restore human parts safely from this instance's metadata
+                        if (targetVisuals.HasMeta("DynamicHiddenHumanNodes"))
+                        {
+                            var hiddenNodes = targetVisuals.GetMeta("DynamicHiddenHumanNodes").AsGodotArray<CanvasItem>();
+                            foreach (var humanPart in hiddenNodes)
+                                if (GodotObject.IsInstanceValid(humanPart))
+                                    humanPart.Visible = true;
+                            targetVisuals.RemoveMeta("DynamicHiddenHumanNodes");
                         }
                     }
                 }
-                else
-                {
-                    hakuForm.Visible = false;
-                    foreach (var humanPart in DynamicHiddenHumanNodes)
-                        if (GodotObject.IsInstanceValid(humanPart))
-                            humanPart.Visible = true;
-
-                    DynamicHiddenHumanNodes.Clear();
-                }
             }
 
-            // 2. Handle Combat Background Swapping
-            var currentScene = rootVisuals.GetTree().CurrentScene;
-            if (LocalContext.IsMe(player) && currentScene != null)
+            // 2. Combat Background Swapping (Only execute visual layout shifts for the local monitor view)
+            if (LocalContext.IsMe(player) && combatRoom.GetTree()?.CurrentScene != null)
             {
+                var currentScene = combatRoom.GetTree().CurrentScene;
                 var combatBg = FindChildOfType<NCombatBackground>(currentScene);
 
                 if (combatBg != null && GodotObject.IsInstanceValid(combatBg))

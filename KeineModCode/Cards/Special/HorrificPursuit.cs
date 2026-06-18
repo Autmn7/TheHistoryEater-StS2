@@ -11,9 +11,9 @@ namespace KeineMod.KeineModCode.Cards.Special;
 [Pool(typeof(TokenCardPool))]
 public class HorrificPursuit : KeineModCard
 {
-    public HorrificPursuit() : base(1, CardType.Skill, CardRarity.Token, TargetType.None)
+    public HorrificPursuit() : base(1, CardType.Status, CardRarity.Status, TargetType.None)
     {
-        WithKeyword(CardKeyword.Exhaust);
+        WithKeywords(CardKeyword.Retain, CardKeyword.Exhaust);
         WithTip(typeof(SandpitMarkPower));
     }
 

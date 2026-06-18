@@ -1,3 +1,4 @@
+using KeineMod.KeineModCode.Relics;
 using KeineMod.KeineModCode.Scripts;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -16,12 +17,18 @@ public class TimeShiftPower : KeineModPower
 
     public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
     {
-        if (power == this && Owner.Player != null && Amount >= 12)
+        if (power == this && Owner.Player != null)
         {
-            Flash();
-            var fullMoonToGain = (int)Math.Floor(Amount / 12.0);
-            KeineConstantsStateRegistry.Get(Owner.Player).GainFullMoon(fullMoonToGain);
-            await PowerCmd.Apply<TimeShiftPower>(choiceContext, Owner, -fullMoonToGain * 12, Owner, null);
+            var perFullMoon = 12;
+            if (Owner.Player.GetRelic<PocketWatch>() != null)
+                perFullMoon = 10;
+            if (Amount >= perFullMoon)
+            {
+                Flash();
+                var fullMoonToGain = (int)Math.Floor(Amount / (decimal)perFullMoon);
+                KeineConstantsStateRegistry.Get(Owner.Player).GainFullMoon(fullMoonToGain);
+                await PowerCmd.Apply<TimeShiftPower>(choiceContext, Owner, -fullMoonToGain * perFullMoon, Owner, null);
+            }
         }
     }
 

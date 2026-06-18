@@ -16,9 +16,9 @@ public class LandOfRisingSun : KeineModCard
 {
     public LandOfRisingSun() : base(0, CardType.Attack, CardRarity.Rare, TargetType.AllEnemies)
     {
-        WithDamage(30, 10);
+        WithDamage(40, 10);
         WithVar("SunrisePower", 3);
-        WithKeywords(KeineKeywords.Hakutaku);
+        WithKeywords(KeineKeywords.Hakutaku, CardKeyword.Exhaust);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

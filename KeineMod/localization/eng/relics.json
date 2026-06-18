@@ -5,5 +5,11 @@
   "KEINEMOD-OLD_SCROLL.title": "Old Scroll",
   "KEINEMOD-ENCHANTED_SCROLL.description": "At the start of each combat, [gold]Time Shift[/gold] [blue]{TimeShiftPower}[/blue], choose an [gold]Upgraded Sacred Scroll[/gold] to [gold]Create[/gold] and gain [blue]{SacredPower}[/blue] of its [gold]Sacred Power[/gold].",
   "KEINEMOD-ENCHANTED_SCROLL.flavor": "",
-  "KEINEMOD-ENCHANTED_SCROLL.title": "Enchanted Scroll"
+  "KEINEMOD-ENCHANTED_SCROLL.title": "Enchanted Scroll",
+  "KEINEMOD-TEXTBOOK.description": "Start each combat with [blue]{KnowledgePower}[/blue] [gold]Knowledge[/gold] and [blue]{WisdomPower}[/blue] [gold]Wisdom[/gold]",
+  "KEINEMOD-TEXTBOOK.flavor": "",
+  "KEINEMOD-TEXTBOOK.title": "Textbook",
+  "KEINEMOD-POCKET_WATCH.description": "[gold]Time Shift[/gold] needed to gain [gold]Full Moon[/gold] is lowered to [blue]10[/blue]. You may enter [green]Hakutaku[/green] form any number of times each turn.",
+  "KEINEMOD-POCKET_WATCH.flavor": "ZA! WARUDO!",
+  "KEINEMOD-POCKET_WATCH.title": "Pocket Watch"
 }

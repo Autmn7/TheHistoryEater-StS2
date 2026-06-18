@@ -15,10 +15,12 @@ public class TheSmartest : KeineModCard, IOnConsumed
 {
     public TheSmartest() : base(9, CardType.Quest, CardRarity.Quest, TargetType.Self)
     {
-        WithVar("CostReduction", 3, 6);
+        WithVar("CostReduction", 3);
         WithTip(KeineKeywords.Consume);
         WithTip(typeof(TheStrongest));
     }
+
+    public override int MaxUpgradeLevel => 0;
 
     public async Task OnConsumed(PlayerChoiceContext choiceContext, Player player, CardModel consumedCard)
     {

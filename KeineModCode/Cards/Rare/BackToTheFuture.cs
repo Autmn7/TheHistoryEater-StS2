@@ -13,10 +13,10 @@ public class BackToTheFuture : KeineModCard
 {
     public BackToTheFuture() : base(0, CardType.Skill, CardRarity.Rare, TargetType.Self)
     {
-        WithCards(4);
+        WithVar("View", 4);
+        WithCards(1, 1);
         WithPower<TimeShiftPower>(4);
-        WithKeyword(CardKeyword.Innate, UpgradeType.Add);
-        WithKeywords(KeineKeywords.Human, KeineKeywords.Consume, CardKeyword.Exhaust);
+        WithKeywords(CardKeyword.Innate, KeineKeywords.Human, KeineKeywords.Consume, CardKeyword.Exhaust);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -25,16 +25,16 @@ public class BackToTheFuture : KeineModCard
         if (InHuman())
         {
             var drawPile = PileTypeExtensions.GetPile(PileType.Draw, Owner);
-            var cardsToView = drawPile.Cards.Take(DynamicVars.Cards.IntValue).ToList();
+            var cardsToView = drawPile.Cards.Take(DynamicVars["View"].IntValue).ToList();
             if (cardsToView.Count != 0)
             {
-                var prefs = new CardSelectorPrefs(new LocString("card_selection", "TO_CONSUME_ANY_KEINE"), 0, DynamicVars.Cards.IntValue);
+                var prefs = new CardSelectorPrefs(new LocString("card_selection", "TO_CONSUME_ANY_KEINE"), 0, DynamicVars["View"].IntValue);
                 var cardsToConsume = (await CardSelectCmd.FromSimpleGrid(choiceContext, cardsToView, Owner, prefs)).ToList();
                 foreach (var card in cardsToConsume)
                     await ConsumeCmd.SpecificCard(choiceContext, card, Owner, this);
             }
 
-            await CardPileCmd.Draw(choiceContext, 1, Owner);
+            await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.BaseValue, Owner);
         }
     }
 }

@@ -7,14 +7,14 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 
-namespace KeineMod.KeineModCode.Cards.Uncommon;
+namespace KeineMod.KeineModCode.Cards.Rare;
 
 public class RainOfShowa : KeineModCard
 {
-    public RainOfShowa() : base(1, CardType.Attack, CardRarity.Uncommon, TargetType.RandomEnemy)
+    public RainOfShowa() : base(2, CardType.Attack, CardRarity.Rare, TargetType.RandomEnemy)
     {
         WithDamage(4, 1);
-        WithCalculatedVar("Repeat", 1, (card, _) => PileType.Exhaust.GetPile(card.Owner).Cards.Concat(ScrollPile.Scroll.GetPile(card.Owner).Cards).Count(c => c is Flow));
+        WithCalculatedVar("Repeat", 3, (card, _) => PileType.Exhaust.GetPile(card.Owner).Cards.Concat(ScrollPile.Scroll.GetPile(card.Owner).Cards).Count(c => c is Flow));
         WithCards(1);
         WithTip(typeof(Flow));
     }

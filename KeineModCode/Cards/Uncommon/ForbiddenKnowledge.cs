@@ -3,15 +3,15 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 
-namespace KeineMod.KeineModCode.Cards.Common;
+namespace KeineMod.KeineModCode.Cards.Uncommon;
 
 public class ForbiddenKnowledge : KeineModCard
 {
-    public ForbiddenKnowledge() : base(0, CardType.Skill, CardRarity.Common, TargetType.Self)
+    public ForbiddenKnowledge() : base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
         WithPower<KnowledgePower>(1);
-        WithEnergy(2, 1);
-        WithKeyword(CardKeyword.Exhaust);
+        WithEnergy(2);
+        WithKeyword(CardKeyword.Exhaust, UpgradeType.Remove);
     }
 
     protected override bool ShouldGlowRedInternal => !Owner.Creature.HasPower<KnowledgePower>();

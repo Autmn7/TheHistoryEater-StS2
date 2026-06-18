@@ -20,13 +20,14 @@ public class Ephemerality137 : KeineModCard, IOnConsumed
     {
         await PowerCmd.Apply<EphemeralityPower>(choiceContext, CombatState.HittableEnemies, DynamicVars["EphemeralityPower"].BaseValue, Owner.Creature, this);
         if (!Keywords.Contains(CardKeyword.Exhaust))
-            await CardPileCmd.Add(this, PileType.Draw, IsUpgraded ? CardPilePosition.Top : CardPilePosition.Random);
+            await CardPileCmd.Add(this, PileType.Draw, CardPilePosition.Random);
     }
 
     public async Task OnConsumed(PlayerChoiceContext choiceContext, Player player, CardModel consumedCard)
     {
         if (consumedCard != this) return;
-        await PowerCmd.Apply<EphemeralityPower>(choiceContext, CombatState.HittableEnemies, DynamicVars["EphemeralityPower"].BaseValue, Owner.Creature, this);
-        CardCmd.PreviewCardPileAdd(await CardPileCmd.Add(CreateClone(), PileType.Draw, IsUpgraded ? CardPilePosition.Top : CardPilePosition.Random));
+        if (IsUpgraded)
+            await PowerCmd.Apply<EphemeralityPower>(choiceContext, CombatState.HittableEnemies, DynamicVars["EphemeralityPower"].BaseValue, Owner.Creature, this);
+        CardCmd.PreviewCardPileAdd(await CardPileCmd.Add(CreateClone(), PileType.Draw, CardPilePosition.Random));
     }
 }
