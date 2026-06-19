@@ -1,15 +1,15 @@
 ﻿using KeineMod.KeineModCode.Scripts;
-using KeineMod.KeineModCode.UIs;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 
 namespace KeineMod.KeineModCode.Cards.Common;
 
-public class WellRead : KeineModCard
+public class WellRead : KeineModCard, IOnConsumed
 {
-    public WellRead() : base(3, CardType.Skill, CardRarity.Common, TargetType.Self)
+    public WellRead() : base(4, CardType.Skill, CardRarity.Common, TargetType.Self)
     {
         WithBlock(10, 4);
         WithEnergy(1);
@@ -21,26 +21,18 @@ public class WellRead : KeineModCard
         await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
     }
 
-    public override async Task AfterCardChangedPilesLate(CardModel card, PileType oldPileType, AbstractModel? source)
+    public Task OnConsumed(PlayerChoiceContext choiceContext, Player player, CardModel consumedCard)
     {
-        await UpdateCost();
+        if (consumedCard.Owner == Owner)
+            EnergyCost.AddThisCombat(-DynamicVars.Energy.IntValue);
+        return Task.CompletedTask;
     }
 
-    public override async Task AfterCardEnteredCombat(CardModel card)
+    public override Task AfterCardEnteredCombat(CardModel card)
     {
-        await UpdateCost();
-    }
-
-    private async Task UpdateCost()
-    {
-        if (Pile != null && Pile.IsCombatPile && Owner.PlayerCombatState != null && CombatState != null && CombatState.IsLiveCombat())
-        {
-            var baseCost = EnergyCost._base;
-            var bonus = ScrollPile.Scroll.GetPile(Owner).Cards.Count * DynamicVars.Energy.IntValue;
-            var targetCost = Math.Max(0, baseCost - bonus);
-            EnergyCost._localModifiers.RemoveAll(m => (int)m.Type == 1 && (int)m.Expiration == 0);
-            EnergyCost.SetThisCombat(targetCost);
-            InvokeEnergyCostChanged();
-        }
+        if (card != this || IsClone)
+            return Task.CompletedTask;
+        EnergyCost.AddThisCombat(-KeineConstantsStateRegistry.Get(Owner).CardsConsumedThisCombat * DynamicVars.Energy.IntValue);
+        return Task.CompletedTask;
     }
 }

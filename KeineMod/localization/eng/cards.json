@@ -131,7 +131,7 @@
   "KEINEMOD-UNOFFICIAL_HISTORY.description": "Apply {HistoricalGapPower:diff()} [gold]Historical Gap[/gold].\nGain {WeakGain:diff()} [gold]Weak[/gold].\n{HumanSec}{HumanOpen}Human{HumanClose}: Apply {WeakPower:diff()} [gold]Weak[/gold].{HumanSecEnd}\n{HakuSec}{HakuOpen}Hakutaku{HakuClose}: Does not gains [gold]Weak[/gold].{HakuSecEnd}",
   "KEINEMOD-UNOFFICIAL_HISTORY.title": "Unofficial History",
   "KEINEMOD-UNOFFICIAL_HISTORY.artist": "TOKIAME",
-  "KEINEMOD-WELL_READ.description": "Gain {Block:diff()} [gold]Block[/gold].\nCost {Energy:energyIcons()} less for each card in your [gold]Scroll[/gold].",
+  "KEINEMOD-WELL_READ.description": "Gain {Block:diff()} [gold]Block[/gold].\nCost {Energy:energyIcons()} less for each card you [gold]Consumed[/gold] this combat.",
   "KEINEMOD-WELL_READ.title": "Well-Read",
   "KEINEMOD-WELL_READ.artist": "はらみみみ",
   "KEINEMOD-LEARN_FROM_PAIN.description": "Deal {Damage:diff()} damage {Repeat:cond:>1?{} times|}.\n{HumanSec}{HumanOpen}Human{HumanClose}: [gold]Consume[/gold] 1 card, if it is a Status or Curse, gain {KnowledgePower:diff()} [gold]Knowledge[/gold].{HumanSecEnd}\n{HakuSec}{HakuOpen}Hakutaku{HakuClose}: Hits {RepeatExtra:diff()} additional time.{HakuSecEnd}",
