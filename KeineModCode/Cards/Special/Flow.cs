@@ -28,7 +28,7 @@ public class Flow : KeineModCard, IOnConsumed
     public async Task OnConsumed(PlayerChoiceContext choiceContext, Player player, CardModel consumedCard)
     {
         if (consumedCard != this) return;
-        await CardPileCmd.Draw(choiceContext, 1, Owner);
+        await CardPileCmd.Draw(choiceContext, Owner);
     }
 
     public override async Task AfterCardExhausted(PlayerChoiceContext choiceContext, CardModel card, bool causedByEthereal)
@@ -37,7 +37,7 @@ public class Flow : KeineModCard, IOnConsumed
         {
             ToDrawByEthereal = causedByEthereal;
             if (!causedByEthereal)
-                await CardPileCmd.Draw(choiceContext, 1, Owner);
+                await CardPileCmd.Draw(choiceContext, Owner);
         }
     }
 
@@ -48,7 +48,7 @@ public class Flow : KeineModCard, IOnConsumed
         if (ToDrawByEthereal)
         {
             ToDrawByEthereal = false;
-            await CardPileCmd.Draw(choiceContext, 1, Owner);
+            await CardPileCmd.Draw(choiceContext, Owner);
         }
     }
 

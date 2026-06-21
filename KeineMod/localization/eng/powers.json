@@ -168,6 +168,12 @@
   "KEINEMOD-YESTERDAY_ONCE_MORE_POWER.smartDescription": "When next {Amount:plural:Non-[gold]Yesterday-Once-More[/gold] card is|[blue]{}[/blue] Non-[gold]Yesterday-Once-More[/gold] cards are} [gold]Exhausted[/gold], [gold]Consume[/gold] a copy of it.",
   "KEINEMOD-YESTERDAY_ONCE_MORE_POWER.title": "Flashback",
   "KEINEMOD-GODS_REALM_POWER.description": "",
-  "KEINEMOD-GODS_REALM_POWER.smartDescription": "Whenever you [gold]Consume[/gold] or [gold]Create[/gold] a card, [gold]Upgrade[/gold] it. If it already is [gold]Upgraded[/gold], gain [blue]{Amount}[/blue] [gold]Block[/gold].",
-  "KEINEMOD-GODS_REALM_POWER.title": "God's Realm"
+  "KEINEMOD-GODS_REALM_POWER.smartDescription": "Whenever you generate a card, [gold]Upgrade[/gold] it. If it already is [gold]Upgraded[/gold], gain [blue]{Amount}[/blue] [gold]Block[/gold].",
+  "KEINEMOD-GODS_REALM_POWER.title": "God's Realm",
+  "KEINEMOD-DUP_REKINDLE_POWER.description": "When you would die, instead: heal to [blue]15%[/blue] of your Max HP, lose all [gold]Burn[/gold] and [blue]1[/blue] [gold]Rekindle[/gold].",
+  "KEINEMOD-DUP_REKINDLE_POWER.smartDescription": "When you would die, instead: heal to [blue]{HealPercent}%[/blue] of your Max HP, lose all [gold]Burn[/gold] and [blue]1[/blue] [gold]Rekindle[/gold].",
+  "KEINEMOD-DUP_REKINDLE_POWER.title": "Rekindle",
+  "KEINEMOD-DUP_TEMP_ESSENCE_POWER.description": "",
+  "KEINEMOD-DUP_TEMP_ESSENCE_POWER.smartDescription": "Each increases [gold]Rekindle[/gold] healing by [blue]5%[/blue] this combat.",
+  "KEINEMOD-DUP_TEMP_ESSENCE_POWER.title": "Temporary Essence"
 }

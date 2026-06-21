@@ -304,7 +304,7 @@
   "KEINEMOD-AN_AFTERLIFE_ODYSSEY.description": "造成{Damage:diff()}点伤害。\n被[gold]吞噬[/gold]：对生命最低的敌人造成{Damage:diff()}点伤害。\n每当任何生物死亡时，将此牌返回你的[gold]手牌[/gold]。",
   "KEINEMOD-AN_AFTERLIFE_ODYSSEY.title": "「20XX年 死后之旅」",
   "KEINEMOD-AN_AFTERLIFE_ODYSSEY.artist": "unknown",
-  "KEINEMOD-YESTERDAY_ONCE_MORE.description": "[gold]重现[/gold]{Cards:diff()}张牌。\n下1张非[gold]昨日重现[/gold]的牌被[gold]消耗[/gold]时，[gold]吞噬[/gold]其一张复制。",
+  "KEINEMOD-YESTERDAY_ONCE_MORE.description": "[gold]重现[/gold]{Cards:diff()}张牌。\n下1张非[gold]昨日重现[/gold]的牌被[gold]消耗[/gold]时，[gold]吞噬[/gold]一张其复制。",
   "KEINEMOD-YESTERDAY_ONCE_MORE.title": "昨日重现",
   "KEINEMOD-YESTERDAY_ONCE_MORE.artist": "寿喜烧九原",
   "KEINEMOD-CRIMSON_NIGHT.description": "造成{Damage:diff()}点伤害{Repeat:diff()}次。\n给予{CalculatedVulnerable:diff()}层[gold]易伤[/gold]。\n[gold]易伤[/gold]的层数也会受到[gold]知识[/gold]的加成。",
@@ -313,7 +313,7 @@
   "KEINEMOD-DETACHMENT.description": "[gold]消耗[/gold]你[gold]卷轴[/gold]中的所有牌。\n每[gold]消耗[/gold]{Ratio:diff()}张，获得{energyPrefix:energyIcons(1)}并抽1张牌。{InCombat:\n（获得{CalculatedCount:diff()}{energyPrefix:energyIcons(1)}，抽{CalculatedCount:diff()}张牌）|}",
   "KEINEMOD-DETACHMENT.title": "超脱",
   "KEINEMOD-DETACHMENT.artist": "我是觉主",
-  "KEINEMOD-GODS_REALM.description": "每当你[gold]吞噬[/gold]或[gold]创造[/gold]一张牌，将其[gold]升级[/gold]。若其已[gold]升级[/gold]，获得{GodsRealmPower:diff()}点[gold]格挡[/gold]。",
+  "KEINEMOD-GODS_REALM.description": "每当你生成一张牌，将其[gold]升级[/gold]。若其已[gold]升级[/gold]，获得{GodsRealmPower:diff()}点[gold]格挡[/gold]。",
   "KEINEMOD-GODS_REALM.title": "「高天原」",
   "KEINEMOD-GODS_REALM.artist": "ginaru",
   "KEINEMOD-UNDOCUMENTED_ERA.description": "给予{HistoricalGapPower:diff()}层[gold]历史之隙[/gold]X次。\n{HumanSec}{HumanOpen}人类{HumanClose}：获得{Block:diff()}点[gold]格挡[/gold]X次。{HumanSecEnd}\n{HakuSec}{HakuOpen}白泽{HakuClose}：X的数值加1。{HakuSecEnd}",
@@ -321,5 +321,14 @@
   "KEINEMOD-UNDOCUMENTED_ERA.artist": "バルカ＝がちゃ",
   "KEINEMOD-IMPROVISE.description": "造成{Damage:diff()}点伤害。\n[gold]创造[/gold]1张其他角色的随机{IfUpgraded:show:已[gold]升级[/gold]的|}[gold]格挡[/gold]技能牌，使其获得[gold]知识渊博[/gold]。",
   "KEINEMOD-IMPROVISE.title": "即兴发挥",
-  "KEINEMOD-IMPROVISE.artist": "りき"
+  "KEINEMOD-IMPROVISE.artist": "りき",
+  "KEINEMOD-DUAL_BLESSING.description": "{IfUpgraded:show:获得{KnowledgePower:diff()}点[gold]知识[/gold]。\n获得{DupRekindlePower:diff()}层[gold]重生[/gold]。|抉择：获得{KnowledgePower:diff()}点[gold]知识[/gold]；或获得{DupRekindlePower:diff()}层[gold]重生[/gold]。}",
+  "KEINEMOD-DUAL_BLESSING.title": "竹林组的祝福",
+  "KEINEMOD-DUAL_BLESSING.artist": "kaze",
+  "KEINEMOD-KEINES_BLESSING.description": "获得{KnowledgePower:diff()}点[gold]知识[/gold]。",
+  "KEINEMOD-KEINES_BLESSING.title": "慧音的祝福",
+  "KEINEMOD-KEINES_BLESSING.artist": "グリンー（二小姐格林）",
+  "KEINEMOD-MOKOUS_BLESSING.description": "获得{DupRekindlePower:diff()}层[gold]重生[/gold]。",
+  "KEINEMOD-MOKOUS_BLESSING.title": "妹红的祝福",
+  "KEINEMOD-MOKOUS_BLESSING.artist": "カズ"
 }

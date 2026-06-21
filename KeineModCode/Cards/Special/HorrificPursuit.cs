@@ -30,6 +30,6 @@ public class HorrificPursuit : KeineModCard
     {
         if (card != this)
             return;
-        await CardPileCmd.Draw(choiceContext, 1, Owner);
+        await CardPileCmd.Draw(choiceContext, Owner);
     }
 }

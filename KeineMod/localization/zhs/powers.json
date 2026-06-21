@@ -165,9 +165,15 @@
   "KEINEMOD-NEMESIS_ALT_POWER.smartDescription": "[blue]{Amount}[/blue]回合后，获得[blue]1[/blue]层[gold]无实体[/gold]。",
   "KEINEMOD-NEMESIS_ALT_POWER.title": "天罚",
   "KEINEMOD-YESTERDAY_ONCE_MORE_POWER.description": "",
-  "KEINEMOD-YESTERDAY_ONCE_MORE_POWER.smartDescription": "下[blue]{Amount}[/blue]张非[gold]昨日重现[/gold]的牌被[gold]消耗[/gold]时，[gold]吞噬[/gold]其一张复制。",
+  "KEINEMOD-YESTERDAY_ONCE_MORE_POWER.smartDescription": "下[blue]{Amount}[/blue]张非[gold]昨日重现[/gold]的牌被[gold]消耗[/gold]时，[gold]吞噬[/gold]一张其复制。",
   "KEINEMOD-YESTERDAY_ONCE_MORE_POWER.title": "闪回",
   "KEINEMOD-GODS_REALM_POWER.description": "",
-  "KEINEMOD-GODS_REALM_POWER.smartDescription": "每当你[gold]吞噬[/gold]或[gold]创造[/gold]一张牌，将其[gold]升级[/gold]。若其已[gold]升级[/gold]，获得[blue]{Amount}[/blue]点[gold]格挡[/gold]。",
-  "KEINEMOD-GODS_REALM_POWER.title": "高天原"
+  "KEINEMOD-GODS_REALM_POWER.smartDescription": "每当你生成一张牌，将其[gold]升级[/gold]。若其已[gold]升级[/gold]，获得[blue]{Amount}[/blue]点[gold]格挡[/gold]。",
+  "KEINEMOD-GODS_REALM_POWER.title": "高天原",
+  "KEINEMOD-DUP_REKINDLE_POWER.description": "当你即将死亡时，改为：恢复至最大生命的[blue]15%[/blue]，失去所有[gold]烧伤[/gold]并失去[blue]1[/blue]层[gold]重生[/gold]。",
+  "KEINEMOD-DUP_REKINDLE_POWER.smartDescription": "当你即将死亡时，改为：恢复至最大生命的[blue]{HealPercent}%[/blue]，失去所有[gold]烧伤[/gold]并失去[blue]1[/blue]层[gold]重生[/gold]。",
+  "KEINEMOD-DUP_REKINDLE_POWER.title": "重生",
+  "KEINEMOD-DUP_TEMP_ESSENCE_POWER.description": "",
+  "KEINEMOD-DUP_TEMP_ESSENCE_POWER.smartDescription": "本场战斗中，每层使[gold]重生[/gold]的治疗量提升[blue]5%[/blue]。",
+  "KEINEMOD-DUP_TEMP_ESSENCE_POWER.title": "临时火种"
 }

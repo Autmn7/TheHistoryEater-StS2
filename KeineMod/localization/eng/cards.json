@@ -313,7 +313,7 @@
   "KEINEMOD-DETACHMENT.description": "[gold]Exhaust[/gold] your [gold]Scroll[/gold].\nFor every {Ratio:diff()} cards [gold]Exhausted[/gold], gain {energyPrefix:energyIcons(1)} and draw 1 card.{InCombat:\n(Gain {CalculatedCount:diff()} {energyPrefix:energyIcons(1)}, draw {CalculatedCount:diff()} {CalculatedCount:plural:card|cards})|}",
   "KEINEMOD-DETACHMENT.title": "Detachment",
   "KEINEMOD-DETACHMENT.artist": "我是觉主",
-  "KEINEMOD-GODS_REALM.description": "Whenever you [gold]Consume[/gold] or [gold]Create[/gold] a card, [gold]Upgrade[/gold] it. If it already is [gold]Upgraded[/gold], gain {GodsRealmPower:diff()} [gold]Block[/gold].",
+  "KEINEMOD-GODS_REALM.description": "Whenever you generate a card, [gold]Upgrade[/gold] it. If it already is [gold]Upgraded[/gold], gain {GodsRealmPower:diff()} [gold]Block[/gold].",
   "KEINEMOD-GODS_REALM.title": "God's Realm",
   "KEINEMOD-GODS_REALM.artist": "ginaru",
   "KEINEMOD-UNDOCUMENTED_ERA.description": "Apply {HistoricalGapPower:diff()} [gold]Historical Gap[/gold] X times.\n{HumanSec}{HumanOpen}Human{HumanClose}: Gain {Block:diff()} [gold]Block[/gold] X times.{HumanSecEnd}\n{HakuSec}{HakuOpen}Hakutaku{HakuClose}: Increase X by 1.{HakuSecEnd}",
@@ -321,5 +321,14 @@
   "KEINEMOD-UNDOCUMENTED_ERA.artist": "バルカ＝がちゃ",
   "KEINEMOD-IMPROVISE.description": "Deal {Damage:diff()} damage.\n[gold]Create[/gold] a random {IfUpgraded:show:[gold]Upgraded[/gold] |}[gold]Block[/gold] Skill from other characters. It gains [gold]Knowledgeable[/gold].",
   "KEINEMOD-IMPROVISE.title": "Improvise",
-  "KEINEMOD-IMPROVISE.artist": "りき"
+  "KEINEMOD-IMPROVISE.artist": "りき",
+  "KEINEMOD-DUAL_BLESSING.description": "{IfUpgraded:show:Gain {KnowledgePower:diff()} [gold]Knowledge[/gold].\nGain {DupRekindlePower:diff()} [gold]Rekindle[/gold].|Choose one: Gain {KnowledgePower:diff()} [gold]Knowledge[/gold]; or Gain {DupRekindlePower:diff()} [gold]Rekindle[/gold].}",
+  "KEINEMOD-DUAL_BLESSING.title": "Dual Blessing",
+  "KEINEMOD-DUAL_BLESSING.artist": "kaze",
+  "KEINEMOD-KEINES_BLESSING.description": "Gain {KnowledgePower:diff()} [gold]Knowledge[/gold].",
+  "KEINEMOD-KEINES_BLESSING.title": "Keine's Blessing",
+  "KEINEMOD-KEINES_BLESSING.artist": "グリンー（二小姐格林）",
+  "KEINEMOD-MOKOUS_BLESSING.description": "Gain {DupRekindlePower:diff()} [gold]Rekindle[/gold].",
+  "KEINEMOD-MOKOUS_BLESSING.title": "Mokou's Blessing",
+  "KEINEMOD-MOKOUS_BLESSING.artist": "カズ"
 }

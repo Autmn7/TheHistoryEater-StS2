@@ -15,7 +15,7 @@ public class Amaterasu : KeineModCard
     public Amaterasu() : base(1, CardType.Attack, CardRarity.Rare, TargetType.AllEnemies)
     {
         WithCalculatedDamage(10, (card, _) => card is KeineModCard keineModCard && keineModCard.InHakutaku() ? card.Owner.Creature.GetPowerAmount<ValorPower>() : 0, ValueProp.Move, 2);
-        WithPower<ValorPower>(3, 2);
+        WithPower<ValorPower>(4, 2);
         WithKeywords(KeineKeywords.Human, KeineKeywords.Hakutaku);
     }
 
