@@ -1,10 +1,5 @@
-using MegaCrit.Sts2.Core.Entities.Powers;
-
 namespace KeineMod.KeineModCode.Powers.Reincarnation;
 
-public class GloryAeonglassPower : KeineModPower
+public class GloryAeonglassPower : ReincarnationPower
 {
-    public override PowerType Type => PowerType.Buff;
-
-    public override PowerStackType StackType => PowerStackType.Single;
 }

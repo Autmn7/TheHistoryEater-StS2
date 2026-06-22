@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dad03ir53q3dk"
-path="res://.godot/imported/rekindle_power.png-8adbc76549a01916317790a47c47a273.ctex"
+uid="uid://bgo2migg78esv"
+path="res://.godot/imported/guidance_power.png-312bff4cd64926ef3ad27a1e74461203.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://KeineMod/images/powers/big/rekindle_power.png"
-dest_files=["res://.godot/imported/rekindle_power.png-8adbc76549a01916317790a47c47a273.ctex"]
+source_file="res://KeineMod/images/powers/guidance_power.png"
+dest_files=["res://.godot/imported/guidance_power.png-312bff4cd64926ef3ad27a1e74461203.ctex"]
 
 [params]
 

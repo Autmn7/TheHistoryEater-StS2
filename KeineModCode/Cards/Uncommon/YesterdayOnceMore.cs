@@ -19,6 +19,6 @@ public class YesterdayOnceMore : KeineModCard
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await RecallCmd.FromScroll(choiceContext, Owner, DynamicVars.Cards.IntValue);
-        await PowerCmd.Apply<YesterdayOnceMorePower>(choiceContext, Owner.Creature, 1, Owner.Creature, this);
+        await PowerCmd.Apply<FlashbackPower>(choiceContext, Owner.Creature, 1, Owner.Creature, this);
     }
 }

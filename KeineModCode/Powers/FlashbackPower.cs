@@ -7,7 +7,7 @@ using MegaCrit.Sts2.Core.Models;
 
 namespace KeineMod.KeineModCode.Powers;
 
-public class YesterdayOnceMorePower : KeineModPower
+public class FlashbackPower : KeineModPower
 {
     public override PowerType Type => PowerType.Buff;
 

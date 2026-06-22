@@ -17,12 +17,7 @@ public class DupRekindlePower : KeineModPower
 
     private decimal GetHealPercent()
     {
-        var player = Owner.Player;
-        if (player == null)
-            return 15M;
-        var tempEssence = 0;
-        if (Owner.HasPower<DupTempEssencePower>()) tempEssence = Owner.GetPowerAmount<DupTempEssencePower>();
-        return 15M + tempEssence * 5M;
+        return 15M;
     }
 
     private void UpdateHealPercentVar()
@@ -36,7 +31,7 @@ public class DupRekindlePower : KeineModPower
         Creature? applier,
         CardModel? cardSource)
     {
-        if (power is DupRekindlePower or DupTempEssencePower) UpdateHealPercentVar();
+        if (power is DupRekindlePower) UpdateHealPercentVar();
 
         return base.AfterPowerAmountChanged(choiceContext, power, amount, applier, cardSource);
     }
