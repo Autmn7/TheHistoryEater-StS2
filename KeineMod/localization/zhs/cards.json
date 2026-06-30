@@ -322,7 +322,7 @@
   "KEINEMOD-IMPROVISE.description": "造成{Damage:diff()}点伤害。\n[gold]创造[/gold]1张其他角色的随机{IfUpgraded:show:已[gold]升级[/gold]的|}[gold]格挡[/gold]技能牌，使其获得[gold]知识渊博[/gold]。",
   "KEINEMOD-IMPROVISE.title": "即兴发挥",
   "KEINEMOD-IMPROVISE.artist": "りき",
-  "KEINEMOD-DUAL_BLESSING.description": "{IfUpgraded:show:获得{KnowledgePower:diff()}点[gold]知识[/gold]。\n获得{DupRekindlePower:diff()}层[gold]重生[/gold]。|抉择：获得{KnowledgePower:diff()}点[gold]知识[/gold]；或获得{DupRekindlePower:diff()}层[gold]重生[/gold]。}",
+  "KEINEMOD-DUAL_BLESSING.description": "{IfUpgraded:show:|抉择：}获得{KnowledgePower:diff()}点[gold]知识[/gold]{IfUpgraded:show:和|或}{DupRekindlePower:diff()}层[gold]重生[/gold]。",
   "KEINEMOD-DUAL_BLESSING.title": "竹林组的祝福",
   "KEINEMOD-DUAL_BLESSING.artist": "kaze",
   "KEINEMOD-KEINES_BLESSING.description": "获得{KnowledgePower:diff()}点[gold]知识[/gold]。",

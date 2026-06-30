@@ -322,7 +322,7 @@
   "KEINEMOD-IMPROVISE.description": "Deal {Damage:diff()} damage.\n[gold]Create[/gold] a random {IfUpgraded:show:[gold]Upgraded[/gold] |}[gold]Block[/gold] Skill from other characters. It gains [gold]Knowledgeable[/gold].",
   "KEINEMOD-IMPROVISE.title": "Improvise",
   "KEINEMOD-IMPROVISE.artist": "りき",
-  "KEINEMOD-DUAL_BLESSING.description": "{IfUpgraded:show:Gain {KnowledgePower:diff()} [gold]Knowledge[/gold].\nGain {DupRekindlePower:diff()} [gold]Rekindle[/gold].|Choose one: Gain {KnowledgePower:diff()} [gold]Knowledge[/gold]; or Gain {DupRekindlePower:diff()} [gold]Rekindle[/gold].}",
+  "KEINEMOD-DUAL_BLESSING.description": "{IfUpgraded:show:|Choose one: }Gain {KnowledgePower:diff()} [gold]Knowledge[/gold] {IfUpgraded:show:and|or} {DupRekindlePower:diff()} [gold]Rekindle[/gold].",
   "KEINEMOD-DUAL_BLESSING.title": "Dual Blessing",
   "KEINEMOD-DUAL_BLESSING.artist": "kaze",
   "KEINEMOD-KEINES_BLESSING.description": "Gain {KnowledgePower:diff()} [gold]Knowledge[/gold].",

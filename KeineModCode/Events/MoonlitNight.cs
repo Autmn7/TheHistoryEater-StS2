@@ -16,18 +16,11 @@ namespace KeineMod.KeineModCode.Events;
 
 public class MoonlitNight : CustomEventModel
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new("BuyDrinkCost", 50)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new("BuyDrinkCost", 75)];
 
     public override bool IsAllowed(IRunState runState)
     {
-        var canBuyDrink = false;
-        foreach (var player in runState.Players)
-        {
-            if (player.Gold >= DynamicVars["BuyDrinkCost"].BaseValue)
-                canBuyDrink = true;
-        }
-
-        return canBuyDrink;
+        return runState.CurrentActIndex == 2 && runState.Players.All(p => p.Gold >= DynamicVars["BuyDrinkCost"].BaseValue);
     }
 
     public override LocString InitialDescription
