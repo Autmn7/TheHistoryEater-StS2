@@ -12,7 +12,7 @@ public static class StringExtensions
     {
         return Path.Join(MainFile.ResPath, "images", path);
     }
-    
+
     public static string SoundEffectPath(this string path)
     {
         return Path.Join(MainFile.ResPath, "sfx", path);

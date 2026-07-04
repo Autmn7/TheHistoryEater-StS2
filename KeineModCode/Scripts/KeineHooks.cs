@@ -54,14 +54,8 @@ public partial class SpineAnimationSyncer : Node
 
         // 1. Grab current animation name from human form
         var humanAnimState = _humanVisuals.Call("get_animation_state").AsGodotObject();
-        if (humanAnimState == null) return;
-
         var humanTrack = humanAnimState.Call("get_current", 0).AsGodotObject();
-        if (humanTrack == null) return;
-
         var humanAnim = humanTrack.Call("get_animation").AsGodotObject();
-        if (humanAnim == null) return;
-
         var targetAnimName = humanAnim.Call("get_name").AsString();
 
         // 2. Resolve if it should loop (idle_loop vs hurt)
@@ -84,16 +78,9 @@ public partial class SpineAnimationSyncer : Node
 
         // 3. Inspect Hakutaku's current active state
         var hakuAnimState = _hakuVisuals.Call("get_animation_state").AsGodotObject();
-        if (hakuAnimState == null) return;
-
         var hakuTrack = hakuAnimState.Call("get_current", 0).AsGodotObject();
-        var hakuAnimName = "";
-
-        if (hakuTrack != null)
-        {
-            var hakuAnim = hakuTrack.Call("get_animation").AsGodotObject();
-            if (hakuAnim != null) hakuAnimName = hakuAnim.Call("get_name").AsString();
-        }
+        var hakuAnim = hakuTrack.Call("get_animation").AsGodotObject();
+        var hakuAnimName = hakuAnim.Call("get_name").AsString();
 
         // 4. Force synchronization if state is mismatched
         if (hakuAnimName != targetAnimName) hakuAnimState.Call("set_animation", targetAnimName, isLooping, 0);
@@ -133,11 +120,11 @@ public class KeineHooks
     public static Task OnStanceChange(PlayerChoiceContext choiceContext, Player player, KeineStanceModel oldStance, KeineStanceModel newStance)
     {
         var combatRoom = NCombatRoom.Instance;
+        var isHakutaku = newStance is HakutakuForm;
+        if (combatRoom == null) return Task.CompletedTask;
 
-        if (player.Character is Character.KeineMod && combatRoom != null)
+        if (player.Character is Character.KeineMod)
         {
-            var isHakutaku = newStance is HakutakuForm;
-
             // 1. Grab the correct visual node directly using the engine's room lookup maps
             var creatureNode = combatRoom.GetCreatureNode(player.Creature);
             var targetVisuals = creatureNode?.Visuals;
@@ -196,80 +183,80 @@ public class KeineHooks
                     }
                 }
             }
+        }
 
-            // 2. Combat Background Swapping (Only execute visual layout shifts for the local monitor view)
-            if (LocalContext.IsMe(player) && combatRoom.GetTree()?.CurrentScene != null)
+        // 2. Combat Background Swapping (Only execute visual layout shifts for the local monitor view, applicable to non-Keine characters as well)
+        if (LocalContext.IsMe(player) && combatRoom.GetTree()?.CurrentScene != null)
+        {
+            var currentScene = combatRoom.GetTree().CurrentScene;
+            var combatBg = FindChildOfType<NCombatBackground>(currentScene);
+
+            if (combatBg != null && GodotObject.IsInstanceValid(combatBg))
             {
-                var currentScene = combatRoom.GetTree().CurrentScene;
-                var combatBg = FindChildOfType<NCombatBackground>(currentScene);
-
-                if (combatBg != null && GodotObject.IsInstanceValid(combatBg))
+                if (isHakutaku)
                 {
-                    if (isHakutaku)
+                    if (HakuBgOverlay == null || !GodotObject.IsInstanceValid(HakuBgOverlay))
                     {
-                        if (HakuBgOverlay == null || !GodotObject.IsInstanceValid(HakuBgOverlay))
+                        var texturePath = "full_moon/full_moon_background.png".ScenePath();
+                        var bgTexture = GD.Load<Texture2D>(texturePath);
+
+                        if (bgTexture == null) Log.Info($"[KeineMod] ERROR: Failed to load background texture at: {texturePath}");
+
+                        HakuBgOverlay = new HakuBackgroundOverlay
                         {
-                            var texturePath = "full_moon/full_moon_background.png".ScenePath();
-                            var bgTexture = GD.Load<Texture2D>(texturePath);
+                            Name = "KeineHakutakuBgOverlay",
+                            Texture = bgTexture,
+                            ExpandMode = TextureRect.ExpandModeEnum.IgnoreSize,
+                            StretchMode = TextureRect.StretchModeEnum.Scale,
+                            Visible = false
+                        };
 
-                            if (bgTexture == null) Log.Info($"[KeineMod] ERROR: Failed to load background texture at: {texturePath}");
-
-                            HakuBgOverlay = new HakuBackgroundOverlay
-                            {
-                                Name = "KeineHakutakuBgOverlay",
-                                Texture = bgTexture,
-                                ExpandMode = TextureRect.ExpandModeEnum.IgnoreSize,
-                                StretchMode = TextureRect.StretchModeEnum.Scale,
-                                Visible = false
-                            };
-
-                            combatBg.AddChild(HakuBgOverlay);
-                        }
-
-                        // --- UPDATED SMART LAYER SORTING ---
-                        var targetIndex = combatBg.GetChildCount() - 1;
-                        for (var i = 0; i < combatBg.GetChildCount(); ++i)
-                        {
-                            var child = combatBg.GetChild(i);
-                            if (child == HakuBgOverlay) continue;
-
-                            var childName = child.Name.ToString();
-
-                            // Added "KaiserCrab" check to safely slot the overlay behind the custom boss layers
-                            if (childName == "Foreground" || childName.Contains("SpineSprite") || childName.Contains("KaiserCrab"))
-                            {
-                                targetIndex = child.GetIndex();
-                                break;
-                            }
-                        }
-
-                        // Slip the full moon right behind the discovered foreground or crab boss node
-                        combatBg.MoveChild(HakuBgOverlay, targetIndex);
-
-                        // --- FADE IN LOGIC ---
-                        if (!HakuBgOverlay.Visible)
-                        {
-                            HakuBgOverlay.Modulate = new Color(1, 1, 1, 0f);
-                            HakuBgOverlay.Visible = true;
-                        }
-
-                        var fadeInTween = combatBg.CreateTween();
-                        fadeInTween.TweenProperty(HakuBgOverlay, "modulate:a", 1.0f, 0.6f)
-                            .SetTrans(Tween.TransitionType.Cubic)
-                            .SetEase(Tween.EaseType.Out);
+                        combatBg.AddChild(HakuBgOverlay);
                     }
-                    else
-                    {
-                        // --- FADE OUT LOGIC ---
-                        if (HakuBgOverlay != null && GodotObject.IsInstanceValid(HakuBgOverlay) && HakuBgOverlay.Visible)
-                        {
-                            var fadeOutTween = combatBg.CreateTween();
-                            fadeOutTween.TweenProperty(HakuBgOverlay, "modulate:a", 0.0f, 0.5f)
-                                .SetTrans(Tween.TransitionType.Cubic)
-                                .SetEase(Tween.EaseType.In);
 
-                            fadeOutTween.TweenCallback(Callable.From(() => HakuBgOverlay.Visible = false));
+                    // --- UPDATED SMART LAYER SORTING ---
+                    var targetIndex = combatBg.GetChildCount() - 1;
+                    for (var i = 0; i < combatBg.GetChildCount(); ++i)
+                    {
+                        var child = combatBg.GetChild(i);
+                        if (child == HakuBgOverlay) continue;
+
+                        var childName = child.Name.ToString();
+
+                        // Added "KaiserCrab" check to safely slot the overlay behind the custom boss layers
+                        if (childName == "Foreground" || childName.Contains("SpineSprite") || childName.Contains("KaiserCrab"))
+                        {
+                            targetIndex = child.GetIndex();
+                            break;
                         }
+                    }
+
+                    // Slip the full moon right behind the discovered foreground or crab boss node
+                    combatBg.MoveChild(HakuBgOverlay, targetIndex);
+
+                    // --- FADE IN LOGIC ---
+                    if (!HakuBgOverlay.Visible)
+                    {
+                        HakuBgOverlay.Modulate = new Color(1, 1, 1, 0f);
+                        HakuBgOverlay.Visible = true;
+                    }
+
+                    var fadeInTween = combatBg.CreateTween();
+                    fadeInTween.TweenProperty(HakuBgOverlay, "modulate:a", 1.0f, 0.6f)
+                        .SetTrans(Tween.TransitionType.Cubic)
+                        .SetEase(Tween.EaseType.Out);
+                }
+                else
+                {
+                    // --- FADE OUT LOGIC ---
+                    if (HakuBgOverlay != null && GodotObject.IsInstanceValid(HakuBgOverlay) && HakuBgOverlay.Visible)
+                    {
+                        var fadeOutTween = combatBg.CreateTween();
+                        fadeOutTween.TweenProperty(HakuBgOverlay, "modulate:a", 0.0f, 0.5f)
+                            .SetTrans(Tween.TransitionType.Cubic)
+                            .SetEase(Tween.EaseType.In);
+
+                        fadeOutTween.TweenCallback(Callable.From(() => HakuBgOverlay.Visible = false));
                     }
                 }
             }
