@@ -1,5 +1,3 @@
-(Still in development)
-
 Only supports beta version at the moment.
 
 Dependencies:
