@@ -1,0 +1,16 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://c88dvxd1rhkfu"
+path="res://.godot/imported/hakutaku.atlas-44ba6666c802569bd0d19648829410ca.spatlas"
+
+[deps]
+
+source_file="res://KeineMod/scenes/visual/idle/hakutaku.atlas"
+dest_files=["res://.godot/imported/hakutaku.atlas-44ba6666c802569bd0d19648829410ca.spatlas"]
+
+[params]
+
+normal_map_prefix="n"
+specular_map_prefix="s"

@@ -19,7 +19,7 @@ public class KeineConstantsState
 
     public bool CanUse(Player player)
     {
-        return FullMoonCharge > 0 && (!ClickedThisTurn || player.GetRelic<PocketWatch>() != null) && !KeineModel.IsInStance<HakutakuForm>(player) && !player.Creature.HasPower<SunrisePower>();
+        return !KeineModel.IsInStance<HakutakuForm>(player) && !player.Creature.HasPower<SunrisePower>() && (player.Creature.HasPower<ImperishableNightPower>() || (FullMoonCharge > 0 && (player.GetRelic<PocketWatch>() != null || !ClickedThisTurn)));
     }
 
     public void LoseFullMoon(int amount)

@@ -4,14 +4,14 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models.Powers;
 
-namespace KeineMod.KeineModCode.Cards.Common;
+namespace KeineMod.KeineModCode.Cards.Uncommon;
 
 public class PenetratingGaze : KeineModCard
 {
-    public PenetratingGaze() : base(1, CardType.Skill, CardRarity.Common, TargetType.AnyEnemy)
+    public PenetratingGaze() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
         WithPower<VulnerablePower>(2, 1);
-        WithPower<ValorPower>(1, 1);
+        WithPower<ValorPower>(2, 1);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

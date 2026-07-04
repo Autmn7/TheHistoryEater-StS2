@@ -12,12 +12,14 @@ namespace KeineMod.KeineModCode.Cards.Uncommon;
 
 public class Guardian : KeineModCard
 {
-    public Guardian() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.AllAllies)
+    public Guardian() : base(2, CardType.Skill, CardRarity.Uncommon, TargetType.AllAllies)
     {
-        WithBlock(6, 3);
+        WithBlock(10, 4);
         WithKeywords(KeineKeywords.Knowledgeable, KeineKeywords.Hakutaku);
         WithTip(new TooltipSource(card => new HoverTip(new LocString("cards", Id.Entry + ".extraTipTitle"), new LocString("cards", Id.Entry + ".extraTipDescription"))));
     }
+
+    public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.MultiplayerOnly;
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {

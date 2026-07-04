@@ -9,11 +9,12 @@ namespace KeineMod.KeineModCode.Cards.Rare;
 
 public class Conceal : KeineModCard
 {
-    public Conceal() : base(1, CardType.Skill, CardRarity.Rare, TargetType.AnyEnemy)
+    public Conceal() : base(2, CardType.Skill, CardRarity.Rare, TargetType.AnyEnemy)
     {
-        WithBlock(7, 2);
-        WithPower<HistoricalGapPower>(2, 1);
+        WithBlock(10);
+        WithPower<HistoricalGapPower>(3);
         WithKeywords(KeineKeywords.Human, KeineKeywords.Hakutaku);
+        WithCostUpgradeBy(-1);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

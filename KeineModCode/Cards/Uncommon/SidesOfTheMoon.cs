@@ -9,11 +9,11 @@ namespace KeineMod.KeineModCode.Cards.Uncommon;
 
 public class SidesOfTheMoon : KeineModCard
 {
-    public SidesOfTheMoon() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.AnyEnemy)
+    public SidesOfTheMoon() : base(0, CardType.Skill, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
-        WithCalculatedVar("Gap", 2, 2, (card, _) => card is KeineModCard keineModCard && keineModCard.InHakutaku() ? 1 : 0, 2);
-        WithVar("Ratio", 2);
-        WithKeywords(CardKeyword.Retain, KeineKeywords.Human, KeineKeywords.Hakutaku);
+        WithCalculatedVar("Gap", 2, 2, (card, _) => card is KeineModCard keineModCard && keineModCard.InHakutaku() ? 1 : 0, 1);
+        WithVar("Ratio", 4, -1);
+        WithKeywords(KeineKeywords.Human, KeineKeywords.Hakutaku);
         WithTip(typeof(TimeShiftPower));
     }
 

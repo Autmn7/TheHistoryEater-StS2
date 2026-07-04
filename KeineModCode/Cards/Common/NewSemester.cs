@@ -10,7 +10,7 @@ public class NewSemester : KeineModCard
 {
     public NewSemester() : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
     {
-        WithBlock(6, 3);
+        WithBlock(7, 3);
         WithVar("Threshold", 3);
         WithPower<KnowledgePower>(1);
         WithCards(1);

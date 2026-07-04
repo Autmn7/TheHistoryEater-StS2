@@ -31,6 +31,75 @@ public partial class HakuBackgroundOverlay : TextureRect
     }
 }
 
+/// <summary>
+/// Monitors and mirrors Spine animations from human form to Hakutaku form.
+/// </summary>
+public partial class SpineAnimationSyncer : Node
+{
+    private GodotObject? _humanVisuals;
+    private GodotObject? _hakuVisuals;
+
+    public void Setup(GodotObject humanVisuals, GodotObject hakuVisuals)
+    {
+        _humanVisuals = humanVisuals;
+        _hakuVisuals = hakuVisuals;
+    }
+
+    public override void _Process(double delta)
+    {
+        var parent = GetParent() as CanvasItem;
+        if (parent == null || !parent.Visible) return;
+
+        if (!IsInstanceValid(_humanVisuals) || !IsInstanceValid(_hakuVisuals)) return;
+
+        // 1. Grab current animation name from human form
+        var humanAnimState = _humanVisuals.Call("get_animation_state").AsGodotObject();
+        if (humanAnimState == null) return;
+
+        var humanTrack = humanAnimState.Call("get_current", 0).AsGodotObject();
+        if (humanTrack == null) return;
+
+        var humanAnim = humanTrack.Call("get_animation").AsGodotObject();
+        if (humanAnim == null) return;
+
+        var targetAnimName = humanAnim.Call("get_name").AsString();
+
+        // 2. Resolve if it should loop (idle_loop vs hurt)
+        var isLooping = true;
+        var loopVal = humanTrack.Get("loop");
+
+        if (loopVal.VariantType != Variant.Type.Nil)
+            isLooping = loopVal.AsBool();
+        else
+            try
+            {
+                isLooping = humanTrack.Call("get_loop").AsBool();
+            }
+            catch
+            {
+                // Matches "idle_loop" perfectly based on your setup
+                isLooping = targetAnimName.Contains("loop", StringComparison.OrdinalIgnoreCase) ||
+                            targetAnimName.Contains("idle", StringComparison.OrdinalIgnoreCase);
+            }
+
+        // 3. Inspect Hakutaku's current active state
+        var hakuAnimState = _hakuVisuals.Call("get_animation_state").AsGodotObject();
+        if (hakuAnimState == null) return;
+
+        var hakuTrack = hakuAnimState.Call("get_current", 0).AsGodotObject();
+        var hakuAnimName = "";
+
+        if (hakuTrack != null)
+        {
+            var hakuAnim = hakuTrack.Call("get_animation").AsGodotObject();
+            if (hakuAnim != null) hakuAnimName = hakuAnim.Call("get_name").AsString();
+        }
+
+        // 4. Force synchronization if state is mismatched
+        if (hakuAnimName != targetAnimName) hakuAnimState.Call("set_animation", targetAnimName, isLooping, 0);
+    }
+}
+
 public class KeineHooks
 {
     private static HakuBackgroundOverlay? HakuBgOverlay = null;
@@ -96,6 +165,20 @@ public class KeineHooks
                         }
 
                         targetVisuals.SetMeta("DynamicHiddenHumanNodes", new Array<CanvasItem>(hiddenNodes));
+
+                        // Instantiate or verify our real-time synchronization tracker
+                        if (!hakuForm.HasNode("SpineAnimationSyncer"))
+                        {
+                            var humanSpine = targetVisuals.GetNodeOrNull("Visuals");
+                            var hakuSpine = hakuForm.GetNodeOrNull("Visuals");
+
+                            if (humanSpine != null && hakuSpine != null)
+                            {
+                                var syncer = new SpineAnimationSyncer { Name = "SpineAnimationSyncer" };
+                                syncer.Setup(humanSpine, hakuSpine);
+                                hakuForm.AddChild(syncer);
+                            }
+                        }
                     }
                     else
                     {
@@ -145,7 +228,7 @@ public class KeineHooks
 
                         // --- UPDATED SMART LAYER SORTING ---
                         var targetIndex = combatBg.GetChildCount() - 1;
-                        for (var i = 0; i < combatBg.GetChildCount(); i++)
+                        for (var i = 0; i < combatBg.GetChildCount(); ++i)
                         {
                             var child = combatBg.GetChild(i);
                             if (child == HakuBgOverlay) continue;

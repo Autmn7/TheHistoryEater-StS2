@@ -70,7 +70,7 @@ public class Reincarnation : KeineModCard
     {
         ArgumentNullException.ThrowIfNull(cardPlay.Target);
         var shouldTriggerFatal = cardPlay.Target.Powers.All(p => p.ShouldOwnerDeathTriggerFatal());
-        var attackCommand = await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target).WithHitFx(tmpSfx: "blunt_attack.mp3").Execute(choiceContext);
+        var attackCommand = await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, cardPlay).Targeting(cardPlay.Target).WithHitFx(tmpSfx: "blunt_attack.mp3").Execute(choiceContext);
         // Check if the target monster died from this specific processing frame
         if (cardPlay.Target.Monster != null && shouldTriggerFatal && attackCommand.Results.SelectMany(r => r).Any(r => r.WasTargetKilled))
         {

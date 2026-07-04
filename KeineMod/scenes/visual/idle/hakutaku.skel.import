@@ -1,0 +1,14 @@
+[remap]
+
+importer="spine.skel"
+type="SpineSkeletonFileResource"
+uid="uid://cck2ibwp1w2ec"
+path="res://.godot/imported/hakutaku.skel-695c0952d5177f51208b913abf472421.spskel"
+
+[deps]
+
+source_file="res://KeineMod/scenes/visual/idle/hakutaku.skel"
+dest_files=["res://.godot/imported/hakutaku.skel-695c0952d5177f51208b913abf472421.spskel"]
+
+[params]
+

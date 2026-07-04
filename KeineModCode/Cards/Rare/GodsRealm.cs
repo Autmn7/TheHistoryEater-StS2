@@ -11,9 +11,8 @@ public class GodsRealm : KeineModCard
 {
     public GodsRealm() : base(1, CardType.Power, CardRarity.Rare, TargetType.Self)
     {
-        WithVar("GodsRealmPower", 2);
+        WithVar("GodsRealmPower", 3);
         WithKeyword(CardKeyword.Innate, UpgradeType.Add);
-        WithTip(KeineKeywords.Consume);
         WithTip(KeineKeywords.Create);
         WithTip(StaticHoverTip.Block);
     }

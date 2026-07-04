@@ -100,7 +100,7 @@ public class ReturningBridge : KeineModCard
                 case "KIN_PRIEST":
                     // RE: Kin Priest [Orb of Feebleness]
                     // Effect: Deal 10 damage, apply 2 Frail and Weak to ALL enemies.
-                    await DamageCmd.Attack(10).FromCard(this).TargetingAllOpponents(CombatState).Execute(choiceContext);
+                    await DamageCmd.Attack(10).FromCard(this, cardPlay).TargetingAllOpponents(CombatState).Execute(choiceContext);
                     await PowerCmd.Apply<FrailPower>(choiceContext, CombatState.HittableEnemies, 2, Owner.Creature, this);
                     await PowerCmd.Apply<WeakPower>(choiceContext, CombatState.HittableEnemies, 2, Owner.Creature, this);
                     break;
@@ -154,14 +154,14 @@ public class ReturningBridge : KeineModCard
                     // RE: Crusher [Guarded Strike]
                     // Effect: Gain 15 Block. Deal 15 damage. Gain 2 Strength.
                     await CreatureCmd.GainBlock(Owner.Creature, 15, ValueProp.Move, cardPlay);
-                    if (cardPlay.Target != null) await DamageCmd.Attack(15).FromCard(this).Targeting(cardPlay.Target).Execute(choiceContext);
+                    if (cardPlay.Target != null) await DamageCmd.Attack(15).FromCard(this, cardPlay).Targeting(cardPlay.Target).Execute(choiceContext);
                     await PowerCmd.Apply<StrengthPower>(choiceContext, Owner.Creature, 2, Owner.Creature, this);
                     break;
 
                 case "ROCKET":
                     // RE: Rocket [Piercing Laser]
                     // Effect: Deal 35 damage.
-                    if (cardPlay.Target != null) await DamageCmd.Attack(35).FromCard(this).Targeting(cardPlay.Target).Execute(choiceContext);
+                    if (cardPlay.Target != null) await DamageCmd.Attack(35).FromCard(this, cardPlay).Targeting(cardPlay.Target).Execute(choiceContext);
                     break;
 
                 case "THE_INSATIABLE":

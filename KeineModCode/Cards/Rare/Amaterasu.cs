@@ -15,7 +15,7 @@ public class Amaterasu : KeineModCard
     public Amaterasu() : base(1, CardType.Attack, CardRarity.Rare, TargetType.AllEnemies)
     {
         WithCalculatedDamage(10, (card, _) => card is KeineModCard keineModCard && keineModCard.InHakutaku() ? card.Owner.Creature.GetPowerAmount<ValorPower>() : 0, ValueProp.Move, 2);
-        WithPower<ValorPower>(4, 2);
+        WithPower<ValorPower>(5, 2);
         WithKeywords(KeineKeywords.Human, KeineKeywords.Hakutaku);
     }
 
@@ -27,7 +27,7 @@ public class Amaterasu : KeineModCard
             NCombatRoom.Instance?.CombatVfxContainer.AddChildSafely(NFireBurstVfx.Create(enemy, 0.75f));
         }
 
-        await DamageCmd.Attack(DynamicVars.CalculatedDamage).FromCard(this).TargetingAllOpponents(CombatState).Execute(choiceContext);
+        await DamageCmd.Attack(DynamicVars.CalculatedDamage).FromCard(this, cardPlay).TargetingAllOpponents(CombatState).Execute(choiceContext);
         if (InHuman())
             await PowerCmd.Apply<ValorPower>(choiceContext, Owner.Creature, DynamicVars["ValorPower"].BaseValue, Owner.Creature, this);
     }

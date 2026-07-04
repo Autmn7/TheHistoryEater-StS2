@@ -1,5 +1,6 @@
 ﻿using BaseLib.Abstracts;
 using BaseLib.Extensions;
+using BaseLib.Patches.UI;
 using BaseLib.Utils.NodeFactories;
 using Godot;
 using KeineMod.KeineModCode.Cards.Basic;
@@ -25,7 +26,7 @@ public class KeineMod : PlaceholderCharacterModel
     public static readonly Color Color = new("#00afaf");
 
     public override Color NameColor => Color;
-    public override Color EnergyLabelOutlineColor => new("#8b0000");
+    public override Color EnergyLabelOutlineColor => new("#004040");
     public override Color MapDrawingColor => Color;
     public override CharacterGender Gender => CharacterGender.Feminine;
     public override int StartingHp => 75;
@@ -88,7 +89,7 @@ public class KeineMod : PlaceholderCharacterModel
 
     public override string CustomCharacterSelectBg => "select/character_select_bg_keine.tscn".ScenePath();
 
-    // public override string CustomEnergyCounterPath => "energy/energy_counter_mokou.tscn".ScenePath();
+    public override string CustomEnergyCounterPath => "energy/energy_counter_keine.tscn".ScenePath();
     public override string CustomRestSiteAnimPath => "rest/rest_site_keine.tscn".ScenePath();
     public override string CustomMerchantAnimPath => "merchant/merchant_keine.tscn".ScenePath();
 
@@ -98,18 +99,18 @@ public class KeineMod : PlaceholderCharacterModel
     public override string CustomCharacterSelectLockedIconPath => "char_select_keine_locked.png".CharacterUiPath();
     public override string CustomMapMarkerPath => "map_marker_keine.png".CharacterUiPath();
 
-    // public override string CustomArmPointingTexturePath => "mokou_point.png".CharacterUiPath();
-    // public override string CustomArmRockTexturePath => "mokou_rock.png".CharacterUiPath();
-    // public override string CustomArmPaperTexturePath => "mokou_paper.png".CharacterUiPath();
-    // public override string CustomArmScissorsTexturePath => "mokou_scissors.png".CharacterUiPath();
+    public override string CustomArmPointingTexturePath => "keine_point.png".CharacterUiPath();
+    public override string CustomArmRockTexturePath => "keine_rock.png".CharacterUiPath();
+    public override string CustomArmPaperTexturePath => "keine_paper.png".CharacterUiPath();
+    public override string CustomArmScissorsTexturePath => "keine_scissors.png".CharacterUiPath();
 
     public override string CustomCharacterSelectTransitionPath => "res://materials/transitions/ironclad_transition_mat.tres";
 
     //public override string CustomAttackSfx => null;
     //public override string CustomCastSfx => null;
     //public override string CustomDeathSfx => null;
-    //public override string CharacterSelectSfx => null;
+    public override string CharacterSelectSfx => "page_turn_sfx.wav".SoundEffectPath();
     public override string CharacterTransitionSfx => "event:/sfx/ui/wipe_ironclad";
 
-    // public override RelicIconData CustomYummyCookie => new("yummy_cookie_mokou.png".BigRelicImagePath(), "yummy_cookie_mokou.png".RelicImagePath(), "relic_outline.png".RelicImagePath());
+    public override RelicIconData CustomYummyCookie => new("yummy_cookie_keine.png".BigRelicImagePath(), "yummy_cookie_keine.png".RelicImagePath(), "relic_outline.png".RelicImagePath());
 }

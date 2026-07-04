@@ -1,5 +1,6 @@
 using BaseLib.Abstracts;
 using BaseLib.Utils;
+using Godot;
 using KeineMod.KeineModCode.Scripts;
 using KeineMod.KeineModCode.Stances;
 using MegaCrit.Sts2.Core.Combat;
@@ -79,5 +80,44 @@ public class KeineModel : CustomSingletonModel
             return Task.CompletedTask;
         foreach (var player in combatState.Players) KeineConstantsStateRegistry.Get(player).ClickedThisTurn = false;
         return Task.CompletedTask;
+    }
+
+    public override Task AfterDeath(PlayerChoiceContext choiceContext, Creature creature, bool wasRemovalPrevented, float deathAnimLength)
+    {
+        if (!wasRemovalPrevented && creature.IsPlayer)
+        {
+            var player = creature.Player;
+            if (player?.Character is Character.KeineMod)
+            {
+                var instance = NCombatRoom.Instance;
+                var creatureNode = instance?.GetCreatureNode(creature);
+                var targetVisuals = creatureNode?.Visuals;
+
+                if (targetVisuals != null && GodotObject.IsInstanceValid(targetVisuals))
+                {
+                    var hakuForm = targetVisuals.GetNodeOrNull<CanvasItem>("HakutakuFormNode");
+                    var isHakutaku = hakuForm != null && hakuForm.Visible;
+
+                    if (isHakutaku)
+                    {
+                        var hakuSpine = hakuForm.GetNodeOrNull<CanvasItem>("Visuals");
+                        var hakuCorpse = hakuForm.GetNodeOrNull<CanvasItem>("Death");
+
+                        if (hakuSpine != null) hakuSpine.Visible = false;
+                        if (hakuCorpse != null) hakuCorpse.Visible = true;
+                    }
+                    else
+                    {
+                        var humanSpine = targetVisuals.GetNodeOrNull<CanvasItem>("Visuals");
+                        var humanCorpse = targetVisuals.GetNodeOrNull<CanvasItem>("Death");
+
+                        if (humanSpine != null) humanSpine.Visible = false;
+                        if (humanCorpse != null) humanCorpse.Visible = true;
+                    }
+                }
+            }
+        }
+
+        return base.AfterDeath(choiceContext, creature, wasRemovalPrevented, deathAnimLength);
     }
 }

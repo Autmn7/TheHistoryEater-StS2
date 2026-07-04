@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cluvk6comhv0v"
-path="res://.godot/imported/sacred_strike.png-4af8cbe688f79c5a150c46c659074c49.ctex"
+uid="uid://ca5g2phmacd61"
+path="res://.godot/imported/yummy_cookie_keine.png-4ab41b7cb28d1bf6685c765394dc68a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://KeineMod/images/card_portraits/sacred_strike.png"
-dest_files=["res://.godot/imported/sacred_strike.png-4af8cbe688f79c5a150c46c659074c49.ctex"]
+source_file="res://KeineMod/images/relics/big/yummy_cookie_keine.png"
+dest_files=["res://.godot/imported/yummy_cookie_keine.png-4ab41b7cb28d1bf6685c765394dc68a6.ctex"]
 
 [params]
 
