@@ -13,8 +13,8 @@ public class Overwrite : KeineModCard
 {
     public Overwrite() : base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
     {
-        WithDamage(7, 2);
-        WithPower<HistoricalGapPower>(2, 1);
+        WithDamage(5, 2);
+        WithPower<HistoricalGapPower>(3, 1);
         WithCards(1);
         WithKeyword(KeineKeywords.Create);
         WithTip(typeof(Flow));
@@ -22,7 +22,7 @@ public class Overwrite : KeineModCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
+        await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, cardPlay).Targeting(cardPlay.Target).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
         await PowerCmd.Apply<HistoricalGapPower>(choiceContext, cardPlay.Target, DynamicVars["HistoricalGapPower"].BaseValue, Owner.Creature, this);
         for (var i = 0; i < DynamicVars.Cards.BaseValue; ++i)
         {

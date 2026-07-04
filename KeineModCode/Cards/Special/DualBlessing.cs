@@ -29,10 +29,7 @@ public class DualBlessing : KeineModCard
         ];
         if (IsUpgraded)
         {
-            foreach (var card in options)
-            {
-                await ((IChoosable)card).OnChosen();
-            }
+            foreach (var card in options) await ((IChoosable)card).OnChosen();
         }
         else
         {

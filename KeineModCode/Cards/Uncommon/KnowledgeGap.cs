@@ -18,7 +18,7 @@ public class KnowledgeGap : KeineModCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        var attackCommand = await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
+        var attackCommand = await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, cardPlay).Targeting(cardPlay.Target).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
         var gap = (int)Math.Floor(attackCommand.Results.SelectMany(r => r).Sum(r => r.TotalDamage + r.OverkillDamage) / DynamicVars["Ratio"].BaseValue);
         await PowerCmd.Apply<HistoricalGapPower>(choiceContext, cardPlay.Target, gap, Owner.Creature, this);
     }

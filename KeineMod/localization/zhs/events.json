@@ -2,7 +2,6 @@
   "KEINEMOD-MOONLIT_NIGHT.title": "不眠月夜",
   "KEINEMOD-MOONLIT_NIGHT.pages.INITIAL.options.LOCKED.title": "锁定",
   "KEINEMOD-MOONLIT_NIGHT.pages.INITIAL.options.LOCKED.description": "[gold]金币[/gold]不足。",
-
   "KEINEMOD-MOONLIT_NIGHT.pages.INITIAL.description": "上弦月温柔地点亮了尖塔的夜晚。在你准备休息之时，远处两位少女的谈笑声引起了你的注意。\n\n“啊，晚上好朋友。有什么可以帮到你的吗？”[blue]知性少女[/blue]莞尔一笑。\n“这座塔还挺有意思的。看你的样子，一路过来也经历了不少吧。”[red]飒气少女[/red]招手邀请你过来。",
   "KEINEMOD-MOONLIT_NIGHT.pages.INITIAL.options.SHARE_STORIES.title": "分享故事",
   "KEINEMOD-MOONLIT_NIGHT.pages.INITIAL.options.SHARE_STORIES.description": "从你的[gold]牌组[/gold]中移除[blue]1[/blue]张牌。",
@@ -15,7 +14,6 @@
   "KEINEMOD-MOONLIT_NIGHT.pages.SHARE_STORIES_DEFECT.description": "[i][font_size=22]<高低起伏的嘀嘀声>[/font_size][/i]\n\n“额，[blue]慧音[/blue]，你听得懂吗？”[red]飒气少女[/red]半笑着。\n“我也不是全知的啊……”[blue]知性少女[/blue]扶额，神情有些尴尬，“不过我的能力或许能帮你达成目标。”\n\n下一瞬间，你认知到自己[sine][blue]故障[/blue][/sine]与[sine][blue]偏差[/blue][/sine]的记忆清空了几分。",
   "KEINEMOD-MOONLIT_NIGHT.pages.SHARE_STORIES.description": "你和二位少女分享了一路爬塔的奇闻趣事。\n\n“很有趣。要听点幻想乡的故事吗？”[red]飒气少女[/red]吐了一个烟圈。\n“或者来一节历史科？幻想乡的历史要从……”[blue]知性少女[/blue]轻笑着，“开个玩笑。不过我的能力或许可以帮到你。”\n\n下一瞬间，你感觉到自己纷乱与冗杂的记忆减轻了几分。",
   "KEINEMOD-MOONLIT_NIGHT.pages.BUY_DRINK.description": "你从附近的商人那里买了一些酒，招待两位少女。\n\n“哟~多谢。那我就不客气了。”[red]飒气少女[/red]豪饮一瓶，“真不错啊，没想到这地方还有这么劲的东西。”\n“慢点喝啦。”[blue]知性少女[/blue]小酌一口，“确实不错。作为谢礼请务必收下这个。”\n\n你感到了两股别样的力量涌入了你的身体。",
-
   "KEINEMOD-MOONLIT_NIGHT_KEINE.pages.INITIAL.description": "上弦月温柔地点亮了尖塔的夜晚。在你准备休息之时，远处一个熟悉的身影引起了你的注意。\n\n“[red]妹红[/red]！你在这里做什么？”你惊讶地笑着。\n“居然是[blue]慧音[/blue]。没想到在这种地方也能碰到好运啊。”[red]妹红[/red]招手邀请你坐过来。",
   "KEINEMOD-MOONLIT_NIGHT_KEINE.pages.INITIAL.options.SHARE_STORIES.title": "分享故事",
   "KEINEMOD-MOONLIT_NIGHT_KEINE.pages.INITIAL.options.SHARE_STORIES.description": "从你的[gold]牌组[/gold]中移除[blue]1[/blue]张牌。",
@@ -23,7 +21,6 @@
   "KEINEMOD-MOONLIT_NIGHT_KEINE.pages.INITIAL.options.BUY_DRINK.description": "支付[red]{BuyDrinkCost}[/red][gold]金币[/gold]。将一张[gold]竹林组的祝福[/gold]加入你的[gold]牌组[/gold]。",
   "KEINEMOD-MOONLIT_NIGHT_KEINE.pages.SHARE_STORIES.description": "“所以说啊……喂，你有在听吗？”你不满地摇了摇[red]妹红[/red]。\n“嗯？抱歉，白天杀了各种虫子，这个点有点困了。”[red]妹红[/red]打了个哈欠。\n“真是的。困了就去好好休息啊。说的我也有点困了。”你被传染了，也打了个哈欠，“用能力吞噬掉白天疲劳的历史吧。”\n\n下一瞬间，你感觉自己轻松了不少。\n\n“真是方便的能力啊。也帮帮我呗。”\n“好哦，那你躺好了。”你轻抚[red]妹红[/red]着银白的长发。",
   "KEINEMOD-MOONLIT_NIGHT_KEINE.pages.BUY_DRINK.description": "你从附近的商人那里买了一些酒，招待[red]妹红[/red]。\n\n“居然会主动请我酒，太阳从西边出来了？平时明明整天唠叨让我少喝的。”[red]妹红[/red]似乎有些受宠若惊。\n“就当犒劳你的啦。等等，慢点喝啦。”你也小酌了一口。\n“真不错啊，没想到这地方还有这么劲的东西。”[red]妹红[/red]豪饮一瓶，“作为谢礼，这个请你收下咯。”\n\n你感到[red]妹红[/red]的部分力量涌入了你的身体，与你融为一体。",
-
   "KEINEMOD-MOONLIT_NIGHT_MOKOU.pages.INITIAL.description": "上弦月温柔地点亮了尖塔的夜晚。在你准备休息之时，远处一个熟悉的身影引起了你的注意。\n\n“[red]妹红[/red]！你在这里做什么？”[blue]慧音[/blue]惊讶地笑着。\n“居然是[blue]慧音[/blue]。没想到在这种地方也能碰到好运啊。”你招手邀请她坐过来。",
   "KEINEMOD-MOONLIT_NIGHT_MOKOU.pages.INITIAL.options.SHARE_STORIES.title": "分享故事",
   "KEINEMOD-MOONLIT_NIGHT_MOKOU.pages.INITIAL.options.SHARE_STORIES.description": "从你的[gold]牌组[/gold]中移除[blue]1[/blue]张牌。",

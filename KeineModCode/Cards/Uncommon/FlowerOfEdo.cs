@@ -41,7 +41,7 @@ public class FlowerOfEdo : KeineModCard, IOnConsumed
             NCombatRoom.Instance?.CombatVfxContainer.AddChildSafely(NFireBurstVfx.Create(enemy, 0.75f));
         }
 
-        await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this).TargetingAllOpponents(CombatState).Execute(choiceContext);
+        await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, cardPlay).TargetingAllOpponents(CombatState).Execute(choiceContext);
     }
 
     public Task OnConsumed(PlayerChoiceContext choiceContext, Player player, CardModel consumedCard)

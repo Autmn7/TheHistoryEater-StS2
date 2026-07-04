@@ -33,7 +33,7 @@ public class LandOfRisingSun : KeineModCard
                 await Cmd.Wait(NGrandFinaleVfx.totalAnticipationDuration);
             }
 
-            await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this).TargetingAllOpponents(CombatState).WithHitVfxNode((Func<Creature, Node2D>)(t => (Node2D)NFireBurstVfx.Create(t, 1.0f))).Execute(choiceContext);
+            await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, cardPlay).TargetingAllOpponents(CombatState).WithHitVfxNode((Func<Creature, Node2D>)(t => (Node2D)NFireBurstVfx.Create(t, 1.0f))).Execute(choiceContext);
             await StanceCmd.ExitStance(choiceContext, Owner, this);
             await PowerCmd.Apply<SunrisePower>(choiceContext, Owner.Creature, DynamicVars["SunrisePower"].BaseValue, Owner.Creature, this);
         }

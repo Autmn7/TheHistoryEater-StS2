@@ -1,3 +1,4 @@
+using KeineMod.KeineModCode.Extensions;
 using KeineMod.KeineModCode.Scripts;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Players;
@@ -18,6 +19,7 @@ public class HistoricalGapPower : KeineModPower, IOnConsumed
     {
         if (Amount > 0)
         {
+            SfxCmd.Play("page_turn_sfx_louder.wav".SoundEffectPath());
             await CreatureCmd.Damage(choiceContext, Owner, Amount, ValueProp.Unblockable | ValueProp.Unpowered, null, null);
             if (!Owner.HasPower<ConcealHistoryPower>())
                 await PowerCmd.Decrement(this);
@@ -28,6 +30,7 @@ public class HistoricalGapPower : KeineModPower, IOnConsumed
     {
         if (Amount > 0)
         {
+            SfxCmd.Play("page_turn_sfx_louder.wav".SoundEffectPath());
             await CreatureCmd.Damage(choiceContext, Owner, Amount, ValueProp.Unblockable | ValueProp.Unpowered, null, null);
             if (!Owner.HasPower<ConcealHistoryPower>())
                 await PowerCmd.Decrement(this);

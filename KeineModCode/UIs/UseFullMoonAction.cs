@@ -1,5 +1,6 @@
 ﻿using Godot;
 using KeineMod.KeineModCode.Core;
+using KeineMod.KeineModCode.Powers;
 using KeineMod.KeineModCode.Scripts;
 using KeineMod.KeineModCode.Stances;
 using MegaCrit.Sts2.Core.Context;
@@ -36,7 +37,8 @@ public class UseFullMoonAction : GameAction
         if (!fullMoonUi.CanUse(_player)) return Task.CompletedTask;
 
         fullMoonUi.ClickedThisTurn = true;
-        fullMoonUi.LoseFullMoon(1);
+        if (!_player.Creature.HasPower<ImperishableNightPower>())
+            fullMoonUi.LoseFullMoon(1);
 
         if (LocalContext.NetId.HasValue)
         {

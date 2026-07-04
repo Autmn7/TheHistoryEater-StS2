@@ -21,7 +21,7 @@ public class WipedFromHistory : KeineModCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await DamageCmd.Attack(DynamicVars.CalculatedDamage).FromCard(this).Targeting(cardPlay.Target).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
+        await DamageCmd.Attack(DynamicVars.CalculatedDamage).FromCard(this, cardPlay).Targeting(cardPlay.Target).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
         if (InHuman())
             if (cardPlay.Target.HasPower<HistoricalGapPower>())
                 await CreatureCmd.GainBlock(Owner.Creature, cardPlay.Target.GetPowerAmount<HistoricalGapPower>(), ValueProp.Move, cardPlay);

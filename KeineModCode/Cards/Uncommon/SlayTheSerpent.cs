@@ -1,11 +1,9 @@
-﻿using BaseLib.Utils;
-using KeineMod.KeineModCode.Cards.Special;
+﻿using KeineMod.KeineModCode.Cards.Special;
 using KeineMod.KeineModCode.Commands;
 using KeineMod.KeineModCode.Scripts;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
 
@@ -20,18 +18,19 @@ public class SlayTheSerpent : KeineModCard
         WithKeywords(KeineKeywords.Human, KeineKeywords.Consume, KeineKeywords.Create, KeineKeywords.Hakutaku);
         WithTip(typeof(Snakebite));
         WithTip(typeof(SerpentForm));
-        WithTip(new TooltipSource(card => HoverTipFactory.FromCard<HeavenlySword>(card.IsUpgraded)));
+        WithTip(typeof(HeavenlySword));
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
+        await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, cardPlay).Targeting(cardPlay.Target).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
         if (InHuman())
         {
             var consumedCard = await ConsumeCmd.FromHandSingle(choiceContext, Owner, this);
             if (consumedCard is Snakebite or SerpentForm)
             {
                 CardModel sword = CombatState.CreateCard<HeavenlySword>(Owner);
+                sword.EnergyCost.SetUntilPlayed(0);
                 await CreateCmd.Execute(choiceContext, sword, Owner, IsUpgraded);
             }
         }

@@ -1,0 +1,95 @@
+[gd_scene load_steps=4 format=3 uid="uid://cs3a5onikvhi4"]
+
+[ext_resource type="Texture2D" uid="uid://cbdrqtrf00v2s" path="res://KeineMod/scenes/energy/moon_back.png" id="1_7xp2j"]
+[ext_resource type="Texture2D" uid="uid://dfl8ghgxk7nn2" path="res://KeineMod/scenes/energy/Mirror.png" id="1_dr6iu"]
+[ext_resource type="Texture2D" uid="uid://c2fx0km8ndpsh" path="res://KeineMod/scenes/energy/Sword.png" id="2_mrv3u"]
+
+[node name="EnergyCounterKeine" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 128.0
+offset_bottom = 128.0
+metadata/_edit_lock_ = true
+
+[node name="EnergyVfxBack" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(64, 64)
+
+[node name="Border" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -78.0
+offset_right = 437.0
+offset_bottom = 434.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_7xp2j")
+
+[node name="Layers" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Layer1" type="TextureRect" parent="Layers"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_dr6iu")
+expand_mode = 1
+
+[node name="RotationLayers" type="Control" parent="Layers"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 128.0
+offset_bottom = 128.0
+
+[node name="Layer2" type="TextureRect" parent="Layers/RotationLayers"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(64, 64)
+texture = ExtResource("2_mrv3u")
+expand_mode = 1
+
+[node name="EnergyVfxFront" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(64, 64)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -30.0
+offset_right = -16.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.6627451, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.1882353)
+theme_override_colors/font_outline_color = Color(0, 0.2509804, 0.2509804, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 16
+theme_override_constants/shadow_outline_size = 16
+theme_override_font_sizes/font_size = 36
+text = "3/3"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,24 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://bj3dv2txevf0k"]
+[gd_scene load_steps=3 format=3 uid="uid://bj3dv2txevf0k"]
 
-[ext_resource type="Texture2D" uid="uid://fb613fkp8udb" path="res://KeineMod/scenes/visual/human_form.png" id="1_mqxky"]
+[ext_resource type="SpineSkeletonDataResource" uid="uid://cf03r50oa28tx" path="res://KeineMod/scenes/visual/keine_spine_skeleton_data_resource.tres" id="1_hr6li"]
+[ext_resource type="Texture2D" uid="uid://c3cjkmg745jta" path="res://KeineMod/scenes/visual/idle/corpse.png" id="3_fliod"]
 
 [node name="HumanForm" type="Node2D"]
 
-[node name="Visuals" type="Sprite2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(0, -160)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_mqxky")
-flip_h = true
+[node name="Visuals" type="SpineSprite" parent="."]
+skeleton_data_res = ExtResource("1_hr6li")
+preview_skin = "Default"
+preview_animation = "-- Empty --"
+preview_frame = false
+preview_time = 0.0
+position = Vector2(0, -17)
+scale = Vector2(1.1, 1.1)
+
+[node name="Death" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -230)
+texture = ExtResource("3_fliod")
 
 [node name="Bounds" type="Control" parent="."]
 unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 0
-offset_left = -114.0
-offset_top = -284.0
-offset_right = 99.0
-offset_bottom = 18.0
+offset_left = -92.0
+offset_top = -294.0
+offset_right = 92.0
 
 [node name="IntentPos" type="Marker2D" parent="."]
 unique_name_in_owner = true

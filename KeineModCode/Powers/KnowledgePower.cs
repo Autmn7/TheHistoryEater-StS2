@@ -31,12 +31,7 @@ public class KnowledgePower : KeineModPower
         await ConsumeCmd.FromHandUpTo(choiceContext, Owner.Player, (int)Math.Floor(Amount / 3.0), this);
     }
 
-    public override decimal ModifyDamageAdditive(
-        Creature? target,
-        decimal amount,
-        ValueProp props,
-        Creature? dealer,
-        CardModel? cardSource)
+    public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource, CardPlay? cardPlay)
     {
         if (cardSource != null && Owner == dealer && props.IsPoweredAttack() && cardSource.Keywords.Contains(KeineKeywords.Knowledgeable))
             return Amount;

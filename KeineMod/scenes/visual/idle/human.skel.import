@@ -1,0 +1,14 @@
+[remap]
+
+importer="spine.skel"
+type="SpineSkeletonFileResource"
+uid="uid://cur5ve2g5nls8"
+path="res://.godot/imported/human.skel-5db18b547351ebe78fe41e0336df06f0.spskel"
+
+[deps]
+
+source_file="res://KeineMod/scenes/visual/idle/human.skel"
+dest_files=["res://.godot/imported/human.skel-5db18b547351ebe78fe41e0336df06f0.spskel"]
+
+[params]
+

@@ -1,0 +1,16 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://bt1bcy0ix0gb0"
+path="res://.godot/imported/human.atlas-f32b96e4900519334a9c20893cb7e606.spatlas"
+
+[deps]
+
+source_file="res://KeineMod/scenes/visual/idle/human.atlas"
+dest_files=["res://.godot/imported/human.atlas-f32b96e4900519334a9c20893cb7e606.spatlas"]
+
+[params]
+
+normal_map_prefix="n"
+specular_map_prefix="s"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cchi27b0guc47"
-path="res://.godot/imported/crimson_night.png-3fc35ba9607a6cb0c1bc3da6b8730d90.ctex"
+uid="uid://blpxca7np3wik"
+path="res://.godot/imported/sharpening_oil.png-917110d8b9527f338a9f4156f47aeb75.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://KeineMod/images/card_portraits/crimson_night.png"
-dest_files=["res://.godot/imported/crimson_night.png-3fc35ba9607a6cb0c1bc3da6b8730d90.ctex"]
+source_file="res://KeineMod/images/potions/sharpening_oil.png"
+dest_files=["res://.godot/imported/sharpening_oil.png-917110d8b9527f338a9f4156f47aeb75.ctex"]
 
 [params]
 

@@ -1,0 +1,10 @@
+﻿{
+  "KEINEMOD-BOTTLED_HISTORY.description": "Apply [blue]{HistoricalGapPower}[/blue] [gold]Historical Gap[/gold] to ALL enemies.",
+  "KEINEMOD-BOTTLED_HISTORY.title": "Bottled History",
+  "KEINEMOD-SHARPENING_OIL.description": "Gain [blue]{ValorPower}[/blue] [gold]Valor[/gold]. [gold]Create[/gold] [blue]{Cards}[/blue] [gold]Heavenly Sword+[gold].",
+  "KEINEMOD-SHARPENING_OIL.title": "Sharpening Oil",
+  "KEINEMOD-CONDENSED_KNOWLEDGE.description": "Gain [blue]{KnowledgePower}[/blue] [gold]Knowledge[/gold]. [gold]Create[/gold] [blue]{Cards}[/blue] random {Cards:plural:Attack|Attacks} and [gold]Block[/gold] {Cards:plural:Skill|Skills} from other characters with [gold]Knowledgeable[/gold].",
+  "KEINEMOD-CONDENSED_KNOWLEDGE.title": "Condensed Knowledge",
+  "KEINEMOD-IMPERISHABLE_ESSENCE.description": "Gain [gold]Imperishable Night[/gold].",
+  "KEINEMOD-IMPERISHABLE_ESSENCE.title": "Imperishable Essence"
+}

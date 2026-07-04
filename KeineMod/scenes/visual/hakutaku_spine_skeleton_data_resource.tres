@@ -1,0 +1,8 @@
+[gd_resource type="SpineSkeletonDataResource" load_steps=3 format=3 uid="uid://cidhnlrsj84mu"]
+
+[ext_resource type="SpineAtlasResource" uid="uid://c88dvxd1rhkfu" path="res://KeineMod/scenes/visual/idle/hakutaku.atlas" id="1_ewo60"]
+[ext_resource type="SpineSkeletonFileResource" uid="uid://cck2ibwp1w2ec" path="res://KeineMod/scenes/visual/idle/hakutaku.skel" id="2_w1u8a"]
+
+[resource]
+atlas_res = ExtResource("1_ewo60")
+skeleton_file_res = ExtResource("2_w1u8a")

@@ -21,7 +21,7 @@ public class RainOfShowa : KeineModCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this).TargetingRandomOpponents(CombatState).WithHitCount((int)((CalculatedVar)DynamicVars["Repeat"]).Calculate(cardPlay.Target)).Execute(choiceContext);
+        await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, cardPlay).TargetingRandomOpponents(CombatState).WithHitCount((int)((CalculatedVar)DynamicVars["Repeat"]).Calculate(cardPlay.Target)).Execute(choiceContext);
         for (var i = 0; i < DynamicVars.Cards.BaseValue; ++i)
         {
             CardModel flow = CombatState.CreateCard<Flow>(Owner);

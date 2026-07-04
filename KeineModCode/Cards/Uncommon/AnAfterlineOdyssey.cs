@@ -19,7 +19,7 @@ public class AnAfterlifeOdyssey : KeineModCard, IOnConsumed
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target).Execute(choiceContext);
+        await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, cardPlay).Targeting(cardPlay.Target).Execute(choiceContext);
     }
 
     public async Task OnConsumed(PlayerChoiceContext choiceContext, Player player, CardModel consumedCard)
@@ -28,7 +28,7 @@ public class AnAfterlifeOdyssey : KeineModCard, IOnConsumed
             return;
         var weakestEnemy = CombatState.HittableEnemies.MinBy(c => c.CurrentHp);
         if (weakestEnemy == null) return;
-        await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this).Targeting(weakestEnemy).Execute(choiceContext);
+        await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, null).Targeting(weakestEnemy).Execute(choiceContext);
     }
 
     public override async Task AfterDeath(PlayerChoiceContext choiceContext, Creature creature, bool wasRemovalPrevented, float deathAnimLength)

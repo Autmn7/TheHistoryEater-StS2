@@ -10,12 +10,11 @@ namespace KeineMod.KeineModCode.Cards.Rare;
 
 public class FeastOfHistory : KeineModCard
 {
-    public FeastOfHistory() : base(3, CardType.Skill, CardRarity.Rare, TargetType.AllEnemies)
+    public FeastOfHistory() : base(2, CardType.Skill, CardRarity.Rare, TargetType.AllEnemies)
     {
-        WithPower<HistoricalGapPower>(3);
+        WithPower<HistoricalGapPower>(3, 1);
         WithCalculatedVar("Times", 2, 2, (card, _) => card is KeineModCard keineModCard && keineModCard.InHakutaku() ? 1 : 0);
         WithKeywords(KeineKeywords.Human, KeineKeywords.Consume, KeineKeywords.Hakutaku, CardKeyword.Exhaust);
-        WithCostUpgradeBy(-1);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
