@@ -23,8 +23,8 @@ public class ReturningBridge : KeineModCard
     public ReturningBridge() : base(1, CardType.Power, CardRarity.Token, TargetType.Self)
     {
         WithVar(new StringVar("Reincarnation"));
-        WithCostUpgradeBy(-1);
         WithTips(card => card is ReturningBridge bridge ? bridge.GetDynamicBossTips() : []);
+        WithCostUpgradeBy(-1);
     }
 
     public override TargetType TargetType => !string.IsNullOrEmpty(SlayedBossIds) && (SlayedBossIds.Contains("CRUSHER") || SlayedBossIds.Contains("ROCKET") || SlayedBossIds.Contains("THE_INSATIABLE")) ? TargetType.AnyEnemy : TargetType.Self;

@@ -3,13 +3,13 @@
   "name": "The History Eater 上白泽慧音",
   "author": "Autmn",
   "description": "A mod featuring Kamishirasawa Keine from Touhou Project.",
-  "version": "v1.0.0",
+  "version": "v1.0.0.1",
   "has_pck": true,
   "has_dll": true,
   "dependencies": [
     {
       "id": "BaseLib",
-      "min_version": "v3.3.4"
+      "min_version": "v3.3.5"
     }
   ],
   "affects_gameplay": true

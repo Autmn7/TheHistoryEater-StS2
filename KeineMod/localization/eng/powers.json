@@ -175,5 +175,11 @@
   "KEINEMOD-DUP_TEMP_ESSENCE_POWER.title": "Temporary Essence",
   "KEINEMOD-IMPERISHABLE_NIGHT_POWER.description": "Entering [green]Hakutaku[/green] form no longer spends [gold]Full Moon[/gold].",
   "KEINEMOD-IMPERISHABLE_NIGHT_POWER.smartDescription": "Entering [green]Hakutaku[/green] form no longer spends [gold]Full Moon[/gold].",
-  "KEINEMOD-IMPERISHABLE_NIGHT_POWER.title": "Imperishable Moon"
+  "KEINEMOD-IMPERISHABLE_NIGHT_POWER.title": "Imperishable Moon",
+  "KEINEMOD-PEER_REVIEW_POWER.description": "",
+  "KEINEMOD-PEER_REVIEW_POWER.smartDescription": "Whenever you apply a Non-[gold]Historical-Gap[/gold] debuff to an enemy, apply [blue]{Amount}[/blue] [gold]Historical Gap[/gold] to it.",
+  "KEINEMOD-PEER_REVIEW_POWER.title": "Peer Review",
+  "KEINEMOD-UNLIMITED_BLADE_WORKS_POWER.description": "",
+  "KEINEMOD-UNLIMITED_BLADE_WORKS_POWER.smartDescription": "Whenever you gain [gold]Valor[/gold] or add [gold]Heavenly Swords[/gold] to your [gold]Hand[/gold], ALL allies do the same.",
+  "KEINEMOD-UNLIMITED_BLADE_WORKS_POWER.title": "Unlimited Blade Works"
 }

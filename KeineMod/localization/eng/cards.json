@@ -330,5 +330,20 @@
   "KEINEMOD-KEINES_BLESSING.artist": "グリンー（二小姐格林）",
   "KEINEMOD-MOKOUS_BLESSING.description": "Gain {DupRekindlePower:diff()} [gold]Rekindle[/gold].",
   "KEINEMOD-MOKOUS_BLESSING.title": "Mokou's Blessing",
-  "KEINEMOD-MOKOUS_BLESSING.artist": "カズ"
+  "KEINEMOD-MOKOUS_BLESSING.artist": "カズ",
+  "KEINEMOD-LACK_CULTURAL_HERITAGE.description": "Deal {EmotionalDamage:diff()} unmodifiable damage to another player if they have no [gold]Knowledge[/gold].\nGive them {KnowledgePower:diff()} [gold]Knowledge[/gold] and add a [gold]Foreign Knowledge[/gold] into their [gold]Hand[/gold].",
+  "KEINEMOD-LACK_CULTURAL_HERITAGE.title": "Lack Cultural Heritage!",
+  "KEINEMOD-LACK_CULTURAL_HERITAGE.artist": "MIO",
+  "KEINEMOD-LACK_CULTURAL_HERITAGE.extraTipTitle": "Bond",
+  "KEINEMOD-LACK_CULTURAL_HERITAGE.extraTipDescription": "If targeted [red]The Immortal[/red], give [blue]1[/blue] additional [gold]Knowledge[/gold].",
+  "KEINEMOD-PEER_REVIEW.description": "Choose an ally.\nWhenever they apply a Non-[gold]Historical-Gap[/gold] debuff to an enemy, also apply {PeerReviewPower:diff()} [gold]Historical Gap[/gold] to it.",
+  "KEINEMOD-PEER_REVIEW.title": "Peer Review",
+  "KEINEMOD-PEER_REVIEW.artist": "艾露Elf",
+  "KEINEMOD-PEER_REVIEW.extraTipTitle": "Bond",
+  "KEINEMOD-PEER_REVIEW.extraTipDescription": "If targeted [red]The Immortal[/red], they apply [blue]1[/blue] additional [gold]Historical Gap[/gold].",
+  "KEINEMOD-UNLIMITED_BLADE_WORKS.description": "Whenever you gain [gold]Valor[/gold] or add [gold]Heavenly Swords[/gold] to your [gold]Hand[/gold], ALL allies do the same.",
+  "KEINEMOD-UNLIMITED_BLADE_WORKS.title": "Unlimited Blade Works",
+  "KEINEMOD-UNLIMITED_BLADE_WORKS.artist": "よこはち",
+  "KEINEMOD-UNLIMITED_BLADE_WORKS.extraTipTitle": "Bond",
+  "KEINEMOD-UNLIMITED_BLADE_WORKS.extraTipDescription": "Any [gold]Heavenly Swords[/gold] added for ally [red]The Immortal[/red] cost [blue]0[/blue] until played."
 }

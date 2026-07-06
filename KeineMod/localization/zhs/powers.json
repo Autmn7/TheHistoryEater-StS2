@@ -175,5 +175,11 @@
   "KEINEMOD-DUP_TEMP_ESSENCE_POWER.title": "临时火种",
   "KEINEMOD-IMPERISHABLE_NIGHT_POWER.description": "进入[green]白泽[/green]形态不再需要消耗[gold]满月[/gold]层数。",
   "KEINEMOD-IMPERISHABLE_NIGHT_POWER.smartDescription": "进入[green]白泽[/green]形态不再需要消耗[gold]满月[/gold]层数。",
-  "KEINEMOD-IMPERISHABLE_NIGHT_POWER.title": "永夜"
+  "KEINEMOD-IMPERISHABLE_NIGHT_POWER.title": "永夜",
+  "KEINEMOD-PEER_REVIEW_POWER.description": "",
+  "KEINEMOD-PEER_REVIEW_POWER.smartDescription": "每当你给予敌人非[gold]历史之隙[/gold]的负面效果时，给予其[blue]{Amount}[/blue]层[gold]历史之隙[/gold]。",
+  "KEINEMOD-PEER_REVIEW_POWER.title": "同行评审",
+  "KEINEMOD-UNLIMITED_BLADE_WORKS_POWER.description": "",
+  "KEINEMOD-UNLIMITED_BLADE_WORKS_POWER.smartDescription": "每当你获得[gold]勇武[/gold]或将[gold]天从云剑[/gold]加入[gold]手牌[/gold]时，所有队友也获得相同效果。",
+  "KEINEMOD-UNLIMITED_BLADE_WORKS_POWER.title": "无限剑制"
 }
