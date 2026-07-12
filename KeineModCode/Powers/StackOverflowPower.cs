@@ -1,8 +1,11 @@
+using KeineMod.KeineModCode.Scripts;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.ValueProps;
 
 namespace KeineMod.KeineModCode.Powers;
 
@@ -10,16 +13,15 @@ public class StackOverflowPower : KeineModPower
 {
     public override PowerType Type => PowerType.Debuff;
 
-    public override PowerStackType StackType => PowerStackType.Counter;
+    public override PowerStackType StackType => PowerStackType.Single;
 
-    public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new StackOverflowVar("DamageTaken", 2)];
+
+    public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
     {
-        if (power.Owner == Owner && Owner.GetPowerAmount<KnowledgePower>() >= Amount)
-        {
-            SfxCmd.Play("event:/sfx/characters/defect/defect_lightning_evoke");
-            VfxCmd.PlayOnCreature(Owner, "vfx/vfx_attack_lightning");
-            await PowerCmd.Remove(this);
-            await CreatureCmd.Kill(Owner);
-        }
+        if (!participants.Contains(Owner))
+            return;
+        VfxCmd.PlayOnCreatureCenter(Owner, "vfx/vfx_starry_impact");
+        await CreatureCmd.Damage(choiceContext, Owner, (int)Math.Floor(Owner.GetPowerAmount<KnowledgePower>() / 2.0), ValueProp.Unpowered, null, null);
     }
 }

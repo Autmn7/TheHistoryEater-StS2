@@ -12,7 +12,7 @@ public class TheScaleGrowsPower : KeineModPower
 
     public override PowerStackType StackType => PowerStackType.Counter;
 
-    public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
+    public override async Task AfterSideTurnEndLate(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
     {
         if (!participants.Contains(Owner))
             return;

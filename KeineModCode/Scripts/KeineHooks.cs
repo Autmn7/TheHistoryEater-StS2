@@ -54,8 +54,14 @@ public partial class SpineAnimationSyncer : Node
 
         // 1. Grab current animation name from human form
         var humanAnimState = _humanVisuals.Call("get_animation_state").AsGodotObject();
+        if (humanAnimState == null) return;
+
         var humanTrack = humanAnimState.Call("get_current", 0).AsGodotObject();
+        if (humanTrack == null) return;
+
         var humanAnim = humanTrack.Call("get_animation").AsGodotObject();
+        if (humanAnim == null) return;
+
         var targetAnimName = humanAnim.Call("get_name").AsString();
 
         // 2. Resolve if it should loop (idle_loop vs hurt)
@@ -78,9 +84,16 @@ public partial class SpineAnimationSyncer : Node
 
         // 3. Inspect Hakutaku's current active state
         var hakuAnimState = _hakuVisuals.Call("get_animation_state").AsGodotObject();
+        if (hakuAnimState == null) return;
+
         var hakuTrack = hakuAnimState.Call("get_current", 0).AsGodotObject();
-        var hakuAnim = hakuTrack.Call("get_animation").AsGodotObject();
-        var hakuAnimName = hakuAnim.Call("get_name").AsString();
+        var hakuAnimName = "";
+
+        if (hakuTrack != null)
+        {
+            var hakuAnim = hakuTrack.Call("get_animation").AsGodotObject();
+            if (hakuAnim != null) hakuAnimName = hakuAnim.Call("get_name").AsString();
+        }
 
         // 4. Force synchronization if state is mismatched
         if (hakuAnimName != targetAnimName) hakuAnimState.Call("set_animation", targetAnimName, isLooping, 0);
@@ -185,7 +198,7 @@ public class KeineHooks
             }
         }
 
-        // 2. Combat Background Swapping (Only execute visual layout shifts for the local monitor view, applicable to non-Keine characters as well)
+        // 2. Combat Background Swapping (Only execute visual layout shifts for the local monitor view)
         if (LocalContext.IsMe(player) && combatRoom.GetTree()?.CurrentScene != null)
         {
             var currentScene = combatRoom.GetTree().CurrentScene;

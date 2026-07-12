@@ -33,7 +33,7 @@ public class LackCulturalHeritage : KeineModCard
         var card = CombatState.CreateCard<ForeignKnowledge>(cardPlay.Target.Player);
         await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Hand, Owner);
     }
-    
+
     public override decimal ModifyPowerAmountGivenAdditive(PowerModel power, Creature giver, decimal amount, Creature? target, CardModel? cardSource)
     {
         if (cardSource == this && power is KnowledgePower)

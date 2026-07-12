@@ -1,4 +1,5 @@
-﻿using KeineMod.KeineModCode.Commands;
+﻿using BaseLib.Patches.Hooks;
+using KeineMod.KeineModCode.Commands;
 using KeineMod.KeineModCode.Scripts;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -10,7 +11,7 @@ namespace KeineMod.KeineModCode.Cards.Ancient;
 
 public class TotalPurification : KeineModCard
 {
-    public TotalPurification() : base(2, CardType.Skill, CardRarity.Ancient, TargetType.Self)
+    public TotalPurification() : base(1, CardType.Skill, CardRarity.Ancient, TargetType.Self)
     {
         WithKeywords(CardKeyword.Retain, KeineKeywords.Human, KeineKeywords.Consume, KeineKeywords.Hakutaku, CardKeyword.Exhaust);
         WithCostUpgradeBy(-1);
@@ -37,5 +38,10 @@ public class TotalPurification : KeineModCard
         if (InHakutaku())
             foreach (var power in Owner.Creature.Powers.ToList().Where(power => power.Type == PowerType.Debuff || (power is StrengthPower or DexterityPower or FocusPower && power.Amount < 0)))
                 await PowerCmd.Remove(power);
+
+        foreach (var card in PileType.Hand.GetPile(Owner).Cards.ToList())
+            await CardPileCmd.Add(card, PileType.Draw);
+        await CardPileCmd.Shuffle(choiceContext, Owner);
+        await CardPileCmd.Draw(choiceContext, MaxHandSizePatch.GetMaxHandSize(Owner, CardPile.MaxCardsInHand) - Owner.PlayerCombatState.Hand.Cards.Count, Owner);
     }
 }

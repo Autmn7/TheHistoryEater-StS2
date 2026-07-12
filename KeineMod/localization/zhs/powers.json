@@ -78,7 +78,7 @@
   "KEINEMOD-THE_SCALE_GROWS_POWER.smartDescription": "在你的回合结束时，获得[blue]{Amount}[/blue]点[gold]知识[/gold]。",
   "KEINEMOD-THE_SCALE_GROWS_POWER.title": "不可视",
   "KEINEMOD-STACK_OVERFLOW_POWER.description": "",
-  "KEINEMOD-STACK_OVERFLOW_POWER.smartDescription": "当你的[gold]知识[/gold]达到[blue]{Amount}[/blue]点时，立即死亡。",
+  "KEINEMOD-STACK_OVERFLOW_POWER.smartDescription": "在你的回合结束时，受到等于你[gold]知识[/gold]一半的伤害（受到[blue]{DamageTaken}[/blue]点伤害）。",
   "KEINEMOD-STACK_OVERFLOW_POWER.title": "栈溢出",
   "KEINEMOD-INTERNALIZE_POWER.description": "",
   "KEINEMOD-INTERNALIZE_POWER.smartDescription": "每当你[gold]吞噬[/gold]一张牌，获得[blue]{Amount}[/blue]点[gold]勇武[/gold]和[gold]仁爱[/gold]。",

@@ -11,7 +11,7 @@ namespace KeineMod.KeineModCode.Cards.Rare;
 
 public class BestialInstinct : KeineModCard
 {
-    public BestialInstinct() : base(2, CardType.Power, CardRarity.Rare, TargetType.AnyAlly)
+    public BestialInstinct() : base(1, CardType.Power, CardRarity.Rare, TargetType.AnyAlly)
     {
         WithPower<TimeShiftPower>(12);
         WithCalculatedVar("BestialInstinctPower", 3, (_, target) => target?.Player?.Character.Id.ToString() == "CHARACTER.MOKOUMOD-MOKOU_MOD" ? 2 : 0, 2);

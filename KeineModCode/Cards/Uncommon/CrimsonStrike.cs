@@ -13,8 +13,7 @@ public class CrimsonStrike : KeineModCard
 {
     public CrimsonStrike() : base(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
-        WithDamage(4, 1);
-        WithVar("Repeat", 2);
+        WithDamage(8, 2);
         WithVar("Ratio", 3, -1);
         WithPower<VulnerablePower>(1);
         WithKeywords(KeineKeywords.Knowledgeable);
@@ -24,7 +23,7 @@ public class CrimsonStrike : KeineModCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, cardPlay).Targeting(cardPlay.Target).WithHitCount(DynamicVars["Repeat"].IntValue).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
+        await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, cardPlay).Targeting(cardPlay.Target).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
         await PowerCmd.Apply<VulnerablePower>(choiceContext, cardPlay.Target, DynamicVars["VulnerablePower"].BaseValue, Owner.Creature, this);
     }
 

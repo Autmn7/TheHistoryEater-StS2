@@ -9,7 +9,7 @@ public class HistoryOfUntrodden : KeineModCard
 {
     public HistoryOfUntrodden() : base(1, CardType.Power, CardRarity.Uncommon, TargetType.Self)
     {
-        WithVar("HistoryOfUntroddenPower", 2, 1);
+        WithVar("HistoryOfUntroddenPower", 3, 1);
         WithTip(typeof(HistoricalGapPower));
     }
 

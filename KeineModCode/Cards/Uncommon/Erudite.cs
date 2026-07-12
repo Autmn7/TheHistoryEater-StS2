@@ -3,14 +3,14 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 
-namespace KeineMod.KeineModCode.Cards.Rare;
+namespace KeineMod.KeineModCode.Cards.Uncommon;
 
 public class Erudite : KeineModCard
 {
-    public Erudite() : base(1, CardType.Power, CardRarity.Rare, TargetType.Self)
+    public Erudite() : base(1, CardType.Power, CardRarity.Uncommon, TargetType.Self)
     {
-        WithPower<WisdomPower>(3, 1);
-        WithCards(3, 1);
+        WithPower<WisdomPower>(2, 1);
+        WithCards(2, 1);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
