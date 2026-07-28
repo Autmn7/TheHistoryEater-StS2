@@ -16,13 +16,15 @@ public class UnlimitedBladeWorksPower : KeineModPower
 
     public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
     {
-        if (power.Owner == Owner && power is ValorPower && amount > 0)
+        if (power.Owner == Owner && applier == Owner && power is ValorPower && amount > 0)
             foreach (var player in CombatState.Players.Where(p => p.Creature.IsAlive && p != Owner.Player))
                 await PowerCmd.Apply<ValorPower>(choiceContext, player.Creature, amount, Owner, null);
     }
 
     public override async Task AfterCardChangedPiles(CardModel card, PileType oldPileType, AbstractModel? clonedBy)
     {
+        if (clonedBy is UnlimitedBladeWorksPower)
+            return;
         if (card.Owner.Creature == Owner && card is HeavenlySword && card.Pile?.Type == PileType.Hand)
             foreach (var player in CombatState.Players.Where(p => p.Creature.IsAlive && p != Owner.Player))
             {
@@ -30,7 +32,7 @@ public class UnlimitedBladeWorksPower : KeineModPower
                 clone._owner = player;
                 if (player.Character.Id.ToString() == "CHARACTER.MOKOUMOD-MOKOU_MOD")
                     clone.EnergyCost.SetUntilPlayed(0);
-                await CardPileCmd.AddGeneratedCardToCombat(clone, PileType.Hand, Owner.Player);
+                await CardPileCmd.Add(clone, PileType.Hand, clonedBy: this);
             }
     }
 }

@@ -323,7 +323,7 @@
   "KEINEMOD-IMPROVISE.title": "Improvise",
   "KEINEMOD-IMPROVISE.artist": "りき",
   "KEINEMOD-DUAL_BLESSING.description": "{IfUpgraded:show:|Choose one: }Gain {KnowledgePower:diff()} [gold]Knowledge[/gold] {IfUpgraded:show:and|or} {DupRekindlePower:diff()} [gold]Rekindle[/gold].",
-  "KEINEMOD-DUAL_BLESSING.title": "Dual Blessing",
+  "KEINEMOD-DUAL_BLESSING.title": "Sacred Rebirth",
   "KEINEMOD-DUAL_BLESSING.artist": "kaze",
   "KEINEMOD-KEINES_BLESSING.description": "Gain {KnowledgePower:diff()} [gold]Knowledge[/gold].",
   "KEINEMOD-KEINES_BLESSING.title": "Keine's Blessing",

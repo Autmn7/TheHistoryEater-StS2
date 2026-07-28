@@ -1,10 +1,10 @@
 {
   "SEA_GLASS.KEINEMOD-KEINE_MOD.title": "古董玻璃",
   "KEINEMOD-OLD_SCROLL.description": "战斗开始时，[gold]时移[/gold][blue]{TimeShiftPower}[/blue]，[gold]创造[/gold][blue]1[/blue]张[gold]勇之卷轴[/gold]。",
-  "KEINEMOD-OLD_SCROLL.flavor": "",
+  "KEINEMOD-OLD_SCROLL.flavor": "卷轴里的语言已经绝迹了。",
   "KEINEMOD-OLD_SCROLL.title": "古老卷轴",
   "KEINEMOD-ENCHANTED_SCROLL.description": "战斗开始时，[gold]时移[/gold][blue]{TimeShiftPower}[/blue]，选择并[gold]创造[/gold][blue]1[/blue]张已[gold]升级[/gold]的[gold]神器卷轴[/gold]，获得[blue]{SacredPower}[/blue]点其[gold]神器之力[/gold]。",
-  "KEINEMOD-ENCHANTED_SCROLL.flavor": "",
+  "KEINEMOD-ENCHANTED_SCROLL.flavor": "古老的文字闪烁着淡蓝色的光芒。",
   "KEINEMOD-ENCHANTED_SCROLL.title": "附魔卷轴",
   "KEINEMOD-TEXTBOOK.description": "战斗开始时，获得[blue]{KnowledgePower}[/blue]点[gold]知识[/gold]和[blue]{WisdomPower}[/blue]点[gold]智慧[/gold]。",
   "KEINEMOD-TEXTBOOK.flavor": "不是用来涂鸦的。更不是板砖！",
