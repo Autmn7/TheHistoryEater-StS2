@@ -1,15 +1,18 @@
-﻿using KeineMod.KeineModCode.Cards.Special;
+﻿using Godot;
+using KeineMod.KeineModCode.Cards.Special;
 using KeineMod.KeineModCode.Commands;
 using KeineMod.KeineModCode.Scripts;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Monsters;
+using MegaCrit.Sts2.Core.Nodes.Vfx;
 using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.Saves.Runs;
 
@@ -70,7 +73,7 @@ public class Reincarnation : KeineModCard
     {
         ArgumentNullException.ThrowIfNull(cardPlay.Target);
         var shouldTriggerFatal = cardPlay.Target.Powers.All(p => p.ShouldOwnerDeathTriggerFatal());
-        var attackCommand = await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, cardPlay).Targeting(cardPlay.Target).WithHitFx(tmpSfx: "blunt_attack.mp3").Execute(choiceContext);
+        var attackCommand = await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, cardPlay).Targeting(cardPlay.Target).WithHitVfxNode((Func<Creature, Node2D>)(t => (Node2D)NBigSlashVfx.Create(t))).WithHitFx(tmpSfx: "blunt_attack.mp3").Execute(choiceContext);
         // Check if the target monster died from this specific processing frame
         if (cardPlay.Target.Monster != null && shouldTriggerFatal && attackCommand.Results.SelectMany(r => r).Any(r => r.WasTargetKilled))
         {

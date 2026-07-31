@@ -21,6 +21,7 @@ public class HorrificPursuit : KeineModCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+        SfxCmd.Play("event:/sfx/enemy/enemy_attacks/the_insatiable/the_insatiable_salivate");
         foreach (var enemy in CombatState.HittableEnemies)
             if (enemy.HasPower<SandpitMarkPower>() && enemy.GetPower<SandpitMarkPower>().Applier == Owner.Creature)
                 await PowerCmd.Decrement(enemy.GetPower<SandpitMarkPower>());

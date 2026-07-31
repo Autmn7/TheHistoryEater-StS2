@@ -1,10 +1,12 @@
-﻿using KeineMod.KeineModCode.Scripts;
+﻿using Godot;
+using KeineMod.KeineModCode.Scripts;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Nodes.Vfx;
 
 namespace KeineMod.KeineModCode.Cards.Uncommon;
 
@@ -19,7 +21,7 @@ public class AnAfterlifeOdyssey : KeineModCard, IOnConsumed
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, cardPlay).Targeting(cardPlay.Target).Execute(choiceContext);
+        await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, cardPlay).Targeting(cardPlay.Target).WithHitVfxNode((Func<Creature, Node2D>)(t => (Node2D)NBigSlashVfx.Create(t))).Execute(choiceContext);
     }
 
     public async Task OnConsumed(PlayerChoiceContext choiceContext, Player player, CardModel consumedCard)

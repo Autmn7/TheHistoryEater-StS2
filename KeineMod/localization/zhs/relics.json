@@ -11,5 +11,11 @@
   "KEINEMOD-TEXTBOOK.title": "加厚课本",
   "KEINEMOD-POCKET_WATCH.description": "获得[gold]满月[/gold]所需的[gold]时移[/gold]降低至[blue]10[/blue]。每回合可以进入[green]白泽[/green]形态任意次。",
   "KEINEMOD-POCKET_WATCH.flavor": "砸！瓦鲁多！",
-  "KEINEMOD-POCKET_WATCH.title": "怀表"
+  "KEINEMOD-POCKET_WATCH.title": "怀表",
+  "KEINEMOD-ETERNAL_FULL_MOON.description": "在第[blue]{ActiveTurn}[/blue]回合开始时，获得[gold]永夜[/gold]。",
+  "KEINEMOD-ETERNAL_FULL_MOON.flavor": "永远是深夜有多好。",
+  "KEINEMOD-ETERNAL_FULL_MOON.title": "永恒满月",
+  "KEINEMOD-CURSED_KIMONO.description": "每当你[gold]吞噬[/gold]一张牌，所有敌人失去[blue]{Damage}[/blue]点生命。",
+  "KEINEMOD-CURSED_KIMONO.flavor": "传说是明历大火的起因。和服的主人无法逃离命陨的命运。",
+  "KEINEMOD-CURSED_KIMONO.title": "被诅咒的振袖"
 }

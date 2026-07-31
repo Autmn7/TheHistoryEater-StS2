@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbn20prb00nrg"
-path="res://.godot/imported/total_purification.png-d3b383d41b70a74404e071ab9c25c70e.ctex"
+uid="uid://d2k1r5uc7bfbe"
+path="res://.godot/imported/eternal_full_moon.png-0273f8e6fe9ee058b48d148762b98a16.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://KeineMod/images/card_portraits/total_purification.png"
-dest_files=["res://.godot/imported/total_purification.png-d3b383d41b70a74404e071ab9c25c70e.ctex"]
+source_file="res://KeineMod/images/relics/eternal_full_moon.png"
+dest_files=["res://.godot/imported/eternal_full_moon.png-0273f8e6fe9ee058b48d148762b98a16.ctex"]
 
 [params]
 

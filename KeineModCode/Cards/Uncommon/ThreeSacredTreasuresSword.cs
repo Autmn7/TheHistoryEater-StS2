@@ -1,13 +1,16 @@
 ﻿using BaseLib.Utils;
+using Godot;
 using KeineMod.KeineModCode.Cards.Special;
 using KeineMod.KeineModCode.Commands;
 using KeineMod.KeineModCode.Powers;
 using KeineMod.KeineModCode.Scripts;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Nodes.Vfx;
 
 namespace KeineMod.KeineModCode.Cards.Uncommon;
 
@@ -25,7 +28,7 @@ public class ThreeSacredTreasuresSword : KeineModCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, cardPlay).Targeting(cardPlay.Target).WithHitCount(DynamicVars["Repeat"].IntValue).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
+        await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, cardPlay).Targeting(cardPlay.Target).WithHitCount(DynamicVars["Repeat"].IntValue).WithHitVfxNode((Func<Creature, Node2D>)(t => (Node2D)NBigSlashImpactVfx.Create(t))).Execute(choiceContext);
         await PowerCmd.Apply<TreasureOfValorPower>(choiceContext, Owner.Creature, DynamicVars["TreasureOfValorPower"].BaseValue, Owner.Creature, this);
         CardModel created = CombatState.CreateCard<ScrollOfValor>(Owner);
         await CreateCmd.Execute(choiceContext, created, Owner, IsUpgraded);

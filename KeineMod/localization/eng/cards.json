@@ -195,7 +195,7 @@
   "KEINEMOD-FOREIGN_KNOWLEDGE.artist": "夜祭り",
   "KEINEMOD-FOREIGN_KNOWLEDGE.extraTipTitle": "Multiplayer",
   "KEINEMOD-FOREIGN_KNOWLEDGE.extraTipDescription": "You may target another player to prioritize cards from their character. Target yourself for the original effect.",
-  "KEINEMOD-TOTAL_PURIFICATION.description": "{HumanSec}{HumanOpen}Human{HumanClose}: [gold]Consume[/gold] ALL your Statuses and Curses.{HumanSecEnd}\n{HakuSec}{HakuOpen}Hakutaku{HakuClose}: Remove ALL your debuffs.{HakuSecEnd}\nReshuffle ALL cards and draw until your [gold]Hand[/gold] is full.",
+  "KEINEMOD-TOTAL_PURIFICATION.description": "{HumanSec}{HumanOpen}Human{HumanClose}: [gold]Consume[/gold] ALL your Statuses and Curses.{HumanSecEnd}\n{HakuSec}{HakuOpen}Hakutaku{HakuClose}: Remove ALL your debuffs.{HakuSecEnd}\nFor each card [gold]Consumed[/gold] and each debuff removed, gain 1 [gold]Knowledge[/gold].",
   "KEINEMOD-TOTAL_PURIFICATION.title": "Total Purification",
   "KEINEMOD-TOTAL_PURIFICATION.artist": "ginaru",
   "KEINEMOD-PHANTASMAL_EMPEROR.description": "Deal {Damage:diff()} damage to ALL enemies {Repeat:diff()} times.\nLose {KnowledgePower:diff()} [gold]Knowledge[/gold].",

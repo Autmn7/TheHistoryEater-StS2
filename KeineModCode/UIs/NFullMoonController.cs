@@ -53,7 +53,7 @@ public partial class NFullMoonController : Control
             return;
         base._Process(delta);
 
-        if (!_player.Creature.HasPower<TimeShiftPower>())
+        if (!_player.Creature.HasPower<TimeShiftPower>() && !_player.Creature.HasPower<ImperishableNightPower>())
         {
             _ui.Visible = false;
         }

@@ -18,6 +18,8 @@ public class SandpitMarkPower : KeineModPower
 
     public override async Task AfterRemoved(Creature oldOwner)
     {
+        SfxCmd.Play("event:/sfx/enemy/enemy_attacks/the_insatiable/the_insatiable_finisher");
+        await Cmd.Wait(0.5f);
         if (Applier?.Player?.RunState.CurrentRoom is { RoomType: RoomType.Boss } && !Owner.HasPower<MinionPower>())
         {
             var hpLoss = Owner.MaxHp * 0.5;

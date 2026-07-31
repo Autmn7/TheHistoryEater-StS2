@@ -33,7 +33,7 @@ public class GhqCrisis : KeineModCard, IOnConsumed
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, cardPlay).Targeting(cardPlay.Target).WithHitCount((int)((CalculatedVar)DynamicVars["Repeat"]).Calculate(cardPlay.Target)).Execute(choiceContext);
+        await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, cardPlay).Targeting(cardPlay.Target).WithHitCount((int)((CalculatedVar)DynamicVars["Repeat"]).Calculate(cardPlay.Target)).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
     }
 
     public Task OnConsumed(PlayerChoiceContext choiceContext, Player player, CardModel consumedCard)

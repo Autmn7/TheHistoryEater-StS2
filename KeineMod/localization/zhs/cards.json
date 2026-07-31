@@ -195,7 +195,7 @@
   "KEINEMOD-FOREIGN_KNOWLEDGE.artist": "夜祭り",
   "KEINEMOD-FOREIGN_KNOWLEDGE.extraTipTitle": "多人模式",
   "KEINEMOD-FOREIGN_KNOWLEDGE.extraTipDescription": "选中队友可以将牌池限定为队友的角色。选中自己则为卡牌原效果。",
-  "KEINEMOD-TOTAL_PURIFICATION.description": "{HumanSec}{HumanOpen}人类{HumanClose}：[gold]吞噬[/gold]所有状态和诅咒牌。{HumanSecEnd}\n{HakuSec}{HakuOpen}白泽{HakuClose}：移除所有负面效果。{HakuSecEnd}\n重新洗牌并抽牌至[gold]手牌[/gold]满。",
+  "KEINEMOD-TOTAL_PURIFICATION.description": "{HumanSec}{HumanOpen}人类{HumanClose}：[gold]吞噬[/gold]所有状态和诅咒牌。{HumanSecEnd}\n{HakuSec}{HakuOpen}白泽{HakuClose}：移除所有负面效果。{HakuSecEnd}\n每[gold]吞噬[/gold]一张牌，每移除一个负面效果：获得1点[gold]知识[/gold]。",
   "KEINEMOD-TOTAL_PURIFICATION.title": "「无何有的净化」",
   "KEINEMOD-TOTAL_PURIFICATION.artist": "ginaru",
   "KEINEMOD-PHANTASMAL_EMPEROR.description": "对所有敌人造成{Damage:diff()}点伤害{Repeat:diff()}次。\n失去{KnowledgePower:diff()}点[gold]知识[/gold]。",

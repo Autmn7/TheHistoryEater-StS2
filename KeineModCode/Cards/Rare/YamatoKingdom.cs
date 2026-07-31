@@ -12,7 +12,7 @@ public class YamatoKingdom : KeineModCard
     {
         WithBlock(5);
         WithTip(typeof(KnowledgePower));
-        WithKeywords(KeineKeywords.Knowledgeable, CardKeyword.Exhaust);
+        WithKeywords(CardKeyword.Retain, KeineKeywords.Knowledgeable, CardKeyword.Exhaust);
     }
 
     protected override bool HasEnergyCostX => true;

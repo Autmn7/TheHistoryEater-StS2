@@ -11,5 +11,11 @@
   "KEINEMOD-TEXTBOOK.title": "Textbook",
   "KEINEMOD-POCKET_WATCH.description": "[gold]Time Shift[/gold] needed to gain [gold]Full Moon[/gold] is lowered to [blue]10[/blue]. You may enter [green]Hakutaku[/green] form any number of times each turn.",
   "KEINEMOD-POCKET_WATCH.flavor": "ZA! WARUDO!",
-  "KEINEMOD-POCKET_WATCH.title": "Pocket Watch"
+  "KEINEMOD-POCKET_WATCH.title": "Pocket Watch",
+  "KEINEMOD-ETERNAL_FULL_MOON.description": "At the start of turn [blue]{ActiveTurn}[/blue], gain [gold]Imperishable Night[/gold].",
+  "KEINEMOD-ETERNAL_FULL_MOON.flavor": "It would be nice if it was midnight all the time.",
+  "KEINEMOD-ETERNAL_FULL_MOON.title": "Eternal Full Moon",
+  "KEINEMOD-CURSED_KIMONO.description": "Whenever you [gold]Consume[/gold] a card, ALL enemies lose [blue]{Damage}[/blue] HP.",
+  "KEINEMOD-CURSED_KIMONO.flavor": "The cause of the Great Fire of Meireki according to legend. Its owner is destined to perish.",
+  "KEINEMOD-CURSED_KIMONO.title": "Cursed Kimono"
 }

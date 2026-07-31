@@ -2,12 +2,15 @@
 using Godot.Collections;
 using KeineMod.KeineModCode.Extensions;
 using KeineMod.KeineModCode.Stances;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Context;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Nodes.Rooms;
+using MegaCrit.Sts2.Core.Nodes.Vfx;
 
 namespace KeineMod.KeineModCode.Scripts;
 
@@ -135,6 +138,12 @@ public class KeineHooks
         var combatRoom = NCombatRoom.Instance;
         var isHakutaku = newStance is HakutakuForm;
         if (combatRoom == null) return Task.CompletedTask;
+
+        if (LocalContext.IsMe(player) && isHakutaku)
+        {
+            NCombatRoom.Instance?.CombatVfxContainer.AddChildSafely(NSmokyVignetteVfx.Create(new Color(0.8f, 0.8f, 0.3f, 0.66f), new Color(0.0f, 4f, 0.0f, 0.33f)));
+            SfxCmd.Play("hyoshigi.wav".SoundEffectPath());
+        }
 
         if (player.Character is Character.KeineMod)
         {
