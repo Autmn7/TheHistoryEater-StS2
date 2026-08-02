@@ -2,5 +2,7 @@
   "KEINEMOD-ARTIST-TITLE": "画师",
   "KEINEMOD-FLAVOR-TITLE": "",
   "KEINEMOD-SCROLL_PILE.title": "卷轴",
-  "KEINEMOD-SCROLL_PILE.description": "A unique pile that holds your [gold]Consumed[/gold] cards."
+  "KEINEMOD-SCROLL_PILE.description": "储存被[gold]吞噬[/gold]卡牌的特殊牌堆。每当你进入[green]白泽[/green]形态，[gold]重现[/gold]至多[blue]2[/blue]张牌。\n\n[gold]重现[/gold]：将牌从[gold]卷轴[/gold]移入[gold]手牌[/gold]，使其本回合耗能减[blue]1[/blue]并获得[gold]虚无[/gold]和[gold]消耗[/gold]。",
+  "KEINEMOD-FULL_MOON.title": "满月",
+  "KEINEMOD-FULL_MOON.description": "当[gold]时移[/gold]达到[blue]12[/blue]层时，增加[blue]1[/blue]层。\n每回合一次：你可以点击[gold]满月[/gold]，失去[blue]1[/blue]层并在本回合进入[green]白泽[/green]形态。"
 }

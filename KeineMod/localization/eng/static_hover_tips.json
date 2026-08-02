@@ -2,5 +2,7 @@
   "KEINEMOD-ARTIST-TITLE": "Artist",
   "KEINEMOD-FLAVOR-TITLE": "",
   "KEINEMOD-SCROLL_PILE.title": "Scroll",
-  "KEINEMOD-SCROLL_PILE.description": "A unique pile that holds your [gold]Consumed[] cards."
+  "KEINEMOD-SCROLL_PILE.description": "A unique pile that stores your [gold]Consumed[/gold] cards. Whenever you enter [green]Hakutaku[/green] form, [gold]Recall[/gold] up to [blue]2[/blue] cards from here.\n\n[gold]Recall[/gold]: Move cards from your [gold]Scroll[/gold] into your [gold]Hand[/gold], they cost [blue]1[/blue] less this turn and gain [gold]Ethereal[/gold] and [gold]Exhaust[/gold].",
+  "KEINEMOD-FULL_MOON.title": "Full Moon",
+  "KEINEMOD-FULL_MOON.description": "Gain [blue]1[/blue] stack whenever your [gold]Time Shift[/gold] reaches [blue]12[/blue].\nOnce per turn: you can click on this, spending [blue]1[/blue] stack and enter [green]Hakutaku[/green] form this turn."
 }

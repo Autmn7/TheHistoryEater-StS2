@@ -14,7 +14,7 @@ public class Future : KeineModCard, ReturningBridge.IChoosable
     public Future() : base(-1, CardType.Status, CardRarity.Status, TargetType.None)
     {
         WithPower<KnowledgePower>(6);
-        WithVar("DisintegrationPower", 6);
+        WithPower<DisintegrationPower>(6);
     }
 
     public override int MaxUpgradeLevel => 0;

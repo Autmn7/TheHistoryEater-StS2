@@ -3,7 +3,7 @@
   "KEINEMOD-CONSUME.title": "Consume",
   "KEINEMOD-CREATE.description": "Add cards into your [gold]Hand[/gold], Non-Status cards added gain [gold]Retain[/gold].",
   "KEINEMOD-CREATE.title": "Create",
-  "KEINEMOD-RECALL.description": "Move cards from you [gold]Scroll[/gold] into your [gold]Hand[/gold], they cost [blue]1[/blue] less this turn and gain [gold]Ethereal[/gold] and [gold]Exhaust[/gold].",
+  "KEINEMOD-RECALL.description": "Move cards from your [gold]Scroll[/gold] into your [gold]Hand[/gold], they cost [blue]1[/blue] less this turn and gain [gold]Ethereal[/gold] and [gold]Exhaust[/gold].",
   "KEINEMOD-RECALL.title": "Recall",
   "KEINEMOD-HUMAN.description": "Your normal form.",
   "KEINEMOD-HUMAN.title": "Human",

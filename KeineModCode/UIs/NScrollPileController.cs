@@ -3,6 +3,9 @@ using KeineMod.KeineModCode.Scripts;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
+using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Localization;
+using MegaCrit.Sts2.Core.Nodes.HoverTips;
 using MegaCrit.Sts2.Core.Nodes.Screens;
 
 namespace KeineMod.KeineModCode.UIs;
@@ -12,6 +15,7 @@ public partial class NScrollPileController : Control
     private Player? _player;
     private Control _ui;
     private Label? _countLabel;
+    private HoverTip _hoverTip;
 
     // Hover Scaling Variables
     private readonly Vector2 _baseScale = new(1.5f, 1.5f);
@@ -22,12 +26,37 @@ public partial class NScrollPileController : Control
     {
         _ui = GetParent<Control>();
         _countLabel = _ui.GetNodeOrNull<Label>((NodePath)"Count") ?? _ui.GetNodeOrNull<Label>((NodePath)"CountContainer/Count");
+
+        // Initialize HoverTip with localization keys
+        var tipTitle = new LocString("static_hover_tips", "KEINEMOD-SCROLL_PILE.title");
+        var tipDesc = new LocString("static_hover_tips", "KEINEMOD-SCROLL_PILE.description");
+        _hoverTip = new HoverTip(tipTitle, tipDesc);
+
         _targetScale = _baseScale;
         _ui.Scale = _baseScale;
         _ui.MouseFilter = MouseFilterEnum.Stop;
         _ui.GuiInput += OnGuiInput;
-        _ui.MouseEntered += () => _targetScale = _hoverScale;
-        _ui.MouseExited += () => _targetScale = _baseScale;
+
+        // Connect mouse hover events
+        _ui.MouseEntered += OnHovered;
+        _ui.MouseExited += OnUnhovered;
+    }
+
+    private void OnHovered()
+    {
+        _targetScale = _hoverScale;
+
+        // Spawn and position the hover tip above the element
+        NHoverTipSet.CreateAndShow(_ui, _hoverTip)
+            ?.SetGlobalPosition(_ui.GlobalPosition + new Vector2(125f, -150f));
+    }
+
+    private void OnUnhovered()
+    {
+        _targetScale = _baseScale;
+
+        // Remove hover tip when mouse leaves
+        NHoverTipSet.Remove(_ui);
     }
 
     private void OnGuiInput(InputEvent @event)
@@ -50,7 +79,11 @@ public partial class NScrollPileController : Control
         var scrollPile = _player != null ? ScrollPile.Scroll.GetPile(_player) : null;
         if (scrollPile == null || CombatManager.Instance.IsOverOrEnding || KeineConstantsStateRegistry.Get(_player).CardsConsumedThisCombat <= 0)
         {
-            _ui.Visible = false;
+            if (_ui.Visible)
+            {
+                NHoverTipSet.Remove(_ui); // Safeguard: remove tip if element hides while hovering
+                _ui.Visible = false;
+            }
         }
         else
         {

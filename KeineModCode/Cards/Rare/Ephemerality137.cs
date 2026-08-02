@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Powers;
 
 namespace KeineMod.KeineModCode.Cards.Rare;
 
@@ -14,6 +15,7 @@ public class Ephemerality137 : KeineModCard, IOnConsumed
     {
         WithPower<EphemeralityPower>(1);
         WithKeywords(CardKeyword.Ethereal);
+        WithTip(typeof(DisintegrationPower));
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

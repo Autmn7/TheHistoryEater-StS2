@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Helpers;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Nodes.Rooms;
 using MegaCrit.Sts2.Core.Nodes.Vfx;
 
@@ -16,6 +17,7 @@ public class HeadbuttKeine : KeineModCard
         WithDamage(30, 6);
         WithKeyword(CardKeyword.Retain, UpgradeType.Add);
         WithKeywords(KeineKeywords.Hakutaku, CardKeyword.Exhaust);
+        WithTip(StaticHoverTip.Stun);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
