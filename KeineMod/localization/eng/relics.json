@@ -1,20 +1,28 @@
 {
   "SEA_GLASS.KEINEMOD-KEINE_MOD.title": "Antique Glass",
+
   "KEINEMOD-OLD_SCROLL.description": "At the start of each combat, [gold]Time Shift[/gold] [blue]{TimeShiftPower}[/blue], [gold]Create[/gold] a [gold]Scroll of Valor[/gold].",
   "KEINEMOD-OLD_SCROLL.flavor": "The language written in the scroll has gone extinct.",
   "KEINEMOD-OLD_SCROLL.title": "Old Scroll",
+
   "KEINEMOD-ENCHANTED_SCROLL.description": "At the start of each combat, [gold]Time Shift[/gold] [blue]{TimeShiftPower}[/blue], choose an [gold]Upgraded Sacred Scroll[/gold] to [gold]Create[/gold] and gain [blue]{SacredPower}[/blue] of its [gold]Sacred Power[/gold].",
   "KEINEMOD-ENCHANTED_SCROLL.flavor": "The ancient symbols glow blue, magically.",
   "KEINEMOD-ENCHANTED_SCROLL.title": "Enchanted Scroll",
+
   "KEINEMOD-TEXTBOOK.description": "Start each combat with [blue]{KnowledgePower}[/blue] [gold]Knowledge[/gold] and [blue]{WisdomPower}[/blue] [gold]Wisdom[/gold]",
-  "KEINEMOD-TEXTBOOK.flavor": "",
+  "KEINEMOD-TEXTBOOK.flavor": "This is a textbook. Neither your personal sketchbook, nor a weapon!",
   "KEINEMOD-TEXTBOOK.title": "Textbook",
+
   "KEINEMOD-POCKET_WATCH.description": "[gold]Time Shift[/gold] needed to gain [gold]Full Moon[/gold] is lowered to [blue]10[/blue]. You may enter [green]Hakutaku[/green] form any number of times each turn.",
   "KEINEMOD-POCKET_WATCH.flavor": "ZA! WARUDO!",
   "KEINEMOD-POCKET_WATCH.title": "Pocket Watch",
+  "PocketWatch.tlnotes": "Obvious Jojo reference.",
+
   "KEINEMOD-ETERNAL_FULL_MOON.description": "At the start of turn [blue]{ActiveTurn}[/blue], gain [gold]Imperishable Night[/gold].",
   "KEINEMOD-ETERNAL_FULL_MOON.flavor": "It would be nice if it was midnight all the time.",
   "KEINEMOD-ETERNAL_FULL_MOON.title": "Eternal Full Moon",
+  "EternalFullMoon.tlnotes": "The flavour is a reference to the Japanese rock group ずっと真夜中でいいのに。 (Zutomayo).",
+  
   "KEINEMOD-CURSED_KIMONO.description": "Whenever you [gold]Consume[/gold] a card, ALL enemies lose [blue]{Damage}[/blue] HP.",
   "KEINEMOD-CURSED_KIMONO.flavor": "The cause of the Great Fire of Meireki according to legend. Its owner is destined to perish.",
   "KEINEMOD-CURSED_KIMONO.title": "Cursed Kimono"

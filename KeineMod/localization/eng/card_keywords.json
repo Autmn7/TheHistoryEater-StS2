@@ -1,10 +1,14 @@
 {
   "KEINEMOD-CONSUME.description": "Move cards into your [gold]Scroll[/gold], trigger their [gold]Consumed[/gold] effects.",
   "KEINEMOD-CONSUME.title": "Consume",
+  "Consume.tlnotes": "Consume here means to eat up. Keine's title in 求聞史紀 is 歴史喰いの半獣, ideally this should be the same the wording of her title. In English, I used Consume rather than Eat because Consume has feels more like a card-game word. I saw you used Record instead, in the end it is up to you which one to use.",
+
   "KEINEMOD-CREATE.description": "Add cards into your [gold]Hand[/gold], Non-Status cards added gain [gold]Retain[/gold].",
   "KEINEMOD-CREATE.title": "Create",
   "KEINEMOD-RECALL.description": "Move cards from your [gold]Scroll[/gold] into your [gold]Hand[/gold], they cost [blue]1[/blue] less this turn and gain [gold]Ethereal[/gold] and [gold]Exhaust[/gold].",
   "KEINEMOD-RECALL.title": "Recall",
+  "Recall.tlnotes": "I saw you used 想起, which is more related to Satori I guess (it is the prefix for most of her spell cards). Recall here is more like resurface, recollect, or reappear. The Chinese I used for this is 重现, for reference.",
+
   "KEINEMOD-HUMAN.description": "Your normal form.",
   "KEINEMOD-HUMAN.title": "Human",
   "KEINEMOD-HAKUTAKU.description": "Your beast form. Whenever you enter [green]Hakutaku[/green] form, [gold]Recall[/gold] up to [blue]2[/blue] cards.",
@@ -17,6 +21,9 @@
   "KEINEMOD-SACREDSCROLL.title": "Sacred Scroll",
   "KEINEMOD-SACREDPOWER.description": "Scroll of Valor - [red]Strength[/red]\nScroll of Benevolence - [green]Dexterity[/green]\nScroll of Wisdom - [blue]Knowledge[/blue]",
   "KEINEMOD-SACREDPOWER.title": "Sacred Power",
+  "SacredPower.tlnotes": "Short for Sacred Treasure's Power, I saw you corrected expanded it, well done.",
+
   "KEINEMOD-REINCARNATION.description": "A part of the Boss's abilities. Each Boss has its unique [gold]Reincarnation[/gold], can be viewed by a power on them during Boss fights.",
-  "KEINEMOD-REINCARNATION.title": "Reincarnation"
+  "KEINEMOD-REINCARNATION.title": "Reincarnation",
+  "Reincarnation.tlnotes": "転世「一条戻り橋」 is the Spell Card, so use 転世 here."
 }

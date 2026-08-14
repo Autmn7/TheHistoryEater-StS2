@@ -2,348 +2,480 @@
   "KEINEMOD-STRIKE_KEINE.description": "Deal {Damage:diff()} damage.",
   "KEINEMOD-STRIKE_KEINE.title": "Strike",
   "KEINEMOD-STRIKE_KEINE.artist": "七夜うみ",
+
   "KEINEMOD-DEFEND_KEINE.description": "Gain {Block:diff()} [gold]Block[/gold].",
   "KEINEMOD-DEFEND_KEINE.title": "Defend",
   "KEINEMOD-DEFEND_KEINE.artist": "きんたろう",
+
   "KEINEMOD-TIDES_OF_TIME.description": "Deal {Damage:diff()} damage.\nIf you have no [gold]Full Moon[/gold], [gold]Time Shift[/gold] {TimeShiftPower:diff()}.",
   "KEINEMOD-TIDES_OF_TIME.title": "Tides of Time",
   "KEINEMOD-TIDES_OF_TIME.artist": "いすか（きいか）",
+
   "KEINEMOD-MANIPULATE_HISTORY.description": "Gain {Block:diff()} [gold]Block[/gold].\n{HumanSec}{HumanOpen}Human{HumanClose}: [gold]Consume[/gold]{IfUpgraded:show: up to|} {Cards:diff()} {Cards:plural:card|cards}.{HumanSecEnd}\n{HakuSec}{HakuOpen}Hakutaku{HakuClose}: [gold]Create[/gold] a [gold]{IfUpgraded:show:Scroll of Valor+|Scroll of Valor}[/gold].{HakuSecEnd}",
   "KEINEMOD-MANIPULATE_HISTORY.title": "Manipulate History",
   "KEINEMOD-MANIPULATE_HISTORY.artist": "すばる",
+
   "KEINEMOD-RESHAPE_HISTORY.description": "Gain {Block:diff()} [gold]Block[/gold].\nDraw {Cards:diff()} {Cards:plural:card|cards}.\n{HumanSec}{HumanOpen}Human{HumanClose}: [gold]Consume[/gold] up to {Cards:diff()} {Cards:plural:card|cards}.{HumanSecEnd}\n{HakuSec}{HakuOpen}Hakutaku{HakuClose}: Choose {IfUpgraded:show:an [gold]Upgraded[/gold]|a} [gold]Sacred Treasure[/gold] to [gold]Create[/gold].{HakuSecEnd}",
   "KEINEMOD-RESHAPE_HISTORY.title": "Reshape History",
   "KEINEMOD-RESHAPE_HISTORY.artist": "AKS紅白黒黃",
+
   "KEINEMOD-SCROLL_OF_VALOR.description": "[gold]Consumed[/gold]: Gain {ValorPower:diff()} [gold]Valor[/gold] and [gold]Transform[/gold] this into [gold]Heavenly Sword[/gold].",
   "KEINEMOD-SCROLL_OF_VALOR.title": "Scroll of Valor",
   "KEINEMOD-SCROLL_OF_VALOR.artist": "pexel.com",
+  "SacredScrolls.tlnotes": "Valor, Benevolence, and Wisdom are the three virtues that each Sacred Treasure represents. But who am I to tell you this, you should be much more familiar with them than I am xD",
+
   "KEINEMOD-HEAVENLY_SWORD.description": "Deal {CalculatedDamage:diff()} damage {Repeat:diff()} times.",
   "KEINEMOD-HEAVENLY_SWORD.title": "Heavenly Sword",
   "KEINEMOD-HEAVENLY_SWORD.artist": "Davies Surya",
+  "HeavenlySword.tlnotes": "Short for Heavenly Sword of Gathering Clouds to save space. Do use 天叢雲剣.",
+
   "KEINEMOD-SCROLL_OF_BENEVOLENCE.description": "[gold]Consumed[/gold]: Gain {BenevolencePower:diff()} [gold]Benevolence[/gold] and [gold]Transform[/gold] this into [gold]Curved Jewel[/gold].",
   "KEINEMOD-SCROLL_OF_BENEVOLENCE.title": "Scroll of Benevolence",
   "KEINEMOD-SCROLL_OF_BENEVOLENCE.artist": "pexel.com",
+
   "KEINEMOD-CURVED_JEWEL.description": "Gain {CalculatedBlock:diff()} [gold]Block[/gold].{RetainBlock:cond:>0?\n[gold]Block[/gold] is retained for a turn.|}",
   "KEINEMOD-CURVED_JEWEL.title": "Curved Jewel",
   "KEINEMOD-CURVED_JEWEL.artist": "Davies Surya",
+  "CurvedJewel.tlnotes": "Short for Eight-Foot Curved Jewel to save space. Do use 八尺瓊勾玉.",
+
   "KEINEMOD-SCROLL_OF_WISDOM.description": "[gold]Consumed[/gold]: Gain {WisdomPower:diff()} [gold]Wisdom[/gold] and [gold]Transform[/gold] this into [gold]Eight-Span Mirror[/gold].",
   "KEINEMOD-SCROLL_OF_WISDOM.title": "Scroll of Wisdom",
   "KEINEMOD-SCROLL_OF_WISDOM.artist": "pexel.com",
+
   "KEINEMOD-EIGHT_SPAN_MIRROR.description": "This turn, your next {MirroredPower:plural:Attack or Skill is|{:diff()} Attacks or Skills are} played an extra time.",
   "KEINEMOD-EIGHT_SPAN_MIRROR.title": "Eight-Span Mirror",
   "KEINEMOD-EIGHT_SPAN_MIRROR.artist": "Davies Surya",
+
   "KEINEMOD-FLOW.description": "[gold]Consumed[/gold]: Draw 1 card.\n[gold]Exhausted[/gold]: Draw 1 card.",
   "KEINEMOD-FLOW.title": "Flow",
   "KEINEMOD-FLOW.artist": "pexel.com",
+
   "KEINEMOD-FATIGUE.description": "[gold]Consumed[/gold]: Draw 1 less card next turn.",
   "KEINEMOD-FATIGUE.title": "Fatigue",
   "KEINEMOD-FATIGUE.artist": "シノアサ",
+
   "KEINEMOD-SLAY_THE_SERPENT.description": "Deal {Damage:diff()} damage.\n{HumanSec}{HumanOpen}Human{HumanClose}: [gold]Consume[/gold] 1 card, if it is [gold]Snakebite[/gold] or [gold]Serpent Form[/gold], [gold]Create[/gold] a [gold]Heavenly Sword[/gold] that costs 0 until played.{HumanSecEnd}\n{HakuSec}{HakuOpen}Hakutaku{HakuClose}: [gold]Create[/gold] a [gold]{IfUpgraded:show:Serpent Form|Snakebite}[/gold].{HakuSecEnd}",
   "KEINEMOD-SLAY_THE_SERPENT.title": "Slay the Serpent",
   "KEINEMOD-SLAY_THE_SERPENT.artist": "unknown",
+  "SlayTheSerpent.tlnotes": "A very thematic card that tells the story of Susanoo slaying Yamata-no-Orochi and drawing sword from its body. The English title is also in the same structure as Slay the Spire, but you don't have to reflect that in the translation.",
+
   "KEINEMOD-KEINE_AHNUNG.description": "[gold]Create[/gold] a [gold]THE SMARTEST[/gold] at the bottom of your [gold]Draw Pile[/gold].",
   "KEINEMOD-KEINE_AHNUNG.title": "Keine Ahnung",
   "KEINEMOD-KEINE_AHNUNG.artist": "unknown",
+  "KeineAhnung.tlnotes": "Ok. This one is hard. 'Keine Ahnung' means 'No Idea' in German, because in the card art she has no idea why Cirno put 9 to every answer. But Keine in German meaning 'No' is the same spelling as Keine, our beloved history teacher. Yes, this is a multi-language pun. I don't know how one can possible reflect this. Skipping the pun can be perfectly fine too. Also the card art is one popular internet meme ‘Confused Nick Young’ back in the days.",
+
   "KEINEMOD-THE_SMARTEST.description": "Does NOTHING!\n[gold]Consumed[/gold]: If costs 0, [gold]Transform[/gold] this into [gold]THE STRONGEST[/gold]; Otherwise, does not move to [gold]Scroll[/gold], reduce cost by {CostReduction:diff()} instead.",
   "KEINEMOD-THE_SMARTEST.title": "THE SMARTEST",
   "KEINEMOD-THE_SMARTEST.artist": "unknown",
+
   "KEINEMOD-THE_STRONGEST.description": "At the end of your turn, deal {PerfectFreezePower:diff()} damage to ALL enemies.",
   "KEINEMOD-THE_STRONGEST.title": "THE STRONGEST",
   "KEINEMOD-THE_STRONGEST.artist": "andy_cookiez",
+
   "KEINEMOD-BURETSU_CRISIS.description": "Deal {Damage:diff()} damage.\n{HumanSec}{HumanOpen}Human{HumanClose}: [gold]Upgrade[/gold] and [gold]Consume[/gold] {Cards:diff()} {Cards:plural:card|cards}.{HumanSecEnd}\n{HakuSec}{HakuOpen}Hakutaku{HakuClose}: [gold]Upgrade[/gold] and [gold]Recall[/gold] {Cards:diff()} {Cards:plural:card|cards}.{HakuSecEnd}",
   "KEINEMOD-BURETSU_CRISIS.title": "Buretsu Crisis",
   "KEINEMOD-BURETSU_CRISIS.artist": "60枚",
+  "Crisis.tlnotes": "Keine's Spell Cards from Imperishable Night. For all Spell Cards, you can leave its whole name in, like 野符「武烈クライシス」, or just 武烈クライシス like you did. Up to you, both are fine.",
+
   "KEINEMOD-MASAKADO_CRISIS.description": "Deal {Damage:diff()} damage.\n{HumanSec}{HumanOpen}Human{HumanClose}: [gold]Consume[/gold] up to {Cards:diff()} {Cards:plural:card|cards}, [gold]Time Shift[/gold] {TimeShiftPower:diff()} for each.{HumanSecEnd}\n{HakuSec}{HakuOpen}Hakutaku{HakuClose}: Gain {Energy:energyIcons()}, [gold]Recall[/gold] up to {Cards:diff()} {Cards:plural:card|cards}, gain 1 less {energyPrefix:energyIcons(1)} for each.{HakuSecEnd}",
   "KEINEMOD-MASAKADO_CRISIS.title": "Masakado Crisis",
   "KEINEMOD-MASAKADO_CRISIS.artist": "03",
+
   "KEINEMOD-YOSHIMITSU_CRISIS.description": "Deal {Damage:diff()} damage.\n{HumanSec}{HumanOpen}Human{HumanClose}: [gold]Consume[/gold] up to {Cards:diff()} {Cards:plural:card|cards}, gain {energyPrefix:energyIcons(1)} for each.{HumanSecEnd}\n{HakuSec}{HakuOpen}Hakutaku{HakuClose}: [gold]Recall[/gold] up to {Cards:diff()} {Cards:plural:card|cards}, gain {Block:diff()} [gold]Block[/gold] for each.{HakuSecEnd}",
   "KEINEMOD-YOSHIMITSU_CRISIS.title": "Yoshimitsu Crisis",
   "KEINEMOD-YOSHIMITSU_CRISIS.artist": "国家飯",
+
   "KEINEMOD-GHQ_CRISIS.description": "Deal {Damage:diff()} damage for: {HumanSec}{HumanOpen}Human{HumanClose}: each card in your [gold]Scroll[/gold];{HumanSecEnd} {HakuSec}{HakuOpen}Hakutaku{HakuClose}: each other card in your [gold]Hand[/gold].{HakuSecEnd}{InCombat: (Hits {Repeat:diff()} {Repeat:plural:time|times})|}\nCost {Energy:energyIcons()} less for each card you [gold]Consumed[/gold] this combat.",
   "KEINEMOD-GHQ_CRISIS.title": "GHQ Crisis",
   "KEINEMOD-GHQ_CRISIS.artist": "ginaru",
+
   "KEINEMOD-LEISURE.description": "Gain {Block:diff()} [gold]Block[/gold].\n[gold]Create[/gold] 1 [gold]Flow[/gold].\n{HumanSec}{HumanOpen}Human{HumanClose}: [gold]Consume[/gold] 1 card.{HumanSecEnd}\n{HakuSec}{HakuOpen}Hakutaku{HakuClose}: [gold]Create[/gold] 1 more [gold]Flow[/gold].{HakuSecEnd}",
   "KEINEMOD-LEISURE.title": "Leisure",
   "KEINEMOD-LEISURE.artist": "玄月ちひろ",
+
   "KEINEMOD-NEW_SEMESTER.description": "Gain {Block:diff()} [gold]Block[/gold].\nGain {KnowledgePower:diff()} [gold]Knowledge[/gold] if you have less than {Threshold:diff()}; Otherwise, draw {Cards:diff()} {Cards:plural:card|cards}.",
   "KEINEMOD-NEW_SEMESTER.title": "New Semester",
   "KEINEMOD-NEW_SEMESTER.artist": "ria",
+
   "KEINEMOD-PHASE_STRIKE.description": "Deal {Damage:diff()} damage.\n{HumanSec}{HumanOpen}Human{HumanClose}: [gold]Time Shift[/gold] {TimeShiftPower:diff()}.{HumanSecEnd}\n{HakuSec}{HakuOpen}Hakutaku{HakuClose}: Gain {Energy:energyIcons()}, exit your form.{HakuSecEnd}",
   "KEINEMOD-PHASE_STRIKE.title": "Phase Strike",
   "KEINEMOD-PHASE_STRIKE.artist": "佐々木　さき子",
+  "PhaseStrike": "Phase as if phases of the moon and Keine's two phases/forms. This is a Strike card that benefit from Strike Dummy.",
+
   "KEINEMOD-LONG_READ.description": "Draw {Cards:diff()} {Cards:plural:card|cards}.\n{HumanSec}{HumanOpen}Human{HumanClose}: [gold]Consume[/gold] 1 card.{HumanSecEnd}",
   "KEINEMOD-LONG_READ.title": "Long Read",
   "KEINEMOD-LONG_READ.artist": "毒岛",
+
   "KEINEMOD-HEADBUTT_KEINE.description": "Deal {Damage:diff()} damage.\n{HakuSec}{HakuOpen}Hakutaku{HakuClose}: [gold]Stun[/gold] the enemy.{HakuSecEnd}",
   "KEINEMOD-HEADBUTT_KEINE.title": "HEADBUTT!!",
   "KEINEMOD-HEADBUTT_KEINE.artist": "先代",
+
   "KEINEMOD-SCOLD.description": "Deal {Damage:diff()} damage.\n{HumanSec}{HumanOpen}Human{HumanClose}: Apply {WeakPower:diff()} [gold]Weak[/gold].{HumanSecEnd}\n{HakuSec}{HakuOpen}Hakutaku{HakuClose}: Apply {VulnerablePower:diff()} [gold]Vulnerable[/gold].{HakuSecEnd}",
   "KEINEMOD-SCOLD.title": "Scold",
   "KEINEMOD-SCOLD.artist": "で～たむ",
+
   "KEINEMOD-PENETRATING_GAZE.description": "Apply {VulnerablePower:diff()} [gold]Vulnerable[/gold].\nGain {ValorPower:diff()} [gold]Valor[/gold].",
   "KEINEMOD-PENETRATING_GAZE.title": "Penetrating Gaze",
   "KEINEMOD-PENETRATING_GAZE.artist": "ukyo_rst",
+
   "KEINEMOD-REVISION_SESSION.description": "Gain {Block:diff()} [gold]Block[/gold].\n[gold]Consumed[/gold]: Gain {KnowledgePower:diff()} [gold]Knowledge[/gold].\n[gold]Recalled[/gold]: Does not gain [gold]Ethereal[/gold].",
   "KEINEMOD-REVISION_SESSION.title": "Revision Session",
   "KEINEMOD-REVISION_SESSION.artist": "ryosios",
+
   "KEINEMOD-RESERVED_TIME.description": "[gold]Time Shift[/gold] {TimeShiftPower:diff()}.\n[gold]Consumed[/gold]: [gold]Time Shift[/gold] {Consumed:diff()}.",
   "KEINEMOD-RESERVED_TIME.title": "Reserved Time",
   "KEINEMOD-RESERVED_TIME.artist": "pexel.com",
+
   "KEINEMOD-SWIRL_OF_HISTORY.description": "Deal {Damage:diff()} damage and apply {HistoricalGapPower:diff()} [gold]Historical Gap[/gold] to ALL enemies.\n[gold]Consumed[/gold]: Apply {Consumed:diff()} [gold]Historical Gap[/gold] to ALL enemies.",
   "KEINEMOD-SWIRL_OF_HISTORY.title": "Swirl of History",
   "KEINEMOD-SWIRL_OF_HISTORY.artist": "unknown",
+
   "KEINEMOD-FLOW_OF_HISTORY.description": "Apply {HistoricalGapPower:diff()} [gold]Historical Gap[/gold].\n[gold]Create[/gold] {Cards:diff()} [gold]{Cards:plural:Flow|Flows}[/gold].\n[gold]Consumed[/gold]: Draw {Consumed:diff()} {Consumed:plural:card|cards}.",
   "KEINEMOD-FLOW_OF_HISTORY.title": "Flow of History",
   "KEINEMOD-FLOW_OF_HISTORY.artist": "pexel.com",
+
   "KEINEMOD-DUAL_FORM.description": "Your cards' {HumanOpen}Human{HumanClose} and {HakuOpen}Hakutaku{HakuClose} effects are considered triggered simultaneously at ALL time.",
   "KEINEMOD-DUAL_FORM.title": "Dual Form",
   "KEINEMOD-DUAL_FORM.artist": "つかさ",
+  "DualForm.tlnotes": "Keine is somehow in both her forms at once. This is a Form card, so follow the format/wording of other Forms like Demon Form, Echo Form etc. I believe in Japanese it should be XX化.",
+
   "KEINEMOD-CONCEAL.description": "Gain {Block:diff()} [gold]Block[/gold].\nApply {HistoricalGapPower:diff()} [gold]Historical Gap[/gold].\n{HumanSec}{HumanOpen}Human{HumanClose}: [gold]Block[/gold] is retained for a turn.{HumanSecEnd}\n{HakuSec}{HakuOpen}Hakutaku{HakuClose}: Enemy's [gold]Historical Gap[/gold] does not decay for a turn.{HakuSecEnd}",
   "KEINEMOD-CONCEAL.title": "Conceal",
   "KEINEMOD-CONCEAL.artist": "ZEKO",
+  "Conceal.tlnotes": "A reference to how Keine concealed the history of the Human Village to make it impossible to find in Imperishable Moon.",
+
   "KEINEMOD-BORROWED_TREASURES.description": "Deal {Damage:diff()} damage.\nChoose a [gold]Sacred Scroll[/gold] to [gold]Create[/gold].",
   "KEINEMOD-BORROWED_TREASURES.title": "Borrowed Treasures",
   "KEINEMOD-BORROWED_TREASURES.artist": "＄",
+
   "KEINEMOD-THREE_SACRED_TREASURES_SWORD.description": "Deal {Damage:diff()} damage {Repeat:diff()} times.\nYour next [gold]Heavenly Sword[/gold] hits an additional time.\n[gold]Create[/gold] a [gold]{IfUpgraded:show:Scroll of Valor+|Scroll of Valor}[/gold].",
   "KEINEMOD-THREE_SACRED_TREASURES_SWORD.title": "Three Sacred Treasures-Sword",
   "KEINEMOD-THREE_SACRED_TREASURES_SWORD.artist": "羽々斬",
+
   "KEINEMOD-THREE_SACRED_TREASURES_ORB.description": "Gain {Block:diff()} [gold]Block[/gold].\nYour next [gold]Curved Jewel[/gold] retains your [gold]Block[/gold] for a turn.\n[gold]Create[/gold] a [gold]{IfUpgraded:show:Scroll of Benevolence+|Scroll of Benevolence}[/gold].",
   "KEINEMOD-THREE_SACRED_TREASURES_ORB.title": "Three Sacred Treasures-Orb",
   "KEINEMOD-THREE_SACRED_TREASURES_ORB.artist": "漫華鏡水月来",
+
   "KEINEMOD-THREE_SACRED_TREASURES_MIRROR.description": "Your [gold]Eight-Span Mirrors[/gold] cost {Energy:energyIcons()} less.\n[gold]Create[/gold] {Cards:diff()} [gold]{Cards:plural:Scroll of Wisdom|Scrolls of Wisdom}[/gold].",
   "KEINEMOD-THREE_SACRED_TREASURES_MIRROR.title": "Three Sacred Treasures-Mirror",
   "KEINEMOD-THREE_SACRED_TREASURES_MIRROR.artist": "オ",
+
   "KEINEMOD-THREE_SACRED_TREASURES_COUNTRY.description": "Whenever you [gold]Consume[/gold] a [gold]Sacred Scroll[/gold], gain {TreasureOfCountryPower:diff()} of its [gold]Sacred Power[/gold].\n[gold]Create[/gold] ALL 3 [gold]Sacred Scrolls[/gold].",
   "KEINEMOD-THREE_SACRED_TREASURES_COUNTRY.title": "Three Sacred Treasures-Country",
   "KEINEMOD-THREE_SACRED_TREASURES_COUNTRY.artist": "ria",
+
   "KEINEMOD-INTERTWINED.description": "[gold]Create[/gold] a [gold]{IfUpgraded:show:Scroll of Benevolence+|Scroll of Benevolence}[/gold] and a [gold]{IfUpgraded:show:Scroll of Valor+|Scroll of Valor}[/gold].\nNext turn, gain {Energy:energyIcons()}.",
   "KEINEMOD-INTERTWINED.title": "Intertwined",
   "KEINEMOD-INTERTWINED.artist": "L_Y",
+
   "KEINEMOD-GOOD_APPLE_BAD_APPLE.description": "Gain {BenevolencePower:diff()} [gold]Benevolence[/gold].\nGain {ValorPower:diff()} [gold]Valor[/gold].\n{HumanSec}{HumanOpen}Human{HumanClose}: Draw {Cards:diff()} {Cards:plural:card|cards}.{HumanSecEnd}\n{HakuSec}{HakuOpen}Hakutaku{HakuClose}: Gain {Energy:energyIcons()}.{HakuSecEnd}",
   "KEINEMOD-GOOD_APPLE_BAD_APPLE.title": "Good Apple Bad Apple",
   "KEINEMOD-GOOD_APPLE_BAD_APPLE.artist": "サーモン",
+  "GoodAppleBadApple.tlnotes": "This one is also quite hard? The intended phrase is Good Cop Bad Cop, a common technique for interrogation. Here it resembles the card art, the human Keine being the 'Good Cop' and hakutaku being 'Bad Cop'. But the card art also looks like that one scene where Keine showed up in Bad Apple, where there are two Keines holding hands. Thus the name Good Apple Bad Apple, referencing the song. I don't know what the equivalence of Good Cop Bad Cop is in Japanese. Bring it up if you can, otherwise leave it as it is is perfectly fine.",
+
   "KEINEMOD-SCROLL_SLASH.description": "Deal {Damage:diff()} damage to ALL enemies.\n{HumanSec}{HumanOpen}Human{HumanClose}: Next turn, gain {Energy:energyIcons()}.{HumanSecEnd}\n{HakuSec}{HakuOpen}Hakutaku{HakuClose}: Draw {Cards:diff()} {Cards:plural:card|cards}.{HakuSecEnd}",
   "KEINEMOD-SCROLL_SLASH.title": "Scroll Slash",
   "KEINEMOD-SCROLL_SLASH.artist": "国家饭",
+
   "KEINEMOD-SCROLL_STORM.description": "Deal {Damage:diff()} damage {Repeat:diff()} times.\n{HumanSec}{HumanOpen}Human{HumanClose}: Gain {KnowledgePower:diff()} [gold]Knowledge[/gold].{HumanSecEnd}\n{HakuSec}{HakuOpen}Hakutaku{HakuClose}: Hits {RepeatExtra:diff()} additional time.{HakuSecEnd}",
   "KEINEMOD-SCROLL_STORM.title": "Scroll Storm",
   "KEINEMOD-SCROLL_STORM.artist": "UGUME",
+
   "KEINEMOD-UNOFFICIAL_HISTORY.description": "Apply {HistoricalGapPower:diff()} [gold]Historical Gap[/gold].\nGain {WeakGain:diff()} [gold]Weak[/gold].\n{HumanSec}{HumanOpen}Human{HumanClose}: Apply {WeakPower:diff()} [gold]Weak[/gold].{HumanSecEnd}\n{HakuSec}{HakuOpen}Hakutaku{HakuClose}: Does not gains [gold]Weak[/gold].{HakuSecEnd}",
   "KEINEMOD-UNOFFICIAL_HISTORY.title": "Unofficial History",
   "KEINEMOD-UNOFFICIAL_HISTORY.artist": "TOKIAME",
+
   "KEINEMOD-WELL_READ.description": "Gain {Block:diff()} [gold]Block[/gold].\nCost {Energy:energyIcons()} less for each card you [gold]Consumed[/gold] this combat.",
   "KEINEMOD-WELL_READ.title": "Well-Read",
   "KEINEMOD-WELL_READ.artist": "はらみみみ",
+
   "KEINEMOD-LEARN_FROM_PAIN.description": "Deal {Damage:diff()} damage {Repeat:cond:>1?{} times|}.\n{HumanSec}{HumanOpen}Human{HumanClose}: [gold]Consume[/gold] 1 card, if it is a Status or Curse, gain {KnowledgePower:diff()} [gold]Knowledge[/gold].{HumanSecEnd}\n{HakuSec}{HakuOpen}Hakutaku{HakuClose}: Hits {RepeatExtra:diff()} additional time.{HakuSecEnd}",
   "KEINEMOD-LEARN_FROM_PAIN.title": "Learn from Pain",
   "KEINEMOD-LEARN_FROM_PAIN.artist": "いちやん",
+
   "KEINEMOD-KNOWLEDGE_GAP.description": "Deal {Damage:diff()} damage.\nApply 1 [gold]Historical Gap[/gold] for every {Ratio:diff)()} damage dealt.",
   "KEINEMOD-KNOWLEDGE_GAP.title": "Knowledge Gap",
   "KEINEMOD-KNOWLEDGE_GAP.artist": "ideolo",
+  "KnowledgeGap.tlnotes": "A theory that means the uneven distribution of information or knowledge. The card is a bridge between the Knowledge and Historical Gap archetypes.",
+
   "KEINEMOD-LEXICOGRAPHY.description": "Gain {Block:diff()} [gold]Block[/gold] and {KnowledgePower:diff()} [gold]Knowledge[/gold] for each enemy.",
   "KEINEMOD-LEXICOGRAPHY.title": "Lexicography",
   "KEINEMOD-LEXICOGRAPHY.artist": "pexel.com",
+
   "KEINEMOD-SIPHONING_HISTORY.description": "Remove enemy's [gold]Historical Gap[/gold]. Enemy loses 1 [gold]Strength[/gold] for every {Ratio:diff()} removed.\n{HakuSec}{HakuOpen}Hakutaku{HakuClose}: [gold]Create[/gold] a [gold]Splitting History[/gold] to your [gold]Discard Pile[/gold].{HakuSecEnd}",
   "KEINEMOD-SIPHONING_HISTORY.title": "Siphoning History",
   "KEINEMOD-SIPHONING_HISTORY.artist": "inC",
+
   "KEINEMOD-SPLITTING_HISTORY.description": "{InCombat:Apply {HistoricalGapPower:diff()} [gold]Historical Gap[/gold].|Apply [gold]Historical Gap[/gold] equal to the amount removed.}",
   "KEINEMOD-SPLITTING_HISTORY.title": "Splitting History",
   "KEINEMOD-SPLITTING_HISTORY.artist": "晶一",
+
   "KEINEMOD-OVERWORKED.description": "Gain {Block:diff()} [gold]Block[/gold].\nGain {KnowledgePower:diff()} [gold]Knowledge[/gold].\n[gold]Create[/gold] a [gold]Fatigue[/gold].",
   "KEINEMOD-OVERWORKED.title": "Overworked",
   "KEINEMOD-OVERWORKED.artist": "sliyu",
+
   "KEINEMOD-FORBIDDEN_KNOWLEDGE.description": "Lose {KnowledgePower:diff()} [gold]Knowledge[/gold] to gain {Energy:energyIcons()}.",
   "KEINEMOD-FORBIDDEN_KNOWLEDGE.title": "Forbidden Knowledge",
   "KEINEMOD-FORBIDDEN_KNOWLEDGE.artist": "see7enf1",
+
   "KEINEMOD-FADING_PAST.description": "[gold]Recall[/gold] {Cards:diff()} {Cards:plural:card|cards}.\n[gold]Create[/gold] a [gold]Fatigue[/gold].",
   "KEINEMOD-FADING_PAST.title": "Fading Past",
   "KEINEMOD-FADING_PAST.artist": "緑QN",
+
   "KEINEMOD-HISTORY_OF_UNTRODDEN.description": "At the start of your turn, apply {HistoryOfUntroddenPower:diff()} [gold]Historical Gap[/gold] to ALL enemies.",
   "KEINEMOD-HISTORY_OF_UNTRODDEN.title": "History of Untrodden Land",
   "KEINEMOD-HISTORY_OF_UNTRODDEN.artist": "柴崎ショージ",
+
   "KEINEMOD-HISTORY_OF_FANTASY.description": "Whenever you generate a card, apply {HistoryOfFantasyPower:diff()} [gold]Historical Gap[/gold] to a random enemy.",
   "KEINEMOD-HISTORY_OF_FANTASY.title": "History of Fantasy",
   "KEINEMOD-HISTORY_OF_FANTASY.artist": "イチゼン",
+
   "KEINEMOD-FEAST_OF_HISTORY.description": "Apply {HistoricalGapPower:diff()} [gold]Historical Gap[/gold] to ALL enemies {Times:diff()} {Times:plural:time|times}.\n{HumanSec}{HumanOpen}Human{HumanClose}: [gold]Consume[/gold] your [gold]Hand[/gold].{HumanSecEnd}\n{HakuSec}{HakuOpen}Hakutaku{HakuClose}: Apply {TimesExtra:diff()} additional times.{HakuSecEnd}",
   "KEINEMOD-FEAST_OF_HISTORY.title": "Feast of History",
   "KEINEMOD-FEAST_OF_HISTORY.artist": "ナウファル・ドリーマー",
+
   "KEINEMOD-ANCIENT_PROTECTION.description": "Whenever you [gold]Consume[/gold] a card, gain {AncientProtectionPower:diff()} [gold]Block[/gold].",
   "KEINEMOD-ANCIENT_PROTECTION.title": "Ancient Protection",
   "KEINEMOD-ANCIENT_PROTECTION.artist": "u",
+
   "KEINEMOD-SIDES_OF_THE_MOON.description": "Apply {Gap:diff()} [gold]Historical Gap[/gold].\n{HumanSec}{HumanOpen}Human{HumanClose}: [gold]Time Shift[/gold] 1 for every {Ratio:diff()} [gold]Historical Gap[/gold] on the enemy.{HumanSecEnd}\n{HakuSec}{HakuOpen}Hakutaku{HakuClose}: Apply {GapExtra:diff()} additional [gold]Historical Gap[/gold].{HakuSecEnd}",
   "KEINEMOD-SIDES_OF_THE_MOON.title": "Sides of the Moon",
   "KEINEMOD-SIDES_OF_THE_MOON.artist": "m2",
+
   "KEINEMOD-FLOWER_OF_EDO.description": "Deal {Damage:diff()} damage to ALL enemies.\n[gold]Consumed[/gold]: Increase damage by {Increase:diff()} this combat.\n[gold]Recalled[/gold]: Does not gain [gold]Exhaust[/gold].",
   "KEINEMOD-FLOWER_OF_EDO.title": "Flower of Edo",
   "KEINEMOD-FLOWER_OF_EDO.artist": "unknown",
+
   "KEINEMOD-YAMATO_KINGDOM.description": "Gain {Block:diff()} [gold]Block[/gold] X{IfUpgraded:show:+1} times.\nGain X{IfUpgraded:show:+1} [gold]Knowledge[/gold].",
   "KEINEMOD-YAMATO_KINGDOM.title": "Yamato Kingdom",
   "KEINEMOD-YAMATO_KINGDOM.artist": "こずみっく",
+
   "KEINEMOD-LAND_OF_RISING_SUN.description": "{HakuSec}{HakuOpen}Hakutaku{HakuClose}: Deal {Damage:diff()} damage to ALL enemies. Exit your form, you cannot enter [green]Hakutaku[/green] form for {SunrisePower:diff()} turns.{HakuSecEnd}",
   "KEINEMOD-LAND_OF_RISING_SUN.title": "Land of Rising Sun",
   "KEINEMOD-LAND_OF_RISING_SUN.artist": "kaze",
+  "LandOfRisingSun.tlnotes": "Short for Emperor of the Land of the Rising Sun to save space. You can use the whole name 日出ずる国の天子.",
+
   "KEINEMOD-SCROLL_DANCE.description": "At the start of your turn, choose a [gold]Sacred Scroll[/gold] to [gold]Create[/gold].",
   "KEINEMOD-SCROLL_DANCE.title": "Scroll Dance",
   "KEINEMOD-SCROLL_DANCE.artist": "Vetina",
+
   "KEINEMOD-BRAINSTORM.description": "[gold]Create[/gold] a random {IfUpgraded:show:[gold]Upgraded[/gold] |}Attack and [gold]Block[/gold] Skill from other characters. They gain [gold]Knowledgeable[/gold].",
   "KEINEMOD-BRAINSTORM.title": "Brainstorm",
   "KEINEMOD-BRAINSTORM.artist": "cuboon",
   "KEINEMOD-BRAINSTORM.extraTipTitle": "Multiplayer",
   "KEINEMOD-BRAINSTORM.extraTipDescription": "You may target another player to prioritize cards from their character. Target yourself for the original effect.",
+
   "KEINEMOD-FOREIGN_KNOWLEDGE.description": "Choose 1 of 3 Attacks from other characters to [gold]Create[/gold]. It gains [gold]Knowledgeable[/gold].",
   "KEINEMOD-FOREIGN_KNOWLEDGE.title": "Foreign Knowledge",
   "KEINEMOD-FOREIGN_KNOWLEDGE.artist": "夜祭り",
   "KEINEMOD-FOREIGN_KNOWLEDGE.extraTipTitle": "Multiplayer",
   "KEINEMOD-FOREIGN_KNOWLEDGE.extraTipDescription": "You may target another player to prioritize cards from their character. Target yourself for the original effect.",
+  "ForeignKnowledge.tlnotes": "A reference to the card Foreign Influence in Slay the Spire 1. Make the name sound as similar to that as possible, which I believe is 外的影響.",
+
   "KEINEMOD-TOTAL_PURIFICATION.description": "{HumanSec}{HumanOpen}Human{HumanClose}: [gold]Consume[/gold] ALL your Statuses and Curses.{HumanSecEnd}\n{HakuSec}{HakuOpen}Hakutaku{HakuClose}: Remove ALL your debuffs.{HakuSecEnd}\nFor each card [gold]Consumed[/gold] and each debuff removed, gain 1 [gold]Knowledge[/gold].",
   "KEINEMOD-TOTAL_PURIFICATION.title": "Total Purification",
   "KEINEMOD-TOTAL_PURIFICATION.artist": "ginaru",
+
   "KEINEMOD-PHANTASMAL_EMPEROR.description": "Deal {Damage:diff()} damage to ALL enemies {Repeat:diff()} times.\nLose {KnowledgePower:diff()} [gold]Knowledge[/gold].",
   "KEINEMOD-PHANTASMAL_EMPEROR.title": "Phantasmal Emperor",
   "KEINEMOD-PHANTASMAL_EMPEROR.artist": "DomotoLain",
+
   "KEINEMOD-KNOWLEDGE_BASE.description": "Whenever you generate a Non-Status card, gain {KnowledgeBasePower:diff()} [gold]Knowledge[/gold].",
   "KEINEMOD-KNOWLEDGE_BASE.title": "Knowledge Base",
   "KEINEMOD-KNOWLEDGE_BASE.artist": "もちぬ",
+
   "KEINEMOD-PASSAGE_OF_TIME.description": "[gold]Time Shift[/gold] {TimeShiftPower:diff()}.\nDraw {Cards:diff()} {Cards:plural:card|cards}.\n{HumanSec}{HumanOpen}Human{HumanClose}: [gold]Consume[/gold] up to {Cards:diff()} {Cards:plural:card|cards}.{HumanSecEnd}\n{HakuSec}{HakuOpen}Hakutaku{HakuClose}: Gain {Energy:energyIcons()}.{HakuSecEnd}",
   "KEINEMOD-PASSAGE_OF_TIME.title": "Passage of Time",
   "KEINEMOD-PASSAGE_OF_TIME.artist": "pexel.com",
+
   "KEINEMOD-EPHEMERALITY137.description": "Apply {EphemeralityPower:diff()} [gold]Ephemerality[/gold] to ALL enemies.\nShuffle this into your [gold]Draw Pile[/gold].\n[gold]Consumed[/gold]: {IfUpgraded:show:Apply {EphemeralityPower:diff()} [gold]Ephemerality[/gold] to ALL enemies. |}Add a copy of this into your [gold]Draw Pile[/gold].",
   "KEINEMOD-EPHEMERALITY137.title": "Ephemerality 137",
   "KEINEMOD-EPHEMERALITY137.artist": "unknown",
+
   "KEINEMOD-LEGEND_OF_GENSOKYO.description": "At the start of your turn, choose 1 of 3 Attacks or [gold]Block[/gold] Skills from other characters to [gold]Create[/gold] with [gold]Knowledgeable[/gold].",
   "KEINEMOD-LEGEND_OF_GENSOKYO.title": "Legend of Gensokyo",
   "KEINEMOD-LEGEND_OF_GENSOKYO.artist": "kaze",
+
   "KEINEMOD-ERUDITE.description": "Gain {WisdomPower:diff()} [gold]Wisdom[/gold].\nDraw {Cards:diff()} {Cards:plural:card|cards}.",
   "KEINEMOD-ERUDITE.title": "Erudite",
   "KEINEMOD-ERUDITE.artist": "阿部鸮转",
+
   "KEINEMOD-BACK_TO_THE_FUTURE.description": "[gold]Time Shift[/gold] {TimeShiftPower:diff()}.\n{HumanSec}{HumanOpen}Human{HumanClose}: Look at the top {View:diff()} {View:plural:card|cards} of your [gold]Draw Pile[/gold], [gold]Consume[/gold] any of them. Draw {Cards:diff()} {Cards:plural:card|cards}.{HumanSecEnd}",
   "KEINEMOD-BACK_TO_THE_FUTURE.title": "Back to the Future",
   "KEINEMOD-BACK_TO_THE_FUTURE.artist": "meo",
+  "BackToTheFuture.tlnotes": "A reference to the old sci-fi film of the same name.",
+
   "KEINEMOD-WORKFLOW.description": "Gain {Block:diff()} [gold]Block[/gold].\n{HumanSec}{HumanOpen}Human{HumanClose}: [gold]Consume[/gold] 1 card, if it is a [gold]Sacred Scroll[/gold], [gold]Create[/gold] 1 [gold]Flow[/gold].{HumanSecEnd}\n{HakuSec}{HakuOpen}Hakutaku{HakuClose}: [gold]Create[/gold] a [gold]Scroll of Wisdom[/gold].{HakuSecEnd}",
   "KEINEMOD-WORKFLOW.title": "Workflow",
   "KEINEMOD-WORKFLOW.artist": "Arkas",
+  "WorkFlow.tlnotes": "A word play on Work and Flow.",
+
   "KEINEMOD-SERENE_NIGHT.description": "[gold]Create[/gold] {Cards:diff()} [gold]{Cards:plural:Flow|Flows}[/gold].\n{HumanSec}{HumanOpen}Human{HumanClose}: [gold]Consume[/gold] up to {Consume:diff()} {Consume:plural:card|cards}.{HumanSecEnd}",
   "KEINEMOD-SERENE_NIGHT.title": "Serene Night",
   "KEINEMOD-SERENE_NIGHT.artist": "赤染",
+
   "KEINEMOD-FIRST_PYRAMID.description": "Gain {KnowledgePower:diff()} [gold]Knowledge[/gold].\n[gold]Consumed[/gold]: Gain {WisdomPower:diff()} [gold]Wisdom[/gold].",
   "KEINEMOD-FIRST_PYRAMID.title": "First Pyramid",
   "KEINEMOD-FIRST_PYRAMID.artist": "unknown",
+
   "KEINEMOD-MOON_SHIFT.description": "Gain {energyPrefix:energyIcons(1)} equal to your [gold]Full Moon[/gold]{IfUpgraded:show: plus 1|}.{InCombat:\n(Gain {CalculatedEnergy:diff()} {energyPrefix:energyIcons(1)})|}",
   "KEINEMOD-MOON_SHIFT.title": "Moon Shift",
   "KEINEMOD-MOON_SHIFT.artist": "47AgDragon",
+
   "KEINEMOD-RAIN_OF_SHOWA.description": "Deal {Damage:diff()} damage to a random enemy {Repeat:diff()} {Repeat:plural:time|times}.\nHits {RepeatExtra:diff()} additional time for each [gold]Flow[/gold] in your [gold]Scroll[/gold] and [gold]Exhaust Pile[/gold].\n[gold]Create[/gold] {Cards:diff()} [gold]{Cards:plural:Flow|Flows}[/gold].",
   "KEINEMOD-RAIN_OF_SHOWA.title": "Rain of Showa",
   "KEINEMOD-RAIN_OF_SHOWA.artist": "甘党",
+
   "KEINEMOD-GO_WITH_THE_FLOW.description": "Your [gold]Flows[/gold] are playable and have [gold]Exhaust[/gold].\n[gold]Create[/gold] {Cards:diff()} [gold]{Cards:plural:Flow|Flows}[/gold].",
   "KEINEMOD-GO_WITH_THE_FLOW.title": "Go with the Flow",
   "KEINEMOD-GO_WITH_THE_FLOW.artist": "こめら",
+
   "KEINEMOD-GUARDIAN.description": "ALL players gain {Block:diff()} [gold]Block[/gold].\n{HakuSec}{HakuOpen}Hakutaku{HakuClose}: And retain [gold]Block[/gold] for a turn.{HakuSecEnd}",
   "KEINEMOD-GUARDIAN.title": "Guardian",
   "KEINEMOD-GUARDIAN.artist": "六夜",
   "KEINEMOD-GUARDIAN.extraTipTitle": "Bond",
   "KEINEMOD-GUARDIAN.extraTipDescription": "The effects on ally [red]The Immortal[/red] are doubled.",
+  "Guardian.tlnotes": "A reference to how Keine protected Mokou in Imperishable Night. Also Bond is translated to 絆魂 in my other mod (Mokou), perhaps you can change it to that for consistency's sake?",
+
   "KEINEMOD-BESTIAL_INSTINCT.description": "You and another player: Gain {BestialInstinctPower:diff()} [gold]Bestial Instinct[/gold], [gold]Time Shift[/gold] {TimeShiftPower:diff()}.",
   "KEINEMOD-BESTIAL_INSTINCT.title": "Bestial Instinct",
   "KEINEMOD-BESTIAL_INSTINCT.artist": "ウータン",
   "KEINEMOD-BESTIAL_INSTINCT.extraTipTitle": "Bond",
   "KEINEMOD-BESTIAL_INSTINCT.extraTipDescription": "If targeted [red]The Immortal[/red], both of you gain [blue]2[/blue] additional [gold]Bestial Instinct[/gold].",
+
   "KEINEMOD-WIPED_FROM_HISTORY.description": "Deal {CalculatedDamage:diff()} damage.\n{HumanSec}{HumanOpen}Human{HumanClose}: Gain [gold]Block[/gold] equal to enemy's [gold]Historical Gap[/gold].{HumanSecEnd}\n{HakuSec}{HakuOpen}Hakutaku{HakuClose}: Deal additional damage equal to double enemy's [gold]Historical Gap[/gold].{HakuSecEnd}",
   "KEINEMOD-WIPED_FROM_HISTORY.title": "Wiped from History",
   "KEINEMOD-WIPED_FROM_HISTORY.artist": "甘味",
+
   "KEINEMOD-OVERWRITE.description": "Deal {Damage:diff()} damage.\nApply {HistoricalGapPower:diff()} [gold]Historical Gap[/gold].\n[gold]Create[/gold] {Cards:diff()} [gold]{Cards:plural:Flow|Flows}[/gold].",
   "KEINEMOD-OVERWRITE.title": "Overwrite",
   "KEINEMOD-OVERWRITE.artist": "あかい魚",
+
   "KEINEMOD-DECONSTRUCTION.description": "{HumanSec}{HumanOpen}Human{HumanClose}: [gold]Consume[/gold] {Cards:diff()} {Cards:plural:card|cards}.{HumanSecEnd}\nDraw {Cards:diff()} {Cards:plural:card|cards}.\nShuffle this into your [gold]Draw Pile[/gold].\nAfter playing this {CountNeeded:diff()} times, [gold]Transform[/gold] this into [gold]{IfUpgraded:show:Reconstruction+|Reconstruction}[/gold] when drawn.",
   "KEINEMOD-DECONSTRUCTION.title": "Deconstruction",
   "KEINEMOD-DECONSTRUCTION.artist": "unknown",
+
   "KEINEMOD-RECONSTRUCTION.description": "Add a copy of a card in your [gold]Scroll[/gold] to your [gold]Hand[/gold]. It gains [gold]Ethereal[/gold] and [gold]Exhaust[/gold].",
   "KEINEMOD-RECONSTRUCTION.title": "Reconstruction",
   "KEINEMOD-RECONSTRUCTION.selectionScreenPrompt": "Choose a card to clone.",
   "KEINEMOD-RECONSTRUCTION.artist": "Nico Dauk",
+
   "KEINEMOD-THE_SCALE_GROWS.description": "At the end of your turn, take damage equal to half your [gold]Knowledge[/gold], then gain {TheScaleGrowsPower:diff()} [gold]Knowledge[/gold].",
   "KEINEMOD-THE_SCALE_GROWS.title": "The Scale Grows...",
   "KEINEMOD-THE_SCALE_GROWS.artist": "Francis Coulombe",
+  "TheScaleGrows.tlnotes": "A reference to the game Look Outside. The main character of the game learned knowledge beyond his comprehension as the size of the cosmic being expands (I will not spoil too much). Here the scale means size rather than physical scale of a dragon or something.",
+
   "KEINEMOD-GUIDANCE.description": "Choose another player, whenever you [gold]Consume[/gold] a Non-[gold]Unplayable[/gold] card this turn, they get a copy of it.\nDraw {Cards:diff()} {Cards:plural:card|cards}.\n{HumanSec}{HumanOpen}Human{HumanClose}: [gold]Consume[/gold] up to {Cards:diff()} {Cards:plural:card|cards}.{HumanSecEnd}",
   "KEINEMOD-GUIDANCE.title": "Guidance",
   "KEINEMOD-GUIDANCE.artist": "千夨chia",
   "KEINEMOD-GUIDANCE.extraTipTitle": "Bond",
   "KEINEMOD-GUIDANCE.extraTipDescription": "If targeted [red]The Immortal[/red], they get [gold]Upgraded[/gold] copies.",
+
   "KEINEMOD-INTERNALIZE.description": "Whenever you [gold]Consume[/gold] a card, gain {InternalizePower:diff()} [gold]Valor[/gold] and [gold]Benevolence[/gold].",
   "KEINEMOD-INTERNALIZE.title": "Internalize",
   "KEINEMOD-INTERNALIZE.artist": "仲谷鳰",
+
   "KEINEMOD-AMATERASU.description": "Deal {CalculatedDamage:diff()} damage to ALL enemies.\n{HumanSec}{HumanOpen}Human{HumanClose}: Gain {ValorPower:diff()} [gold]Valor[/gold].{HumanSecEnd}\n{HakuSec}{HakuOpen}Hakutaku{HakuClose}: This card's damage scales with your [gold]Valor[/gold].{HakuSecEnd}",
   "KEINEMOD-AMATERASU.title": "Amaterasu",
   "KEINEMOD-AMATERASU.artist": "kaze",
+
   "KEINEMOD-DETERMINATION.description": "Gain {Block:diff()} [gold]Block[/gold].\nGain {ValorPower:diff()} [gold]Valor[/gold].\n{HumanSec}{HumanOpen}Human{HumanClose}: [gold]Consume[/gold] up to {Cards:diff()} {Cards:plural:card|cards}.{HumanSecEnd}\n{HakuSec}{HakuOpen}Hakutaku{HakuClose}: [gold]Upgrade[/gold] {Cards:diff()} {Cards:plural:card|cards} in your [gold]Hand[/gold].{HakuSecEnd}",
   "KEINEMOD-DETERMINATION.title": "Determination",
   "KEINEMOD-DETERMINATION.artist": "山羊さん",
+
   "KEINEMOD-SACRED_SMITE.description": "[gold]Create[/gold] a [gold]Scroll of Valor[/gold].\nDeal {Damage:diff()} damage for each [gold]Sacred Scroll[/gold] or [gold]Sacred Treasure[/gold] in your [gold]Hand[/gold] and [gold]Scroll[/gold].",
   "KEINEMOD-SACRED_SMITE.title": "Sacred Smite",
   "KEINEMOD-SACRED_SMITE.artist": "ノヤ",
+
   "KEINEMOD-KNOWLEDGE_IS_POWER.description": "Whenever you gain [gold]Knowledge[/gold], gain {KnowledgeIsPowerPower:plural:|{} times }that much [gold]Strength[/gold].",
   "KEINEMOD-KNOWLEDGE_IS_POWER.title": "Knowledge is Power",
   "KEINEMOD-KNOWLEDGE_IS_POWER.artist": "にしもん",
+
   "KEINEMOD-ENERGY_OUTBURST.description": "Whenever you enter [green]Hakutaku[/green] form, gain {Energy:energyIcons()}.",
   "KEINEMOD-ENERGY_OUTBURST.title": "Energy Outburst",
   "KEINEMOD-ENERGY_OUTBURST.artist": "//Gua",
+
   "KEINEMOD-REINCARNATION.description": "Deal {Damage:diff()} damage. If [gold]Fatal[/gold], permanently increase damage by {Increment:diff()}. If kills a Boss, capture its [gold]Reincarnation[/gold].\nAt the start of each combat, [gold]Create[/gold] a [gold]Returning Bridge[/gold] if this has captured [gold]Reincarnation[/gold].{SlayedBosses.StringValue:cond:\n(Captured: {}.)|}",
   "KEINEMOD-REINCARNATION.title": "Reincarnation",
   "KEINEMOD-REINCARNATION.artist": "史恵",
+
   "KEINEMOD-RETURNING_BRIDGE.description": "{InCombat:Unleash the [gold]Reincarnation[/gold] of {Reincarnation.StringValue}.|Unleash ALL captured [gold]Reincarnation[/gold].}",
   "KEINEMOD-RETURNING_BRIDGE.title": "Returning Bridge",
   "KEINEMOD-RETURNING_BRIDGE.artist": "SiyuMU",
+
   "KEINEMOD-PAST.description": "Gain {KnowledgePower:diff()} [gold]Knowledge[/gold].",
   "KEINEMOD-PAST.title": "Past",
   "KEINEMOD-PAST.artist": "わんこソラ",
+
   "KEINEMOD-FUTURE.description": "Gain {KnowledgePower:diff()} [gold]Knowledge[/gold].\nGain {DisintegrationPower:diff()} [gold]Disintegration[/gold].",
   "KEINEMOD-FUTURE.title": "Future",
   "KEINEMOD-FUTURE.artist": "わんこソラ",
+
   "KEINEMOD-HORRIFIC_PURSUIT.description": "Approach.\nDecrease [gold]Sandpit[/gold] by 1.\nWhen drawn, draw 1 card.",
   "KEINEMOD-HORRIFIC_PURSUIT.title": "Horrific Pursuit",
   "KEINEMOD-HORRIFIC_PURSUIT.artist": "unknown",
+
   "KEINEMOD-AN_AFTERLIFE_ODYSSEY.description": "Deal {Damage:diff()} damage.\n[gold]Consumed[/gold]: Deal {Damage:diff()} damage to the lowest-HP enemy.\nWhenever ANYONE dies, return this to your [gold]Hand[/gold].",
   "KEINEMOD-AN_AFTERLIFE_ODYSSEY.title": "An Afterlife Odyssey",
   "KEINEMOD-AN_AFTERLIFE_ODYSSEY.artist": "unknown",
+
   "KEINEMOD-YESTERDAY_ONCE_MORE.description": "[gold]Recall[/gold] {Cards:diff()} {Cards:plural:card|cards}.\nWhen next Non-[gold]Yesterday-Once-More[/gold] card is [gold]Exhausted[/gold], [gold]Consume[/gold] a copy of it.",
   "KEINEMOD-YESTERDAY_ONCE_MORE.title": "Yesterday Once More",
   "KEINEMOD-YESTERDAY_ONCE_MORE.artist": "寿喜烧九原",
+  "YesterdayOnceMore.tlnotes": "A reference to an old song by The Carpenters of the same name.",
+
   "KEINEMOD-CRIMSON_STRIKE.description": "Deal {Damage:diff()} damage.\nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold].\nIncrease [gold]Vulnerable[/gold] by 1 for every {Ratio:diff()} [gold]Knowledge[/gold].",
   "KEINEMOD-CRIMSON_STRIKE.title": "Crimson Strike",
   "KEINEMOD-CRIMSON_STRIKE.artist": "チョモラン",
+  "CrimsonStrike.tlnotes": "This is a Strike card that benefit from Strike Dummy.",
+
   "KEINEMOD-DETACHMENT.description": "[gold]Exhaust[/gold] your [gold]Scroll[/gold].\nFor every {Ratio:diff()} cards [gold]Exhausted[/gold], gain {energyPrefix:energyIcons(1)} and draw 1 card.{InCombat:\n(Gain {CalculatedCount:diff()} {energyPrefix:energyIcons(1)}, draw {CalculatedCount:diff()} {CalculatedCount:plural:card|cards})|}",
   "KEINEMOD-DETACHMENT.title": "Detachment",
   "KEINEMOD-DETACHMENT.artist": "我是觉主",
+  "Detachment.tlnotes": "A reference to a movie of same name, which I believe its Japanese name is デタッチメント 優しい無関心. The card art referenced it too.",
+
   "KEINEMOD-GODS_REALM.description": "Gain {Block:diff()} [gold]Block[/gold] for each card in your [gold]Scroll[/gold].\n[gold]Upgrade[/gold] ALL cards in your [gold]Scroll[/gold].",
   "KEINEMOD-GODS_REALM.title": "God's Realm",
   "KEINEMOD-GODS_REALM.artist": "ginaru",
+
   "KEINEMOD-UNDOCUMENTED_ERA.description": "Apply {HistoricalGapPower:diff()} [gold]Historical Gap[/gold] X times.\n{HumanSec}{HumanOpen}Human{HumanClose}: Gain {Block:diff()} [gold]Block[/gold] X times.{HumanSecEnd}\n{HakuSec}{HakuOpen}Hakutaku{HakuClose}: Increase X by 1.{HakuSecEnd}",
   "KEINEMOD-UNDOCUMENTED_ERA.title": "Undocumented Era",
   "KEINEMOD-UNDOCUMENTED_ERA.artist": "バルカ＝がちゃ",
+
   "KEINEMOD-IMPROVISE.description": "Deal {Damage:diff()} damage.\n[gold]Create[/gold] a random {IfUpgraded:show:[gold]Upgraded[/gold] |}[gold]Block[/gold] Skill from other characters. It gains [gold]Knowledgeable[/gold].",
   "KEINEMOD-IMPROVISE.title": "Improvise",
   "KEINEMOD-IMPROVISE.artist": "りき",
+
   "KEINEMOD-DUAL_BLESSING.description": "{IfUpgraded:show:|Choose one: }Gain {KnowledgePower:diff()} [gold]Knowledge[/gold] {IfUpgraded:show:and|or} {DupRekindlePower:diff()} [gold]Rekindle[/gold].",
   "KEINEMOD-DUAL_BLESSING.title": "Sacred Rebirth",
   "KEINEMOD-DUAL_BLESSING.artist": "kaze",
+
   "KEINEMOD-KEINES_BLESSING.description": "Gain {KnowledgePower:diff()} [gold]Knowledge[/gold].",
   "KEINEMOD-KEINES_BLESSING.title": "Keine's Blessing",
   "KEINEMOD-KEINES_BLESSING.artist": "グリンー（二小姐格林）",
+
   "KEINEMOD-MOKOUS_BLESSING.description": "Gain {DupRekindlePower:diff()} [gold]Rekindle[/gold].",
   "KEINEMOD-MOKOUS_BLESSING.title": "Mokou's Blessing",
   "KEINEMOD-MOKOUS_BLESSING.artist": "カズ",
+
   "KEINEMOD-LACK_CULTURAL_HERITAGE.description": "Deal {EmotionalDamage:diff()} unmodifiable damage to another player if they have no [gold]Knowledge[/gold].\nGive them {KnowledgePower:diff()} [gold]Knowledge[/gold] and add a [gold]Foreign Knowledge[/gold] into their [gold]Hand[/gold].",
   "KEINEMOD-LACK_CULTURAL_HERITAGE.title": "Lack Cultural Heritage!",
   "KEINEMOD-LACK_CULTURAL_HERITAGE.artist": "MIO",
   "KEINEMOD-LACK_CULTURAL_HERITAGE.extraTipTitle": "Bond",
   "KEINEMOD-LACK_CULTURAL_HERITAGE.extraTipDescription": "If targeted [red]The Immortal[/red], give [blue]1[/blue] additional [gold]Knowledge[/gold].",
+  "LackCulturalHeritage.tlnotes": "A reference to the game Touhou Mystia’s Izakaya, where Cultural Heritage is a tag on the food you need to make to satisfy guests such as Keine and Akyuu.",
+
   "KEINEMOD-PEER_REVIEW.description": "Choose an ally.\nWhenever they apply a Non-[gold]Historical-Gap[/gold] debuff to an enemy, also apply {PeerReviewPower:diff()} [gold]Historical Gap[/gold] to it.",
   "KEINEMOD-PEER_REVIEW.title": "Peer Review",
   "KEINEMOD-PEER_REVIEW.artist": "艾露Elf",
   "KEINEMOD-PEER_REVIEW.extraTipTitle": "Bond",
   "KEINEMOD-PEER_REVIEW.extraTipDescription": "If targeted [red]The Immortal[/red], they apply [blue]1[/blue] additional [gold]Historical Gap[/gold].",
+  "PeerReview.tlnotes": "Common term used in academia that means a research paper or study is checked by experts in its field.",
+
   "KEINEMOD-UNLIMITED_BLADE_WORKS.description": "Whenever you gain [gold]Valor[/gold] or add [gold]Heavenly Swords[/gold] to your [gold]Hand[/gold], ALL allies do the same.",
   "KEINEMOD-UNLIMITED_BLADE_WORKS.title": "Unlimited Blade Works",
   "KEINEMOD-UNLIMITED_BLADE_WORKS.artist": "よこはち",
   "KEINEMOD-UNLIMITED_BLADE_WORKS.extraTipTitle": "Bond",
-  "KEINEMOD-UNLIMITED_BLADE_WORKS.extraTipDescription": "Any [gold]Heavenly Swords[/gold] added for ally [red]The Immortal[/red] cost [blue]0[/blue] until played."
+  "KEINEMOD-UNLIMITED_BLADE_WORKS.extraTipDescription": "Any [gold]Heavenly Swords[/gold] added for ally [red]The Immortal[/red] cost [blue]0[/blue] until played.",
+  "UnlimitedBladeWorks.tlnotes": "A reference to Fate series."
 }

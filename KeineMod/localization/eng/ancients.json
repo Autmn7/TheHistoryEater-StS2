@@ -10,6 +10,8 @@
   "DARV.talk.KEINEMOD-KEINE_MOD.1-2r.next": "Blush",
   "DARV.talk.KEINEMOD-KEINE_MOD.1-3r.char": "O-Okay... G-Good to know.",
   "DARV.talk.KEINEMOD-KEINE_MOD.2-0r.ancient": "Hey there, bookworm! Got some fine scrolls here with your name all over 'em.",
+  "Darv.tlnotes": "The part with Mokou is a similar question Darv asked Mokou in my other mod, where Mokou replied 'Someone important to me is'.",
+  
   "NEOW.talk.KEINEMOD-KEINE_MOD.0-0.ancient": "[sine]..you... ..manipulate... history.... \n..perhaps... ..you can.. change... our.. ..history....[/sine]",
   "NEOW.talk.KEINEMOD-KEINE_MOD.0-0.next": "Respond",
   "NEOW.talk.KEINEMOD-KEINE_MOD.0-1.char": "I shall do what I can.",
@@ -17,6 +19,7 @@
   "NEOW.talk.KEINEMOD-KEINE_MOD.1-0r.next": "Continue",
   "NEOW.talk.KEINEMOD-KEINE_MOD.1-1r.ancient": "[sine]..glad... we... ..reached... ...an agreement....[/sine]",
   "NEOW.talk.KEINEMOD-KEINE_MOD.2-0r.ancient": "[sine]..welcome.. back... ..history... eater....[/sine]",
+  
   "NONUPEIPE.talk.KEINEMOD-KEINE_MOD.0-0.ancient": "Look at you, aren't you a dazzling star? Fine knitted dress with beautiful patterns, silvery hair smooth as silk, and that brilliantly designed hat is just the cherry on top.",
   "NONUPEIPE.talk.KEINEMOD-KEINE_MOD.0-0.next": "Thank",
   "NONUPEIPE.talk.KEINEMOD-KEINE_MOD.0-1.char": "That is such a compliment. Thank you, I have no words.",
@@ -28,6 +31,7 @@
   "NONUPEIPE.talk.KEINEMOD-KEINE_MOD.1-1r.next": "Continue",
   "NONUPEIPE.talk.KEINEMOD-KEINE_MOD.1-2r.ancient": "Interesting. Let's leave it as a mystery shall we?\nAfter all, a secret makes a woman, woman.",
   "NONUPEIPE.talk.KEINEMOD-KEINE_MOD.2-0r.ancient": "You have returned, looking gorgeous as usual.\nNo wonder why the [red]Immortal[/red] lady fell for you.",
+  
   "OROBAS.talk.KEINEMOD-KEINE_MOD.0-0.ancient": "Eat history? History food for you?! How taste??",
   "OROBAS.talk.KEINEMOD-KEINE_MOD.0-0.next": "Explain",
   "OROBAS.talk.KEINEMOD-KEINE_MOD.0-1.char": "No, history is not food for me. And I do not know how they taste. My ability simply allows me to conceal them temporarily.\nOh, am I speaking too fast? I can explain again if you want to.",
@@ -39,6 +43,8 @@
   "OROBAS.talk.KEINEMOD-KEINE_MOD.1-1r.next": "Respond",
   "OROBAS.talk.KEINEMOD-KEINE_MOD.1-2r.char": "Of course you can be my student. You are the student with the brightest eye.",
   "OROBAS.talk.KEINEMOD-KEINE_MOD.2-0r.ancient": "History teacher! Have this!\nNow more lessons!",
+  "Orobas.tlnotes": "Keine treats Orobas like one of her students. I do like this dynamic when I was writing this.",
+  
   "PAEL.talk.KEINEMOD-KEINE_MOD.0-0.ancient": "[thinky_dots]Calm and collected...\nWe will get along well.[/thinky_dots]",
   "PAEL.talk.KEINEMOD-KEINE_MOD.0-0.next": "Respond",
   "PAEL.talk.KEINEMOD-KEINE_MOD.0-1.char": "Gentle and generous.\nI am sure we will.",
@@ -48,6 +54,7 @@
   "PAEL.talk.KEINEMOD-KEINE_MOD.1-1r.next": "Nod",
   "PAEL.talk.KEINEMOD-KEINE_MOD.1-2r.char": "I see. This makes me wonder why I never need to sleep in [green]Hakutaku[/green] form.",
   "PAEL.talk.KEINEMOD-KEINE_MOD.2-0r.ancient": "[thinky_dots]Here, take this. Remember not to overwork yourself...[/thinky_dots]",
+  
   "TANX.talk.KEINEMOD-KEINE_MOD.0-0.ancient": "BOOKS? SCROLLS? NO NEED FOR THAT!\nWEAPONS ARE ALL YOU NEED!!",
   "TANX.talk.KEINEMOD-KEINE_MOD.0-0.next": "Respond",
   "TANX.talk.KEINEMOD-KEINE_MOD.0-1.char": "I would very much disagree. Still, I suppose we must agree to disagree.",
@@ -57,6 +64,8 @@
   "TANX.talk.KEINEMOD-KEINE_MOD.1-1r.next": "Continue",
   "TANX.talk.KEINEMOD-KEINE_MOD.1-2r.ancient": "SWEET FIGHT!! HAVE A WEAPON!",
   "TANX.talk.KEINEMOD-KEINE_MOD.2-0r.ancient": "HEAVENLY SWORD? MIGHTY NAME FOR A MIGHTY WEAPON!!",
+  "Tanx.tlnotes": "Tanx being the fight-maniac that he is. Also with Heavenly Sword, do use 天叢雲剣, see tlnotes on the card Heavenly Sword.",
+  
   "TEZCATARA.talk.KEINEMOD-KEINE_MOD.0-0.ancient": "Hello, sweetie. Oh, careful there.\nThe fire's [jitter][b]nice[/b][/jitter] and [jitter][b]warm[/b][/jitter], but don't let it get too close to your scrolls.",
   "TEZCATARA.talk.KEINEMOD-KEINE_MOD.0-0.next": "Thank",
   "TEZCATARA.talk.KEINEMOD-KEINE_MOD.0-1.char": "Thanks for the reminder.",
@@ -66,6 +75,8 @@
   "TEZCATARA.talk.KEINEMOD-KEINE_MOD.1-1r.next": "Respond",
   "TEZCATARA.talk.KEINEMOD-KEINE_MOD.1-2r.char": "Understood. Perhaps it is nice that you can forget, but I will try my best to remember.",
   "TEZCATARA.talk.KEINEMOD-KEINE_MOD.2-0r.ancient": "Some things never change about history. There's always an ancient being with soup.",
+  "Tezcatara.tlnotes": "A nice little distinction between forgetting and remembering.",
+  
   "VAKUU.talk.KEINEMOD-KEINE_MOD.0-0.ancient": "How are you doing, gorgeous lady?\nAnything in particular that you are interested in?",
   "VAKUU.talk.KEINEMOD-KEINE_MOD.0-0.next": "Glare",
   "VAKUU.talk.KEINEMOD-KEINE_MOD.0-1.char": "Do not even attempt to mess with me, wretched demon!\nI know what you did, and I am coming right for you after this.",
@@ -77,6 +88,8 @@
   "VAKUU.talk.KEINEMOD-KEINE_MOD.1-1r.next": "Mock",
   "VAKUU.talk.KEINEMOD-KEINE_MOD.1-2r.char": "Stay arrogant if you wish. I cannot recall a single arrogant student who did not eventually beg me for mercy.",
   "VAKUU.talk.KEINEMOD-KEINE_MOD.2-0r.ancient": "I have come to the realization that you are always aggressive no matter what I say.\nSo suit yourself. I am done trying.",
+  "Vakuu.tlnotes": "With Keine's righteous virtues, it should come as no doubt that Keine hates Vakuu. Express as much rage as possible.",
+  
   "THE_ARCHITECT.talk.KEINEMOD-KEINE_MOD.0-0r.char": "So you are the source of their suffering. You sought to create history, yet produced only ruin.",
   "THE_ARCHITECT.talk.KEINEMOD-KEINE_MOD.0-0r.next": "Continue",
   "THE_ARCHITECT.talk.KEINEMOD-KEINE_MOD.0-1r.ancient": "You know nothing about my visions.",
@@ -88,5 +101,6 @@
   "THE_ARCHITECT.talk.KEINEMOD-KEINE_MOD.2-0r.char": "A creator who abandons responsibility has no right to call themselves a creator. Have you no remorse?",
   "THE_ARCHITECT.talk.KEINEMOD-KEINE_MOD.2-0r.next": "Continue",
   "THE_ARCHITECT.talk.KEINEMOD-KEINE_MOD.2-1r.ancient": "Remorse is for those who believe they have erred.",
-  "THE_ARCHITECT.talk.KEINEMOD-KEINE_MOD.2-attack": "Both"
+  "THE_ARCHITECT.talk.KEINEMOD-KEINE_MOD.2-attack": "Both",
+  "Architect.tlnotes": "The Architect believes he did nothing wrong and is above all else. The conflict mainly focus on how he and Keine view the concept of 'Create' differently. Also, 'hybrid abomination' refers to the fact that Keine is a half-beast. This is a very harsh line, I feel sorry for Keine..."
 }
