@@ -1,0 +1,8 @@
+{
+  "KEINEMOD-ARTIST-TITLE": "イラスト",
+  "KEINEMOD-FLAVOR-TITLE": "",
+  "KEINEMOD-SCROLL_PILE.title": "巻物",
+  "KEINEMOD-SCROLL_PILE.description": "[gold]記録[/gold]したカードを保管する専用の山。[green]白沢[/green]形態になるたび、ここから最大[blue]2[/blue]枚のカードを[gold]想起[/gold]する。\n\n[gold]想起[/gold]：カードを[gold]巻物[/gold]から[gold]手札[/gold]へ移す。そのカードはこのターン、コストが[blue]1[/blue]減少し、[gold]エセリアル[/gold]と[gold]廃棄[/gold]を得る。",
+  "KEINEMOD-FULL_MOON.title": "満月",
+  "KEINEMOD-FULL_MOON.description": "[gold]タイムシフト[/gold]が[blue]12[/blue]に達するたび、[blue]1[/blue]得る。\n[blue]1[/blue]ターンに[blue]1[/blue]回：これをクリックして[blue]1[/blue]消費すると、このターン[green]白沢[/green]形態になる。"
+}

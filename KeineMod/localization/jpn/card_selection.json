@@ -1,0 +1,7 @@
+{
+  "TO_CONSUME_KEINE": "[gold]記録[/gold]するカードを[blue]{Amount}[/blue]枚選択。",
+  "TO_CONSUME_UPTO_KEINE": "[gold]記録[/gold]するカードを最大[blue]{Amount}[/blue]枚選択。",
+  "TO_CONSUME_ANY_KEINE": "[gold]記録[/gold]するカードを好きな枚数選択。",
+  "TO_RECALL_KEINE": "[gold]想起[/gold]するカードを[blue]{Amount}[/blue]枚選択。",
+  "TO_RECALL_UPTO_KEINE": "[gold]想起[/gold]するカードを最大[blue]{Amount}[/blue]枚選択。"
+}

@@ -1,0 +1,10 @@
+{
+  "KEINEMOD-BOTTLED_HISTORY.description": "敵全体に[gold]歴史の隔たり[/gold][blue]{HistoricalGapPower}[/blue]を与える。",
+  "KEINEMOD-BOTTLED_HISTORY.title": "瓶詰めの歴史",
+  "KEINEMOD-SHARPENING_OIL.description": "[gold]勇気[/gold][blue]{ValorPower}[/blue]を得る。[gold]天叢雲剣+[/gold]を[blue]{Cards}[/blue]枚[gold]創造[/gold]する。",
+  "KEINEMOD-SHARPENING_OIL.title": "研磨油",
+  "KEINEMOD-CONDENSED_KNOWLEDGE.description": "[gold]知識[/gold][blue]{KnowledgePower}[/blue]を得る。他のキャラクターから、[gold]博識[/gold]を持つランダムなアタックと[gold]ブロック[/gold]スキルをそれぞれ[blue]{Cards}[/blue]枚[gold]創造[/gold]する。",
+  "KEINEMOD-CONDENSED_KNOWLEDGE.title": "凝縮された知識",
+  "KEINEMOD-IMPERISHABLE_ESSENCE.description": "[gold]永夜[/gold]を得る。",
+  "KEINEMOD-IMPERISHABLE_ESSENCE.title": "永夜のエッセンス"
+}

@@ -1,0 +1,22 @@
+{
+  "KEINEMOD-CONSUME.description": "カードを[gold]巻物[/gold]へ移し、そのカードの[gold]記録時[/gold]効果を発動させる。",
+  "KEINEMOD-CONSUME.title": "記録",
+  "KEINEMOD-CREATE.description": "カードを[gold]手札[/gold]に加える。状態異常以外の加えたカードは[gold]保留[/gold]を得る。",
+  "KEINEMOD-CREATE.title": "創造",
+  "KEINEMOD-RECALL.description": "カードを[gold]巻物[/gold]から[gold]手札[/gold]へ移す。そのカードはこのターン、コストが[blue]1[/blue]減少し、[gold]エセリアル[/gold]と[gold]廃棄[/gold]を得る。",
+  "KEINEMOD-RECALL.title": "想起",
+  "KEINEMOD-HUMAN.description": "通常の姿。",
+  "KEINEMOD-HUMAN.title": "人間",
+  "KEINEMOD-HAKUTAKU.description": "獣の姿。[green]白沢[/green]形態になるたび、最大[blue]2[/blue]枚のカードを[gold]想起[/gold]する。",
+  "KEINEMOD-HAKUTAKU.title": "白沢",
+  "KEINEMOD-FULLMOON.description": "[blue]1[/blue]ターンに[blue]1[/blue]回：[gold]満月[/gold]をクリックして[blue]1[/blue]消費すると、このターン[green]白沢[/green]形態になる。\n[gold]想起最大枚数[/gold]：[blue]2[/blue]枚（[gold]智慧[/gold]1につき＋[blue]1[/blue]枚）",
+  "KEINEMOD-FULLMOON.title": "満月",
+  "KEINEMOD-KNOWLEDGEABLE.description": "このカードのダメージと[gold]ブロック[/gold]は、あなたの[gold]知識[/gold]に応じて増加する。",
+  "KEINEMOD-KNOWLEDGEABLE.title": "博識",
+  "KEINEMOD-SACREDSCROLL.description": "[gold]使用不可[/gold]。[gold]記録[/gold]された時、対応する[gold]神器[/gold]へ[gold]変身[/gold]する。",
+  "KEINEMOD-SACREDSCROLL.title": "神器の巻物",
+  "KEINEMOD-SACREDPOWER.description": "勇気の巻物 - [red]筋力[/red]\n仁愛の巻物 - [green]敏捷性[/green]\n智慧の巻物 - [blue]知識[/blue]",
+  "KEINEMOD-SACREDPOWER.title": "神器の力",
+  "KEINEMOD-REINCARNATION.description": "ボス能力の一部。各ボスは固有の[gold]転世[/gold]を持ち、ボス戦中にそのパワーから確認できる。",
+  "KEINEMOD-REINCARNATION.title": "転世"
+}
