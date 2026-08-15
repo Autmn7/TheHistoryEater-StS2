@@ -1,0 +1,21 @@
+{
+  "SEA_GLASS.KEINEMOD-KEINE_MOD.title": "年代物のガラス",
+  "KEINEMOD-OLD_SCROLL.description": "戦闘開始時、[gold]タイムシフト[/gold][blue]{TimeShiftPower}[/blue]を得て、[gold]勇気の巻物[/gold]を1枚[gold]創造[/gold]する。",
+  "KEINEMOD-OLD_SCROLL.flavor": "巻物に記された言語は、とうの昔に滅びている。",
+  "KEINEMOD-OLD_SCROLL.title": "古びた巻物",
+  "KEINEMOD-ENCHANTED_SCROLL.description": "戦闘開始時、[gold]タイムシフト[/gold][blue]{TimeShiftPower}[/blue]を得る。アップグレード済みの[gold]神器の巻物[/gold]を1つ選んで[gold]創造[/gold]し、その[gold]神器の力[/gold]を[blue]{SacredPower}[/blue]得る。",
+  "KEINEMOD-ENCHANTED_SCROLL.flavor": "古代の記号が妖しく青く輝いている。",
+  "KEINEMOD-ENCHANTED_SCROLL.title": "魔法の巻物",
+  "KEINEMOD-TEXTBOOK.description": "各戦闘開始時、[gold]知識[/gold][blue]{KnowledgePower}[/blue]と[gold]智慧[/gold][blue]{WisdomPower}[/blue]を得る。",
+  "KEINEMOD-TEXTBOOK.flavor": "",
+  "KEINEMOD-TEXTBOOK.title": "教科書",
+  "KEINEMOD-POCKET_WATCH.description": "[gold]満月[/gold]を得るために必要な[gold]タイムシフト[/gold]が[blue]10[/blue]になる。各ターンに何度でも[green]白沢[/green]形態になれる。",
+  "KEINEMOD-POCKET_WATCH.flavor": "ザ・ワールド！",
+  "KEINEMOD-POCKET_WATCH.title": "懐中時計",
+  "KEINEMOD-ETERNAL_FULL_MOON.description": "[blue]{ActiveTurn}[/blue]ターン目の開始時、[gold]永夜[/gold]を得る。",
+  "KEINEMOD-ETERNAL_FULL_MOON.flavor": "ずっと真夜中でいいのに。",
+  "KEINEMOD-ETERNAL_FULL_MOON.title": "永遠の満月",
+  "KEINEMOD-CURSED_KIMONO.description": "カードを[gold]記録[/gold]するたび、敵全体のHPを[blue]{Damage}[/blue]失わせる。",
+  "KEINEMOD-CURSED_KIMONO.flavor": "伝説では、明暦の大火を引き起こした着物。持ち主には滅びの運命が待つ。",
+  "KEINEMOD-CURSED_KIMONO.title": "呪いの振袖"
+}
