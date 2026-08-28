@@ -1,12 +1,16 @@
 using BaseLib.Abstracts;
 using BaseLib.Utils;
 using Godot;
+using KeineMod.KeineModCode.Cards;
+using KeineMod.KeineModCode.Powers;
 using KeineMod.KeineModCode.Scripts;
 using KeineMod.KeineModCode.Stances;
 using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Nodes.Rooms;
 
@@ -119,5 +123,11 @@ public class KeineModel : CustomSingletonModel
         }
 
         return base.AfterDeath(choiceContext, creature, wasRemovalPrevented, deathAnimLength);
+    }
+
+    public override async Task AfterCardGeneratedForCombat(CardModel card, Player? creator)
+    {
+        if (card is KeineModCard && !card.Owner.Creature.HasPower<TimeShiftPower>())
+            await PowerCmd.Apply<TimeShiftPower>(new ThrowingPlayerChoiceContext(), card.Owner.Creature, 1, card.Owner.Creature, null);
     }
 }
