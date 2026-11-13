@@ -15,8 +15,10 @@ public class KnowledgeIsPowerPower : KeineModPower
 
     public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
     {
-        Flash();
         if (power.Owner == Owner && power is KnowledgePower && amount > 0)
+        {
+            Flash();
             await PowerCmd.Apply<StrengthPower>(choiceContext, Owner, amount * Amount, Owner, null);
+        }
     }
 }

@@ -17,7 +17,18 @@ public class KnowledgePower : KeineModPower
 
     public override PowerStackType StackType => PowerStackType.Counter;
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DivisorVar("Cards", 3)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new("Cards", 0M)];
+
+    public override Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
+    {
+        if (power == this)
+        {
+            DynamicVars["Cards"].PreviewValue =
+                Math.Floor(Amount / 3M);
+        }
+
+        return Task.CompletedTask;
+    }
 
     public override decimal ModifyHandDraw(Player player, decimal count)
     {

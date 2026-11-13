@@ -26,6 +26,7 @@ public class KeineMod : PlaceholderCharacterModel
     public static readonly Color Color = new("#00afaf");
 
     public override Color NameColor => Color;
+    public override Color DreadNameColor => Color;
     public override Color EnergyLabelOutlineColor => new("#004040");
     public override Color MapDrawingColor => Color;
     public override CharacterGender Gender => CharacterGender.Feminine;

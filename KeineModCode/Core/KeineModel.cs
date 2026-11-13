@@ -10,7 +10,6 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Nodes.Rooms;
 
@@ -20,10 +19,7 @@ public class KeineModel : CustomSingletonModel
 {
     private static readonly SpireField<Player, KeineStanceModel> ActiveStance = new((Func<KeineStanceModel>)KeineModelDb.KeineStance<HumanForm>);
 
-    public override bool ShouldReceiveCombatHooks => true;
-
-    public KeineModel()
-        : base(true, false)
+    public KeineModel() : base(HookType.Combat)
     {
     }
 
@@ -86,7 +82,7 @@ public class KeineModel : CustomSingletonModel
         return Task.CompletedTask;
     }
 
-    public override Task AfterDeath(PlayerChoiceContext choiceContext, Creature creature, bool wasRemovalPrevented, float deathAnimLength)
+    public override Task AfterDeath(PlayerChoiceContext choiceContext, Creature creature, CardModel? source, bool wasRemovalPrevented, float deathAnimLength)
     {
         if (!wasRemovalPrevented && creature.IsPlayer)
         {
@@ -122,7 +118,7 @@ public class KeineModel : CustomSingletonModel
             }
         }
 
-        return base.AfterDeath(choiceContext, creature, wasRemovalPrevented, deathAnimLength);
+        return base.AfterDeath(choiceContext, creature, source, wasRemovalPrevented, deathAnimLength);
     }
 
     public override async Task AfterCardGeneratedForCombat(CardModel card, Player? creator)

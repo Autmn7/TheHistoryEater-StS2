@@ -33,7 +33,7 @@ public class AnAfterlifeOdyssey : KeineModCard, IOnConsumed
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, null).Targeting(weakestEnemy).Execute(choiceContext);
     }
 
-    public override async Task AfterDeath(PlayerChoiceContext choiceContext, Creature creature, bool wasRemovalPrevented, float deathAnimLength)
+    public override async Task AfterDeath(PlayerChoiceContext choiceContext, Creature creature, CardModel? source, bool wasRemovalPrevented, float deathAnimLength)
     {
         if (wasRemovalPrevented || CombatState == null)
             return;
