@@ -276,7 +276,7 @@
   "KEINEMOD-TOTAL_PURIFICATION.title": "Total Purification",
   "KEINEMOD-TOTAL_PURIFICATION.artist": "ginaru",
 
-  "KEINEMOD-PHANTASMAL_EMPEROR.description": "Deal {Damage:diff()} damage to ALL enemies {Repeat:diff()} times.\nLose {KnowledgePower:diff()} [gold]Knowledge[/gold].",
+  "KEINEMOD-PHANTASMAL_EMPEROR.description": "Deal {Damage:diff()} damage to ALL enemies {Repeat:diff()} times.",
   "KEINEMOD-PHANTASMAL_EMPEROR.title": "Phantasmal Emperor",
   "KEINEMOD-PHANTASMAL_EMPEROR.artist": "DomotoLain",
 

@@ -13,7 +13,7 @@ public class PhantasmalEmperor : KeineModCard
 {
     public PhantasmalEmperor() : base(2, CardType.Attack, CardRarity.Rare, TargetType.AllEnemies)
     {
-        WithDamage(6);
+        WithDamage(4);
         WithVar("Repeat", 4, 1);
         WithPower<KnowledgePower>(3);
         WithKeyword(KeineKeywords.Knowledgeable);
@@ -29,7 +29,5 @@ public class PhantasmalEmperor : KeineModCard
 
         await Cmd.Wait(0.5f);
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, cardPlay).TargetingAllOpponents(CombatState).WithHitCount(DynamicVars["Repeat"].IntValue).Execute(choiceContext);
-        if (Owner.Creature.GetPower<KnowledgePower>() != null)
-            await PowerCmd.ModifyAmount(choiceContext, Owner.Creature.GetPower<KnowledgePower>(), -DynamicVars["KnowledgePower"].BaseValue, Owner.Creature, this);
     }
 }
